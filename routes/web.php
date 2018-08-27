@@ -32,3 +32,7 @@ Route::resource('backend/orders', 'OrderController');
 Route::resource('backend/ratings', 'RatingController');
 Route::resource('backend/offers', 'OfferController');
 Route::resource('backend/futureproducts', 'FutureProductController');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
