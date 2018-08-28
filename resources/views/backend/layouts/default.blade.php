@@ -10,7 +10,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/backend.css') }}" rel="stylesheet">
 </head>
-<body class="sidebar-mini skin-purple sidebar-collapse">
+<body class="sidebar-mini skin-purple">
     <div id="app" class="wrapper">
         <!-- Main Header -->
         <header class="main-header">

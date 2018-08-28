@@ -7,8 +7,8 @@
 
 <section class="content-header">
     <h1>
-        Dashboard
-        <small>Version 2.0</small>
+        Product Category
+        <small>All</small>
     </h1>
     <ol class="breadcrumb">
         <li>
@@ -31,7 +31,7 @@
                             <div class="box-header with-border">
                                 <h3 class="box-title">Categories</h3>
                                 <div class="box-tools pull-right">
-                                    <a href="#" class="label label-default">Add New</a>
+                                    <a href="#" class="btn btn-default btn-sm">Add New</a>
                                 </div>
                             </div>
                             <div class="box-body">
