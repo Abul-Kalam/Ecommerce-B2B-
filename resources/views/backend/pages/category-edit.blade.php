@@ -1,6 +1,6 @@
 @extends('backend.layouts.default')
 
-@section('title', 'Create Category') 
+@section('title', 'Edit Category') 
 
 
 @section('content')
@@ -29,8 +29,9 @@
                     <form action="">
                         <div class="box mt-3">
                             <div class="box-header with-border">
-                                <h3 class="box-title">Create</h3>
+                                <h3 class="box-title">Edit</h3>
                                 <div class="box-tools pull-right">
+                                    <a href="#" class="btn btn-sm btn-default">Add New</a>
                                     <a href="#" class="btn btn-sm btn-default">All</a>
                                 </div>
                             </div>
@@ -94,7 +95,7 @@
                                 </div>
                             </div>
                             <div class="box-footer">
-                                <button type="submit" class="btn btn-primary pull-right">Submit</button>
+                                <button type="submit" class="btn btn-primary pull-right">Update</button>
                             </div>
                         </div>
                     </form>

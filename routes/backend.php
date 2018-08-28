@@ -4,6 +4,7 @@ Route::get('dashboard', function () {
     return view('backend.pages.dashboard');
 })->name('dashboard');
 
+
 Route::resource('users', 'UserController');
 Route::resource('tags', 'TagController');
 Route::resource('categories', 'CategoryController');
