@@ -19,7 +19,7 @@ class Rating extends Model
     protected $casts      = [
         'product_id'       => 'string',
         'user_id'          => 'string',
-        'price_rating'     => 'string',
+        'price_rating'     => 'float',
         'quality_rating'   => 'string',
         'shipping_rating'  => 'string'
     ];

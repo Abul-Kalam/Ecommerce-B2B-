@@ -126,8 +126,11 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                     <!-- The user image in the navbar-->
                     <img src="/images/avatar5.png" class="user-image" alt="User Image">
-                    <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                    <span class="hidden-xs">Alexander Pierce</span>
+
+                    
+                    @if(Auth::user()->name)
+                    <span class="hidden-xs">{{ Auth::user()->name }}</span>
+                    @endif
                 </a>
                 <ul class="dropdown-menu">
                     <!-- The user image in the menu -->
@@ -135,7 +138,7 @@
                         <img src="/images/avatar5.png" class="img-circle" alt="User Image">
 
                         <p>
-                            Alexander Pierce - Web Developer
+                            {{ Auth::user()->name }} - Web Developer
                             <small>Member since Nov. 2012</small>
                         </p>
                     </li>
@@ -160,7 +163,14 @@
                             <a href="#" class="btn btn-default btn-flat">Profile</a>
                         </div>
                         <div class="pull-right">
-                            <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                            {{--  <a href="{{ route('logout') }}" class="btn btn-default btn-flat">Sign out</a>  --}}
+
+                            <a class="nav-link" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                                          document.getElementById('logout-form').submit();">{{ __('Sign Out') }}</a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
                         </div>
                     </li>
                 </ul>
