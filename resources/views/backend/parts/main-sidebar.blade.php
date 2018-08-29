@@ -35,14 +35,14 @@
         <li class="header">HEADER</li>
         @foreach ($nav as $item)
             @if ($item['type'] === 'single')
-                <li class="{{ $item['active'] ? 'active' : '' }}">
+                <li class="{{ $item['slug'] === $activePrimary ? 'active' : '' }}">
                     <a href="{{ route($item['route']) }}">
                         <i class="{{ $item['icon_class'] }}"></i>
                         <span>{{ $item['label'] }}</span>
                     </a>
                 </li>
             @elseif ($item['type'] === 'menu')
-                <li class="treeview">
+                <li class="treeview {{ $item['slug'] === $activePrimary ? 'active menu-open' : '' }}">
                     <a href="#">
                         <i class="{{ $item['icon_class'] }}"></i>
                         <span>{{ $item['label'] }}</span>
@@ -52,7 +52,7 @@
                     </a>
                     <ul class="treeview-menu">
                         @foreach ($item['childs'] as $citem)
-                        <li>
+                        <li class="{{ $citem['slug'] === $activeSecondary ? 'active' : '' }}">
                             <a href="{{ route($citem['route']) }}">{{ $citem['label'] }}</a>
                         </li>
                         @endforeach

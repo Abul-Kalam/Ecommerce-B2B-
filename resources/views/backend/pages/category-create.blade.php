@@ -1,3 +1,7 @@
+@php
+    $_activePrimaryNav = 'product-category';
+    $_activeSecondaryNav = 'create';
+@endphp
 @extends('backend.layouts.default')
 
 @section('title', 'Create Category') 
