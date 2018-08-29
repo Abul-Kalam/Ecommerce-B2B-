@@ -126,8 +126,6 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                     <!-- The user image in the navbar-->
                     <img src="/images/avatar5.png" class="user-image" alt="User Image">
-
-                    
                     @if(Auth::user()->name)
                     <span class="hidden-xs">{{ Auth::user()->name }}</span>
                     @endif
@@ -136,7 +134,6 @@
                     <!-- The user image in the menu -->
                     <li class="user-header">
                         <img src="/images/avatar5.png" class="img-circle" alt="User Image">
-
                         <p>
                             {{ Auth::user()->name }} - Web Developer
                             <small>Member since Nov. 2012</small>
@@ -165,7 +162,7 @@
                         <div class="pull-right">
                             {{--  <a href="{{ route('logout') }}" class="btn btn-default btn-flat">Sign out</a>  --}}
 
-                            <a class="nav-link" href="{{ route('logout') }}"
+                            <a class="btn btn-default btn-flat" href="{{ route('logout') }}"
                             onclick="event.preventDefault();
                                           document.getElementById('logout-form').submit();">{{ __('Sign Out') }}</a>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

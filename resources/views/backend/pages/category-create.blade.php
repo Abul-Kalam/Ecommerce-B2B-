@@ -7,8 +7,8 @@
 
 <section class="content-header">
     <h1>
-        Dashboard
-        <small>Version 2.0</small>
+        Product Category
+        <small>Add new</small>
     </h1>
     <ol class="breadcrumb">
         <li>
