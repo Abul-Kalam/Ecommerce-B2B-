@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Offer;
 use Illuminate\Http\Request;
 
 class OfferController extends Controller
@@ -23,7 +24,7 @@ class OfferController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.pages.offer-create');
     }
 
     /**
@@ -34,7 +35,39 @@ class OfferController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // $request->validate([
+        //     'slug' => 'required|unique:categories|max:255',
+        //     'display-name-en' => 'required|max:255',
+        //     'display-name-bn' => 'required|max:255'
+        // ]);
+        
+        $offer = new Offer();
+        
+        $slug = $request->input('slug');
+
+        $slug = preg_replace('/\s+/u', '-', trim($slug));
+
+        $offer->slug             = $slug;
+        $offer->localization     = [
+            'en' => [
+                'display_name' => $request->input('display-name-en')
+            ],
+            'bn' => [
+                'display_name' => $request->input('display-name-bn')
+            ]
+        ];
+        $offer->options            = null;
+        $offer->meta             = [
+            'title' => $request->input('meta-title'),
+            'keywords' => $request->input('meta-keywords'),
+            'description' => $request->input('meta-description')
+        ];
+        $offer->description  = $request->input('description');
+        $offer->image_url  = $request->input('feature-image-url');
+        
+        $offer->save();
+
+        return redirect()->route('backend.offers.edit', $offer->id);
     }
 
     /**
