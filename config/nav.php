@@ -14,7 +14,7 @@ return [
             'slug' => 'media',
             'label' => 'Media',
             'route' => 'backend.media',
-            'icon_class'  => 'fa fa-folder-open',
+            'icon_class'  => 'fa fa-folder',
         ],
         [
             'type' => 'menu',
