@@ -1,9 +1,4 @@
-@extends('backend.layouts.default')
-
-@section('title', 'All Categories') 
-
-
-@section('content')
+@extends('backend.layouts.default') @section('title', 'All Categories') @section('content')
 
 <section class="content-header">
     <h1>
@@ -20,7 +15,7 @@
 </section>
 
 <section class="content">
-    
+
 
     <div class="page">
         <div class="container">
@@ -30,71 +25,60 @@
                         <div class="box mt-3">
                             <div class="box-header with-border">
                                 <h3 class="box-title">Categories</h3>
-                                <div class="box-tools pull-right">
-                                    <a href="#" class="btn btn-default btn-sm">Add New</a>
+                                <div class="box-tools">
+                                    <div class="input-group input-group-sm" style="width: 200px;">
+                                        <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
+                        
+                                        <div class="input-group-btn">
+                                            <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="box-body">
-                                <div class="row">
-                                    <div class="col-lg-6 form-group">
-                                        <label for="display_name_en">Display Name En</label>
-                                        <input type="text" class="form-control" id="display_name_en" name="display_name_en">
-                                    </div>
-                                    <div class="col-lg-6 form-group">
-                                        <label for="display_name_bn">Display Name Bn</label>
-                                        <input type="text" class="form-control" id="display_name_bn" name="display_name_bn">
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-lg-6 form-group">
-                                        <label for="slug">Slug</label>
-                                        <input type="text" class="form-control" id="slug" name="slug">
-                                    </div>
-                                    <div class="col-lg-6 form-group">
-                                        <label for="display_name_bn">Parent Category</label>
-                                        <select class="form-control">
-                                            <option>Select Category</option>
-                                            <option>Man's Fashion</option>
-                                            <option>Womens's Fashion</option>
-                                            <option>4</option>
-                                            <option>5</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="description">Description</label>
-                                    <textarea class="form-control" id="description" rows="3" name="description"></textarea>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="meta-title">Meta Title</label>
-                                    <input type="text" class="form-control" id="meta-title" name="meta_title">
-                                </div>
-                                
-                                <div class="form-group">
-                                    <label for="meta-keywords">Meta Keywords</label>
-                                    <input type="text" class="form-control" id="meta-keywords" name="meta_keywords">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="meta-description">Meta Description</label>
-                                    <textarea class="form-control" id="description" rows="3" name="meta_description"></textarea>
-                                </div>
-                                      
-                                <div class="form-group">
-                                    <label for="exampleInputFile">File input</label>
-                                    <input type="file" id="exampleInputFile">
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                    <input type="checkbox"> Check me out
-                                    </label>
-                                </div>
+                                <table class="table table-bordered">
+                                    <tbody>
+                                        <tr>
+                                            <th style="width: 10px">#</th>
+                                            <th>Name</th>
+                                            <th>Description</th>
+                                            <th>Slug</th>
+                                        </tr>
+                                        <tr>
+                                            <td>1.</td>
+                                            <td>Man's Fashion</td>
+                                            <td>Only for man</td>
+                                            <td>man's-fashion</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3.</td>
+                                            <td>Women's Fashion</td>
+                                            <td>Only for women</td>
+                                            <td>Women's-fashion</td>
+                                        </tr>
+                                        <tr>
+                                            <td>4.</td>
+                                            <td>Women's Fashion</td>
+                                            <td>Only for women</td>
+                                            <td>Women's-fashion</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2.</td>
+                                            <td>Women's Fashion</td>
+                                            <td>Only for women</td>
+                                            <td>Women's-fashion</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
-                            <div class="box-footer">
-                                <button type="submit" class="btn btn-primary pull-right">Submit</button>
+                            <div class="box-footer clearfix">
+                                <ul class="pagination pagination-sm no-margin pull-right">
+                                    <li><a href="#">«</a></li>
+                                    <li><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">»</a></li>
+                                </ul>
                             </div>
                         </div>
                     </form>

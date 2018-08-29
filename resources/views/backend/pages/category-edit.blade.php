@@ -92,13 +92,8 @@
                                 </div>
                                       
                                 <div class="form-group">
-                                    <label for="exampleInputFile">File input</label>
-                                    <input type="file" id="exampleInputFile">
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                    <input type="checkbox"> Check me out
-                                    </label>
+                                    <label for="feature-image-url">Feature Image Url</label>
+                                    <input type="text" class="form-control" id="feature-image-url" name="feature-image-url">
                                 </div>
                             </div>
                             <div class="box-footer">
