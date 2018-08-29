@@ -43,14 +43,12 @@
                                 <div class="row">
                                     <div class="col-lg-6 form-group">
                                         <label for="display_name_en">Display Name En</label>
-                                        <input type="text" class="form-control" id="display_name_en" name="display_name_en" value="{{ $category->localization['en']
-                                        ['display_name'] }}">
+                                        <input type="text" class="form-control" id="display_name_en" name="display-name-en" value="{{  $category->localization['en']['display_name'] }}">
                                     </div>
 
-                                    {{ $category->localization['en']['display_name'] }}
                                     <div class="col-lg-6 form-group">
                                         <label for="display_name_bn">Display Name Bn</label>
-                                        <input type="text" class="form-control" id="display_name_bn" name="display_name_bn">
+                                        <input type="text" class="form-control" id="display_name_bn" name="display-name-bn" value="{{  $category->localization['bn']['display_name'] }}">
                                     </div>
                                 </div>
 
@@ -78,22 +76,22 @@
 
                                 <div class="form-group">
                                     <label for="meta-title">Meta Title</label>
-                                    <input type="text" class="form-control" id="meta-title" name="meta_title" value="{{ $category->meta['title'] }}">
+                                    <input type="text" class="form-control" id="meta-title" name="meta-title" value="{{ $category->meta['title'] }}">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="meta-keywords">Meta Keywords</label>
-                                    <input type="text" class="form-control" id="meta-keywords" name="meta_keywords" value="{{ $category->meta['keywords'] }}">
+                                    <input type="text" class="form-control" id="meta-keywords" name="meta-keywords" value="{{ $category->meta['keywords'] }}">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="meta-description">Meta Description</label>
-                                    <textarea class="form-control" id="description" rows="3" name="meta_description"> {{ $category->meta['description'] }}</textarea>
+                                    <textarea class="form-control" id="description" rows="3" name="meta-description"> {{ $category->meta['description'] }}</textarea>
                                 </div>
                                       
                                 <div class="form-group">
                                     <label for="feature-image-url">Feature Image Url</label>
-                                    <input type="text" class="form-control" id="feature-image-url" name="feature-image-url">
+                                    <input type="text" class="form-control" id="feature-image-url" name="feature-image-url" value="{{ $category->image_url }}">
                                 </div>
                             </div>
                             <div class="box-footer">

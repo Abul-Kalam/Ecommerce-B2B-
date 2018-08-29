@@ -16,7 +16,6 @@ class CreateOffersTable extends Migration
         Schema::create('offers', function (Blueprint $table) {
             $table->increments('id');
             $table->string('slug')->unique();
-            $table->string('title')->nullable();
             $table->string('description')->nullable();
             $table->json('localization')->nullable();
             $table->json('options')->nullable();

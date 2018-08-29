@@ -7,7 +7,7 @@
 
 <section class="content-header">
     <h1>
-        Product Category
+       Offer
         <small>Add new</small>
     </h1>
     <ol class="breadcrumb">
@@ -26,7 +26,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
-                    <form action="{{ route('backend.categories.store') }}" method="post">
+                    <form action="{{ route('backend.offers.store') }}" method="post">
 
                             {{ csrf_field() }}
 
@@ -50,19 +50,9 @@
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-lg-6 form-group">
+                                    <div class="col-lg-12 form-group">
                                         <label for="slug">Slug</label>
                                         <input type="text" class="form-control" id="slug" name="slug">
-                                    </div>
-                                    <div class="col-lg-6 form-group">
-                                        <label for="display-name-bn">Parent Category</label>
-                                        <select class="form-control">
-                                            <option>Select Category</option>
-                                            <option>Man's Fashion</option>
-                                            <option>Womens's Fashion</option>
-                                            <option>4</option>
-                                            <option>5</option>
-                                        </select>
                                     </div>
                                 </div>
 
@@ -87,7 +77,7 @@
                                 </div>
                                       
                                 <div class="form-group">
-                                    <label for="feature-image-url">Feature Image Url</label>
+                                    <label for="feature-image-url">Url</label>
                                     <input type="text" class="form-control" id="feature-image-url" name="feature-image-url">
                                 </div>
                             </div>

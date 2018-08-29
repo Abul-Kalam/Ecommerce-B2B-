@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Tag;
 use Illuminate\Http\Request;
 
 class TagController extends Controller
@@ -23,7 +24,7 @@ class TagController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.pages.tag-create');
     }
 
     /**
@@ -34,7 +35,37 @@ class TagController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        // $request->validate([
+        //     'slug' => 'required|unique:categories|max:255',
+        //     'display-name-en' => 'required|max:255',
+        //     'display-name-bn' => 'required|max:255'
+        // ]);
+        
+        $tag = new Tag();
+        
+        $slug = $request->input('slug');
+
+        $slug = preg_replace('/\s+/u', '-', trim($slug));
+
+        $tag->slug             = $slug;
+        $tag->localization     = [
+            'en' => [
+                'display_name' => $request->input('display-name-en')
+            ],
+            'bn' => [
+                'display_name' => $request->input('display-name-bn')
+            ]
+        ];
+        $tag->meta             = [
+            'title' => $request->input('meta-title'),
+            'keywords' => $request->input('meta-keywords'),
+            'description' => $request->input('meta-description')
+        ];
+        $tag->description  = $request->input('description');
+        
+        $tag->save();
+        return redirect()->route('backend.tags.edit', $tag->id);
     }
 
     /**
@@ -56,7 +87,11 @@ class TagController extends Controller
      */
     public function edit($id)
     {
-        //
+        $tag = Tag::findOrFail($id);
+
+        return view('backend.pages.tag-edit', [
+            'tag' => $tag,
+        ]);
     }
 
     /**
@@ -68,7 +103,37 @@ class TagController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+         
+        // $request->validate([
+        //     'slug' => 'required|unique:categories|max:255',
+        //     'display-name-en' => 'required|max:255',
+        //     'display-name-bn' => 'required|max:255'
+        // ]);
+        
+        $tag = Tag::findOrFail($id);
+        
+        $slug = $request->input('slug');
+
+        $slug = preg_replace('/\s+/u', '-', trim($slug));
+
+        $tag->slug             = $slug;
+        $tag->localization     = [
+            'en' => [
+                'display_name' => $request->input('display-name-en')
+            ],
+            'bn' => [
+                'display_name' => $request->input('display-name-bn')
+            ]
+        ];
+        $tag->meta             = [
+            'title' => $request->input('meta-title'),
+            'keywords' => $request->input('meta-keywords'),
+            'description' => $request->input('meta-description')
+        ];
+        $tag->description  = $request->input('description');
+        
+        $tag->save();
+        return redirect()->route('backend.tags.edit', $tag->id);
     }
 
     /**

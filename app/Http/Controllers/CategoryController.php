@@ -63,8 +63,11 @@ class CategoryController extends Controller
             'description' => $request->input('meta-description')
         ];
         $category->description  = $request->input('description');
+        $category->image_url  = $request->input('feature-image-url');
         
         $category->save();
+
+        return redirect()->route('backend.categories.edit', $category->id);
     }
 
     /**
@@ -102,7 +105,39 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
+        // $request->validate([
+        //     'slug' => 'required|unique:categories|max:255',
+        //     'display-name-en' => 'required|max:255',
+        //     'display-name-bn' => 'required|max:255'
+        // ]);
+        
+        $category = Category::findOrFail($id);
+        
+        $slug = $request->input('slug');
+
+        $slug = preg_replace('/\s+/u', '-', trim($slug));
+
+        $category->slug             = $slug;
+        $category->localization     = [
+            'en' => [
+                'display_name' => $request->input('display-name-en')
+            ],
+            'bn' => [
+                'display_name' => $request->input('display-name-bn')
+            ]
+        ];
+        $category->options            = null;
+        $category->meta             = [
+            'title' => $request->input('meta-title'),
+            'keywords' => $request->input('meta-keywords'),
+            'description' => $request->input('meta-description')
+        ];
+        $category->description  = $request->input('description');
+        $category->image_url  = $request->input('feature-image-url');
+        
+        $category->save();
+        return redirect()->route('backend.categories.edit', $category->id);
     }
 
     /**
