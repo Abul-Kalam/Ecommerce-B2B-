@@ -26,3 +26,7 @@ Route::get('/home', 'HomeController@index')->name('home');
   Route::get('categories/list', function () {
     return view('backend.pages.category-list');
   });
+
+  Route::get('shops/create', function () {
+    return view('backend.pages.shop-create');
+  });

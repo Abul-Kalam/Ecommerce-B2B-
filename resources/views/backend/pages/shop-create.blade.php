@@ -1,11 +1,11 @@
 @extends('backend.layouts.default') 
-@section('title', 'All Categories') 
+@section('title', 'Create Shop') 
 @section('content')
 
 <section class="content-header">
     <h1>
-        Product Category
-        <small>All</small>
+        Shop
+        <small>Add new</small>
     </h1>
     <ol class="breadcrumb">
         <li>
