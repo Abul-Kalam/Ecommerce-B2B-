@@ -125,6 +125,10 @@ var app = new Vue({
   el: '#app'
 });
 
+$(document).ready(function () {
+  $('.select2').select2();
+});
+
 /***/ }),
 /* 3 */
 /***/ (function(module, exports, __webpack_require__) {

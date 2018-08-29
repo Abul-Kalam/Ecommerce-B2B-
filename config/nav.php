@@ -13,7 +13,7 @@ return [
             'type' => 'single',
             'slug' => 'media',
             'label' => 'Media',
-            'route' => 'backend.dashboard',
+            'route' => 'backend.media',
             'icon_class'  => 'fa fa-folder-open',
         ],
         [

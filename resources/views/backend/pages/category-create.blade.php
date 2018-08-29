@@ -57,8 +57,7 @@
                                     </div>
                                     <div class="col-lg-6 form-group">
                                         <label for="display-name-bn">Parent Category</label>
-                                        <select class="form-control">
-                                            <option>Select Category</option>
+                                        <select class="form-control select2" placeholder="Select Category">
                                             <option>Man's Fashion</option>
                                             <option>Womens's Fashion</option>
                                             <option>4</option>
