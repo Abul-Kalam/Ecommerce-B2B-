@@ -1,6 +1,12 @@
+@php
+    $_activePrimaryNav = 'dashboard';
+    $_activeSecondaryNav = null;
+@endphp
 @extends('backend.layouts.default')
 
-@section('title', 'Dashboard') @section('content')
+@section('title', 'Dashboard')
+
+@section('content')
 
 <section class="content-header">
     <h1>

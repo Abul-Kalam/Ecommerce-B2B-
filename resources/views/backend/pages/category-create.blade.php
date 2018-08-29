@@ -1,3 +1,7 @@
+@php
+    $_activePrimaryNav = 'product-category';
+    $_activeSecondaryNav = 'create';
+@endphp
 @extends('backend.layouts.default')
 
 @section('title', 'Create Category') 
@@ -38,7 +42,7 @@
                                 <div class="row">
                                     <div class="col-lg-6 form-group">
                                         <label for="display_name_en">Display Name En</label>
-                                        <input type="text" class="form-control" id="display_name_en" name="display_name_en">
+                                        <input type="text" class="form-control" id="display_name_en" name="display-name-en">
                                     </div>
                                     <div class="col-lg-6 form-group">
                                         <label for="display-name-bn">Display Name Bn</label>

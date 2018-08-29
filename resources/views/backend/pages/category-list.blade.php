@@ -1,5 +1,11 @@
-@extends('backend.layouts.default') 
-@section('title', 'All Categories') 
+@php
+    $_activePrimaryNav = 'product-category';
+    $_activeSecondaryNav = 'index';
+@endphp
+@extends('backend.layouts.default')
+
+@section('title', 'All Categories')
+
 @section('content')
 
 <section class="content-header">

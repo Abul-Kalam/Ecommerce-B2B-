@@ -6,7 +6,7 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ config('app.name', 'KadaMati') }}</title>
+    <title>@yield('title') | {{ config('app.name', 'KadaMati') }}</title>
     <!-- Styles -->
     <link href="{{ asset('css/backend.css') }}" rel="stylesheet">
 </head>
@@ -19,7 +19,11 @@
         
         <!-- Left side column. contains the logo and sidebar -->
         <aside class="main-sidebar">
-            @include('backend.parts.main-sidebar')
+            @include('backend.parts.main-sidebar',
+            [
+                'activePrimary' => $_activePrimaryNav,
+                'activeSecondary' => $_activeSecondaryNav,
+            ])
         </aside>
 
         <div class="content-wrapper">
