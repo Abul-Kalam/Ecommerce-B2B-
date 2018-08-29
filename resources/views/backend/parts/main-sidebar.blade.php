@@ -1,3 +1,6 @@
+@php
+    $nav = config('nav.main');
+@endphp
 <!-- sidebar: style can be found in sidebar.less -->
 <section class="sidebar">
 
@@ -30,30 +33,33 @@
     <!-- Sidebar Menu -->
     <ul class="sidebar-menu" data-widget="tree">
         <li class="header">HEADER</li>
-        <!-- Optionally, you can add icons to the links -->
-        <li class="active">
-            <a href="{{ route('backend.dashboard') }}">
-                <i class="fa fa-dashboard"></i>
-                <span>Dashboard</span>
-            </a>
-        </li>
-        <li class="treeview">
-            <a href="#">
-                <i class="fa fa-th-list"></i>
-                <span>Product Category</span>
-                <span class="pull-right-container">
-                    <i class="fa fa-angle-left pull-right"></i>
-                </span>
-            </a>
-            <ul class="treeview-menu">
-                <li>
-                    <a href="{{ route('backend.categories.create') }}">Add New</a>
+        @foreach ($nav as $item)
+            @if ($item['type'] === 'single')
+                <li class="{{ $item['active'] ? 'active' : '' }}">
+                    <a href="{{ route($item['route']) }}">
+                        <i class="{{ $item['icon_class'] }}"></i>
+                        <span>{{ $item['label'] }}</span>
+                    </a>
                 </li>
-                <li>
-                    <a href="{{ route('backend.categories.index') }}">All Categories</a>
+            @elseif ($item['type'] === 'menu')
+                <li class="treeview">
+                    <a href="#">
+                        <i class="{{ $item['icon_class'] }}"></i>
+                        <span>{{ $item['label'] }}</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        @foreach ($item['childs'] as $citem)
+                        <li>
+                            <a href="{{ route($citem['route']) }}">{{ $citem['label'] }}</a>
+                        </li>
+                        @endforeach
+                    </ul>
                 </li>
-            </ul>
-        </li>
+            @endif
+        @endforeach
     </ul>
     <!-- /.sidebar-menu -->
 </section>
