@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -34,11 +35,11 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'slug' => 'required|unique:categories|max:255',
-            'display_name_en' => 'required|max:255',
-            'display_name_bn' => 'required|max:255'
-        ]);
+        // $request->validate([
+        //     'slug' => 'required|unique:categories|max:255',
+        //     'display-name-en' => 'required|max:255',
+        //     'display-name-bn' => 'required|max:255'
+        // ]);
         
         $category = new Category();
         
@@ -49,17 +50,17 @@ class CategoryController extends Controller
         $category->slug             = $slug;
         $category->localization     = [
             'en' => [
-                'display_name' => $request->input('display_name_en')
+                'display_name' => $request->input('display-name-en')
             ],
             'bn' => [
-                'display_name' => $request->input('display_name_bn')
+                'display_name' => $request->input('display-name-bn')
             ]
         ];
         $category->options            = null;
         $category->meta             = [
-            'title' => $request->input('meta_title'),
-            'keywords' => $request->input('meta_keywords'),
-            'description' => $request->input('meta_description')
+            'title' => $request->input('meta-title'),
+            'keywords' => $request->input('meta-keywords'),
+            'description' => $request->input('meta-description')
         ];
         $category->description  = $request->input('description');
         
@@ -85,7 +86,11 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        return view('backend.pages.category-edit');
+        $category = Category::findOrFail($id);
+
+        return view('backend.pages.category-edit', [
+            'category' => $category,
+        ]);
     }
 
     /**

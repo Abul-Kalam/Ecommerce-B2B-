@@ -15,14 +15,14 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('categories/create', function () {
-  return view('backend.pages.category-create');
-})->name('dashboard');
+  // Route::get('categories/create', function () {
+  //   return view('backend.pages.category-create');
+  // })->name('dashboard');
 
-Route::get('categories/edit', function () {
-  return view('backend.pages.category-edit');
-})->name('dashboard');
+  // Route::get('categories/edit', function () {
+  //   return view('backend.pages.category-edit');
+  // })->name('dashboard');
 
-Route::get('categories/list', function () {
-  return view('backend.pages.category-list');
-})->name('dashboard');
+  Route::get('categories/list', function () {
+    return view('backend.pages.category-list');
+  });
