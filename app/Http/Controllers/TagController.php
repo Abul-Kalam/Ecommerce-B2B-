@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Session;
 use App\Tag;
 use Illuminate\Http\Request;
 
@@ -71,6 +72,8 @@ class TagController extends Controller
         $tag->description  = $request->input('description');
         
         $tag->save();
+
+        Session::flash('message', 'Successfully Created!');
         return redirect()->route('backend.tags.edit', $tag->id);
     }
 
@@ -139,6 +142,7 @@ class TagController extends Controller
         $tag->description  = $request->input('description');
         
         $tag->save();
+        Session::flash('message', 'Successfully Updated!');
         return redirect()->route('backend.tags.edit', $tag->id);
     }
 

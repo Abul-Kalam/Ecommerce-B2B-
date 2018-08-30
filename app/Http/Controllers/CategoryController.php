@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Session;
 use App\Category;
 use Illuminate\Http\Request;
 
@@ -73,6 +74,7 @@ class CategoryController extends Controller
         
         $category->save();
 
+        Session::flash('message', 'Successfully Created!');
         return redirect()->route('backend.categories.edit', $category->id);
     }
 
@@ -113,7 +115,7 @@ class CategoryController extends Controller
     {
         
         $request->validate([
-            'slug' => 'required|unique:categories|max:255',
+            'slug' => 'required|max:255|unique:categories,id,'.$id,
             'display-name-en' => 'required|max:255',
             'display-name-bn' => 'required|max:255'
         ]);
@@ -143,6 +145,7 @@ class CategoryController extends Controller
         $category->image_url  = $request->input('feature-image-url');
         
         $category->save();
+        Session::flash('message', 'Successfully Updated!');
         return redirect()->route('backend.categories.edit', $category->id);
     }
 

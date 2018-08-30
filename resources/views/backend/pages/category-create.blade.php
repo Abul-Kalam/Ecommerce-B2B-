@@ -1,6 +1,8 @@
 @php
     $_activePrimaryNav = 'product-category';
     $_activeSecondaryNav = 'create';
+    $_alertType = null;
+    $_alertMessage = null;
 @endphp
 @extends('backend.layouts.default')
 
