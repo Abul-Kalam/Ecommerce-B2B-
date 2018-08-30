@@ -1,3 +1,7 @@
+@php
+    $_activePrimaryNav = 'product-category';
+    $_activeSecondaryNav = 'create';
+@endphp
 @extends('backend.layouts.default')
 
 @section('title', 'Edit Category') 
@@ -7,7 +11,7 @@
 
 <section class="content-header">
     <h1>
-        Dashboard
+        Tag
         <small>Version 2.0</small>
     </h1>
     <ol class="breadcrumb">
@@ -41,21 +45,27 @@
                             </div>
                             <div class="box-body">
                                 <div class="row">
-                                    <div class="col-lg-6 form-group">
+                                    <div class="col-lg-6 form-group {{ $errors->has('display-name-en') ? 'has-error' : '' }}">
                                         <label for="display_name_en">Display Name En</label>
                                         <input type="text" class="form-control" id="display_name_en" name="display-name-en" value="{{  $tag->localization['en']['display_name'] }}">
+                                        @if($errors->has('display-name-en'))<span id="helpBlock2" class="help-block">The Display Name En field is required.</span>
+                                        @endif
                                     </div>
 
-                                    <div class="col-lg-6 form-group">
+                                    <div class="col-lg-6 form-group {{ $errors->has('display-name-bn') ? 'has-error' : '' }}">
                                         <label for="display_name_bn">Display Name Bn</label>
                                         <input type="text" class="form-control" id="display_name_bn" name="display-name-bn" value="{{  $tag->localization['bn']['display_name'] }}">
+                                        @if($errors->has('display-name-bn'))<span id="helpBlock2" class="help-block">The Display Name Bn field is required.</span>
+                                        @endif
                                     </div>
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-lg-12 form-group">
+                                    <div class="col-lg-12 form-group {{ $errors->has('slug') ? 'has-error' : '' }}">
                                         <label for="slug">Slug</label>
                                         <input type="text" class="form-control" id="slug" name="slug" value="{{ $tag->slug }}">
+                                        @if($errors->has('slug'))<span id="helpBlock2" class="help-block">The slug field is required.</span>
+                                        @endif
                                     </div>
                                 </div>
 

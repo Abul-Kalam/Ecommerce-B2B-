@@ -4,13 +4,13 @@
 @endphp
 @extends('backend.layouts.default')
 
-@section('title', 'All Categories')
+@section('title', 'All Tags')
 
 @section('content')
 
 <section class="content-header">
     <h1>
-        Product Category
+        Tag
         <small>All</small>
     </h1>
     <ol class="breadcrumb">
@@ -32,7 +32,7 @@
                     <form action="">
                         <div class="box mt-3">
                             <div class="box-header with-border">
-                                <a href="{{ route('backend.categories.create')}}" class="btn btn-sm btn-default">Add New</a>
+                                <a href="{{ route('backend.tags.create')}}" class="btn btn-sm btn-default">Add New</a>
                                 <div class="box-tools mt-2">
                                     <div class="input-group input-group-sm" style="width: 200px;">
                                         <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
@@ -53,17 +53,17 @@
                                             <th style="width: 95px; text-align: center" >Actions</th>
                                         </tr>
                                         
-                                        @foreach ($categories as $c)
+                                        @foreach ($tags as $t)
                                         <tr>
-                                            <td>{{$c->id}}</td>
-                                            <td>{{ $c->localization['en']['display_name'] }}</td>
+                                            <td>{{$t->id}}</td>
+                                            <td>{{ $t->localization['en']['display_name'] }}</td>
 
-                                            <td>{{ $c->slug }}</td>
+                                            <td>{{ $t->slug }}</td>
                                             <td>
                                                 <span class="actions">
-                                                    <a href="{{ route('backend.categories.show', $c->id)}}">View</a>
+                                                    <a href="{{ route('backend.tags.show', $t->id)}}">View</a>
                                                     <span>&nbsp;|&nbsp;</span>
-                                                    <a href="{{ route('backend.categories.edit', $c->id)}}">Edit</a>
+                                                    <a href="{{ route('backend.tags.edit', $t->id)}}">Edit</a>
                                                 </span>
                                                 
                                             </td>
@@ -73,7 +73,7 @@
                                 </table>
                             </div>
                             <div class="box-footer clearfix">
-                                {{ $categories->links() }}
+                                {{ $tags->links() }}
                             </div>
                         </div>
                     </form>
