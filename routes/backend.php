@@ -15,6 +15,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('users', 'UserController');
     Route::resource('tags', 'TagController');
     Route::resource('categories', 'CategoryController');
+    Route::post('backend/categories/search', 'CategoryController@search')->name('categories.search');
     Route::resource('invoices', 'InvoiceController');
     Route::resource('products', 'ProductController');
     // Route::resource('media', 'MediaController');

@@ -24,6 +24,22 @@ class CategoryController extends Controller
         ]);
     }
 
+
+
+    public function search(Request $request)
+    {
+        $keywords = $request->input('keywords');
+
+        $categories = Category::where('localization->en->display_name', 'like', '%'.$keywords.'%')
+        ->orWhere('localization->bn->display_name', 'like', '%'.$keywords.'%')->paginate(5);
+
+        return view('backend.pages.category-list', [
+            'categories' => $categories
+        ]);
+    }
+
+    
+
     /**
      * Show the form for creating a new resource.
      *

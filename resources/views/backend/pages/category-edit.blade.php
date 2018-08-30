@@ -39,8 +39,7 @@
                             <div class="box-header with-border">
                                 <a href="{{ route('backend.categories.create')}}" class="btn btn-sm btn-default">Add New</a>
                                 <div class="box-tools pull-right">
-                                    <a href="{{ route('backend.categories.index')}}" class="btn btn-sm btn-default">All</a>
-                                    <a href="#" class="btn btn-sm btn-default mt-2">All</a>
+                                    <a href="{{ route('backend.categories.index')}}" class="btn btn-sm btn-default mt-2">All</a>
                                 </div>
                             </div>
                             <div class="box-body">
