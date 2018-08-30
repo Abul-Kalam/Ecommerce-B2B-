@@ -32,7 +32,7 @@
                     <form action="">
                         <div class="box mt-3">
                             <div class="box-header with-border">
-                                <a href="#" class="btn btn-sm btn-default">Add New</a>
+                                <a href="{{ route('backend.categories.create')}}" class="btn btn-sm btn-default">Add New</a>
                                 <div class="box-tools mt-2">
                                     <div class="input-group input-group-sm" style="width: 200px;">
                                         <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
@@ -52,64 +52,29 @@
                                             <th>Slug</th>
                                             <th style="width: 95px; text-align: center" >Actions</th>
                                         </tr>
+                                        
+                                        @foreach ($categories as $c)
                                         <tr>
-                                            <td>1.</td>
-                                            <td>Man's Fashion</td>
-                                            <td>man's-fashion</td>
+                                            <td>{{$c->id}}</td>
+                                            <td>{{ $c->localization['en']['display_name'] }}</td>
+
+                                            <td>{{ $c->slug }}</td>
                                             <td>
                                                 <span class="actions">
-                                                    <a href="#">View</a>
+                                                    <a href="{{ route('backend.categories.show', $c->id)}}">View</a>
                                                     <span>&nbsp;|&nbsp;</span>
-                                                    <a href="#">Edit</a>
+                                                    <a href="{{ route('backend.categories.edit', $c->id)}}">Edit</a>
                                                 </span>
+                                                
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td>2.</td>
-                                            <td>Women's Fashion</td>
-                                            <td>Women's-fashion</td>
-                                            <td>
-                                                <span class="actions">
-                                                    <a href="#">View</a>
-                                                    <span>&nbsp;|&nbsp;</span>
-                                                    <a href="#">Edit</a>
-                                                </span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>3.</td>
-                                            <td>Women's Fashion</td>
-                                            <td>Women's-fashion</td>
-                                            <td>
-                                                <span class="actions">
-                                                    <a href="#">View</a>
-                                                    <span>&nbsp;|&nbsp;</span>
-                                                    <a href="#">Edit</a>
-                                                </span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>4.</td>
-                                            <td>Women's Fashion</td>
-                                            <td>Women's-fashion</td>
-                                            <td>
-                                                <span class="actions">
-                                                    <a href="#">View</a>
-                                                    <span>&nbsp;|&nbsp;</span>
-                                                    <a href="#">Edit</a>
-                                                </span>
-                                            </td>
-                                        </tr>
+                                       @endforeach
                                     </tbody>
                                 </table>
                             </div>
                             <div class="box-footer clearfix">
                                 <ul class="pagination pagination-sm no-margin pull-right">
-                                    <li><a href="#">«</a></li>
-                                    <li><a href="#">1</a></li>
-                                    <li><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
-                                    <li><a href="#">»</a></li>
+                                    {{ $categories->links() }}
                                 </ul>
                             </div>
                         </div>

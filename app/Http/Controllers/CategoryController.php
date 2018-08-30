@@ -13,8 +13,14 @@ class CategoryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('backend.pages.category-list');
+    {   
+        $paginate = config('app.pagenation_count', 3);
+        
+        $categories = Category::orderBy('created_at', 'DESC')->paginate($paginate);
+
+        return view('backend.pages.category-list' ,[
+            'categories' => $categories,
+        ]);
     }
 
     /**
@@ -35,11 +41,11 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        // $request->validate([
-        //     'slug' => 'required|unique:categories|max:255',
-        //     'display-name-en' => 'required|max:255',
-        //     'display-name-bn' => 'required|max:255'
-        // ]);
+        $request->validate([
+            'slug' => 'required|unique:categories|max:255',
+            'display-name-en' => 'required|max:255',
+            'display-name-bn' => 'required|max:255'
+        ]);
         
         $category = new Category();
         
@@ -106,11 +112,11 @@ class CategoryController extends Controller
     public function update(Request $request, $id)
     {
         
-        // $request->validate([
-        //     'slug' => 'required|unique:categories|max:255',
-        //     'display-name-en' => 'required|max:255',
-        //     'display-name-bn' => 'required|max:255'
-        // ]);
+        $request->validate([
+            'slug' => 'required|unique:categories|max:255',
+            'display-name-en' => 'required|max:255',
+            'display-name-bn' => 'required|max:255'
+        ]);
         
         $category = Category::findOrFail($id);
         

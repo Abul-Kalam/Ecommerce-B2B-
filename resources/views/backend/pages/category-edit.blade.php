@@ -1,3 +1,7 @@
+@php
+    $_activePrimaryNav = 'product-category';
+    $_activeSecondaryNav = null;
+@endphp
 @extends('backend.layouts.default')
 
 @section('title', 'Edit Category') 
@@ -40,21 +44,31 @@
                             </div>
                             <div class="box-body">
                                 <div class="row">
-                                    <div class="col-lg-6 form-group">
-                                        <label for="display_name_en">Display Name En</label>
-                                        <input type="text" class="form-control" id="display_name_en" name="display-name-en" value="{{  $category->localization['en']['display_name'] }}">
+                                    <div class="col-lg-6 form-group {{  $errors->has('display-name-en') ? 'has-error' : '' }}">
+                                        <label for="display-name-en">Display Name En</label>
+                                        <input type="text" class="form-control" id="display-name-en" name="display-name-en" value="{{  $category->localization['en']['display_name'] }}">
+                                        @if($errors->has('display-name-en'))
+                                        <span class="help-block">The Display Name En field is required.</span>
+                                    @endif
                                     </div>
 
-                                    <div class="col-lg-6 form-group">
-                                        <label for="display_name_bn">Display Name Bn</label>
-                                        <input type="text" class="form-control" id="display_name_bn" name="display-name-bn" value="{{  $category->localization['bn']['display_name'] }}">
+                                    <div class="col-lg-6 form-group {{  $errors->has('display-name-bn') ? 'has-error' : '' }}">
+                                        <label for="display-name-bn">Display Name Bn</label>
+                                        <input type="text" class="form-control" id="display-name-bn" name="display-name-bn" value="{{  $category->localization['bn']['display_name'] }}">
+                                        @if($errors->has('display-name-bn'))
+                                        <span class="help-block">The Display Name Bn field is required.</span>
+                                    @endif
                                     </div>
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-lg-6 form-group">
+                                    <div class="col-lg-6 form-group  {{  $errors->has('slug') ? 'has-error' : '' }}">
                                         <label for="slug">Slug</label>
                                         <input type="text" class="form-control" id="slug" name="slug" value="{{ $category->slug }}">
+
+                                        @if($errors->has('slug'))
+                                        <span class="help-block">The slug field is required.</span>
+                                        @endif
                                     </div>
                                     <div class="col-lg-6 form-group">
                                         <label for="display_name_bn">Parent Category</label>
