@@ -1,7 +1,10 @@
 @php
     $_activePrimaryNav = 'product-category';
     $_activeSecondaryNav = 'create';
+    $_alertType = 'success';
+    $_alertMessage =  Session::get('message');
 @endphp
+
 @extends('backend.layouts.default')
 
 @section('title', 'Edit Category') 

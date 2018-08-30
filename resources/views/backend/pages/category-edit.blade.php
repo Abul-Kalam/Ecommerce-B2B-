@@ -1,6 +1,8 @@
 @php
     $_activePrimaryNav = 'product-category';
     $_activeSecondaryNav = null;
+    $_alertType = 'success';
+    $_alertMessage =  Session::get('message');
 @endphp
 @extends('backend.layouts.default')
 
@@ -37,9 +39,9 @@
 
                         <div class="box mt-3">
                             <div class="box-header with-border">
-                                <a href="#" class="btn btn-sm btn-default">Add New</a>
+                                <a href="{{ route('backend.categories.create')}}" class="btn btn-sm btn-default">Add New</a>
                                 <div class="box-tools pull-right">
-                                    <a href="#" class="btn btn-sm btn-default">All</a>
+                                    <a href="{{ route('backend.categories.index')}}" class="btn btn-sm btn-default">All</a>
                                 </div>
                             </div>
                             <div class="box-body">
