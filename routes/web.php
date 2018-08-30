@@ -38,3 +38,4 @@ Route::get('/home', 'HomeController@index')->name('home');
   Route::get('shops/list', function () {
     return view('backend.pages.shop-list');
   });
+ 

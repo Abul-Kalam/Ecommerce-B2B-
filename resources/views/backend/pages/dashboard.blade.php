@@ -1,6 +1,8 @@
 @php
     $_activePrimaryNav = 'dashboard';
     $_activeSecondaryNav = null;
+    $_alertType = 'success';
+    $_alertMessage = 'OMG';
 @endphp
 @extends('backend.layouts.default')
 

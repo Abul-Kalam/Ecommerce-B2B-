@@ -10023,6 +10023,10 @@ table.text-center th {
   padding-left: 3rem !important;
 }
 
+.rounded-0 {
+  border-radius: 0 !important;
+}
+
 * {
   text-decoration: none !important;
 }
