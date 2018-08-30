@@ -44,7 +44,7 @@
                                 </div>
                             </div>
                             <div class="box-body no-padding">
-                                <table class="table table-bordered">
+                                <table class="table table-bordered table-hover">
                                     <tbody>
                                         <tr>
                                             <th style="width: 10px">#</th>
