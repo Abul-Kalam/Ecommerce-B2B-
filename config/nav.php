@@ -33,6 +33,24 @@ return [
                     'route' => 'backend.categories.index'
                 ]
             ]
+        ],
+        [
+            'type' => 'menu',
+            'slug' => 'tag',
+            'label' => 'Tag',
+            'icon_class'  => 'fa fa-list',
+            'childs' => [
+                [
+                    'slug' => 'create',
+                    'label' => 'Add New',
+                    'route' => 'backend.tags.create'
+                ],
+                [
+                    'slug' => 'index',
+                    'label' => 'All tag',
+                    'route' => 'backend.tags.index'
+                ]
+            ]
         ]
     ]
 ];

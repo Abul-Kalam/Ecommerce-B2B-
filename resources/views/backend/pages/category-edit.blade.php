@@ -1,6 +1,6 @@
 @php
     $_activePrimaryNav = 'product-category';
-    $_activeSecondaryNav = null;
+    $_activeSecondaryNav = 'edit';
 @endphp
 @extends('backend.layouts.default')
 
@@ -39,7 +39,7 @@
                             <div class="box-header with-border">
                                 <a href="#" class="btn btn-sm btn-default">Add New</a>
                                 <div class="box-tools pull-right">
-                                    <a href="#" class="btn btn-sm btn-default">All</a>
+                                    <a href="#" class="btn btn-sm btn-default mt-2">All</a>
                                 </div>
                             </div>
                             <div class="box-body">

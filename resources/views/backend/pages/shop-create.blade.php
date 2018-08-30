@@ -1,3 +1,7 @@
+@php
+    $_activePrimaryNav = 'shop';
+    $_activeSecondaryNav = 'create';
+@endphp
 @extends('backend.layouts.default') 
 @section('title', 'Create Shop') 
 @section('content')
@@ -24,87 +28,69 @@
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
                     <form action="">
+
                         <div class="box mt-3">
                             <div class="box-header with-border">
-                                <a href="#" class="btn btn-sm btn-default">Add New</a>
-                                <div class="box-tools mt-2">
-                                    <div class="input-group input-group-sm" style="width: 200px;">
-                                        <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
-                        
-                                        <div class="input-group-btn">
-                                            <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-                                        </div>
+                                <a href="#" class="btn btn-sm btn-default pull-right">All</a>
+                            </div>
+                            <div class="box-body">
+                                <div class="row">
+                                    <div class="col-lg-6 form-group">
+                                        <label for="display_name_en">Display Name En</label>
+                                        <input type="text" class="form-control" id="display_name_en" name="display-name-en">
+                                    </div>
+                                    <div class="col-lg-6 form-group">
+                                        <label for="display-name-bn">Display Name Bn</label>
+                                        <input type="text" class="form-control" id="display-name-bn" name="display-name-bn">
                                     </div>
                                 </div>
+
+                                <div class="row">
+                                    <div class="col-lg-6 form-group">
+                                        <label for="slug">Slug</label>
+                                        <input type="text" class="form-control" id="slug" name="slug">
+                                    </div>
+                                    <div class="col-lg-6 form-group">
+                                        <label for="display-name-bn">Status</label>
+                                        <select class="form-control" placeholder="Select Status">
+                                            <option>Active</option>
+                                            <option>Inactive</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="description">Address</label>
+                                    <textarea class="form-control" id="address" rows="3" name="address"></textarea>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="description">Description</label>
+                                    <textarea class="form-control" id="description" rows="3" name="description"></textarea>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="meta-title">Meta Title</label>
+                                    <input type="text" class="form-control" id="meta-title" name="meta-title">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="meta-keywords">Meta Keywords</label>
+                                    <input type="text" class="form-control" id="meta-keywords" name="meta-keywords">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="meta-description">Meta Description</label>
+                                    <textarea class="form-control" id="description" rows="3" name="meta-description"></textarea>
+                                </div>
+                                        
+                                <div class="form-group">
+                                    <label for="feature-image-url">Feature Image Url</label>
+                                    <input type="text" class="form-control" id="feature-image-url" name="feature-image-url">
+                                </div>
                             </div>
-                            <div class="box-body no-padding">
-                                <table class="table table-bordered">
-                                    <tbody>
-                                        <tr>
-                                            <th style="width: 10px">#</th>
-                                            <th>Name</th>
-                                            <th>Slug</th>
-                                            <th style="width: 95px; text-align: center" >Actions</th>
-                                        </tr>
-                                        <tr>
-                                            <td>1.</td>
-                                            <td>Man's Fashion</td>
-                                            <td>man's-fashion</td>
-                                            <td>
-                                                <span class="actions">
-                                                    <a href="#">View</a>
-                                                    <span>&nbsp;|&nbsp;</span>
-                                                    <a href="#">Edit</a>
-                                                </span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>2.</td>
-                                            <td>Women's Fashion</td>
-                                            <td>Women's-fashion</td>
-                                            <td>
-                                                <span class="actions">
-                                                    <a href="#">View</a>
-                                                    <span>&nbsp;|&nbsp;</span>
-                                                    <a href="#">Edit</a>
-                                                </span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>3.</td>
-                                            <td>Women's Fashion</td>
-                                            <td>Women's-fashion</td>
-                                            <td>
-                                                <span class="actions">
-                                                    <a href="#">View</a>
-                                                    <span>&nbsp;|&nbsp;</span>
-                                                    <a href="#">Edit</a>
-                                                </span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>4.</td>
-                                            <td>Women's Fashion</td>
-                                            <td>Women's-fashion</td>
-                                            <td>
-                                                <span class="actions">
-                                                    <a href="#">View</a>
-                                                    <span>&nbsp;|&nbsp;</span>
-                                                    <a href="#">Edit</a>
-                                                </span>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div class="box-footer clearfix">
-                                <ul class="pagination pagination-sm no-margin pull-right">
-                                    <li><a href="#">«</a></li>
-                                    <li><a href="#">1</a></li>
-                                    <li><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
-                                    <li><a href="#">»</a></li>
-                                </ul>
+                            <div class="box-footer">
+                                <button type="submit" class="btn btn-primary pull-right">Submit</button>
                             </div>
                         </div>
                     </form>

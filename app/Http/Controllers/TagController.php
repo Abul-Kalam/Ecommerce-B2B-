@@ -14,7 +14,13 @@ class TagController extends Controller
      */
     public function index()
     {
-        return "index";
+        $paginate = config('app.pagenation_count', 3);
+        
+        $tags = Tag::orderBy('created_at', 'DESC')->paginate($paginate);
+
+        return view('backend.pages.tag-list', [
+            'tags' => $tags,
+        ]);
     }
 
     /**
@@ -36,11 +42,11 @@ class TagController extends Controller
     public function store(Request $request)
     {
         
-        // $request->validate([
-        //     'slug' => 'required|unique:categories|max:255',
-        //     'display-name-en' => 'required|max:255',
-        //     'display-name-bn' => 'required|max:255'
-        // ]);
+        $request->validate([
+            'slug' => 'required|unique:categories|max:255',
+            'display-name-en' => 'required|max:255',
+            'display-name-bn' => 'required|max:255'
+        ]);
         
         $tag = new Tag();
         
@@ -104,11 +110,11 @@ class TagController extends Controller
     public function update(Request $request, $id)
     {
          
-        // $request->validate([
-        //     'slug' => 'required|unique:categories|max:255',
-        //     'display-name-en' => 'required|max:255',
-        //     'display-name-bn' => 'required|max:255'
-        // ]);
+        $request->validate([
+            'slug' => 'required|unique:categories|max:255',
+            'display-name-en' => 'required|max:255',
+            'display-name-bn' => 'required|max:255'
+        ]);
         
         $tag = Tag::findOrFail($id);
         
