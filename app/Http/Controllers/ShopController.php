@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Session;
+use App\Category;
 use Illuminate\Http\Request;
 
 class ShopController extends Controller
@@ -34,7 +36,40 @@ class ShopController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'slug' => 'required|unique:categories|max:255',
+            'display-name-en' => 'required|max:255',
+            'display-name-bn' => 'required|max:255'
+        ]);
+        
+        $shop = new Shop();
+        
+        $slug = $request->input('slug');
+
+        $slug = preg_replace('/\s+/u', '-', trim($slug));
+
+        $shop->slug             = $slug;
+        $shop->localization     = [
+            'en' => [
+                'display_name' => $request->input('display-name-en')
+            ],
+            'bn' => [
+                'display_name' => $request->input('display-name-bn')
+            ]
+        ];
+        $shop->options            = null;
+        $shop->meta             = [
+            'title' => $request->input('meta-title'),
+            'keywords' => $request->input('meta-keywords'),
+            'description' => $request->input('meta-description')
+        ];
+        $shop->description  = $request->input('description');
+        $shop->image_url  = $request->input('feature-image-url');
+        
+        $shop->save();
+
+        Session::flash('message', 'Successfully Created!');
+        return redirect()->route('backend.shop.edit', $shop->id);
     }
 
     /**

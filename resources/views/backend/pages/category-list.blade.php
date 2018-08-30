@@ -36,14 +36,19 @@
                             <div class="box-header with-border">
                                 <a href="{{ route('backend.categories.create')}}" class="btn btn-sm btn-default">Add New</a>
                                 <div class="box-tools mt-2">
+                                <form class="form-inline my-2 my-lg-0" action="{{ route('backend.categories.search') }}" method="post">
+                                        {{ csrf_field() }}
                                     <div class="input-group input-group-sm" style="width: 200px;">
-                                        <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
+                                               
+                                        <input type="text" name="keywords" class="form-control pull-right" placeholder="Search">
                         
                                         <div class="input-group-btn">
                                             <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
                                         </div>
                                     </div>
+                                </form>
                                 </div>
+
                             </div>
                             <div class="box-body no-padding">
                                 <table class="table table-bordered table-hover">
