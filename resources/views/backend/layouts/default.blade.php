@@ -1,8 +1,8 @@
 @php
-    $_activePrimaryNav = $_activePrimaryNav ? $_activePrimaryNav : 'dashboard';
-    $_activeSecondaryNav = $_activeSecondaryNav ? $_activeSecondaryNav : null;
-    $_alertType = $_alertType ? $_alertType : null;
-    $_alertMessage = $_alertMessage ? $_alertMessage : null;
+    $_activePrimaryNav = isset($_activePrimaryNav) ? $_activePrimaryNav : 'dashboard';
+    $_activeSecondaryNav = isset($_activeSecondaryNav) ? $_activeSecondaryNav : null;
+    $_alertType = isset($_alertType) ? $_alertType : null;
+    $_alertMessage = isset($_alertMessage) ? $_alertMessage : null;
 @endphp
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
