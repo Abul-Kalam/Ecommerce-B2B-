@@ -1,3 +1,9 @@
+@php
+    $_activePrimaryNav = $_activePrimaryNav ? $_activePrimaryNav : 'dashboard';
+    $_activeSecondaryNav = $_activeSecondaryNav ? $_activeSecondaryNav : null;
+    $_alertType = $_alertType ? $_alertType : null;
+    $_alertMessage = $_alertMessage ? $_alertMessage : null;
+@endphp
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -27,6 +33,11 @@
         </aside>
 
         <div class="content-wrapper">
+            @includeWhen($_alertMessage, 'backend.parts.main-alert',
+            [
+                'type' => $_alertType,
+                'message' => $_alertMessage,
+            ])
             @yield('content')
         </div>
     </div>
