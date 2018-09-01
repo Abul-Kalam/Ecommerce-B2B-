@@ -28094,7 +28094,7 @@ if (false) {
 /* 16 */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed: ModuleBuildError: Module build failed: \r\n@import '~bootstrap/scss/bootstrap';\r\n^\r\n      File to import not found or unreadable: ~bootstrap/scss/bootstrap.\r\n      in C:\\wamp64\\www\\kadamati\\resources\\assets\\sass\\frontend\\frontend.scss (line 4, column 1)\n    at runLoaders (C:\\wamp64\\www\\kadamati\\node_modules\\webpack\\lib\\NormalModule.js:195:19)\n    at C:\\wamp64\\www\\kadamati\\node_modules\\loader-runner\\lib\\LoaderRunner.js:364:11\n    at C:\\wamp64\\www\\kadamati\\node_modules\\loader-runner\\lib\\LoaderRunner.js:230:18\n    at context.callback (C:\\wamp64\\www\\kadamati\\node_modules\\loader-runner\\lib\\LoaderRunner.js:111:13)\n    at Object.asyncSassJobQueue.push [as callback] (C:\\wamp64\\www\\kadamati\\node_modules\\sass-loader\\lib\\loader.js:55:13)\n    at Object.done [as callback] (C:\\wamp64\\www\\kadamati\\node_modules\\neo-async\\async.js:7974:18)\n    at options.error (C:\\wamp64\\www\\kadamati\\node_modules\\node-sass\\lib\\index.js:294:32)");
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

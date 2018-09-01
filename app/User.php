@@ -20,6 +20,19 @@ class User extends Authenticatable
         'name', 'email', 'password','last_login_at', 'last_login_ip',
     ];
 
+
+
+    protected $casts      = [
+        'name'           => 'string',
+        'email'           => 'string',
+        'first_name'           => 'string',
+        'last_name'           => 'string',
+        'password'           => 'string',
+        'localization'   => 'array',
+        'description'    => 'string',
+        'image_url'    => 'string'
+    ];
+
     /**
      * The attributes that should be hidden for arrays.
      *

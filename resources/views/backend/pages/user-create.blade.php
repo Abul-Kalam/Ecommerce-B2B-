@@ -13,7 +13,7 @@
 
 <section class="content-header">
     <h1>
-        Product Category
+       User
         <small>Add new</small>
     </h1>
     <ol class="breadcrumb">
@@ -42,19 +42,19 @@
                             </div>
                             <div class="box-body">
                                 <div class="row">
-                                    <div class="col-lg-6 form-group {{  $errors->has('display-name-en') ? 'has-error' : '' }}">
-                                        <label for="display-name-en">Display Name En</label>
-                                        <input type="text" class="form-control" id="display-name-en" name="display-name-en">
-                                        @if($errors->has('display-name-en'))
-                                            <span class="help-block">The Display Name En field is required.</span>
+                                    <div class="col-lg-6 form-group {{  $errors->has('first-name') ? 'has-error' : '' }}">
+                                        <label for="first-name">First Name</label>
+                                        <input type="text" class="form-control" id="first-name" name="first-name">
+                                        @if($errors->has('first-name'))
+                                            <span class="help-block">The First Name field is required.</span>
                                         @endif
                                     </div>
-                                    <div class="col-lg-6 form-group {{  $errors->has('display-name-bn') ? 'has-error' : '' }}">
-                                        <label for="display-name-bn">Display Name Bn</label>
-                                        <input type="text" class="form-control" id="display-name-bn" name="display-name-bn">
+                                    <div class="col-lg-6 form-group {{  $errors->has('last-name') ? 'has-error' : '' }}">
+                                        <label for="last-name">Last Name</label>
+                                        <input type="text" class="form-control" id="last-name" name="last-name">
 
-                                        @if($errors->has('display-name-bn'))
-                                        <span class="help-block">The Display Name Bn field is required.</span>
+                                        @if($errors->has('last-name'))
+                                        <span class="help-block">The Last Name field is required.</span>
                                         @endif
                                     </div>
                                 </div>
@@ -76,34 +76,34 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-lg-6 form-group {{  $errors->has('display-name-en') ? 'has-error' : '' }}">
-                                        <label for="display-name-en">Display Name En</label>
-                                        <input type="text" class="form-control" id="display-name-en" name="display-name-en">
-                                        @if($errors->has('display-name-en'))
-                                            <span class="help-block">The Display Name En field is required.</span>
+                                    <div class="col-lg-6 form-group {{  $errors->has('name') ? 'has-error' : '' }}">
+                                        <label for="name">User Name</label>
+                                        <input type="text" class="form-control" id="name" name="name">
+                                        @if($errors->has('name'))
+                                            <span class="help-block">The User Name field is required.</span>
                                         @endif
                                     </div>
-                                    <div class="col-lg-6 form-group {{  $errors->has('display-name-bn') ? 'has-error' : '' }}">
-                                        <label for="display-name-bn">Display Name Bn</label>
-                                        <input type="text" class="form-control" id="display-name-bn" name="display-name-bn">
+                                    <div class="col-lg-6 form-group {{  $errors->has('email') ? 'has-error' : '' }}">
+                                        <label for="email">Email</label>
+                                        <input type="email" class="form-control" id="email" name="email">
 
-                                        @if($errors->has('display-name-bn'))
-                                        <span class="help-block">The Display Name Bn field is required.</span>
+                                        @if($errors->has('email'))
+                                        <span class="help-block">The Email field is required.</span>
                                         @endif
                                     </div>
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-lg-6 form-group {{  $errors->has('slug') ? 'has-error' : '' }}">
-                                        <label for="slug">Slug</label>
-                                        <input type="text" class="form-control" id="slug" name="slug">
+                                    <div class="col-lg-6 form-group {{  $errors->has('password') ? 'has-error' : '' }}">
+                                        <label for="password">Password</label>
+                                        <input type="password" class="form-control" id="password" name="password">
                                        
-                                        @if($errors->has('slug'))
-                                        <span class="help-block">The slug field is required.</span>
+                                        @if($errors->has('password'))
+                                        <span class="help-block">The Password field is required.</span>
                                         @endif
                                     </div>
                                     <div class="col-lg-6 form-group">
-                                        <label for="display-name-bn">Parent Category</label>
+                                        <label for="display-name-bn">Role</label>
                                         <select class="form-control select2" placeholder="Select Category">
                                             <option>Man's Fashion</option>
                                             <option>Womens's Fashion</option>
@@ -118,8 +118,8 @@
                                     <textarea class="form-control" id="description" rows="3" name="description"></textarea>
                                 </div>
                                 <div class="form-group">
-                                    <label for="feature-image-url">Feature Image Url</label>
-                                    <input type="text" class="form-control" id="feature-image-url" name="feature-image-url">
+                                    <label for="image-url">Image Url</label>
+                                    <input type="text" class="form-control" id="image-url" name="image-url">
                                 </div>
                             </div>
                             <div class="box-footer">
