@@ -1,0 +1,8 @@
+// Bootstrap
+@import 'functions';
+@import 'variables';
+@import '~bootstrap/scss/bootstrap';
+
+body{
+  background-color: $body-bg;
+}
