@@ -10,7 +10,7 @@
             <img src="/images/avatar5.png" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-            <p>Alexander Pierce</p>
+            <p>{{ ucfirst( Auth::user()->name )}}</p>
             <!-- Status -->
             <a href="#">
                 <i class="fa fa-circle text-success"></i> Online</a>

@@ -127,7 +127,7 @@
                     <!-- The user image in the navbar-->
                     <img src="/images/avatar5.png" class="user-image" alt="User Image">
                     @if(Auth::user()->name)
-                    <span class="hidden-xs">{{ Auth::user()->name }}</span>
+                    <span class="hidden-xs">{{ ucfirst( Auth::user()->name ) }}</span>
                     @endif
                 </a>
                 <ul class="dropdown-menu">
@@ -135,8 +135,8 @@
                     <li class="user-header">
                         <img src="/images/avatar5.png" class="img-circle" alt="User Image">
                         <p>
-                            {{ Auth::user()->name }} - Web Developer
-                            <small>Member since Nov. 2012</small>
+                            {{ ucfirst( Auth::user()->name ) }} - Web Developer
+                            <small>Member since Nov. {{ Auth::user()->last_login_at }}</small>
                         </p>
                     </li>
                     <!-- Menu Body -->
