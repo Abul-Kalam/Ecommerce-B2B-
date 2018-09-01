@@ -125,7 +125,11 @@
                 <!-- Menu Toggle Button -->
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                     <!-- The user image in the navbar-->
+                    @if(Auth::user()->avatar_url)
+                    <img src="{{ asset( Auth::user()->avatar_url) }}" class="user-image" alt="User Image">
+                    @else
                     <img src="/images/avatar5.png" class="user-image" alt="User Image">
+                    @endif
                     @if(Auth::user()->name)
                     <span class="hidden-xs">{{ ucfirst( Auth::user()->name ) }}</span>
                     @endif
@@ -133,7 +137,11 @@
                 <ul class="dropdown-menu">
                     <!-- The user image in the menu -->
                     <li class="user-header">
+                        @if(Auth::user()->avatar_url)
+                        <img src="{{ asset( Auth::user()->avatar_url) }}" class="img-circle" alt="User Image">
+                        @else
                         <img src="/images/avatar5.png" class="img-circle" alt="User Image">
+                        @endif
                         <p>
                             {{ ucfirst( Auth::user()->name ) }} - Web Developer
                             <small>Member since Nov. {{ Auth::user()->last_login_at }}</small>

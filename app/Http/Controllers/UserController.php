@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Session;
+use Carbon\Carbon;
 use App\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
@@ -40,13 +41,13 @@ class UserController extends Controller
     {
        
         $request->validate([
-            // 'name' => 'required|unique:categories|max:255',
-            // 'display-name-en' => 'required|max:255',
-            // 'display-name-bn' => 'required|max:255',
-            // 'first-name' => 'required|max:255',
-            // 'last-name' => 'required|max:255',
-            // 'email' => 'required|max:255',
-            // 'password' => 'required|max:255',
+            'name' => 'required|max:255',
+            'display-name-en' => 'required|max:255',
+            'display-name-bn' => 'required|max:255',
+            'first-name' => 'required|max:255',
+            'last-name' => 'required|max:255',
+            'email' => 'required|max:255',
+            'password' => 'required|max:255',
 
         ]);
         
@@ -63,16 +64,25 @@ class UserController extends Controller
         $user->first_name  = $request->input('first-name');
         $user->last_name  = $request->input('last-name');
         $user->name  = $request->input('name');
-        $user->description  = $request->input('description');
+        $user->about  = $request->input('about');
         $user->email= $request->input('email');
-        $user->image_url  = $request->input('image-url');
+        $user->avatar_url  = $request->input('avatar-url');
         $password = $request->input('password');
         $user->password = Hash::make($password) ;
+        // $user->update([
+        //     'last_login_at' => Carbon::now()->toDateTimeString(),
+        //     'last_login_ip' => $request->getClientIp()
+        // ]);
+
+        $user->last_login_at = Carbon::now()->toDateTimeString() ;
+        $user->last_login_ip = $request->getClientIp() ;
+        
+        
         
         $user->save();
 
         Session::flash('message', 'Successfully Created!');
-        return redirect()->route('backend.tags.edit', $user->id);
+        return redirect()->route('backend.users.edit', $user->id);
     }
 
     /**
@@ -94,7 +104,11 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::findOrFail($id);
+
+        return view('backend.pages.user-edit', [
+            'user' => $user,
+        ]);
     }
 
     /**
@@ -106,7 +120,53 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name' => 'required|max:255',
+            'display-name-en' => 'required|max:255',
+            'display-name-bn' => 'required|max:255',
+            'first-name' => 'required|max:255',
+            'last-name' => 'required|max:255',
+            'email' => 'required|max:255',
+
+        ]);
+        
+        $user =  User::findOrFail($id);
+        
+        $user->localization     = [
+            'en' => [
+                'display_name' => $request->input('display-name-en')
+            ],
+            'bn' => [
+                'display_name' => $request->input('display-name-bn')
+            ]
+        ];
+        $user->first_name  = $request->input('first-name');
+        $user->last_name  = $request->input('last-name');
+        $user->name  = $request->input('name');
+        $user->about  = $request->input('about');
+        $user->email= $request->input('email');
+        $user->avatar_url  = $request->input('avatar-url');
+        if ($request->input('password') )
+        {
+            $user->password  = Hash::make('password') ;
+        }
+        else {
+            $user->password  = $user->password;
+        }
+        // $user->update([
+        //     'last_login_at' => Carbon::now()->toDateTimeString(),
+        //     'last_login_ip' => $request->getClientIp()
+        // ]);
+
+        $user->last_login_at = Carbon::now()->toDateTimeString() ;
+        $user->last_login_ip = $request->getClientIp() ;
+        
+        
+        
+        $user->save();
+
+        Session::flash('message', 'Successfully Created!');
+        return redirect()->route('backend.users.edit', $user->id);
     }
 
     /**

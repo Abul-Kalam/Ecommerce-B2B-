@@ -29,8 +29,10 @@ class User extends Authenticatable
         'last_name'           => 'string',
         'password'           => 'string',
         'localization'   => 'array',
-        'description'    => 'string',
-        'image_url'    => 'string'
+        'about'    => 'string',
+        'avatar_url'    => 'string',
+        'shipping_address'   => 'string',
+        'billing_address'    => 'string'
     ];
 
     /**

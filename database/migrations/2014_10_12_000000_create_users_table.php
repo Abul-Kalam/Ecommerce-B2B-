@@ -21,10 +21,12 @@ class CreateUsersTable extends Migration
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();
             $table->string('password');
-            $table->string('description')->nullable();
-            $table->string('image_url', 255)->nullable();
+            $table->string('about')->nullable();
+            $table->string('avatar_url', 255)->nullable();
             $table->datetime('last_login_at')->nullable();
             $table->string('last_login_ip')->nullable();
+            $table->json('shipping_address')->nullable();
+            $table->json('billing_address')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

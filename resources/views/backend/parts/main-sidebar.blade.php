@@ -7,7 +7,12 @@
     <!-- Sidebar user panel (optional) -->
     <div class="user-panel">
         <div class="pull-left image">
+            @if(Auth::user()->avatar_url)
+                <img src="{{ asset( Auth::user()->avatar_url) }}" class="img-circle" alt="User Image">
+            @else
             <img src="/images/avatar5.png" class="img-circle" alt="User Image">
+            @endif
+            
         </div>
         <div class="pull-left info">
             <p>{{ ucfirst( Auth::user()->name )}}</p>
