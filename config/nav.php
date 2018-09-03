@@ -123,24 +123,6 @@ return [
                     'route' => 'backend.roles.index'
                 ]
             ]
-        ],
-        [
-            'type' => 'menu',
-            'slug' => 'shop',
-            'label' => 'Shop',
-            'icon_class'  => 'fa fa-users',
-            'childs' => [
-                [
-                    'slug' => 'create',
-                    'label' => 'Add New',
-                    'route' => 'backend.shops.create'
-                ],
-                [
-                    'slug' => 'index',
-                    'label' => 'All tag',
-                    'route' => 'backend.shops.index'
-                ]
-            ]
         ]
     ]
 ];
