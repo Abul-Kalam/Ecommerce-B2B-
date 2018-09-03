@@ -43,7 +43,7 @@
                             <div class="box-header with-border">
                                 <h3 class="box-title">Create</h3>
                                 <div class="box-tools pull-right">
-                                    <a href="#" class="btn btn-sm btn-default">All</a>
+                                    <a href="{{ route('backend.permissions.index')}}" class="btn btn-sm btn-default">All</a>
                                 </div>
                             </div>
                             <div class="box-body">
