@@ -1,6 +1,8 @@
 @php
     $_activePrimaryNav = 'product-category';
     $_activeSecondaryNav = 'edit';
+    $_alertType = 'success';
+    $_alertMessage =  Session::get('message');
 @endphp
 @extends('backend.layouts.default')
 

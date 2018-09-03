@@ -27,4 +27,11 @@ Route::middleware('auth')->group(function () {
     Route::resource('offers', 'OfferController');
     Route::resource('futureproducts', 'FutureProductController');
 
+    Route::resource('permissions', 'PermissionController');
+    Route::post('backend/permissions/search', 'PermissionController@search')->name('permissions.search');
+
+
+    Route::resource('roles', 'RoleController');
+    Route::post('backend/roles/search', 'RoleController@search')->name('roles.search');
+
     });

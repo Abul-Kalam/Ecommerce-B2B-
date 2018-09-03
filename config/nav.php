@@ -87,6 +87,42 @@ return [
                     'route' => 'backend.users.index'
                 ]
             ]
+        ],
+        [
+            'type' => 'menu',
+            'slug' => 'permission',
+            'label' => 'Permission',
+            'icon_class'  => 'fa fa-users',
+            'childs' => [
+                [
+                    'slug' => 'create',
+                    'label' => 'Add New',
+                    'route' => 'backend.permissions.create'
+                ],
+                [
+                    'slug' => 'index',
+                    'label' => 'All tag',
+                    'route' => 'backend.permissions.index'
+                ]
+            ]
+        ],
+        [
+            'type' => 'menu',
+            'slug' => 'role',
+            'label' => 'Role',
+            'icon_class'  => 'fa fa-users',
+            'childs' => [
+                [
+                    'slug' => 'create',
+                    'label' => 'Add New',
+                    'route' => 'backend.roles.create'
+                ],
+                [
+                    'slug' => 'index',
+                    'label' => 'All tag',
+                    'route' => 'backend.roles.index'
+                ]
+            ]
         ]
     ]
 ];
