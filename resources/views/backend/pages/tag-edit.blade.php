@@ -42,8 +42,8 @@
                             <div class="box-header with-border">
                                 <h3 class="box-title">Edit</h3>
                                 <div class="box-tools pull-right">
-                                    <a href="#" class="btn btn-sm btn-default">Add New</a>
-                                    <a href="#" class="btn btn-sm btn-default">All</a>
+                                    <a href="{{ route('backend.tags.create') }}" class="btn btn-sm btn-default">Add New</a>
+                                    <a href="{{ route('backend.tags.index') }}" class="btn btn-sm btn-default">All</a>
                                 </div>
                             </div>
                             <div class="box-body">

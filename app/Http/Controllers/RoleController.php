@@ -50,11 +50,12 @@ class RoleController extends Controller
     public function search(Request $request)
     {
         $keywords = $request->input('keywords');
-        $role = Role::where('display_name', 'like', '%'.$keywords.'%')->paginate(5);
+        $roles = Role::where('display_name', 'like', '%'.$keywords.'%')->paginate(5);
 
         return view('backend.pages.role-list', [
-            'role' => $role
+            'roles' => $roles
         ]);
+       
     }
 
     

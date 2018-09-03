@@ -15,7 +15,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('users', 'UserController');
     Route::resource('tags', 'TagController');
     Route::resource('categories', 'CategoryController');
-    Route::post('backend/categories/search', 'CategoryController@search')->name('categories.search');
+    Route::post('categories/search', 'CategoryController@search')->name('categories.search');
     Route::resource('invoices', 'InvoiceController');
     Route::resource('products', 'ProductController');
     // Route::resource('media', 'MediaController');
@@ -28,10 +28,10 @@ Route::middleware('auth')->group(function () {
     Route::resource('futureproducts', 'FutureProductController');
 
     Route::resource('permissions', 'PermissionController');
-    Route::post('backend/permissions/search', 'PermissionController@search')->name('permissions.search');
+    Route::post('permissions/search', 'PermissionController@search')->name('permissions.search');
 
 
     Route::resource('roles', 'RoleController');
-    Route::post('backend/roles/search', 'RoleController@search')->name('roles.search');
+    Route::post('roles/search', 'RoleController@search')->name('roles.search');
 
-    });
+});

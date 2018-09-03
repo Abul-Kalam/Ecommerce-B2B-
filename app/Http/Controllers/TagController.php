@@ -24,6 +24,18 @@ class TagController extends Controller
         ]);
     }
 
+    public function search(Request $request)
+    {
+        $keywords = $request->input('keywords');
+        $tags = tag::where('nmae', 'like', '%'.$keywords.'%')->paginate(5);
+
+        return view('backend.pages.role-list', [
+            'tags' => $tags
+        ]);
+       
+    }
+
+
     /**
      * Show the form for creating a new resource.
      *
