@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Session;
-use App\Category;
+use App\Shop;
 use Illuminate\Http\Request;
 
 class ShopController extends Controller
@@ -44,6 +44,7 @@ class ShopController extends Controller
         
         $shop = new Shop();
         
+        $status = $request->input('status') ? $request->input('status') : "active";
         $slug = $request->input('slug');
 
         $slug = preg_replace('/\s+/u', '-', trim($slug));
@@ -57,14 +58,22 @@ class ShopController extends Controller
                 'display_name' => $request->input('display-name-bn')
             ]
         ];
-        $shop->options            = null;
+        //$shop->options            = null;
         $shop->meta             = [
             'title' => $request->input('meta-title'),
             'keywords' => $request->input('meta-keywords'),
             'description' => $request->input('meta-description')
         ];
+        $shop->address             = [
+            'address_line_1' => $request->input('address-line-1'),
+            'address_line_2' => $request->input('address-line-2'),
+            'zip' => $request->input('zip'),
+            'district' => $request->input('district'),
+            'division' => $request->input('division'),
+        ];
+        $shop->status           =  $status;
         $shop->description  = $request->input('description');
-        $shop->image_url  = $request->input('feature-image-url');
+        $shop->logo_urls  = $request->input('feature-image-url');
         
         $shop->save();
 
@@ -91,7 +100,12 @@ class ShopController extends Controller
      */
     public function edit($id)
     {
-        //
+        $shop = shop::findOrFail($id); 
+
+        
+        return view('backend.pages.shop-edit', [
+            'shop' => $shop,
+        ]);
     }
 
     /**

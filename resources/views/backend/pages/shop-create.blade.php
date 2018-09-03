@@ -27,7 +27,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
-                    <form action="">
+                    <form action="{{ route('backend.shops.store') }}" method="post">
+
+                        {{ csrf_field() }}
 
                         <div class="box box-solid mt-3">
                             {{-- <div class="box-header with-border">
@@ -47,8 +49,8 @@
                                         <div class="tab-pane active" id="tab_1">
                                             <div class="row">
                                                 <div class="col-lg-6 form-group">
-                                                    <label for="display_name_en">Display Name En</label>
-                                                    <input type="text" class="form-control" id="display_name_en" name="display-name-en">
+                                                    <label for="display-name-en">Display Name En</label>
+                                                    <input type="text" class="form-control" id="display-name-en" name="display-name-en">
                                                 </div>
                                                 <div class="col-lg-6 form-group">
                                                     <label for="display-name-bn">Display Name Bn</label>
@@ -63,9 +65,9 @@
                                                 </div>
                                                 <div class="col-lg-6 form-group">
                                                     <label for="display-name-bn">Status</label>
-                                                    <select class="form-control" placeholder="Select Status">
-                                                        <option>Active</option>
-                                                        <option>Inactive</option>
+                                                    <select class="form-control" placeholder="Select Status" name="status">
+                                                        <option value="active">Active</option>
+                                                        <option value="inactive">Inactive</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -96,15 +98,15 @@
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
                                                         <label>District</label>
-                                                        <select class="form-control">
-                                                            <option>Narsingdi</option>
-                                                            <option>Tangail</option>
-                                                            <option>Patuakhali</option>
-                                                            <option>Comilla</option>
-                                                            <option>Mymensingh</option>
-                                                            <option>Rajshahi</option>
-                                                            <option>Sylhet</option>
-                                                            <option>Rangpur</option>
+                                                        <select class="form-control" name="district">
+                                                            <option value="narsingdi">Narsingdi</option>
+                                                            <option value="tangail">Tangail</option>
+                                                            <option value="patuakhali">Patuakhali</option>
+                                                            <option value="comilla">Comilla</option>
+                                                            <option value="mymensingh">Mymensingh</option>
+                                                            <option value="rajshahi">Rajshahi</option>
+                                                            <option value="sylhet">Sylhet</option>
+                                                            <option value="rangpur">Rangpur</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -112,14 +114,14 @@
                                                     <div class="form-group">
                                                         <label>Division</label>
                                                         <select class="form-control">
-                                                            <option>Barishal</option>
-                                                            <option>Chattagram</option>
-                                                            <option>Dhaka</option>
-                                                            <option>Khulna</option>
-                                                            <option>Mymensingh</option>
-                                                            <option>Rajshahi</option>
-                                                            <option>Sylhet</option>
-                                                            <option>Rangpur</option>
+                                                            <option value="barishal">Barishal</option>
+                                                            <option value="chattagram">Chattagram</option>
+                                                            <option value="dhaka">Dhaka</option>
+                                                            <option value="khulna">Khulna</option>
+                                                            <option value="mymensingh">Mymensingh</option>
+                                                            <option value="rajshahi">Rajshahi</option>
+                                                            <option value="sylhet">Sylhet</option>
+                                                            <option value="rangpur">Rangpur</option>
                                                         </select>
                                                     </div>
                                                 </div>

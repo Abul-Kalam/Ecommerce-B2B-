@@ -20,7 +20,7 @@ class Shop extends Model
         'slug'           => 'string',
         'title'          => 'string',
         'status'         => 'string',
-        'logo'           => 'string',
+        'logo_urls'      => 'array',
         'description'    => 'string',
         'localization'   => 'array',
         'address'        => 'array',
