@@ -48,20 +48,29 @@
                                     <div class="tab-content">
                                         <div class="tab-pane active" id="tab_1">
                                             <div class="row">
-                                                <div class="col-lg-6 form-group">
+                                                <div class="col-lg-6 form-group {{  $errors->has('display-name-en') ? 'has-error' : '' }}">
                                                     <label for="display-name-en">Display Name En</label>
                                                     <input type="text" class="form-control" id="display-name-en" name="display-name-en" value="{{  $shop->localization['en']['display_name'] }}">
+                                                    @if($errors->has('display-name-en'))
+                                                    <span class="help-block">The Display Name En field is required.</span>
+                                                    @endif
                                                 </div>
-                                                <div class="col-lg-6 form-group">
+                                                <div class="col-lg-6 form-group {{  $errors->has('display-name-bn') ? 'has-error' : '' }}">
                                                     <label for="display-name-bn">Display Name Bn</label>
                                                     <input type="text" class="form-control" id="display-name-bn" name="display-name-bn" value="{{  $shop->localization['bn']['display_name'] }}">
+                                                    @if($errors->has('display-name-en'))
+                                                    <span class="help-block">The Display Name Bn field is required.</span>
+                                                    @endif
                                                 </div>
                                             </div>
             
                                             <div class="row">
-                                                <div class="col-lg-6 form-group">
+                                                <div class="col-lg-6 form-group {{  $errors->has('slug') ? 'has-error' : '' }}">
                                                     <label for="slug">Slug</label>
                                                     <input type="text" class="form-control" id="slug" name="slug" value="{{ $shop->slug}}">
+                                                    @if($errors->has('slug'))
+                                                    <span class="help-block">The Display Name Slug field is required.</span>
+                                                    @endif
                                                 </div>
                                                 <div class="col-lg-6 form-group">
                                                     <label for="display-name-bn">Status</label>
@@ -87,14 +96,14 @@
                                             <div class="form-group">
                                                 <label for="address-line-1">Address Line 1</label>
                                                 <input type="text" class="form-control" id="address-line-1" name="address-line-1" value="{{
-                                                    $shop->address['address_line_1']
+                                                    $shop->address['line_1']
                                                 }}">
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="address-line-2">Address Line 2</label>
                                                 <input type="text" class="form-control" id="address-line-2" name="address-line-2" value="{{
-                                                    $shop->address['address_line_2']
+                                                    $shop->address['line_2']
                                                 }}">
                                             </div>
 
@@ -130,17 +139,31 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            
                                             <div class="row">
-                                                <div class="col-lg-6">
-                                                    <div class="form-group">
-                                                        <label for="zip">Zip / Postal Code</label>
-                                                        <input type="text" class="form-control" id="zip" name="zip" value="{{
-                                                            $shop->address['zip']
-                                                        }}">
+                                                    <div class="col-lg-6">
+                                                        <div class="form-group">
+                                                            <label>Thana</label>
+                                                            <select class="form-control" name="thana">
+                                                                <option value="narsingdi">Narsingdi</option>
+                                                                <option value="tangail">Tangail</option>
+                                                                <option value="patuakhali">Patuakhali</option>
+                                                                <option value="comilla">Comilla</option>
+                                                                <option value="mymensingh">Mymensingh</option>
+                                                                <option value="rajshahi">Rajshahi</option>
+                                                                <option value="sylhet">Sylhet</option>
+                                                                <option value="rangpur">Rangpur</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <div class="form-group">
+                                                                <label for="zip">Zip / Postal Code</label>
+                                                            <input type="text" class="form-control" id="zip" name="zip" value="{{
+                                                                $shop->address['zip']
+                                                            }}">
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
                                         </div>
                                         <!-- /.tab-pane -->
                                         <div class="tab-pane" id="tab_3">

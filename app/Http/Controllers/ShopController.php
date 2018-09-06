@@ -37,7 +37,7 @@ class ShopController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'slug' => 'required|unique:categories|max:255',
+            'slug' => 'required|unique:shops|max:255',
             'display-name-en' => 'required|max:255',
             'display-name-bn' => 'required|max:255'
         ]);
@@ -65,11 +65,12 @@ class ShopController extends Controller
             'description' => $request->input('meta-description')
         ];
         $shop->address             = [
-            'address_line_1' => $request->input('address-line-1'),
-            'address_line_2' => $request->input('address-line-2'),
+            'line_1' => $request->input('address-line-1'),
+            'line_2' => $request->input('address-line-2'),
             'zip' => $request->input('zip'),
             'district' => $request->input('district'),
             'division' => $request->input('division'),
+            'thana' => $request->input('thana'),
         ];
         $shop->status           =  $status;
         $shop->description  = $request->input('description');
@@ -78,7 +79,7 @@ class ShopController extends Controller
         $shop->save();
 
         Session::flash('message', 'Successfully Created!');
-        return redirect()->route('backend.shop.edit', $shop->id);
+        return redirect()->route('backend.shops.edit', $shop->id);
     }
 
     /**
@@ -117,7 +118,50 @@ class ShopController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'slug' => 'required|max:255|unique:shops,id,'.$id,
+            'display-name-en' => 'required|max:255',
+            'display-name-bn' => 'required|max:255'
+        ]);
+        
+        $shop = shop::findOrFail($id); 
+        
+        $status = $request->input('status') ? $request->input('status') : "active";
+        $slug = $request->input('slug');
+
+        $slug = preg_replace('/\s+/u', '-', trim($slug));
+
+        $shop->slug             = $slug;
+        $shop->localization     = [
+            'en' => [
+                'display_name' => $request->input('display-name-en')
+            ],
+            'bn' => [
+                'display_name' => $request->input('display-name-bn')
+            ]
+        ];
+        //$shop->options            = null;
+        $shop->meta             = [
+            'title' => $request->input('meta-title'),
+            'keywords' => $request->input('meta-keywords'),
+            'description' => $request->input('meta-description')
+        ];
+        $shop->address             = [
+            'line_1' => $request->input('address-line-1'),
+            'line_2' => $request->input('address-line-2'),
+            'zip' => $request->input('zip'),
+            'district' => $request->input('district'),
+            'division' => $request->input('division'),
+            'thana' => $request->input('thana')
+        ];
+        $shop->status           =  $status;
+        $shop->description  = $request->input('description');
+        $shop->images_url  = $request->input('image-url');
+        
+        $shop->save();
+
+        Session::flash('message', 'Successfully Updated!');
+        return redirect()->route('backend.shops.edit', $shop->id);
     }
 
     /**

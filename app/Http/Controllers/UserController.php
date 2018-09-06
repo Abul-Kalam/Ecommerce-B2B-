@@ -50,7 +50,7 @@ class UserController extends Controller
             'display-name-bn' => 'required|max:255',
             'first-name' => 'required|max:255',
             'last-name' => 'required|max:255',
-            'email' => 'required|max:255',
+            'email' => 'required|unique:users|max:255',
             'password' => 'required|max:255',
 
         ]);
@@ -68,11 +68,12 @@ class UserController extends Controller
 
 
         $user->billing_address = [
-            'address_line_1' => $request->input('billing-address-line-1'),
-            'address_line_2' => $request->input('billing-address-line-2'),
+            'line_1' => $request->input('billing-address-line-1'),
+            'line_2' => $request->input('billing-address-line-2'),
             'zip' => $request->input('billing-zip'),
             'district' => $request->input('billing-district'),
             'division' => $request->input('billing-division'),
+            'thana' => $request->input('billing-thana'),
         ];
 
         $shipping_address_line_1 = $request->input('shipping-address-line-1') ? $request->input('shipping-address-line-1') : 
@@ -90,13 +91,17 @@ class UserController extends Controller
         $shipping_division = $request->input('shipping-division') ? $request->input('shipping-division') : 
         $request->input('billing-division');
 
+        $shipping_thana = $request->input('shipping-thana') ? $request->input('shipping-thana') : 
+        $request->input('billing-thana');
+
 
         $user->shipping_address = [
-            'address_line_1' => $shipping_address_line_1,
-            'address_line_2' => $shipping_address_line_2,
+            'line_1' => $shipping_address_line_1,
+            'line_2' => $shipping_address_line_2,
             'district' => $shipping_district,
             'division' =>$shipping_division,
             'zip' => $shipping_zip,
+            'thana' => $shipping_thana,
         ];
 
        
@@ -119,7 +124,7 @@ class UserController extends Controller
         
         $user->save();
         $user->roles()->sync([$request->input('role')]);
-        Session::flash('message', 'Successfully Created!');
+        Session::flash('message', 'Successfully Updated!');
         return redirect()->route('backend.users.edit', $user->id);
     }
 
@@ -167,7 +172,7 @@ class UserController extends Controller
             'display-name-bn' => 'required|max:255',
             'first-name' => 'required|max:255',
             'last-name' => 'required|max:255',
-            'email' => 'required|max:255',
+            'email' => 'required|max:255|unique:users,id,'.$id,
 
         ]);
         
@@ -198,6 +203,43 @@ class UserController extends Controller
         //     'last_login_at' => Carbon::now()->toDateTimeString(),
         //     'last_login_ip' => $request->getClientIp()
         // ]);
+
+        $user->billing_address = [
+            'line_1' => $request->input('billing-address-line-1'),
+            'line_2' => $request->input('billing-address-line-2'),
+            'zip' => $request->input('billing-zip'),
+            'district' => $request->input('billing-district'),
+            'division' => $request->input('billing-division'),
+            'thana' => $request->input('billing-thana'),
+        ];
+
+        $shipping_address_line_1 = $request->input('shipping-address-line-1') ? $request->input('shipping-address-line-1') : 
+        $request->input('billing-address-line-1');
+
+        $shipping_address_line_2 = $request->input('shipping-address-line-2') ? $request->input('shipping-address-line-2') : 
+        $request->input('billing-address-line-2');
+
+        $shipping_zip = $request->input('shipping-zip') ? $request->input('shipping-zip') : 
+        $request->input('billing-zip');
+
+        $shipping_district = $request->input('shipping-district') ? $request->input('shipping-district') : 
+        $request->input('billing-district');
+
+        $shipping_division = $request->input('shipping-division') ? $request->input('shipping-division') : 
+        $request->input('billing-division');
+
+        $shipping_thana = $request->input('shipping-thana') ? $request->input('shipping-thana') : 
+        $request->input('billing-thana');
+
+
+        $user->shipping_address = [
+            'line_1' => $shipping_address_line_1,
+            'line_2' => $shipping_address_line_2,
+            'district' => $shipping_district,
+            'division' =>$shipping_division,
+            'zip' => $shipping_zip,
+            'thana' => $shipping_thana,
+        ];
 
         $user->last_login_at = Carbon::now()->toDateTimeString() ;
         $user->last_login_ip = $request->getClientIp() ;

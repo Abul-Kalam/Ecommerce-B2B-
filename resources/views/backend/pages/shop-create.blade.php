@@ -48,20 +48,29 @@
                                     <div class="tab-content">
                                         <div class="tab-pane active" id="tab_1">
                                             <div class="row">
-                                                <div class="col-lg-6 form-group">
+                                                <div class="col-lg-6 form-group {{  $errors->has('display-name-en') ? 'has-error' : '' }}">
                                                     <label for="display-name-en">Display Name En</label>
                                                     <input type="text" class="form-control" id="display-name-en" name="display-name-en">
+                                                    @if($errors->has('display-name-en'))
+                                                    <span class="help-block">The Display Name En field is required.</span>
+                                                    @endif
                                                 </div>
-                                                <div class="col-lg-6 form-group">
+                                                <div class="col-lg-6 form-group {{  $errors->has('display-name-bn') ? 'has-error' : '' }}">
                                                     <label for="display-name-bn">Display Name Bn</label>
                                                     <input type="text" class="form-control" id="display-name-bn" name="display-name-bn">
+                                                    @if($errors->has('display-name-bn'))
+                                                    <span class="help-block">The Display Name Bn field is required.</span>
+                                                    @endif
                                                 </div>
                                             </div>
             
                                             <div class="row">
-                                                <div class="col-lg-6 form-group">
+                                                <div class="col-lg-6 form-group {{  $errors->has('slug') ? 'has-error' : '' }}">
                                                     <label for="slug">Slug</label>
                                                     <input type="text" class="form-control" id="slug" name="slug">
+                                                    @if($errors->has('slug'))
+                                                    <span class="help-block">The Display Name slug field is required.</span>
+                                                    @endif
                                                 </div>
                                                 <div class="col-lg-6 form-group">
                                                     <label for="display-name-bn">Status</label>
@@ -99,6 +108,7 @@
                                                     <div class="form-group">
                                                         <label>District</label>
                                                         <select class="form-control" name="district">
+                                                            <option value="">Choose District</option>
                                                             <option value="narsingdi">Narsingdi</option>
                                                             <option value="tangail">Tangail</option>
                                                             <option value="patuakhali">Patuakhali</option>
@@ -114,6 +124,7 @@
                                                     <div class="form-group">
                                                         <label>Division</label>
                                                         <select class="form-control">
+                                                            <option value="">Choose Division</option>
                                                             <option value="barishal">Barishal</option>
                                                             <option value="chattagram">Chattagram</option>
                                                             <option value="dhaka">Dhaka</option>
@@ -126,13 +137,28 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            
                                             <div class="row">
+                                                <div class="col-lg-6">
+                                                    <div class="form-group">
+                                                        <label>Thana</label>
+                                                        <select class="form-control" name="thana">
+                                                            <option value="">Choose Thana</option>
+                                                            <option value="narsingdi">Narsingdi</option>
+                                                            <option value="tangail">Tangail</option>
+                                                            <option value="patuakhali">Patuakhali</option>
+                                                            <option value="comilla">Comilla</option>
+                                                            <option value="mymensingh">Mymensingh</option>
+                                                            <option value="rajshahi">Rajshahi</option>
+                                                            <option value="sylhet">Sylhet</option>
+                                                            <option value="rangpur">Rangpur</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
                                                         <label for="zip">Zip / Postal Code</label>
                                                         <input type="text" class="form-control" id="zip" name="zip">
-                                                    </div>
+                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
