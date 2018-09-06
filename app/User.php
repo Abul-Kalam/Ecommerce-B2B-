@@ -31,8 +31,8 @@ class User extends Authenticatable
         'localization'   => 'array',
         'about'    => 'string',
         'avatar_url'    => 'string',
-        'shipping_address'   => 'string',
-        'billing_address'    => 'string'
+        'shipping_address'   => 'array',
+        'billing_address'    => 'array'
     ];
 
     /**

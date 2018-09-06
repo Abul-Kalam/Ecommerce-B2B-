@@ -73,7 +73,7 @@ class ShopController extends Controller
         ];
         $shop->status           =  $status;
         $shop->description  = $request->input('description');
-        $shop->logo_urls  = $request->input('feature-image-url');
+        $shop->images_url  = $request->input('image-url');
         
         $shop->save();
 

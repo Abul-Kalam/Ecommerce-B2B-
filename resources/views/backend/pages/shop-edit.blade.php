@@ -79,19 +79,23 @@
 
                                             <div class="form-group">
                                                 <label for="feature-image-url">Feature Image Url</label>
-                                                <input type="text" class="form-control" id="feature-image-url" name="feature-image-url">
+                                                <input type="text" class="form-control" id="feature-image-url" name="feature-image-url" value="{{ $shop->images_url }}">
                                             </div>
                                         </div>
                                         <!-- /.tab-pane -->
                                         <div class="tab-pane" id="tab_2">
                                             <div class="form-group">
                                                 <label for="address-line-1">Address Line 1</label>
-                                                <input type="text" class="form-control" id="address-line-1" name="address-line-1">
+                                                <input type="text" class="form-control" id="address-line-1" name="address-line-1" value="{{
+                                                    $shop->address['address_line_1']
+                                                }}">
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="address-line-2">Address Line 2</label>
-                                                <input type="text" class="form-control" id="address-line-2" name="address-line-2">
+                                                <input type="text" class="form-control" id="address-line-2" name="address-line-2" value="{{
+                                                    $shop->address['address_line_2']
+                                                }}">
                                             </div>
 
                                             <div class="row">
@@ -131,7 +135,9 @@
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
                                                         <label for="zip">Zip / Postal Code</label>
-                                                        <input type="text" class="form-control" id="zip" name="zip">
+                                                        <input type="text" class="form-control" id="zip" name="zip" value="{{
+                                                            $shop->address['zip']
+                                                        }}">
                                                     </div>
                                                 </div>
                                             </div>
@@ -140,17 +146,17 @@
                                         <div class="tab-pane" id="tab_3">
                                             <div class="form-group">
                                                 <label for="meta-title">Meta Title</label>
-                                                <input type="text" class="form-control" id="meta-title" name="meta-title">
+                                                <input type="text" class="form-control" id="meta-title" name="meta-title" value="{{ $shop->meta['title'] }}">
                                             </div>
                                             
                                             <div class="form-group">
                                                 <label for="meta-keywords">Meta Keywords</label>
-                                                <input type="text" class="form-control" id="meta-keywords" name="meta-keywords">
+                                                <input type="text" class="form-control" id="meta-keywords" name="meta-keywords" value="{{ $shop->meta['keywords'] }}">
                                             </div>
             
                                             <div class="form-group">
                                                 <label for="meta-description">Meta Description</label>
-                                                <textarea class="form-control" id="description" rows="3" name="meta-description"></textarea>
+                                                <textarea class="form-control" id="description" rows="3" name="meta-description">{{  $shop->meta['description'] }}</textarea>
                                             </div>
                                         </div>
                                         <!-- /.tab-pane -->

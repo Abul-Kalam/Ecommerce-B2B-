@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Session;
 use Carbon\Carbon;
 use App\User;
+use App\Role;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -27,8 +28,11 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        return view('backend.pages.user-create');
+    {   
+        $roles = Role::get();
+        return view('backend.pages.user-create', [
+            'roles' => $roles
+        ]);
     }
 
     /**
@@ -61,6 +65,44 @@ class UserController extends Controller
                 'display_name' => $request->input('display-name-bn')
             ]
         ];
+
+
+        $user->billing_address = [
+            'address_line_1' => $request->input('billing-address-line-1'),
+            'address_line_2' => $request->input('billing-address-line-2'),
+            'zip' => $request->input('billing-zip'),
+            'district' => $request->input('billing-district'),
+            'division' => $request->input('billing-division'),
+        ];
+
+        $shipping_address_line_1 = $request->input('shipping-address-line-1') ? $request->input('shipping-address-line-1') : 
+        $request->input('billing-address-line-1');
+
+        $shipping_address_line_2 = $request->input('shipping-address-line-2') ? $request->input('shipping-address-line-2') : 
+        $request->input('billing-address-line-2');
+
+        $shipping_zip = $request->input('shipping-zip') ? $request->input('shipping-zip') : 
+        $request->input('billing-zip');
+
+        $shipping_district = $request->input('shipping-district') ? $request->input('shipping-district') : 
+        $request->input('billing-district');
+
+        $shipping_division = $request->input('shipping-division') ? $request->input('shipping-division') : 
+        $request->input('billing-division');
+
+
+        $user->shipping_address = [
+            'address_line_1' => $shipping_address_line_1,
+            'address_line_2' => $shipping_address_line_2,
+            'district' => $shipping_district,
+            'division' =>$shipping_division,
+            'zip' => $shipping_zip,
+        ];
+
+       
+
+       
+
         $user->first_name  = $request->input('first-name');
         $user->last_name  = $request->input('last-name');
         $user->name  = $request->input('name');
@@ -69,18 +111,14 @@ class UserController extends Controller
         $user->avatar_url  = $request->input('avatar-url');
         $password = $request->input('password');
         $user->password = Hash::make($password) ;
-        // $user->update([
-        //     'last_login_at' => Carbon::now()->toDateTimeString(),
-        //     'last_login_ip' => $request->getClientIp()
-        // ]);
-
+        
         $user->last_login_at = Carbon::now()->toDateTimeString() ;
         $user->last_login_ip = $request->getClientIp() ;
         
         
         
         $user->save();
-
+        $user->roles()->sync([$request->input('role')]);
         Session::flash('message', 'Successfully Created!');
         return redirect()->route('backend.users.edit', $user->id);
     }
@@ -106,8 +144,11 @@ class UserController extends Controller
     {
         $user = User::findOrFail($id);
 
+        $roles = Role::get();
         return view('backend.pages.user-edit', [
             'user' => $user,
+            'roles' => $roles
+            
         ]);
     }
 
@@ -164,7 +205,7 @@ class UserController extends Controller
         
         
         $user->save();
-
+        $user->roles()->sync([$request->input('role')]);
         Session::flash('message', 'Successfully Created!');
         return redirect()->route('backend.users.edit', $user->id);
     }

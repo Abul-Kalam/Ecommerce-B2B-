@@ -78,8 +78,8 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="feature-image-url">Feature Image Url</label>
-                                                <input type="text" class="form-control" id="feature-image-url" name="feature-image-url">
+                                                <label for="image-url">Image Url</label>
+                                                <input type="text" class="form-control" id="image-url" name="image-url">
                                             </div>
                                         </div>
                                         <!-- /.tab-pane -->

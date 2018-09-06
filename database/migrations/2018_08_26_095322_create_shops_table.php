@@ -21,7 +21,7 @@ class CreateShopsTable extends Migration
             $table->text('description')->nullable();
             $table->json('localization')->nullable();
             $table->json('meta')->nullable();
-            $table->json('logo_urls')->nullable();
+            $table->json('images_url')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
