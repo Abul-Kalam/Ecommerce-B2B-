@@ -26,4 +26,10 @@ class Shop extends Model
         'address'        => 'array',
         'meta'           => 'array'
     ];
+
+
+    public function users()
+    {
+        return $this->belongsToMany('App\User')->withPivot('role');
+    }
 }

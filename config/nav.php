@@ -83,7 +83,7 @@ return [
                 ],
                 [
                     'slug' => 'index',
-                    'label' => 'All tag',
+                    'label' => 'All user',
                     'route' => 'backend.users.index'
                 ]
             ]
@@ -101,7 +101,7 @@ return [
                 ],
                 [
                     'slug' => 'index',
-                    'label' => 'All tag',
+                    'label' => 'All Permission',
                     'route' => 'backend.permissions.index'
                 ]
             ]
@@ -119,7 +119,7 @@ return [
                 ],
                 [
                     'slug' => 'index',
-                    'label' => 'All tag',
+                    'label' => 'All role',
                     'route' => 'backend.roles.index'
                 ]
             ]
