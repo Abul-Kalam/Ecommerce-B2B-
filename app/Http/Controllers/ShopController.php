@@ -15,8 +15,29 @@ class ShopController extends Controller
      */
     public function index()
     {
-        return "shop";
+        $paginate = config('app.pagenation_count', 3);
+        
+        $shops = Shop::orderBy('created_at', 'DESC')->paginate($paginate);
+
+        return view('backend.pages.shop-list', [
+            'shops' => $shops,
+        ]);
     }
+
+
+    public function search(Request $request)
+    {
+        $keywords = $request->input('keywords');
+
+        $shops = Shop::where('localization->en->display_name', 'like', '%'.$keywords.'%')
+        ->orWhere('localization->bn->display_name', 'like', '%'.$keywords.'%')->paginate(5);
+
+        return view('backend.pages.shop-list', [
+            'shops' => $shops
+        ]);
+    }
+
+
 
     /**
      * Show the form for creating a new resource.

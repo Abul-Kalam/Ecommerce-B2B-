@@ -64,14 +64,14 @@ $_activeSecondaryNav = 'create';
                                             </div>
                                             <div class="row">
                                                 <div class="col-lg-6 form-group {{  $errors->has('display-name-en') ? 'has-error' : '' }}">
-                                                    <label for="display-name-en">Display Name En</label>
+                                                    <label for="display-name-en">Display Name (english)</label>
                                                     <input type="text" class="form-control" id="display-name-en" name="display-name-en">
                                                     @if($errors->has('display-name-en'))
                                                     <span class="help-block">The Display Name En field is required.</span>
                                                     @endif
                                                 </div>
                                                 <div class="col-lg-6 form-group {{  $errors->has('display-name-bn') ? 'has-error' : '' }}">
-                                                    <label for="display-name-bn">Display Name Bn</label>
+                                                    <label for="display-name-bn">Display Name (bangla)</label>
                                                     <input type="text" class="form-control" id="display-name-bn" name="display-name-bn">
                                                     @if($errors->has('display-name-bn'))
                                                     <span class="help-block">The Display Name Bn field is required.</span>

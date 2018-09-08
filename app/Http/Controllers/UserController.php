@@ -19,7 +19,31 @@ class UserController extends Controller
      */
     public function index()
     {
-        return "ueser";
+        $paginate = config('app.pagenation_count', 3);
+        
+        $users = User::orderBy('created_at', 'DESC')->paginate($paginate);
+
+        // return view('backend.pages.user-list' ,[
+        //     'users' => $users,
+        // ]);
+
+
+        return view('backend.pages.user-list', [
+            'users' => $users
+        ]);
+    }
+
+
+    public function search(Request $request)
+    {
+        $keywords = $request->input('keywords');
+
+        $users = User::where('localization->en->display_name', 'like', '%'.$keywords.'%')
+        ->orWhere('localization->bn->display_name', 'like', '%'.$keywords.'%')->paginate(5);
+
+        return view('backend.pages.user-list', [
+            'users' => $users
+        ]);
     }
 
     /**

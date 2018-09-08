@@ -27,13 +27,16 @@ class TagController extends Controller
     public function search(Request $request)
     {
         $keywords = $request->input('keywords');
-        $tags = tag::where('nmae', 'like', '%'.$keywords.'%')->paginate(5);
+        $tags = tag::where('slug', 'like', '%'.$keywords.'%')->paginate(5);
 
-        return view('backend.pages.role-list', [
+        return view('backend.pages.tag-list', [
             'tags' => $tags
         ]);
        
     }
+
+
+  
 
 
     /**

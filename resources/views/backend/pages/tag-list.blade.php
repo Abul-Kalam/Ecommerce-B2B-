@@ -36,11 +36,17 @@
                             <a href="{{ route('backend.tags.create')}}" class="btn btn-sm btn-default">Add New</a>
                             <div class="box-tools mt-2">
                                 <div class="input-group input-group-sm" style="width: 200px;">
-                                    <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
-                    
-                                    <div class="input-group-btn">
-                                        <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-                                    </div>
+                                    <form class="form-inline my-2 my-lg-0" action="{{ route('backend.tags.search') }}" method="post">
+                                            {{ csrf_field() }}
+                                        <div class="input-group input-group-sm" style="width: 200px;">
+                                                    
+                                            <input type="text" name="keywords" class="form-control pull-right" placeholder="Search">
+                            
+                                            <div class="input-group-btn">
+                                                <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                                            </div>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>

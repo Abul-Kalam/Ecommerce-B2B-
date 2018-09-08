@@ -1,16 +1,18 @@
 @php
-    $_activePrimaryNav = 'shop';
+    $_activePrimaryNav = 'product-category';
     $_activeSecondaryNav = 'index';
+    $_alertType = null;
+    $_alertMessage = null;
 @endphp
 @extends('backend.layouts.default')
 
-@section('title', 'All Shops')
+@section('title', 'All Users')
 
 @section('content')
 
 <section class="content-header">
     <h1>
-        Shops
+        User
         <small>All</small>
     </h1>
     <ol class="breadcrumb">
@@ -31,10 +33,10 @@
                 <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
                     <div class="box mt-3">
                         <div class="box-header with-border">
-                            <a href="{{ route('backend.shops.create')}}" class="btn btn-sm btn-default">Add New</a>
+                            <a href="{{ route('backend.users.create')}}" class="btn btn-sm btn-default">Add New</a>
                             <div class="box-tools mt-2">
                                 <div class="input-group input-group-sm" style="width: 200px;">
-                                    <form class="form-inline my-2 my-lg-0" action="{{ route('backend.shops.search') }}" method="post">
+                                    <form class="form-inline my-2 my-lg-0" action="{{ route('backend.users.search') }}" method="post">
                                             {{ csrf_field() }}
                                         <div class="input-group input-group-sm" style="width: 200px;">
                                                     
@@ -54,28 +56,23 @@
                                     <tr>
                                         <th style="width: 10px">#</th>
                                         <th>Name</th>
-                                        <th>Slug</th>
-                                        <th style="width: 150px;">Status</th>
-                                        <th style="width: 95px; text-align: center;">Actions</th>
+                                        <th>Email</th>
+                                        <th style="width: 95px; text-align: center" >Actions</th>
                                     </tr>
-                                    @foreach($shops as $s)
+                                    
+                                    @foreach ($users as $t)
                                     <tr>
-                                        <td>{{ $s->id }}.</td>
-                                        <td>{{ $s->localization['en']['display_name'] }}</td>
-                                        <td>{{  $s->slug }}</td>
-                                        <td>
-                                            @if($s->status === 'active')
-                                            <span class="label label-success">Active</span>
-                                            @elseif($s->status === 'inactive')
-                                            <span class="label label-danger">Inactive</span>
-                                            @endif
-                                        </td>
+                                        <td>{{$t->id}}</td>
+                                        <td>{{ $t->localization['en']['display_name'] }}</td>
+
+                                        <td>{{ $t->email }}</td>
                                         <td>
                                             <span class="actions">
-                                                <a href="{{ route('backend.shops.show', $s->id)}}">View</a>
+                                                <a href="{{ route('backend.users.show', $t->id)}}">View</a>
                                                 <span>&nbsp;|&nbsp;</span>
-                                                <a href="{{ route('backend.shops.edit', $s->id)}}">Edit</a>
+                                                <a href="{{ route('backend.users.edit', $t->id)}}">Edit</a>
                                             </span>
+                                            
                                         </td>
                                     </tr>
                                     @endforeach
@@ -83,7 +80,7 @@
                             </table>
                         </div>
                         <div class="box-footer clearfix">
-                            {{ $shops->links() }}
+                            {{ $users->links() }}
                         </div>
                     </div>
                 </div>
