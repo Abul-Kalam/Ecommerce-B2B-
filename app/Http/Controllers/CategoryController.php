@@ -86,7 +86,13 @@ class CategoryController extends Controller
             'description' => $request->input('meta-description')
         ];
         $category->description  = $request->input('description');
-        $category->image_url  = $request->input('feature-image-url');
+
+        $category->image_url             = [
+            'logo' => $request->input('logo-url'),
+            'banner' => $request->input('banner-url'),
+            'icone' => $request->input('icone-url'),
+            'tamanna' => $request->input('tamanna-url')
+        ];
         
         $category->save();
 
@@ -158,7 +164,12 @@ class CategoryController extends Controller
             'description' => $request->input('meta-description')
         ];
         $category->description  = $request->input('description');
-        $category->image_url  = $request->input('feature-image-url');
+        $category->image_url             = [
+            'logo' => $request->input('logo-url'),
+            'banner' => $request->input('banner-url'),
+            'icone' => $request->input('icone-url'),
+            'tamanna' => $request->input('tamanna-url')
+        ];
         
         $category->save();
         Session::flash('message', 'Successfully Updated!');

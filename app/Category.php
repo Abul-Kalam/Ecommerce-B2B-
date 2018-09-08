@@ -18,7 +18,7 @@ class Category extends Model
 
     protected $casts      = [
         'slug'           => 'string',
-        'image_url'      => 'string',
+        'image_url'      => 'array',
         'description'    => 'string',
         'localization'   => 'array',
         'options'        => 'array',
