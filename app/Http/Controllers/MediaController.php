@@ -2,7 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use Session;
+use App\Media;
+use Carbon\Carbon;
+use Illuminate\Http\File;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class MediaController extends Controller
 {
@@ -23,7 +28,7 @@ class MediaController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.pages.media-create');
     }
 
     /**
@@ -34,7 +39,42 @@ class MediaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $request->validate([
+            'title' => 'required|max:255',
+            // 'media' => 'required|file mimes:xlsx,xls,csv,jpg,jpeg,png,bmp,doc,docx,pdf,tif,tiff,mp4,mov,ogg,qt'
+        ]);
+            $media = new Media();
+        
+
+            
+
+            if ($request->hasFile('media')) {
+                $media->title  = $request->input('title');
+                $media->caption  = $request->input('caption');
+                $file = $request->file('media');
+                $file_type = substr($file->getMimeType(), 0, 5);
+                $originalName = $file->getClientOriginalName();
+                $media->type  = $file_type;
+
+                $nowtime = Carbon::now();
+                $year =  $nowtime->year;
+                $month = $nowtime->month;
+                $day = $nowtime->day;
+
+                $store_path = 'public/'.$file_type.'s/' . $year .'/' . $month . '/' .  $day;
+                $path = $file->storeAs($store_path , $originalName);
+                $media->paths = $path;
+
+            // $path = $file->storeAs($store_path, $originalName);
+                $media->save();
+                return "ok";
+            }
+            return "no";
+            
+        // }
+        
+        // return redirect()->route('media.edit', $media->id);
     }
 
     /**

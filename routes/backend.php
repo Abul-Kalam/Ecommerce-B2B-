@@ -7,9 +7,6 @@ Route::middleware('auth')->group(function () {
     Route::get('dashboard', function () {
         return view('backend.pages.dashboard');
     })->name('dashboard');
-    Route::get('media', function () {
-        return view('backend.pages.media');
-    })->name('media');
     //==========================================================================
 
     Route::resource('users', 'UserController');
@@ -21,7 +18,7 @@ Route::middleware('auth')->group(function () {
     Route::post('categories/search', 'CategoryController@search')->name('categories.search');
     Route::resource('invoices', 'InvoiceController');
     Route::resource('products', 'ProductController');
-    // Route::resource('media', 'MediaController');
+    Route::resource('media', 'MediaController');
     Route::resource('brands', 'BrandController');
     Route::resource('shops', 'ShopController');
     Route::post('shops/search', 'ShopController@search')->name('shops.search');

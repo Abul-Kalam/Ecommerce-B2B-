@@ -9,13 +9,13 @@ return [
             'route' => 'backend.dashboard',
             'icon_class'  => 'fa fa-tachometer-alt',
         ],
-        [
-            'type' => 'single',
-            'slug' => 'media',
-            'label' => 'Media',
-            'route' => 'backend.media',
-            'icon_class'  => 'fa fa-folder',
-        ],
+        // [
+        //     'type' => 'single',
+        //     'slug' => 'media',
+        //     'label' => 'Media',
+        //     'route' => 'backend.media.index',
+        //     'icon_class'  => 'fa fa-folder',
+        // ],
         [
             'type' => 'menu',
             'slug' => 'shop',
@@ -121,6 +121,24 @@ return [
                     'slug' => 'index',
                     'label' => 'All role',
                     'route' => 'backend.roles.index'
+                ]
+            ]
+        ],
+        [
+            'type' => 'menu',
+            'slug' => 'media',
+            'label' => 'Media',
+            'icon_class'  => 'fa fa-users',
+            'childs' => [
+                [
+                    'slug' => 'create',
+                    'label' => 'Add New',
+                    'route' => 'backend.media.create'
+                ],
+                [
+                    'slug' => 'index',
+                    'label' => 'All role',
+                    'route' => 'backend.media.index'
                 ]
             ]
         ]
