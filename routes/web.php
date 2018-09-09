@@ -41,4 +41,8 @@ Route::get('/', function () {
 // Route::get('shops/list', function () {
 //   return view('backend.pages.shop-list');
 // });
+
+Route::get('media/create', function () {
+  return view('backend.pages.media-create');
+})->name('backend.media.create');
  

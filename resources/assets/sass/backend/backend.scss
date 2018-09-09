@@ -1,7 +1,9 @@
 @import '~select2/dist/css/select2.min.css';
 // Admin Light
+// @import '~dropzone/dist/min/dropzone.min.css';
 @import '~admin-lte/dist/css/AdminLTE.css';
 @import '~admin-lte/dist/css/skins/_all-skins.css';
+@import 'dropzone';
 
 
 .m-0 {
@@ -205,4 +207,3 @@
 *{
   text-decoration: none !important;
 }
-
