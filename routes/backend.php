@@ -31,6 +31,11 @@ Route::middleware('auth')->group(function () {
     Route::resource('permissions', 'PermissionController');
     Route::post('permissions/search', 'PermissionController@search')->name('permissions.search');
 
+    Route::resource('countries', 'CountryController');
+    Route::resource('divisions', 'DivisionController');
+    Route::resource('districts', 'DistrictController');
+    Route::resource('thanas', 'ThanaController');
+
 
     Route::resource('roles', 'RoleController');
     Route::post('roles/search', 'RoleController@search')->name('roles.search');

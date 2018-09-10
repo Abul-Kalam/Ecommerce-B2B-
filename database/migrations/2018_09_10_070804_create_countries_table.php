@@ -15,11 +15,14 @@ class CreateCountriesTable extends Migration
     {
         Schema::create('countries', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('slug', 255)->unique();
-            $table->string('iso2', 2)->nullable();
+            $table->string('iso2', 2)->unique();
             $table->json('localization')->nullable();
+            $table->boolean('sell_status')->default(true);
+            $table->boolean('buy_status')->default(true);
+            $table->json('currency')->nullable();
             $table->json('image_url')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
