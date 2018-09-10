@@ -4,7 +4,7 @@
 @endphp
 @extends('backend.layouts.default')
 
-@section('title', 'Media')
+@section('title', 'All Media')
 
 @section('content')
 
