@@ -30,7 +30,8 @@ try {
  * a simple convenience so we don't have to attach every token manually.
  */
 
-// let token = document.head.querySelector('meta[name="csrf-token"]');
+let token = document.head.querySelector('meta[name="csrf-token"]');
+window.csrftoken = token;
 
 // if (token) {
 //     window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;

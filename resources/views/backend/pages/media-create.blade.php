@@ -48,7 +48,13 @@ $_alertMessage = null;
 @section('scripts')
 <script>
     // console.log('Scripts working....');
-    var myDropzone = new Dropzone("div#dzone", { url: "/file/post"});
-
+    var myDropzone = new Dropzone("div#dzone", { 
+        url: "{{ route('backend.media.store') }}",
+        maxFilesize: 2,
+        headers: {
+            "X-Requested-With" : "XMLHttpRequest",
+            "X-CSRF-TOKEN" : csrftoken.content
+        }
+    });
 </script>
 @endsection

@@ -134,6 +134,24 @@ return [
                     'route' => 'backend.roles.index'
                 ]
             ]
+        ],
+        [
+            'type'          => 'menu',
+            'slug'          => 'brand',
+            'label'         => 'Brand',
+            'icon_class'    => 'fa fa-users',
+            'childs'        => [
+                [
+                    'slug'  => 'create',
+                    'label' => 'Add New',
+                    'route' => 'backend.brands.create'
+                ],
+                [
+                    'slug'  => 'index',
+                    'label' => 'All brand',
+                    'route' => 'backend.brands.index'
+                ]
+            ]
         ]
     ]
 ];

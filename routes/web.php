@@ -42,7 +42,7 @@ Route::get('/', function () {
 //   return view('backend.pages.shop-list');
 // });
 
-Route::get('media/create', function () {
-  return view('backend.pages.media-create');
-})->name('backend.media.create');
+// Route::get('media/create', function () {
+//   return view('backend.pages.media-create');
+// })->name('backend.media.create');
  

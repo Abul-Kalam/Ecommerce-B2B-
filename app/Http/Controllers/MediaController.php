@@ -41,7 +41,7 @@ class MediaController extends Controller
     {
         
         $request->validate([
-            'title' => 'required|max:255',
+            //'title' => 'required|max:255',
             // 'media' => 'required|file mimes:xlsx,xls,csv,jpg,jpeg,png,bmp,doc,docx,pdf,tif,tiff,mp4,mov,ogg,qt'
         ]);
             $media = new Media();
@@ -49,14 +49,15 @@ class MediaController extends Controller
 
             
 
-            if ($request->hasFile('media')) {
-                $media->title  = $request->input('title');
-                $media->caption  = $request->input('caption');
-                $file = $request->file('media');
+            if ($request->hasFile('file')) {
+                
+                // $media->caption  = $request->input('caption');
+                $file = $request->file('file');
                 $file_type = substr($file->getMimeType(), 0, 5);
                 $originalName = $file->getClientOriginalName();
                 $media->type  = $file_type;
 
+                $media->title  = $originalName;
                 $nowtime = Carbon::now();
                 $year =  $nowtime->year;
                 $month = $nowtime->month;
@@ -64,17 +65,20 @@ class MediaController extends Controller
 
                 $store_path = 'public/'.$file_type.'s/' . $year .'/' . $month . '/' .  $day;
                 $path = $file->storeAs($store_path , $originalName);
-                $media->paths = $path;
+                $media->paths = [
+                    'original' => $path
+                ];
 
-            // $path = $file->storeAs($store_path, $originalName);
+                $path = $file->storeAs($store_path, $originalName);
                 $media->save();
-                return "ok";
+                
+
+                return response()->json([
+                    'media' => $media,
+                    'massage' =>'Successfully Created!'
+                ], 200);
             }
-            return "no";
             
-        // }
-        
-        // return redirect()->route('media.edit', $media->id);
     }
 
     /**

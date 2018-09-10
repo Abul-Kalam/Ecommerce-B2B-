@@ -90,8 +90,8 @@ class CategoryController extends Controller
         $category->image_url             = [
             'logo' => $request->input('logo-url'),
             'banner' => $request->input('banner-url'),
-            'icone' => $request->input('icone-url'),
-            'tamanna' => $request->input('tamanna-url')
+            'icon' => $request->input('icon-url'),
+            'thumbnail' => $request->input('thumbnail-url')
         ];
         
         $category->save();
@@ -167,8 +167,8 @@ class CategoryController extends Controller
         $category->image_url             = [
             'logo' => $request->input('logo-url'),
             'banner' => $request->input('banner-url'),
-            'icone' => $request->input('icone-url'),
-            'tamanna' => $request->input('tamanna-url')
+            'icon' => $request->input('icon-url'),
+            'thumbnail' => $request->input('thumbnail-url')
         ];
         
         $category->save();

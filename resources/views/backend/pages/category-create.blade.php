@@ -49,14 +49,14 @@
                                         <div class="tab-pane active" id="tab_1">
                                             <div class="row">
                                                 <div class="col-lg-6 form-group {{  $errors->has('display-name-en') ? 'has-error' : '' }}">
-                                                    <label for="display-name-en">Display Name En</label>
+                                                    <label for="display-name-en">Display Name English</label>
                                                     <input type="text" class="form-control" id="display-name-en" name="display-name-en">
                                                     @if($errors->has('display-name-en'))
                                                     <span class="help-block">The Display Name En field is required.</span>
                                                     @endif
                                                 </div>
                                                 <div class="col-lg-6 form-group {{  $errors->has('display-name-bn') ? 'has-error' : '' }}">
-                                                    <label for="display-name-bn">Display Name Bn</label>
+                                                    <label for="display-name-bn">Display Name Bangla</label>
                                                     <input type="text" class="form-control" id="display-name-bn" name="display-name-bn">
                                                     @if($errors->has('display-name-bn'))
                                                     <span class="help-block">The Display Name Bn field is required.</span>
@@ -102,13 +102,13 @@
                                                 <p class="help-block">Example block-level help text here.</p>
                                             </div>
                                             <div class="form-group">
-                                                <label for="icone-url">Icone Url</label>
-                                                <input type="text" class="form-control" id="icone-url" name="icone-url">
+                                                <label for="icone-url">Icon Url</label>
+                                                <input type="text" class="form-control" id="icon-url" name="icon-url">
                                                 <p class="help-block">Example block-level help text here.</p>
                                             </div>
                                             <div class="form-group">
-                                                <label for="tamanna-url">Tamanna Url</label>
-                                                <input type="text" class="form-control" id="tamanna-url" name="tamanna-url">
+                                                <label for="thumbnail-url">Thumbnail Url</label>
+                                                <input type="text" class="form-control" id="thumbnail-url" name="thumbnail-url">
                                                 <p class="help-block">Example block-level help text here.</p>
                                             </div>
                                         </div>
