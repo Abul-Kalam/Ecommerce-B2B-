@@ -20,7 +20,7 @@ class CreateCategoriesTable extends Migration
             $table->json('localization')->nullable();
             $table->json('options')->nullable();
             $table->json('meta')->nullable();
-            $table->json('image_url', 255)->nullable();
+            $table->json('image_url')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

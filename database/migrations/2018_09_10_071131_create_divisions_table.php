@@ -15,6 +15,9 @@ class CreateDivisionsTable extends Migration
     {
         Schema::create('divisions', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('country_id')->nullable();
+            $table->string('slug', 255)->unique();
+            $table->json('localization')->nullable();
             $table->timestamps();
         });
     }
