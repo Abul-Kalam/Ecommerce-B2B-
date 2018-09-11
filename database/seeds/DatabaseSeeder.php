@@ -12,8 +12,12 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
-            LaratrustSeeder::class,
+            //LaratrustSeeder::class,
             // RolesTableSeeder::class,
+
+           // CountriesTableSeeder::class,
+            DivisionsTableSeeder::class,
+            DistrictsTableSeeder::class,
         ]);
     }
 }

@@ -10,17 +10,21 @@ class CountriesTableSeeder extends Seeder
      * @return void
      */
     public function run()
-    {
+    {   
         DB::table('countries')->insert([
             [
-                'slug' => 'bangladesh',
                 'iso2' => 'bd',
+                'buy_status' => 1,
+                'sell_status'=> 1,
                 'localization' => json_encode([
                     'en' => ['display_name' => 'Bangladesh'],
-                    'bn' => ['display_name' => 'বাংলাদেশ']
+                    'bn' => ['display_name' => 'Bangladesh']
                 ], JSON_UNESCAPED_UNICODE),
-                'image_url' => [
+                'image_urls' => [
                     'logo' => '#',
+                ],
+                'currency' => [
+                    'local' => '#',
                 ]
             ],
             
