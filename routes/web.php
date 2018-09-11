@@ -45,4 +45,9 @@ Route::get('/', function () {
 // Route::get('media/create', function () {
 //   return view('backend.pages.media-create');
 // })->name('backend.media.create');
+
+
+Route::get('media/list', function () {
+  return view('backend.pages.media-list');
+})->name('backend.media.list');
  
