@@ -1,6 +1,8 @@
 @php
-    $_activePrimaryNav = 'media';
-    $_activeSecondaryNav = null;
+$_activePrimaryNav = 'media';
+$_activeSecondaryNav = 'index';
+$_alertType = null;
+$_alertMessage = null;
 @endphp
 @extends('backend.layouts.default')
 
@@ -11,6 +13,7 @@
 <section class="content-header">
     <h1>
         Media
+        <small>All</small>
     </h1>
     <ol class="breadcrumb">
         <li>
@@ -21,7 +24,84 @@
     </ol>
 </section>
 <section class="content">
-    content
+    <div class="page">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
+                    <div class="box">
+                        <div class="box-header with-border">
+                            <a href="" class="btn btn-sm btn-default">Add New</a>
+                            <div class="box-tools mt-2">
+                                <form class="form-inline my-2 my-lg-0" action="" method="post">
+                                    <div class="input-group input-group-sm" style="width: 200px;">
+                                                
+                                        <input type="text" name="keywords" class="form-control pull-right" placeholder="Search">
+                        
+                                        <div class="input-group-btn">
+                                            <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="box-body no-padding">
+                            <table class="table table-bordered table-hover">
+                                <tbody>
+                                    <tr>
+                                        <th style="width: 15px">#</th>
+                                        <th style="width: 98px">Image</th>
+                                        <th>Title</th>
+                                        <th>Date</th>
+                                        <th style="width: 95px; text-align: center">Actions</th>
+                                    </tr>
+
+
+                                    <tr>
+                                        <td>1</td>
+                                        <td>
+                                            <img class="img-md" src="{{ asset('/images/avatar.png') }}" alt="">
+                                        </td>
+                                        <td>Default.jpg</td>
+                                        <td>11/9/2018</td>
+                                        <td>
+                                            <span class="actions">
+                                                <a href="">View</a>
+                                                <span>&nbsp;|&nbsp;</span>
+                                                <a href="">Edit</a>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>
+                                            <img class="img-md" src="{{ asset('/images/avatar2.png') }}" alt="">
+                                        </td>
+                                        <td>Default.jpg</td>
+                                        <td>11/9/2018</td>
+                                        <td>
+                                            <span class="actions">
+                                                <a href="">View</a>
+                                                <span>&nbsp;|&nbsp;</span>
+                                                <a href="">Edit</a>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="box-footer clearfix">
+                            <ul class="pagination pagination-sm no-margin pull-right">
+                                <li><a href="#">«</a></li>
+                                <li><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">»</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 </section>
 
 @endsection
