@@ -17,7 +17,7 @@ class CreateCountriesTable extends Migration
             $table->increments('id');
             $table->string('iso2', 2)->unique();
             $table->json('localization')->nullable();
-            $table->boolean('sell_status');
+            $table->boolean('sell_status')->default(true);
             $table->boolean('buy_status')->default(true);
             $table->json('currency')->nullable();
             $table->json('image_urls')->nullable();
