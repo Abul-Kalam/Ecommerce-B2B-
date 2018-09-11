@@ -50,4 +50,8 @@ Route::get('/', function () {
 Route::get('media/list', function () {
   return view('backend.pages.media-list');
 })->name('backend.media.list');
+
+Route::get('products/create', function () {
+  return view('backend.pages.product-create');
+})->name('backend.product.create');
  
