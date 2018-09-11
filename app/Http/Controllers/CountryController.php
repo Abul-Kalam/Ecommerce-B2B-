@@ -15,7 +15,13 @@ class CountryController extends Controller
      */
     public function index()
     {
-        echo "hello";
+        $paginate = config('app.pagenation_count', 3);
+        
+        $countries = Country::orderBy('created_at', 'DESC')->paginate($paginate);
+
+        return view('backend.pages.country-list' ,[
+            'countries' => $countries,
+        ]);
     }
 
     /**
@@ -36,11 +42,11 @@ class CountryController extends Controller
      */
     public function store(Request $request)
     {
-        // $request->validate([
-        //     'slug' => 'required|unique:categories|max:255',
-        //     'display-name-en' => 'required|max:255',
-        //     'display-name-bn' => 'required|max:255'
-        // ]);
+        $request->validate([
+            'iso2' => 'required|unique:countries|max:2',
+            'display-name-en' => 'required|max:255',
+            'display-name-bn' => 'required|max:255'
+        ]);
         
         $country = new Country();
         
@@ -60,12 +66,14 @@ class CountryController extends Controller
         
         $country->iso2  = $request->input('iso2');
 
-        $country->image_url             = [
-            'currency_url' => $request->input('currency-url'),
+        $country->image_urls             = [
+            'currency_local' => $request->input('currency-local'),
+            'currency_global' => $request->input('currency-global'),
+            'currency_alternative' => $request->input('currency-alternative'),
         ];
         
-        $sell_status = $request->input('sell-status') ? $request->input('sell-status') : "true";
-        $buy_status = $request->input('buy-status') ? $request->input('buy-status') : "true";
+        $country->sell_status = $request->input('sell-status');
+        $country->buy_status = $request->input('buy-status');
 
         $country->save();
 
@@ -107,8 +115,44 @@ class CountryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
-        //
+    {   
+
+        $request->validate([
+            'iso2' => 'required|max:255|unique:countries,id,'.$id,
+            'display-name-en' => 'required|max:255',
+            'display-name-bn' => 'required|max:255'
+        ]);
+
+        $country = Country::findOrFail($id);
+        
+        $country->localization     = [
+            'en' => [
+                'display_name' => $request->input('display-name-en')
+            ],
+            'bn' => [
+                'display_name' => $request->input('display-name-bn')
+            ]
+        ];
+        $country->currency             = [
+            'local' => $request->input('local'),
+            'global' => $request->input('global'),
+            'alternative' => $request->input('alternative')
+        ];
+        
+        $country->iso2  = $request->input('iso2');
+
+        $country->image_urls             = [
+            'currency_local' => $request->input('currency-local'),
+            'currency_global' => $request->input('currency-global'),
+            'currency_alternative' => $request->input('currency-alternative'),
+        ];
+        $country->sell_status = $request->input('sell-status');
+        $country->buy_status = $request->input('buy-status');
+
+        $country->save();
+
+        Session::flash('message', 'Successfully Updated!');
+        return redirect()->route('backend.countries.edit', $country->id);
     }
 
     /**

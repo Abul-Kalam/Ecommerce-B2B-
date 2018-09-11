@@ -1,6 +1,8 @@
 @php
     $_activePrimaryNav = 'shop';
     $_activeSecondaryNav = 'create';
+    $_alertType = 'success';
+    $_alertMessage =  Session::get('message');
 @endphp
 @extends('backend.layouts.default') 
 @section('title', 'Create Shop') 
@@ -40,6 +42,7 @@
                                     <ul class="nav nav-tabs">
                                         <li class="active"><a href="#tab_1" data-toggle="tab" aria-expanded="false">Basic</a></li>
                                         <li class=""><a href="#tab_2" data-toggle="tab" aria-expanded="false">Currency</a></li>
+                                        <li class=""><a href="#tab_3" data-toggle="tab" aria-expanded="false">Images</a></li>
                                         <li class="pull-right">
                                             <a href="#" class="text-muted"><i class="fas fa-cog"></i></a>
                                         </li>
@@ -71,28 +74,22 @@
                                                     @endif
                                                 </div>
                                             </div>
-            
                                             <div class="row">
                                                 <div class="col-lg-6 form-group">
                                                     <label for="display-name-bn">Sell Status</label>
                                                     <select class="form-control" placeholder="Select sell-status" name="sell-status">
-                                                        <option value="allow">Allow</option>
-                                                        <option value="disallow">Disallow</option>
+                                                        <option value="1" {{ $country->sell_status === true ? 'selected' : '' }}>Allow</option>
+                                                        <option value="0" {{ $country->sell_status === false ? 'selected' : '' }}>Disallow</option>
                                                     </select>
                                                 </div>
                                                 <div class="col-lg-6 form-group">
                                                     <label for="display-name-bn">Buy Status</label>
                                                     <select class="form-control" placeholder="Select buy-status" name="buy-status">
-                                                        <option value="allow">Allow</option>
-                                                        <option value="disallow">Disallow</option>
+                                                        <option value="1" {{ $country->buy_status === true ? 'selected' : '' }}>Allow</option>
+                                                        <option value="0" {{ $country->buy_status === false ? 'selected' : '' }}>Disallow</option>
                                                     </select>
                                                 </div>
                                                 
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label for="currency-url">Image Url</label>
-                                                <input type="text" class="form-control" id="currency-url" name="currency-url" value="{{ $country->image_url['currency_url'] }}">
                                             </div>
                                         </div>
                                         <!-- /.tab-pane -->
@@ -109,6 +106,25 @@
                                             <div class="form-group">
                                                 <label for="global">Alternative</label>
                                                 <input type="text" class="form-control" id="alternative" name="alternative" value="{{ $country->currency['alternative'] }}">
+                                            </div>
+                                        </div>
+                                        <!-- /.tab-pane -->
+                                        <div class="tab-pane" id="tab_3">
+                                            <div class="form-group">
+                                                <label for="currency-local">Local</label>
+                                                <input type="text" class="form-control" id="currency-local" name="currency-local" value="{{ $country->image_urls['currency_local'] }}">
+                                                <p class="help-block">Example block-level help text here.</p>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="currency-global">Global</label>
+                                                <input type="text" class="form-control" id="currency-global" name="currency-global" value="{{ $country->image_urls['currency_global'] }}">
+                                                <p class="help-block">Example block-level help text here.</p>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="currency-alternative">Alternative</label>
+                                                <input type="text" class="form-control" id="currency-alternative" name="currency-alternative" value="{{ $country->image_urls['currency_alternative'] }}">
+                                                <p class="help-block">Example block-level help text here.</p>
                                             </div>
                                         </div>
                                         <!-- /.tab-pane -->

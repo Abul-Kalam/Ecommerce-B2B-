@@ -40,6 +40,7 @@
                                     <ul class="nav nav-tabs">
                                         <li class="active"><a href="#tab_1" data-toggle="tab" aria-expanded="false">Basic</a></li>
                                         <li class=""><a href="#tab_2" data-toggle="tab" aria-expanded="false">Currency</a></li>
+                                        <li class=""><a href="#tab_3" data-toggle="tab" aria-expanded="false">Images</a></li>
                                         <li class="pull-right">
                                             <a href="#" class="text-muted"><i class="fas fa-cog"></i></a>
                                         </li>
@@ -76,23 +77,18 @@
                                                 <div class="col-lg-6 form-group">
                                                     <label for="display-name-bn">Sell Status</label>
                                                     <select class="form-control" placeholder="Select sell-status" name="sell-status">
-                                                        <option value="allow">Allow</option>
-                                                        <option value="disallow">Disallow</option>
+                                                        <option value="1">Allow</option>
+                                                        <option value="0">Disallow</option>
                                                     </select>
                                                 </div>
                                                 <div class="col-lg-6 form-group">
                                                     <label for="display-name-bn">Buy Status</label>
                                                     <select class="form-control" placeholder="Select buy-status" name="buy-status">
-                                                        <option value="allow">Allow</option>
-                                                        <option value="disallow">Disallow</option>
+                                                        <option value="1">Allow</option>
+                                                        <option value="0">Disallow</option>
                                                     </select>
                                                 </div>
                                                 
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label for="currency-url">Image Url</label>
-                                                <input type="text" class="form-control" id="currency-url" name="currency-url">
                                             </div>
                                         </div>
                                         <!-- /.tab-pane -->
@@ -112,8 +108,28 @@
                                             </div>
                                         </div>
                                         <!-- /.tab-pane -->
+                                        <div class="tab-pane" id="tab_3">
+                                            <div class="form-group">
+                                                <label for="currency-local">Local</label>
+                                                <input type="text" class="form-control" id="currency-local" name="currency-local">
+                                                <p class="help-block">Example block-level help text here.</p>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="currency-global">Global</label>
+                                                <input type="text" class="form-control" id="currency-global" name="currency-global">
+                                                <p class="help-block">Example block-level help text here.</p>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="currency-alternative">Alternative</label>
+                                                <input type="text" class="form-control" id="currency-alternative" name="currency-alternative">
+                                                <p class="help-block">Example block-level help text here.</p>
+                                            </div>
+                                        </div>
+                                        <!-- /.tab-pane -->
                                     </div>
                                     <!-- /.tab-content -->
+                                    
                                 </div>
                             </div>
                             <div class="box-footer">

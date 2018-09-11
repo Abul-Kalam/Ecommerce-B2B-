@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Session;
+use App\District;
+use App\Thana;
 use Illuminate\Http\Request;
 
 class ThanaController extends Controller
@@ -23,7 +26,10 @@ class ThanaController extends Controller
      */
     public function create()
     {
-        //
+        $districts = District::get();
+        return view('backend.pages.thana-create' , [
+            'districts' => $districts,
+        ]);
     }
 
     /**
@@ -34,7 +40,32 @@ class ThanaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'slug' => 'required|unique:thanas|max:255',
+            'display-name-en' => 'required|max:255',
+            'display-name-bn' => 'required|max:255'
+        ]);
+        
+        $thana = new Thana();
+        
+        $thana->localization     = [
+            'en' => [
+                'display_name' => $request->input('display-name-en')
+            ],
+            'bn' => [
+                'display_name' => $request->input('display-name-bn')
+            ]
+        ];
+       
+        
+        $thana->slug  = $request->input('slug');
+        $thana->district_id  = $request->input('district-id');
+
+      
+
+        $thana->save();
+        Session::flash('message', 'Successfully Created!');
+        return redirect()->route('backend.thanas.edit', $thana->id);
     }
 
     /**
@@ -56,7 +87,12 @@ class ThanaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $thana = Thana::findOrFail($id);
+        $districts = District::get();
+        return view('backend.pages.thana-edit', [
+            'districts' => $districts,
+            'thana' => $thana,
+        ]);
     }
 
     /**
@@ -68,7 +104,32 @@ class ThanaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'slug' => 'required|max:255|unique:thanas,id,'.$id,
+            'display-name-en' => 'required|max:255',
+            'display-name-bn' => 'required|max:255'
+        ]);
+        
+        $thana = new Thana();
+        
+        $thana->localization     = [
+            'en' => [
+                'display_name' => $request->input('display-name-en')
+            ],
+            'bn' => [
+                'display_name' => $request->input('display-name-bn')
+            ]
+        ];
+       
+        
+        $thana->slug  = $request->input('slug');
+        $thana->district_id  = $request->input('district-id');
+
+      
+
+        $thana->save();
+        Session::flash('message', 'Successfully Created!');
+        return redirect()->route('backend.thanas.edit', $thana->id);
     }
 
     /**

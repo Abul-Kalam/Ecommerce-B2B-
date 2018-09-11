@@ -19,6 +19,7 @@ class CreateThanasTable extends Migration
             $table->string('slug', 255)->unique();
             $table->json('localization')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

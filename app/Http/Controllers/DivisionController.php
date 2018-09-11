@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Session;
+use App\Country;
+use App\Division;
 use Illuminate\Http\Request;
 
 class DivisionController extends Controller
@@ -22,8 +25,11 @@ class DivisionController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        //
+    {   
+        $countries = Country::get();
+        return view('backend.pages.division-create' , [
+            'countries' => $countries,
+        ]);
     }
 
     /**
@@ -34,7 +40,34 @@ class DivisionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'slug' => 'required|unique:divisions|max:255',
+            'display-name-en' => 'required|max:255',
+            'display-name-bn' => 'required|max:255'
+        ]);
+        
+        $division = new Division();
+        
+        $division->localization     = [
+            'en' => [
+                'display_name' => $request->input('display-name-en')
+            ],
+            'bn' => [
+                'display_name' => $request->input('display-name-bn')
+            ]
+        ];
+       
+        
+        $division->slug  = $request->input('slug');
+        $division->country_id  = $request->input('country_id');
+
+      
+
+        $division->save();
+        Session::flash('message', 'Successfully Created!');
+        return redirect()->route('backend.divisions.edit', $division->id);
+
+       
     }
 
     /**
@@ -44,8 +77,8 @@ class DivisionController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
-        //
+    {   
+        
     }
 
     /**
@@ -56,7 +89,14 @@ class DivisionController extends Controller
      */
     public function edit($id)
     {
-        //
+        $division = Division::findOrFail($id);
+        $countries = Country::get();
+        return view('backend.pages.division-edit' , [
+            'countries' => $countries,
+            'division' => $division,
+        ]);
+
+      
     }
 
     /**
@@ -68,7 +108,33 @@ class DivisionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'slug' => 'required|max:255|unique:divisions,id,'.$id,
+            'display-name-en' => 'required|max:255',
+            'display-name-bn' => 'required|max:255'
+        ]);
+        
+        $division = Division::findOrFail($id);
+        
+        
+        $division->localization     = [
+            'en' => [
+                'display_name' => $request->input('display-name-en')
+            ],
+            'bn' => [
+                'display_name' => $request->input('display-name-bn')
+            ]
+        ];
+       
+        
+        $division->slug  = $request->input('slug');
+        $division->country_id  = $request->input('country_id');
+
+      
+
+        $division->save();
+        Session::flash('message', 'Successfully Update!');
+        return redirect()->route('backend.divisions.edit', $division->id);
     }
 
     /**

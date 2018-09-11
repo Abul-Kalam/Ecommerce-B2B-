@@ -18,10 +18,15 @@ class Country extends Model
 
     protected $casts      = [
         'iso2'            => 'string',
-        'localization'    => 'json',
+        'localization'    => 'array',
         'sell_status'     => 'boolean',
         'buy_status'      => 'boolean',
         'currency'        => 'array',
-        'image_url'       => 'array'
+        'image_urls'       => 'array'
     ];
+
+    public function divisions()
+    {
+        return $this->hasMany('App\Division');
+    }
 }

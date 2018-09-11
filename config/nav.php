@@ -152,6 +152,78 @@ return [
                     'route' => 'backend.brands.index'
                 ]
             ]
+        ],
+        [
+            'type'          => 'menu',
+            'slug'          => 'country',
+            'label'         => 'Country',
+            'icon_class'    => 'fa fa-users',
+            'childs'        => [
+                [
+                    'slug'  => 'create',
+                    'label' => 'Add New',
+                    'route' => 'backend.countries.create'
+                ],
+                [
+                    'slug'  => 'index',
+                    'label' => 'All country',
+                    'route' => 'backend.countries.index'
+                ]
+            ]
+        ],
+        [
+            'type'          => 'menu',
+            'slug'          => 'division',
+            'label'         => 'Division',
+            'icon_class'    => 'fa fa-users',
+            'childs'        => [
+                [
+                    'slug'  => 'create',
+                    'label' => 'Add New',
+                    'route' => 'backend.divisions.create'
+                ],
+                [
+                    'slug'  => 'index',
+                    'label' => 'All division',
+                    'route' => 'backend.divisions.index'
+                ]
+            ]
+        ],
+        [
+            'type'          => 'menu',
+            'slug'          => 'district',
+            'label'         => 'District',
+            'icon_class'    => 'fa fa-users',
+            'childs'        => [
+                [
+                    'slug'  => 'create',
+                    'label' => 'Add New',
+                    'route' => 'backend.districts.create'
+                ],
+                [
+                    'slug'  => 'index',
+                    'label' => 'All district',
+                    'route' => 'backend.districts.index'
+                ]
+            ]
+        ],
+        [
+            'type'          => 'menu',
+            'slug'          => 'thana',
+            'label'         => 'Thana',
+            'icon_class'    => 'fa fa-users',
+            'childs'        => [
+                [
+                    'slug'  => 'create',
+                    'label' => 'Add New',
+                    'route' => 'backend.thanas.create'
+                ],
+                [
+                    'slug'  => 'index',
+                    'label' => 'All thana',
+                    'route' => 'backend.thanas.index'
+                ]
+            ]
         ]
     ]
 ];
