@@ -22,7 +22,7 @@ class Country extends Model
         'sell_status'     => 'boolean',
         'buy_status'      => 'boolean',
         'currency'        => 'array',
-        'image_urls'       => 'array'
+        'image_urls'      => 'array'
     ];
 
     public function divisions()
