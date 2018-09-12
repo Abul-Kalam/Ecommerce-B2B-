@@ -23,7 +23,7 @@ class DivisionsTableSeeder extends Seeder
             [
                 'slug' => 'barisal',
                 'localization' => json_encode([
-                    'en' => ['display_name' => 'Dhaka'],
+                    'en' => ['display_name' => 'Barisal'],
                     'bn' => ['display_name' => 'বরিশাল']
                 ], JSON_UNESCAPED_UNICODE),
                 'country_id' => 1,
@@ -32,6 +32,14 @@ class DivisionsTableSeeder extends Seeder
                 'slug' => 'sylhet',
                 'localization' => json_encode([
                     'en' => ['display_name' => 'Sylhet'],
+                    'bn' => ['display_name' => 'সিলেট']
+                ], JSON_UNESCAPED_UNICODE),
+                'country_id' => 1,
+            ],
+            [
+                'slug' => 'comilla',
+                'localization' => json_encode([
+                    'en' => ['display_name' => 'Comilla'],
                     'bn' => ['display_name' => 'সিলেট']
                 ], JSON_UNESCAPED_UNICODE),
                 'country_id' => 1,
