@@ -35,7 +35,7 @@
                         <div class="box-header with-border">
                             <a href="{{ route('backend.countries.create')}}" class="btn btn-sm btn-default">Add New</a>
                             <div class="box-tools mt-2">
-                            <form class="form-inline my-2 my-lg-0" action="{{ route('backend.countries.search') }}" method="post">
+                                <form class="form-inline my-2 my-lg-0" action="{{ route('backend.countries.search') }}" method="post">
                                     {{ csrf_field() }}
                                 <div class="input-group input-group-sm" style="width: 200px;">
                                             
@@ -45,7 +45,7 @@
                                         <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
                                     </div>
                                 </div>
-                            </form>
+                                </form>
                             </div>
 
                         </div>
