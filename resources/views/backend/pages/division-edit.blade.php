@@ -71,17 +71,14 @@
                                         @endif
                                     </div>
                                 </div>
-{{--                                
-                                {{ $c->localization['bn']['display_name']}}
-                                @endforeach  --}}
                                 <div class="row">
                                     <div class="col-lg-6 form-group">
                                         <label for="countries">Countries</label>
                                         <select class="form-control" placeholder="Select country" name="country_id">
                                             <option value="">Choose Countries</option>
-                                                @foreach ($countries as $c)
-                                                <option value="{{ $c->id}}">{{ $c->localization['en']['display_name']}}</option>
-                                                @endforeach
+                                            @foreach ($countries as $c)
+                                            <option value="{{ $c->id }}" {{ $c->id == $division->country_id ? 'selected' : '' }}>{{ $c->localization['en']['display_name']}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                     

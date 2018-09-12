@@ -1,11 +1,11 @@
 @php
-    $_activePrimaryNav = 'shop';
+    $_activePrimaryNav = 'country';
     $_activeSecondaryNav = 'create';
     $_alertType = 'success';
     $_alertMessage =  Session::get('message');
 @endphp
 @extends('backend.layouts.default') 
-@section('title', 'Create Shop') 
+@section('title', 'Create Country') 
 @section('content')
 
 <section class="content-header">

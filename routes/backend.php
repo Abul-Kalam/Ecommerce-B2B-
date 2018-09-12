@@ -34,10 +34,11 @@ Route::middleware('auth')->group(function () {
     Route::resource('countries', 'CountryController');
     Route::post('countries/search', 'CountryController@search')->name('countries.search');
     Route::resource('divisions', 'DivisionController');
+    Route::post('divisions/search', 'DivisionController@search')->name('divisions.search');
     Route::resource('districts', 'DistrictController');
+    Route::post('districts/search', 'DistrictController@search')->name('districts.search');
     Route::resource('thanas', 'ThanaController');
-
-
+    Route::post('thanas/search', 'ThanaController@search')->name('thanas.search');
     Route::resource('roles', 'RoleController');
     Route::post('roles/search', 'RoleController@search')->name('roles.search');
 

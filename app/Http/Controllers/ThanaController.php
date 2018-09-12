@@ -16,7 +16,13 @@ class ThanaController extends Controller
      */
     public function index()
     {
-        //
+        $paginate = config('app.pagenation_count', 3);
+        
+        $thanas = Thana::with('district')->orderBy('created_at', 'DESC')->paginate($paginate);
+
+        return view('backend.pages.thana-list' ,[
+            'thanas' => $thanas,
+        ]);
     }
 
     /**

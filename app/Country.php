@@ -27,6 +27,6 @@ class Country extends Model
 
     public function divisions()
     {
-        return $this->hasMany('App\Division');
+        return $this->belongsToMany('App\Division');
     }
 }
