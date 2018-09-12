@@ -16,7 +16,13 @@ class DistrictController extends Controller
      */
     public function index()
     {
-        //
+        $paginate = config('app.pagenation_count', 3);
+        
+        $districts = District::with('division')->orderBy('created_at', 'DESC')->paginate($paginate);
+
+        return view('backend.pages.district-list' ,[
+            'districts' => $districts,
+        ]);
     }
 
     /**

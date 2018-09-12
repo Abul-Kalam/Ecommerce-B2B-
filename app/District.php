@@ -17,17 +17,17 @@ class District extends Model
     protected $dates      = ['created_at', 'updated_at', 'deleted_at'];
 
     protected $casts      = [
-        'country_id'      => 'string',
+        'division_id'      => 'string',
         'slug'            => 'string',
         'localization'    => 'array'
     ];
 
     public function division()
     {
-        return $this->belongsTo('App\divisions');
+        return $this->belongsTo('App\Division');
     }
     
-    public function thanas()
+    public function thana()
     {
         return $this->belongsToMany('App\Thana');
     }

@@ -1,9 +1,9 @@
 @php
-    $_activePrimaryNav = 'shop';
+    $_activePrimaryNav = 'country';
     $_activeSecondaryNav = 'create';
 @endphp
 @extends('backend.layouts.default') 
-@section('title', 'Create Shop') 
+@section('title', 'Create Country') 
 @section('content')
 
 <section class="content-header">

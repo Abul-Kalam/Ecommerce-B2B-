@@ -16,7 +16,13 @@ class DivisionController extends Controller
      */
     public function index()
     {
-        //
+        $paginate = config('app.pagenation_count', 3);
+        
+        $divisions = Division::with('country')->orderBy('created_at', 'DESC')->paginate($paginate);
+
+        return view('backend.pages.division-list' ,[
+            'divisions' => $divisions,
+        ]);
     }
 
     /**

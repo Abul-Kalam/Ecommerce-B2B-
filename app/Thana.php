@@ -22,9 +22,9 @@ class Thana extends Model
         'localization'    => 'array'
     ];
 
-    public function districts()
+    public function district()
     {
-        return $this->belongsTo('App\division');
+        return $this->belongsTo('App\District');
     }
     
 }
