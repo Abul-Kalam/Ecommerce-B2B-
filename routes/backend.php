@@ -17,7 +17,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('categories', 'CategoryController');
     Route::post('categories/search', 'CategoryController@search')->name('categories.search');
     Route::resource('invoices', 'InvoiceController');
-    Route::resource('products', 'ProductController');
+    // Route::resource('products', 'ProductController');
     Route::resource('media', 'MediaController');
     Route::resource('brands', 'BrandController');
     Route::resource('shops', 'ShopController');
