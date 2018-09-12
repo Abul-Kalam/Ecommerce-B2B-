@@ -24,7 +24,18 @@ class ThanaController extends Controller
             'thanas' => $thanas,
         ]);
     }
+    public function search(Request $request)
+    {
+        $keywords = $request->input('keywords');
+        $keywords = strtolower($keywords);
 
+        $thanas = Thana::where('localization->en->display_name', 'like', '%'.$keywords.'%')
+        ->orWhere('localization->bn->display_name', 'like', '%'.$keywords.'%')->paginate(5);
+
+        return view('backend.pages.thana-list', [
+            'thanas' => $thanas
+        ]);
+    }
     /**
      * Show the form for creating a new resource.
      *

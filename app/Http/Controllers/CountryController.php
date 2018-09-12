@@ -24,6 +24,19 @@ class CountryController extends Controller
         ]);
     }
 
+
+    public function search(Request $request)
+    {
+        $keywords = $request->input('keywords');
+
+        $countries = Country::where('localization->en->display_name', 'like', '%'.$keywords.'%')
+        ->orWhere('localization->bn->display_name', 'like', '%'.$keywords.'%')->paginate(5);
+
+        return view('backend.pages.country-list', [
+            'countries' => $countries
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
