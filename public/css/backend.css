@@ -7403,6 +7403,10 @@ table.text-center th {
   background-color: #f7f7f7;
 }
 
+.multi-input-list .item .container.open .header {
+  background-color: #e8e8e8;
+}
+
 .multi-input-list .item .container.open .header .icon {
   color: #999;
 }
