@@ -1,3 +1,4 @@
+
 @import '~select2/dist/css/select2.min.css';
 // Admin Light
 // @import '~dropzone/dist/min/dropzone.min.css';
@@ -306,6 +307,43 @@
         padding: 1rem;
         display: none;
       }
+    }
+  }
+}
+
+
+.tag{
+  background-color: #ebebeb;
+  border-radius: 21px;
+  padding: 0.25rem;
+  border: 1px solid #d8d8d8;
+  .btn-tag{
+    border-radius: 100%;
+    width: 21px;
+    height: 21px;
+    line-height: 18px;
+    &:hover{
+      color: #fff;
+      background-color: #dd4b39;
+    }
+  }
+  .title{
+    font-size: .9em;
+    line-height: 18px;
+    margin: 0 1rem 0 0.25rem;
+  }
+}
+
+.tag-list{
+  margin: 0;
+  padding: 0;
+  display: block;
+  list-style-type: none;
+  li{
+    display: inline-block;
+    .tag{
+      margin-right: .5rem;
+      margin-bottom: 1rem;
     }
   }
 }

@@ -7500,3 +7500,44 @@ table.text-center th {
   display: none;
 }
 
+.tag {
+  background-color: #ebebeb;
+  border-radius: 21px;
+  padding: 0.25rem;
+  border: 1px solid #d8d8d8;
+}
+
+.tag .btn-tag {
+  border-radius: 100%;
+  width: 21px;
+  height: 21px;
+  line-height: 18px;
+}
+
+.tag .btn-tag:hover {
+  color: #fff;
+  background-color: #dd4b39;
+}
+
+.tag .title {
+  font-size: .9em;
+  line-height: 18px;
+  margin: 0 1rem 0 0.25rem;
+}
+
+.tag-list {
+  margin: 0;
+  padding: 0;
+  display: block;
+  list-style-type: none;
+}
+
+.tag-list li {
+  display: inline-block;
+}
+
+.tag-list li .tag {
+  margin-right: .5rem;
+  margin-bottom: 1rem;
+}
+
