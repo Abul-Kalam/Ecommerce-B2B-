@@ -16,7 +16,7 @@ class ThanaController extends Controller
      */
     public function index()
     {
-        $paginate = config('app.pagenation_count', 3);
+        $paginate = config('app.pagenation_count', 17);
         
         $thanas = Thana::with('district')->orderBy('created_at', 'DESC')->paginate($paginate);
 
@@ -135,7 +135,7 @@ class ThanaController extends Controller
             'district-id' => 'required'
         ]);
         
-        $thana = new Thana();
+        $thana = Thana::findOrFail($id);
         
         $display_name_en = $request->input('display-name-en');
         $thana->localization     = [
@@ -157,7 +157,7 @@ class ThanaController extends Controller
       
 
         $thana->save();
-        Session::flash('message', 'Successfully Created!');
+        Session::flash('message', 'Successfully Updated!');
         return redirect()->route('backend.thanas.edit', $thana->id);
     }
 
