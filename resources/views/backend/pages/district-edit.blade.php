@@ -58,7 +58,7 @@
                                 <div class="row">
                                     <div class="col-lg-6 form-group {{  $errors->has('display-name-en') ? 'has-error' : '' }}">
                                         <label for="display_name_en">Display Name En</label>
-                                        <input type="text" class="form-control" id="display-name-en" name="display-name-en" value="{{ $district->localization['en']['display_name'] }}">
+                                        <input type="text" class="form-control" id="display-name-en" name="display-name-en" value="{{ucwords( $district->localization['en']['display_name']) }}">
                                         @if($errors->has('display-name-en'))
                                         <span class="help-block">The Display Name En field is required.</span>
                                         @endif
@@ -80,7 +80,7 @@
                                         <select class="form-control" placeholder="Select division" name="division-id">
                                             <option value="">Choose Divisions</option>
                                                 @foreach ($divisions as $d)
-                                                <option value="{{ $d->id}}" {{ $d->id == $district->division_id ? 'selected' : '' }}>{{ $d->localization['en']['display_name']}}</option>
+                                                <option value="{{ $d->id}}" {{ $d->id == $district->division_id ? 'selected' : '' }}>{{ ucwords($d->localization['en']['display_name']) }}</option>
                                                 @endforeach
                                         </select>
                                     </div>

@@ -62,9 +62,9 @@
                                     @foreach ($divisions as $c)
                                     <tr>
                                         <td>{{$c->id}}</td>
-                                        <td>{{ $c->localization['en']['display_name'] }}</td>
+                                        <td>{{ ucwords($c->localization['en']['display_name']) }}</td>
 
-                                        <td><a href="{{ route('backend.countries.edit', $c->country->id )}}">{{ $c->country->localization['en']['display_name']  }}</a></td>
+                                        <td><a href="{{ route('backend.countries.edit', $c->country->id )}}">{{ ucwords($c->country->localization['en']['display_name'])  }}</a></td>
                                         <td>
                                             <span class="actions">
                                                 <a href="{{ route('backend.divisions.show', $c->id) }}">View</a>

@@ -16,7 +16,7 @@ class DistrictController extends Controller
      */
     public function index()
     {
-        $paginate = config('app.pagenation_count', 3);
+        $paginate = config('app.pagenation_count', 15);
         
         $districts = District::with('division')->orderBy('created_at', 'DESC')->paginate($paginate);
 
@@ -62,14 +62,17 @@ class DistrictController extends Controller
         $request->validate([
             'slug' => 'required|unique:districts|max:255',
             'display-name-en' => 'required|max:255',
-            'display-name-bn' => 'required|max:255'
+            'display-name-bn' => 'required|max:255',
+            'division-id' => 'required'
         ]);
         
         $district = new District();
         
+        $display_name_en = $request->input('display-name-en');
+
         $district->localization     = [
             'en' => [
-                'display_name' => $request->input('display-name-en')
+                'display_name' => strtolower($display_name_en),
             ],
             'bn' => [
                 'display_name' => $request->input('display-name-bn')
@@ -77,8 +80,13 @@ class DistrictController extends Controller
         ];
        
         
-        $district->slug  = $request->input('slug');
-        $district->division_id  = $request->input('division-id');
+        $slug = $request->input('slug');
+
+        $slug = preg_replace('/\s+/u', '-', trim($slug));
+
+
+        $district->slug  = $slug;
+        $district->division_id  = input('division-id');
 
       
 
@@ -126,14 +134,17 @@ class DistrictController extends Controller
         $request->validate([
             'slug' => 'required|max:255|unique:districts,id,'.$id,
             'display-name-en' => 'required|max:255',
-            'display-name-bn' => 'required|max:255'
+            'display-name-bn' => 'required|max:255',
+            'division-id' => 'required'
         ]);
         
         $district = District::findOrFail($id);
         
+        $display_name_en = $request->input('display-name-en');
+
         $district->localization     = [
             'en' => [
-                'display_name' => $request->input('display-name-en')
+                'display_name' => strtolower($display_name_en),
             ],
             'bn' => [
                 'display_name' => $request->input('display-name-bn')
@@ -141,8 +152,13 @@ class DistrictController extends Controller
         ];
        
         
-        $district->slug  = $request->input('slug');
-        $district->division_id  = $request->input('division-id');
+        $slug = $request->input('slug');
+
+        $slug = preg_replace('/\s+/u', '-', trim($slug));
+
+
+        $district->slug  = $slug;
+        $district->division_id  = input('division-id');
 
       
 
