@@ -75,13 +75,16 @@
                                 {{ $c->localization['bn']['display_name']}}
                                 @endforeach  --}}
                                 <div class="row">
-                                    <div class="col-lg-6 form-group">
+                                    <div class="col-lg-6 form-group {{ $errors->has('district-id') ? 'has-error' : '' }}">
                                         <label for="district">Districts</label>
                                         <select class="form-control" placeholder="Select district" name="district-id">
                                             <option value="">Choose District</option>
                                                 @foreach ($districts as $d)
-                                                <option value="{{ $d->id}}">{{ $d->localization['en']['display_name']}}</option>
+                                                <option value="{{ $d->id}}">{{ ucwords($d->localization['en']['display_name']) }}</option>
                                                 @endforeach
+                                                @if($errors->has('country-id'))
+                                                <span class="help-block">The Districts field is required.</span>
+                                                @endif
                                         </select>
                                     </div>
                                     

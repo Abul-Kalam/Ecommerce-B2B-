@@ -60,22 +60,29 @@ class ThanaController extends Controller
         $request->validate([
             'slug' => 'required|unique:thanas|max:255',
             'display-name-en' => 'required|max:255',
-            'display-name-bn' => 'required|max:255'
+            'display-name-bn' => 'required|max:255',
+            'district-id' => 'required'
         ]);
         
         $thana = new Thana();
         
+        $display_name_en = $request->input('display-name-en');
         $thana->localization     = [
             'en' => [
-                'display_name' => $request->input('display-name-en')
+                'display_name' => strtolower($display_name_en),
             ],
             'bn' => [
                 'display_name' => $request->input('display-name-bn')
             ]
         ];
-       
         
-        $thana->slug  = $request->input('slug');
+        $slug = $request->input('slug');
+
+        $slug = preg_replace('/\s+/u', '-', trim($slug));
+
+
+        $thana->slug  = $slug;
+        
         $thana->district_id  = $request->input('district-id');
 
       
@@ -124,14 +131,16 @@ class ThanaController extends Controller
         $request->validate([
             'slug' => 'required|max:255|unique:thanas,id,'.$id,
             'display-name-en' => 'required|max:255',
-            'display-name-bn' => 'required|max:255'
+            'display-name-bn' => 'required|max:255',
+            'district-id' => 'required'
         ]);
         
         $thana = new Thana();
         
+        $display_name_en = $request->input('display-name-en');
         $thana->localization     = [
             'en' => [
-                'display_name' => $request->input('display-name-en')
+                'display_name' => strtolower($display_name_en),
             ],
             'bn' => [
                 'display_name' => $request->input('display-name-bn')
@@ -139,7 +148,10 @@ class ThanaController extends Controller
         ];
        
         
-        $thana->slug  = $request->input('slug');
+        $slug = $request->input('slug');
+        $slug = preg_replace('/\s+/u', '-', trim($slug));
+
+        $thana->slug  = $slug;
         $thana->district_id  = $request->input('district-id');
 
       

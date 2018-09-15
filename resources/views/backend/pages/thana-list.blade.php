@@ -62,9 +62,9 @@
                                     @foreach ($thanas as $c)
                                     <tr>
                                         <td>{{$c->id}}</td>
-                                        <td>{{ $c->localization['en']['display_name'] }}</td>
+                                        <td>{{ ucwords($c->localization['en']['display_name']) }}</td>
 
-                                        <td><a href="{{ route('backend.districts.edit', $c->district->id )}}">{{ $c->district->localization['en']['display_name']  }}</a></td>
+                                        <td><a href="{{ route('backend.districts.edit', $c->district->id )}}">{{ ucwords($c->district->localization['en']['display_name'] ) }}</a></td>
                                         <td>
                                             <span class="actions">
                                                 <a href="{{ route('backend.thanas.show', $c->id) }}">View</a>
