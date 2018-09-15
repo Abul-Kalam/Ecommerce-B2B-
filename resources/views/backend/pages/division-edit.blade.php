@@ -58,27 +58,30 @@
                                 <div class="row">
                                     <div class="col-lg-6 form-group {{  $errors->has('display-name-en') ? 'has-error' : '' }}">
                                         <label for="display_name_en">Display Name En</label>
-                                        <input type="text" class="form-control" id="display-name-en" name="display-name-en" value="{{ $division->localization['en']['display_name'] }}">
+                                        <input type="text" class="form-control" id="display-name-en" name="display-name-en" value="{{ ucwords($division->localization['en']['display_name']) }}">
                                         @if($errors->has('display-name-en'))
                                         <span class="help-block">The Display Name En field is required.</span>
                                         @endif
                                     </div>
                                     <div class="col-lg-6 form-group {{ $errors->has('display-name-bn') ? 'has-error' : '' }}">
                                         <label for="display-name-bn">Display Name Bn</label>
-                                        <input type="text" class="form-control" id="display-name-bn" name="display-name-bn" value="{{ $division->localization['bn']['display_name']}}">
+                                        <input type="text" class="form-control" id="display-name-bn" name="display-name-bn" value="{{ $division->localization['bn']['display_name'] }}">
                                         @if($errors->has('display-name-bn'))
                                         <span class="help-block">The Display Name Bn field is required.</span>
                                         @endif
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-lg-6 form-group">
+                                    <div class="col-lg-6 form-group  {{ $errors->has('country-id') ? 'has-error' : '' }}">
                                         <label for="countries">Countries</label>
-                                        <select class="form-control" placeholder="Select country" name="country_id">
+                                        <select class="form-control" placeholder="Select country" name="country-id">
                                             <option value="">Choose Countries</option>
                                             @foreach ($countries as $c)
-                                            <option value="{{ $c->id }}" {{ $c->id == $division->country_id ? 'selected' : '' }}>{{ $c->localization['en']['display_name']}}</option>
+                                            <option value="{{ $c->id }}" {{ $c->id == $division->country_id ? 'selected' : '' }}>{{ ucwords($c->localization['en']['display_name']) }}</option>
                                             @endforeach
+                                            @if($errors->has('country-id'))
+                                            <span class="help-block">The Country field is required.</span>
+                                            @endif
                                         </select>
                                     </div>
                                     

@@ -61,23 +61,31 @@ class DivisionController extends Controller
         $request->validate([
             'slug' => 'required|unique:divisions|max:255',
             'display-name-en' => 'required|max:255',
-            'display-name-bn' => 'required|max:255'
+            'display-name-bn' => 'required|max:255',
+            'country-id' => 'required'
         ]);
         
         $division = new Division();
         
+        $display_name_en = $request->input('display-name-en');
+
         $division->localization     = [
             'en' => [
-                'display_name' => $request->input('display-name-en')
+                'display_name' => strtolower($display_name_en),
             ],
             'bn' => [
                 'display_name' => $request->input('display-name-bn')
             ]
         ];
        
+
+        $slug = $request->input('slug');
+
+        $slug = preg_replace('/\s+/u', '-', trim($slug));
         
-        $division->slug  = $request->input('slug');
-        $division->country_id  = $request->input('country_id');
+        $division->slug  =  $slug;
+
+        $division->country_id  = $request->input('country-id');
 
       
 
@@ -129,24 +137,32 @@ class DivisionController extends Controller
         $request->validate([
             'slug' => 'required|max:255|unique:divisions,id,'.$id,
             'display-name-en' => 'required|max:255',
-            'display-name-bn' => 'required|max:255'
+            'display-name-bn' => 'required|max:255',
+            'country-id' => 'required'
         ]);
         
         $division = Division::findOrFail($id);
         
         
+        $display_name_en = $request->input('display-name-en');
+
         $division->localization     = [
             'en' => [
-                'display_name' => $request->input('display-name-en')
+                'display_name' => strtolower($display_name_en),
             ],
             'bn' => [
                 'display_name' => $request->input('display-name-bn')
             ]
         ];
        
+
+        $slug = $request->input('slug');
+
+        $slug = preg_replace('/\s+/u', '-', trim($slug));
         
-        $division->slug  = $request->input('slug');
-        $division->country_id  = $request->input('country_id');
+        $division->slug  =  $slug;
+
+        $division->country_id  = $request->input('country-id');
 
       
 

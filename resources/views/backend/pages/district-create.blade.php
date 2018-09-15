@@ -80,7 +80,7 @@
                                         <select class="form-control" placeholder="Select division" name="division-id">
                                             <option value="">Choose Divisions</option>
                                                 @foreach ($divisions as $d)
-                                                <option value="{{ $d->id}}">{{ $d->localization['en']['display_name']}}</option>
+                                                <option value="{{ $d->id}}">{{ ucwords($d->localization['en']['display_name']) }}</option>
                                                 @endforeach
                                         </select>
                                     </div>

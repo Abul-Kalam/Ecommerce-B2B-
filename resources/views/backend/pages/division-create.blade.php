@@ -71,17 +71,18 @@
                                         @endif
                                     </div>
                                 </div>
-{{--                                
-                                {{ $c->localization['bn']['display_name']}}
-                                @endforeach  --}}
+
                                 <div class="row">
-                                    <div class="col-lg-6 form-group">
-                                        <label for="countries">Countries</label>
-                                        <select class="form-control" placeholder="Select country" name="country_id">
-                                            <option value="">Choose Countries</option>
+                                    <div class="col-lg-6 form-group {{ $errors->has('country-id') ? 'has-error' : '' }}">
+                                        <label for="countries">Country</label>
+                                        <select class="form-control" placeholder="Select country" name="country-id">
+                                            <option value="">Choose Country</option>
                                                 @foreach ($countries as $c)
-                                                <option value="{{ $c->id}}">{{ $c->localization['en']['display_name']}}</option>
+                                                <option value="{{ $c->id}}">{{ ucwords($c->localization['en']['display_name']) }}</option>
                                                 @endforeach
+                                                @if($errors->has('country-id'))
+                                                <span class="help-block">The Country field is required.</span>
+                                                @endif
                                         </select>
                                     </div>
                                     
