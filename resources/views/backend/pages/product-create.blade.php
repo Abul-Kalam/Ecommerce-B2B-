@@ -212,7 +212,7 @@ $_activeSecondaryNav = 'create';
                                             <input type="text" class="form-control" placeholder="Select Attribute">
                                             <span class="input-group-btn">
                                                 <button type="button" class="btn btn-success btn-flat">Select</button>
-                                                <button type="button" class="btn btn-secondary btn-flat"><i class="fas fa-plus"></i></button>
+                                                <button type="button" class="btn btn-default btn-flat"><i class="fas fa-plus"></i></button>
                                             </span>
                                         </div>
                                     </div>
@@ -250,6 +250,8 @@ $_activeSecondaryNav = 'create';
                                     <!-- /.box-body -->
                                 </div>
                             </div>
+                            {{-- ======================./Attributes=================== --}}
+
                             <div class="col-lg-6">
                                 <div class="box box-solid">
                                     <div class="box-header with-border">
@@ -334,8 +336,10 @@ $_activeSecondaryNav = 'create';
                                     <!-- /.box-body -->
                                 </div>
                             </div>
+                            {{-- =======================./Variation================= --}}
                         </div>
                     </div>
+
                     <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
                         <div class="box box-solid">
                             <div class="box-header with-border">
@@ -354,7 +358,7 @@ $_activeSecondaryNav = 'create';
                                         <option>Amanah</option>
                                     </select>
                                     <span class="input-group-btn">
-                                        <button type="button" class="btn btn-secondary btn-flat"><i class="fas fa-plus"></i></button>
+                                        <button type="button" class="btn btn-default btn-flat"><i class="fas fa-plus"></i></button>
                                     </span>
                                 </div>
                                 {{-- ======================./Brand================ --}}
@@ -429,16 +433,14 @@ $_activeSecondaryNav = 'create';
                                     <div class="input-group">
                                         <input type="text" class="form-control">
                                         <span class="input-group-btn">
-                                            <button type="button" class="btn btn-secondary btn-flat">Add</button>
+                                            <button type="button" class="btn btn-default btn-flat">Add</button>
                                         </span>
                                     </div>
                                     <p class="help-block mb-4">Separate tags with commas</p>
-
-
                                     <ul class="tag-list">
                                         <li>
                                             <div class="tag">
-                                                <button type="button" class="btn btn-xs btn-secondary btn-flat btn-tag">
+                                                <button type="button" class="btn btn-xs btn-default btn-flat btn-r-close">
                                                     <i class="fas fa-times"></i>
                                                 </button>
                                                 <span class="title">Hello</span>
@@ -446,7 +448,7 @@ $_activeSecondaryNav = 'create';
                                         </li>
                                         <li>
                                             <div class="tag">
-                                                <button type="button" class="btn btn-xs btn-secondary btn-flat btn-tag">
+                                                <button type="button" class="btn btn-xs btn-default btn-flat btn-r-close">
                                                     <i class="fas fa-times"></i>
                                                 </button>
                                                 <span class="title">Hello</span>
@@ -454,7 +456,7 @@ $_activeSecondaryNav = 'create';
                                         </li>
                                         <li>
                                             <div class="tag">
-                                                <button type="button" class="btn btn-xs btn-secondary btn-flat btn-tag">
+                                                <button type="button" class="btn btn-xs btn-default btn-flat btn-r-close">
                                                     <i class="fas fa-times"></i>
                                                 </button>
                                                 <span class="title">Hello</span>
@@ -462,7 +464,7 @@ $_activeSecondaryNav = 'create';
                                         </li>
                                         <li>
                                             <div class="tag">
-                                                <button type="button" class="btn btn-xs btn-secondary btn-flat btn-tag">
+                                                <button type="button" class="btn btn-xs btn-default btn-flat btn-r-close">
                                                     <i class="fas fa-times"></i>
                                                 </button>
                                                 <span class="title">Hello</span>
@@ -470,7 +472,7 @@ $_activeSecondaryNav = 'create';
                                         </li>
                                         <li>
                                             <div class="tag">
-                                                <button type="button" class="btn btn-xs btn-secondary btn-flat btn-tag">
+                                                <button type="button" class="btn btn-xs btn-default btn-flat btn-r-close">
                                                     <i class="fas fa-times"></i>
                                                 </button>
                                                 <span class="title">Hello</span>
@@ -478,10 +480,46 @@ $_activeSecondaryNav = 'create';
                                         </li>
                                     </ul>
                                 </div>
-                                
                             </div>
                         </div>
+                        {{-- =========================./Tag's===================== --}}
 
+                        <div class="box box-solid">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Product Image</h3>
+                                <div class="box-tools pull-right">
+                                    <button type="button" class="btn btn-box-tool">Add New</button>
+                                </div>
+                            </div>
+                            <div class="box-body">
+                                <ul class="img-list">
+                                    <li>
+                                        <div class="img-box">
+                                            <img src="{{ asset('/images/avatar.png') }}" alt="thumbnail">
+                                            <button class="btn-r-close" title="Delete image" type="button">
+                                                <i class="fas fa-times"></i>
+                                            </button>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="img-box">
+                                            <img src="{{ asset('/images/avatar.png') }}" alt="thumbnail">
+                                            <button class="btn-r-close" title="Delete image" type="button">
+                                                <i class="fas fa-times"></i>
+                                            </button>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="img-box">
+                                            <img src="{{ asset('/images/avatar.png') }}" alt="thumbnail">
+                                            <button class="btn-r-close" title="Delete image" type="button">
+                                                <i class="fas fa-times"></i>
+                                            </button>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </form>
