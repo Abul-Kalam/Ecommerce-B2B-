@@ -86,7 +86,7 @@ class DistrictController extends Controller
 
 
         $district->slug  = $slug;
-        $district->division_id  = input('division-id');
+        $district->division_id  = $request->input('division-id');
 
       
 
@@ -158,7 +158,7 @@ class DistrictController extends Controller
 
 
         $district->slug  = $slug;
-        $district->division_id  = input('division-id');
+        $district->division_id  = $request->input('division-id');
 
       
 
