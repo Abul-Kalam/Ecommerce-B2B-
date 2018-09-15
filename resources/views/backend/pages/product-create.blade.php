@@ -418,6 +418,69 @@ $_activeSecondaryNav = 'create';
                                 </div>
                             </div>
                         </div>
+                        {{-- ========================./Facker======================= --}}
+
+                        <div class="box box-solid">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Tag's</h3>
+                            </div>
+                            <div class="box-body">
+                                <div class="form-group mb-0">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control">
+                                        <span class="input-group-btn">
+                                            <button type="button" class="btn btn-secondary btn-flat">Add</button>
+                                        </span>
+                                    </div>
+                                    <p class="help-block mb-4">Separate tags with commas</p>
+
+
+                                    <ul class="tag-list">
+                                        <li>
+                                            <div class="tag">
+                                                <button type="button" class="btn btn-xs btn-secondary btn-flat btn-tag">
+                                                    <i class="fas fa-times"></i>
+                                                </button>
+                                                <span class="title">Hello</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="tag">
+                                                <button type="button" class="btn btn-xs btn-secondary btn-flat btn-tag">
+                                                    <i class="fas fa-times"></i>
+                                                </button>
+                                                <span class="title">Hello</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="tag">
+                                                <button type="button" class="btn btn-xs btn-secondary btn-flat btn-tag">
+                                                    <i class="fas fa-times"></i>
+                                                </button>
+                                                <span class="title">Hello</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="tag">
+                                                <button type="button" class="btn btn-xs btn-secondary btn-flat btn-tag">
+                                                    <i class="fas fa-times"></i>
+                                                </button>
+                                                <span class="title">Hello</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="tag">
+                                                <button type="button" class="btn btn-xs btn-secondary btn-flat btn-tag">
+                                                    <i class="fas fa-times"></i>
+                                                </button>
+                                                <span class="title">Hello</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                
+                            </div>
+                        </div>
 
                     </div>
                 </div>
