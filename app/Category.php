@@ -17,6 +17,7 @@ class Category extends Model
     protected $dates      = ['created_at', 'updated_at', 'deleted_at'];
 
     protected $casts      = [
+        'parent_id'      => 'integer',
         'slug'           => 'string',
         'image_url'      => 'array',
         'description'    => 'string',
@@ -24,4 +25,20 @@ class Category extends Model
         'options'        => 'array',
         'meta'           => 'array'
     ];
+
+
+    public function categories()
+    {
+        return $this->hasOne('App\Category');
+    }
+
+    public function parent()
+    {
+        return $this->hasOne('App\Category', 'parent_id', 'id');
+    }
+
+    public function childs()
+    {
+        return $this->hasMany('App\Category', 'id', 'parent_id');
+    }
 }

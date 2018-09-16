@@ -1,5 +1,5 @@
 @php
-    $_activePrimaryNav = 'category';
+    $_activePrimaryNav = 'product-category';
     $_activeSecondaryNav = 'create';
 @endphp
 @extends('backend.layouts.default') 
@@ -74,15 +74,23 @@
                                                 </div>
                                                 <div class="col-lg-6 form-group">
                                                     <label for="display-name-bn">Parent Category</label>
-                                                    <select class="form-control select2" placeholder="Select Category">
-                                                        <option>Man's Fashion</option>
-                                                        <option>Womens's Fashion</option>
-                                                        <option>4</option>
-                                                        <option>5</option>
+                                                    <select class="form-control select2" placeholder="Select Category"  name="parent_id">
+                                                    <option value="0">Select Category</option>
+                                                    @foreach ($categories as $c)
+                                                    <option value="{{ $c->id }}" id="p-{{ $c->id }}">{{ $c->localization['bn']['display_name'] }}</option>
+                                                    @endforeach
                                                     </select>
                                                 </div>
                                             </div>
-            
+                                            
+                                             {{--  <option value="0">Select Category</option>
+
+                    
+                                                    @foreach ($categories as $c)
+                                                    <option value="{{ $c->id }}" id="p-{{ $c->id }}">{{ $c->localization['bn']['display_name'] }}</option>
+                                                    @endforeach
+                                            </div>  --}}
+
                                             <div class="form-group">
                                                 <label for="description">Description</label>
                                                 <textarea class="form-control" id="description" rows="3" name="description"></textarea>

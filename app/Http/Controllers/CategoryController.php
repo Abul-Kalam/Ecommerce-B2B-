@@ -47,7 +47,10 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('backend.pages.category-create');
+        $categories = Category::where('parent_id', '=', 0)->get();
+        return view('backend.pages.category-create', [
+            'categories' => $categories
+        ]);
     }
 
     /**
@@ -66,27 +69,34 @@ class CategoryController extends Controller
         
         $category = new Category();
         
+        $parent_id = $request->input('parent_id') ? $request->input('parent_id') : 0;
         $slug = $request->input('slug');
 
         $slug = preg_replace('/\s+/u', '-', trim($slug));
 
         $category->slug             = $slug;
+
+        $display_name_en = $request->input('display-name-en');
         $category->localization     = [
             'en' => [
-                'display_name' => $request->input('display-name-en')
+                'display_name' => strtolower($display_name_en),
             ],
             'bn' => [
                 'display_name' => $request->input('display-name-bn')
             ]
         ];
         $category->options            = null;
+
+        $meta_title = $request->input('meta-title');
+        $meta_keywords = $request->input('meta-keywords');
+
         $category->meta             = [
-            'title' => $request->input('meta-title'),
-            'keywords' => $request->input('meta-keywords'),
+            'title' => strtolower($meta_title),
+            'keywords' => strtolower($meta_title),
             'description' => $request->input('meta-description')
         ];
         $category->description  = $request->input('description');
-
+        $category->parent_id = $parent_id;
         $category->image_url             = [
             'logo' => $request->input('logo-url'),
             'banner' => $request->input('banner-url'),
@@ -121,8 +131,11 @@ class CategoryController extends Controller
     {
         $category = Category::findOrFail($id);
 
+        $categories = Category::where('parent_id', '=', 0)->get();
+
         return view('backend.pages.category-edit', [
             'category' => $category,
+            'categories' => $categories
         ]);
     }
 
@@ -149,18 +162,25 @@ class CategoryController extends Controller
         $slug = preg_replace('/\s+/u', '-', trim($slug));
 
         $category->slug             = $slug;
+
+        $display_name_en = $request->input('display-name-en');
+
         $category->localization     = [
             'en' => [
-                'display_name' => $request->input('display-name-en')
+                'display_name' => strtolower($display_name_en),
             ],
             'bn' => [
                 'display_name' => $request->input('display-name-bn')
             ]
         ];
         $category->options            = null;
+
+        $meta_title = $request->input('meta-title');
+        $meta_keywords = $request->input('meta-keywords');
+        
         $category->meta             = [
-            'title' => $request->input('meta-title'),
-            'keywords' => $request->input('meta-keywords'),
+            'title' => strtolower($meta_title),
+            'keywords' => strtolower($meta_title),
             'description' => $request->input('meta-description')
         ];
         $category->description  = $request->input('description');

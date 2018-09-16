@@ -1,5 +1,5 @@
 @php
-    $_activePrimaryNav = 'category';
+    $_activePrimaryNav = 'product-category';
     $_activeSecondaryNav = 'create';
     $_alertType = 'success';
     $_alertMessage =  Session::get('message');
@@ -76,11 +76,11 @@
                                                 </div>
                                                 <div class="col-lg-6 form-group">
                                                     <label for="display-name-bn">Parent Category</label>
-                                                    <select class="form-control select2" placeholder="Select Category">
-                                                        <option>Man's Fashion</option>
-                                                        <option>Womens's Fashion</option>
-                                                        <option>4</option>
-                                                        <option>5</option>
+                                                    <select class="form-control select2" placeholder="Select Category" name="parent_id">
+                                                        <option value="0">Select Category</option>
+                                                        @foreach ($categories as $c)
+                                                        <option value="{{ $c->id }}" id="p-{{ $c->id }}"  {{ $c->id === $c->id ? "selected" : "" }}>{{ $c->localization['bn']['display_name'] }}</option>
+                                                        @endforeach
                                                     </select>
                                                 </div>
                                             </div>
