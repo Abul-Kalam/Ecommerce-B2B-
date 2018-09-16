@@ -14,7 +14,7 @@ class PermissionController extends Controller
      */
     public function index()
     {
-        $paginate = config('app.pagenation_count', 3);
+        $paginate = config('app.pagenation_count', 11);
         
         $permissions = Permission::orderBy('created_at', 'DESC')->paginate($paginate);
 
@@ -57,9 +57,16 @@ class PermissionController extends Controller
         ]);
 
         $permission = new Permission();
+        
+        $name = $request->input('name');
 
-        $permission->name         = $request->input('name');
-        $permission->display_name = $request->input('display-name');
+        $name = preg_replace('/\s+/u', '-', trim($name));
+
+
+        $display_name = $request->input('display-name');
+
+        $permission->name         = strtolower($name);
+        $permission->display_name = strtolower($display_name);
         $permission->description  = $request->input('description');
         $permission->save();
 
@@ -109,8 +116,13 @@ class PermissionController extends Controller
         ]);
         $permission = Permission::findOrFail($id);
         
-        $permission->name         = $request->input('name');
-        $permission->display_name = $request->input('display-name');
+        $name = $request->input('name');
+
+        $name = preg_replace('/\s+/u', '-', trim($name));
+        $display_name = $request->input('display-name');
+
+        $permission->name         = strtolower($name);
+        $permission->display_name = strtolower($display_name);
         $permission->description  = $request->input('description');
         $permission->save();
 

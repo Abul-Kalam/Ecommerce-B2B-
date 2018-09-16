@@ -1,5 +1,5 @@
 @php
-    $_activePrimaryNav = 'product-category';
+    $_activePrimaryNav = 'role';
     $_activeSecondaryNav = 'create';
     $_alertType = 'success';
     $_alertMessage =  Session::get('message');
@@ -9,7 +9,7 @@
 
 @extends('backend.layouts.default')
 
-@section('title', 'Create Category') 
+@section('title', 'Create Role') 
 
 
 @section('content')
@@ -43,14 +43,14 @@
                             <div class="box-header with-border">
                                 <h3 class="box-title">Create</h3>
                                 <div class="box-tools pull-right">
-                                    <a href="#" class="btn btn-sm btn-default">All</a>
+                                    <a href="{{ route('backend.roles.index')}}" class="btn btn-sm btn-default">All</a>
                                 </div>
                             </div>
                             <div class="box-body">
                                 <div class="row">
                                     <div class="col-lg-12 form-group {{ $errors->has('display-name') ? 'has-error' : '' }}">
                                         <label for="display-name">Display Name</label>
-                                        <input type="text" class="form-control" id="display-name" name="display-name" value="{{ $role->display_name }}">
+                                        <input type="text" class="form-control" id="display-name" name="display-name" value="{{ ucwords($role->display_name) }}">
                                         @if($errors->has('display-name'))<span id="helpBlock2" class="help-block">The Display name field is required.</span>
                                         @endif
                                     </div>
@@ -58,7 +58,7 @@
                                 <div class="row">
                                     <div class="col-lg-12 form-group {{ $errors->has('name') ? 'has-error' : '' }}">
                                         <label for="name">Name</label>
-                                        <input type="text" class="form-control" id="name" name="name" value="{{ $role->name }}">
+                                        <input type="text" class="form-control" id="name" name="name" value="{{ ucwords($role->name) }}">
                                         @if($errors->has('name'))<span id="helpBlock2" class="help-block">The Name field is required.</span>
                                         @endif
                                     </div>

@@ -18,11 +18,15 @@ class Brand extends Model
 
     protected $casts      = [
         'slug'            => 'string',
-        'title'           => 'string',
-        'images_url'            => 'array',
+        'images_url'      => 'array',
         'about'           => 'string',
         'localization'    => 'array',
         'country_id'      => 'string',
         'meta'            => 'array'
     ];
+
+    public function country()
+    {
+        return $this->belongsTo('App\Country');
+    }
 }

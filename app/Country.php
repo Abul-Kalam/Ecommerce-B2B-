@@ -29,4 +29,15 @@ class Country extends Model
     {
         return $this->belongsToMany('App\Division');
     }
+
+    public function brand()
+    {
+        return $this->belongsToMany('App\Brand');
+    }
+
+
+    // public function division()
+    // {
+    //     return $this->belongsTo('App\Division');
+    // }
 }

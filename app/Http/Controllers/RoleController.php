@@ -17,7 +17,7 @@ class RoleController extends Controller
      */
     public function index()
     {
-        $paginate = config('app.pagenation_count', 2);
+        $paginate = config('app.pagenation_count', 5);
 
         $roles = Role::orderBy('created_at', 'DESC')->paginate($paginate);
         
@@ -67,9 +67,11 @@ class RoleController extends Controller
         ]);
     
         $role = new Role();
+        $name = $request->input('name');
+        $display_name = $request->input('display-name');
 
-        $role->name         = $request->input('name');
-        $role->display_name = $request->input('display-name');
+        $role->name         = strtolower($name);
+        $role->display_name = strtolower($display_name);
         $role->description  = $request->input('description');
         $role->save();
 
@@ -126,8 +128,11 @@ class RoleController extends Controller
 
         $role = Role::findOrFail($id);
         
-        $role->name         = $request->input('name');
-        $role->display_name = $request->input('display-name');
+        $name = $request->input('name');
+        $display_name = $request->input('display-name');
+
+        $role->name         = strtolower($name);
+        $role->display_name = strtolower($display_name);
         $role->description  = $request->input('description');
         $role->save();
 

@@ -1,5 +1,5 @@
 @php
-    $_activePrimaryNav = 'product-category';
+    $_activePrimaryNav = 'role';
     $_activeSecondaryNav = 'create';
     $_alertType = null;
     $_alertMessage = null;
@@ -9,7 +9,7 @@
 
 @extends('backend.layouts.default')
 
-@section('title', 'Create Category') 
+@section('title', 'Create Role') 
 
 
 @section('content')
@@ -74,7 +74,7 @@
                                 <div class="checkbox disabled">
                                 <label>
                                     <input type="checkbox" value="{{ $permission->id }}" id="p-{{ $permission->id }}" name="permissions[]">
-                                    {{ $permission->name }}
+                                    {{ ucwords($permission->display_name) }}
                                 </label>
                                 </div>
                                 @endforeach

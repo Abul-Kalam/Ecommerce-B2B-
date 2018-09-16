@@ -71,17 +71,20 @@ class TagController extends Controller
         $slug = preg_replace('/\s+/u', '-', trim($slug));
 
         $tag->slug             = $slug;
+        $display_name_en = $request->input('display-name-en');
         $tag->localization     = [
             'en' => [
-                'display_name' => $request->input('display-name-en')
+                'display_name' => strtolower($display_name_en),
             ],
             'bn' => [
                 'display_name' => $request->input('display-name-bn')
             ]
         ];
+        $meta_title = $request->input('meta-title');
+        $meta_keywords = $request->input('meta-keywords');
         $tag->meta             = [
-            'title' => $request->input('meta-title'),
-            'keywords' => $request->input('meta-keywords'),
+            'title' => strtolower($meta_title),
+            'keywords' => strtolower($meta_title),
             'description' => $request->input('meta-description')
         ];
         $tag->description  = $request->input('description');
@@ -141,17 +144,20 @@ class TagController extends Controller
         $slug = preg_replace('/\s+/u', '-', trim($slug));
 
         $tag->slug             = $slug;
+        $display_name_en = $request->input('display-name-en');
         $tag->localization     = [
             'en' => [
-                'display_name' => $request->input('display-name-en')
+                'display_name' => strtolower($display_name_en),
             ],
             'bn' => [
                 'display_name' => $request->input('display-name-bn')
             ]
         ];
+        $meta_title = $request->input('meta-title');
+        $meta_keywords = $request->input('meta-keywords');
         $tag->meta             = [
-            'title' => $request->input('meta-title'),
-            'keywords' => $request->input('meta-keywords'),
+            'title' => strtolower($meta_title),
+            'keywords' => strtolower($meta_title),
             'description' => $request->input('meta-description')
         ];
         $tag->description  = $request->input('description');

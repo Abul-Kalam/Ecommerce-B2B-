@@ -71,18 +71,21 @@ class ShopController extends Controller
         $slug = preg_replace('/\s+/u', '-', trim($slug));
 
         $shop->slug             = $slug;
+        $display_name_en = $request->input('display-name-en');
         $shop->localization     = [
             'en' => [
-                'display_name' => $request->input('display-name-en')
+                'display_name' => strtolower($display_name_en),
             ],
             'bn' => [
                 'display_name' => $request->input('display-name-bn')
             ]
         ];
-        //$shop->options            = null;
+
+        $meta_title = $request->input('meta-title');
+        $meta_keywords = $request->input('meta-keywords');
         $shop->meta             = [
-            'title' => $request->input('meta-title'),
-            'keywords' => $request->input('meta-keywords'),
+            'title' => strtolower($meta_title),
+            'keywords' => strtolower($meta_title),
             'description' => $request->input('meta-description')
         ];
         $shop->address             = [
@@ -153,18 +156,21 @@ class ShopController extends Controller
         $slug = preg_replace('/\s+/u', '-', trim($slug));
 
         $shop->slug             = $slug;
+        $display_name_en = $request->input('display-name-en');
         $shop->localization     = [
             'en' => [
-                'display_name' => $request->input('display-name-en')
+                'display_name' => strtolower($display_name_en),
             ],
             'bn' => [
                 'display_name' => $request->input('display-name-bn')
             ]
         ];
-        //$shop->options            = null;
+
+        $meta_title = $request->input('meta-title');
+        $meta_keywords = $request->input('meta-keywords');
         $shop->meta             = [
-            'title' => $request->input('meta-title'),
-            'keywords' => $request->input('meta-keywords'),
+            'title' => strtolower($meta_title),
+            'keywords' => strtolower($meta_title),
             'description' => $request->input('meta-description')
         ];
         $shop->address             = [

@@ -20,6 +20,8 @@ Route::middleware('auth')->group(function () {
     // Route::resource('products', 'ProductController');
     Route::resource('media', 'MediaController');
     Route::resource('brands', 'BrandController');
+    Route::post('brands/search', 'BrandController@search')->name('brands.search');
+    
     Route::resource('shops', 'ShopController');
     Route::post('shops/search', 'ShopController@search')->name('shops.search');
     Route::resource('comments', 'CommentController');

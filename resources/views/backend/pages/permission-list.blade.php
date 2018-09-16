@@ -1,12 +1,12 @@
 @php
-    $_activePrimaryNav = 'product-category';
+    $_activePrimaryNav = 'permission';
     $_activeSecondaryNav = 'index';
     $_alertType = null;
     $_alertMessage = null;
 @endphp
 @extends('backend.layouts.default')
 
-@section('title', 'All Categories')
+@section('title', 'All permission')
 
 @section('content')
 
@@ -62,7 +62,7 @@
                                     @foreach ($permissions as $p)
                                     <tr>
                                         <td>{{$p->id}}</td>
-                                        <td>{{ $p->display_name }}</td>
+                                        <td>{{ ucwords( $p->display_name) }}</td>
 
                                         <td>{{ $p->name }}</td>
                                         <td>

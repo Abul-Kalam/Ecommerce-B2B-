@@ -50,7 +50,7 @@
                                             <div class="row">
                                                 <div class="col-lg-6 form-group {{  $errors->has('display-name-en') ? 'has-error' : '' }}">
                                                     <label for="display-name-en">Display Name En</label>
-                                                    <input type="text" class="form-control" id="display-name-en" name="display-name-en" value="{{  $shop->localization['en']['display_name'] }}">
+                                                    <input type="text" class="form-control" id="display-name-en" name="display-name-en" value="{{ ucwords($shop->localization['en']['display_name']) }}">
                                                     @if($errors->has('display-name-en'))
                                                     <span class="help-block">The Display Name En field is required.</span>
                                                     @endif
@@ -169,12 +169,12 @@
                                         <div class="tab-pane" id="tab_3">
                                             <div class="form-group">
                                                 <label for="meta-title">Meta Title</label>
-                                                <input type="text" class="form-control" id="meta-title" name="meta-title" value="{{ $shop->meta['title'] }}">
+                                                <input type="text" class="form-control" id="meta-title" name="meta-title" value="{{ ucwords($shop->meta['title']) }}">
                                             </div>
                                             
                                             <div class="form-group">
                                                 <label for="meta-keywords">Meta Keywords</label>
-                                                <input type="text" class="form-control" id="meta-keywords" name="meta-keywords" value="{{ $shop->meta['keywords'] }}">
+                                                <input type="text" class="form-control" id="meta-keywords" name="meta-keywords" value="{{ ucwords( $shop->meta['keywords']) }}">
                                             </div>
             
                                             <div class="form-group">

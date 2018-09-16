@@ -55,7 +55,7 @@
                                     <tr>
                                         <th style="width: 10px">#</th>
                                         <th>Name</th>
-                                        <th>Slug</th>
+                                        <th>Country</th>
                                         <th style="width: 95px; text-align: center" >Actions</th>
                                     </tr>
                                     

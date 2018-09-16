@@ -47,28 +47,19 @@
                                     </ul>
                                     <div class="tab-content">
                                         <div class="tab-pane active" id="tab_1">
-                                                <div class="row">
-                                                        <div class="col-lg-12 form-group {{  $errors->has('title') ? 'has-error' : '' }}">
-                                                            <label for="title">Title</label>
-                                                            <input type="text" class="form-control" id="title" name="title">
-                                                            @if($errors->has('title'))
-                                                            <span class="help-block">The Title field is required.</span>
-                                                            @endif
-                                                        </div>
-                                                    </div>
                                             <div class="row">
                                                 <div class="col-lg-6 form-group {{  $errors->has('display-name-en') ? 'has-error' : '' }}">
-                                                    <label for="display-name-en">Display Name English</label>
+                                                    <label for="display-name-en">Brand Name English</label>
                                                     <input type="text" class="form-control" id="display-name-en" name="display-name-en">
                                                     @if($errors->has('display-name-en'))
-                                                    <span class="help-block">The Display Name En field is required.</span>
+                                                    <span class="help-block">The Brand Name English field is required.</span>
                                                     @endif
                                                 </div>
                                                 <div class="col-lg-6 form-group {{  $errors->has('display-name-bn') ? 'has-error' : '' }}">
-                                                    <label for="display-name-bn">Display Name Bangla</label>
+                                                    <label for="display-name-bn">Brand Name Bangla</label>
                                                     <input type="text" class="form-control" id="display-name-bn" name="display-name-bn">
                                                     @if($errors->has('display-name-bn'))
-                                                    <span class="help-block">The Display Name Bn field is required.</span>
+                                                    <span class="help-block">The Brand Name Bangla field is required.</span>
                                                     @endif
                                                 </div>
                                             </div>
@@ -81,12 +72,17 @@
                                                     <span class="help-block">The Display Name slug field is required.</span>
                                                     @endif
                                                 </div>
-                                                <div class="col-lg-6 form-group {{  $errors->has('country-id') ? 'has-error' : '' }}">
-                                                    <label for="country-id">Country</label>
-                                                    <input type="number" class="form-control" id="country-id" name="country-id">
-                                                    @if($errors->has('country-id'))
-                                                    <span class="help-block">The Display Name Country field is required.</span>
-                                                    @endif
+                                                <div class="col-lg-6 form-group {{ $errors->has('country-id') ? 'has-error' : '' }}">
+                                                    <label for="countries">Country</label>
+                                                    <select class="form-control" placeholder="Select country" name="country-id">
+                                                        <option value="">Choose Country</option>
+                                                            @foreach ($countries as $c)
+                                                            <option value="{{ $c->id}}">{{ ucwords($c->localization['en']['display_name']) }}</option>
+                                                            @endforeach
+                                                            @if($errors->has('country-id'))
+                                                            <span class="help-block">The Country field is required.</span>
+                                                            @endif
+                                                    </select>
                                                 </div>
                                             </div>
             

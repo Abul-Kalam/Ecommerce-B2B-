@@ -1,5 +1,5 @@
 @php
-    $_activePrimaryNav = 'product-category';
+    $_activePrimaryNav = 'permission';
     $_activeSecondaryNav = 'create';
     $_alertType = 'success';
     $_alertMessage =  Session::get('message');
@@ -9,7 +9,7 @@
 
 @extends('backend.layouts.default')
 
-@section('title', 'Create Category') 
+@section('title', 'Create Permission') 
 
 
 @section('content')
@@ -50,7 +50,7 @@
                                 <div class="row">
                                     <div class="col-lg-12 form-group {{ $errors->has('display-name') ? 'has-error' : '' }}">
                                         <label for="display-name">Display Name</label>
-                                        <input type="text" class="form-control" id="display-name" name="display-name" value="{{  $permission->display_name }}">
+                                        <input type="text" class="form-control" id="display-name" name="display-name" value="{{  ucwords($permission->display_name) }}">
                                         @if($errors->has('display-name'))<span id="helpBlock2" class="help-block">The Display name field is required.</span>
                                         @endif
                                     </div>
@@ -58,7 +58,7 @@
                                 <div class="row">
                                     <div class="col-lg-12 form-group {{ $errors->has('name') ? 'has-error' : '' }}">
                                         <label for="name">Name</label>
-                                        <input type="text" class="form-control" id="name" name="name" value="{{ $permission->name  }}">
+                                        <input type="text" class="form-control" id="name" name="name" value="{{ $permission->name }}">
                                         @if($errors->has('name'))<span id="helpBlock2" class="help-block">The Name field is required.</span>
                                         @endif
                                     </div>

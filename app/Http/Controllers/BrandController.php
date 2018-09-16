@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Session;
 use App\Brand;
+use App\Country;
 use Illuminate\Http\Request;
 
 class BrandController extends Controller
@@ -15,17 +16,39 @@ class BrandController extends Controller
      */
     public function index()
     {
-        return "Brand";
-    }
+        $paginate = config('app.pagenation_count', 3);
+        
+        $brands = Brand::with('country')->orderBy('created_at', 'DESC')->paginate($paginate);
 
+        return view('backend.pages.brand-list' ,[
+            'brands' => $brands,
+        ]);
+    }
+    // with('country')->
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function search(Request $request)
+    {
+        $keywords = $request->input('keywords');
+
+        $brands = Brand::where('localization->en->display_name', 'like', '%'.$keywords.'%')
+        ->orWhere('localization->bn->display_name', 'like', '%'.$keywords.'%')->paginate(5);
+
+        return view('backend.pages.brand-list', [
+            'brands' => $brands
+        ]);
+    }
+
     public function create()
     {
-        return view('backend.pages.brand-create');
+        $countries = Country::get();
+        return view('backend.pages.brand-create', [
+            'countries' => $countries,
+        ]);
     }
 
     /**
@@ -49,21 +72,24 @@ class BrandController extends Controller
         $slug = preg_replace('/\s+/u', '-', trim($slug));
 
         $brand->slug             = $slug;
+
+        $display_name_en = $request->input('display-name-en');
         $brand->localization     = [
             'en' => [
-                'display_name' => $request->input('display-name-en')
+                'display_name' => strtolower($display_name_en),
             ],
             'bn' => [
                 'display_name' => $request->input('display-name-bn')
             ]
         ];
+        $meta_title = $request->input('meta-title');
+        $meta_keywords = $request->input('meta-keywords');
         $brand->meta             = [
-            'title' => $request->input('meta-title'),
-            'keywords' => $request->input('meta-keywords'),
+            'title' => strtolower($meta_title),
+            'keywords' => strtolower($meta_title),
             'description' => $request->input('meta-description')
         ];
         $brand->about  = $request->input('about');
-        $brand->title  = $request->input('title');
         $brand->country_id  = $request->input('country-id');
 
         $brand->images_url             = [
@@ -87,7 +113,7 @@ class BrandController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
@@ -99,9 +125,10 @@ class BrandController extends Controller
     public function edit($id)
     {
         $brand = Brand::findOrFail($id);
-
+        $countries = Country::get();
         return view('backend.pages.brand-edit', [
             'brand' => $brand,
+            'countries' => $countries,
         ]);
     }
 
@@ -141,7 +168,6 @@ class BrandController extends Controller
             'description' => $request->input('meta-description')
         ];
         $brand->about  = $request->input('about');
-        $brand->title  = $request->input('title');
         $brand->country_id  = $request->input('country-id');
 
         $brand->images_url             = [
