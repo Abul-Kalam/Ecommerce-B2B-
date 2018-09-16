@@ -32,7 +32,7 @@ $_activeSecondaryNav = 'create';
                         <nav class="navbar navbar-default">
                             <div class="container-fluid">
                                 <div class="navbar-header pull-right">
-                                    <button type="button" class="btn btn-sm btn-primary navbar-btn">Published</button>
+                                    <button type="button" class="btn btn-sm btn-primary navbar-btn">Publish</button>
                                 </div>
                             </div>
                         </nav>
