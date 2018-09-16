@@ -26,5 +26,9 @@ class Thana extends Model
     {
         return $this->belongsTo('App\District');
     }
+    public function shop()
+    {
+        return $this->belongsToMany('App\Shop');
+    }
     
 }

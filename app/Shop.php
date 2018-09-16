@@ -32,4 +32,21 @@ class Shop extends Model
     {
         return $this->belongsToMany('App\User')->withPivot('role');
     }
+
+    public function district()
+    {
+        return $this->belongsTo('App\District');
+    }
+    public function division()
+    {
+        return $this->belongsTo('App\Division');
+    }
+    public function country()
+    {
+        return $this->belongsTo('App\Country');
+    }
+    public function thana()
+    {
+        return $this->belongsTo('App\Thana');
+    }
 }

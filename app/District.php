@@ -31,4 +31,9 @@ class District extends Model
     {
         return $this->belongsToMany('App\Thana');
     }
+
+    public function shop()
+    {
+        return $this->belongsToMany('App\Shop');
+    }
 }

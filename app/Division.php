@@ -31,4 +31,9 @@ class Division extends Model
     {
         return $this->belongsToMany('App\District');
     }
+
+    public function shop()
+    {
+        return $this->belongsToMany('App\Shop');
+    }
 }
