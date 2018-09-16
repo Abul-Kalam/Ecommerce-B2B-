@@ -22,10 +22,23 @@ $_activeSecondaryNav = 'create';
 
 <section class="content">
 
+    <form action="">
+        
+        <div class="page">
+            
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <nav class="navbar navbar-default">
+                            <div class="container-fluid">
+                                <div class="navbar-header pull-right">
+                                    <button type="button" class="btn btn-sm btn-primary navbar-btn">Publish</button>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
 
-    <div class="page">
-        <div class="container-fluid">
-            <form action="">
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
                         <div class="form-group">
@@ -58,23 +71,23 @@ $_activeSecondaryNav = 'create';
                                                 <div class="col-lg-3">
                                                     <div class="input-group">
                                                         <input type="text" class="form-control" id="cost" name="cost"
-                                                        placeholder="Min Cost">
+                                                            placeholder="Min Cost">
                                                         <span class="input-group-addon">৳</span>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-3">
                                                     <div class="input-group">
                                                         <input type="text" class="form-control" id="regular" name="regular"
-                                                        placeholder="Regular">
+                                                            placeholder="Regular">
                                                         <span class="input-group-addon">৳</span>
-                                                    </div>  
+                                                    </div>
                                                 </div>
                                                 <div class="col-lg-3">
                                                     <div class="input-group">
                                                         <input type="text" class="form-control" id="sale" name="sale"
                                                             placeholder="Sale">
                                                         <span class="input-group-addon">৳</span>
-                                                    </div>  
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="row from-group">
@@ -114,7 +127,7 @@ $_activeSecondaryNav = 'create';
                                                     </ul>
                                                 </div>
                                             </div>
-                                            
+
                                         </div>
                                         <!-- /.tab-pane -->
                                         <div class="tab-pane" id="tab_2">
@@ -285,23 +298,23 @@ $_activeSecondaryNav = 'create';
                                                         <div class="col-lg-3">
                                                             <div class="input-group">
                                                                 <input type="text" class="form-control" id="cost" name="cost"
-                                                                placeholder="Min Cost">
+                                                                    placeholder="Min Cost">
                                                                 <span class="input-group-addon">৳</span>
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-3">
                                                             <div class="input-group">
-                                                                <input type="text" class="form-control" id="regular" name="regular"
-                                                                placeholder="Regular">
+                                                                <input type="text" class="form-control" id="regular"
+                                                                    name="regular" placeholder="Regular">
                                                                 <span class="input-group-addon">৳</span>
-                                                            </div>  
+                                                            </div>
                                                         </div>
                                                         <div class="col-lg-3">
                                                             <div class="input-group">
                                                                 <input type="text" class="form-control" id="sale" name="sale"
                                                                     placeholder="Sale">
                                                                 <span class="input-group-addon">৳</span>
-                                                            </div>  
+                                                            </div>
                                                         </div>
                                                     </div>
 
@@ -330,7 +343,7 @@ $_activeSecondaryNav = 'create';
                                                     </div>
                                                 </div>
                                             </div>
-                                            
+
                                         </li>
                                     </ul>
                                     <!-- /.box-body -->
@@ -348,8 +361,7 @@ $_activeSecondaryNav = 'create';
                             <!-- /.box-header -->
                             <div class="box-body">
                                 <div class="input-group">
-                                    <select class="form-control select2" style="width: 100%;"
-                                        tabindex="-1" aria-hidden="true">
+                                    <select class="form-control select2" style="width: 100%;" tabindex="-1" aria-hidden="true">
                                         <option>Choose product brand</option>
                                         <option>Ponds</option>
                                         <option>Nivea</option>
@@ -362,7 +374,7 @@ $_activeSecondaryNav = 'create';
                                     </span>
                                 </div>
                                 {{-- ======================./Brand================ --}}
-                                
+
                                 <br>
 
                                 <div class="form-group">
@@ -520,11 +532,25 @@ $_activeSecondaryNav = 'create';
                                 </ul>
                             </div>
                         </div>
+                        {{-- =====================./Product-iamge================= --}}
+
+                        <div class="box box-solid">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Video</h3>
+                            </div>
+                            <div class="box-body">
+                                <div class="form-group">
+                                    <label for="embed_url">Youtube embed url</label>
+                                    <input type="text" class="form-control" id="embed_url">
+                                </div>
+                            </div>
+                        </div>
+                        {{-- =====================./Video-URL================= --}}
                     </div>
                 </div>
-            </form>
+            </div>
         </div>
-    </div>
+    </form>
 </section>
 
 @endsection

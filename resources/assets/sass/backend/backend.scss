@@ -369,7 +369,13 @@ button{
     width: 100px;
     height: 100px;
   }
+  &:hover{
+    .btn-r-close{
+      display: block;
+    }
+  }
   .btn-r-close{
+    display: none;
     position: absolute;
     border-radius: 0;
     top: 0;

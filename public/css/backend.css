@@ -7566,7 +7566,12 @@ button {
   height: 100px;
 }
 
+.img-box:hover .btn-r-close {
+  display: block;
+}
+
 .img-box .btn-r-close {
+  display: none;
   position: absolute;
   border-radius: 0;
   top: 0;
