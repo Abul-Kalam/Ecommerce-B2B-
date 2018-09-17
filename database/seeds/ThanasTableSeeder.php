@@ -444,7 +444,698 @@ class ThanasTableSeeder extends Seeder
                 ], JSON_UNESCAPED_UNICODE),
                 'district_id'  => 1,
             ],
+
+            //dhaka district thana  
             
+            [
+                'id'           => 49,
+                'slug'         => 'faridpur-sadar',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'faridpur sadar'],
+                    'bn'       => ['display_name' => 'ফরিদপুর সদর']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 2,
+            ],
+            [
+                'id'           => 50,
+                'slug'         => 'bhanga',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'bhanga'],
+                    'bn'       => ['display_name' => 'ভাঙ্গা']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 2,
+            ],
+            [
+                'id'           => 51,
+                'slug'         => 'madhukhali',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'madhukhali'],
+                    'bn'       => ['display_name' => 'মধুখালী']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 2,
+            ],
+            [
+                'id'           => 52,
+                'slug'         => 'sadarpur',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'sadarpur'],
+                    'bn'       => ['display_name' => 'সদরপুর']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 2,
+            ],
+            [
+                'id'           => 53,
+                'slug'         => 'alfadanga',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'alfadanga'],
+                    'bn'       => ['display_name' => 'আলফাডাঙ্গা']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 2,
+            ],
+            [
+                'id'           => 54,
+                'slug'         => 'boalmari',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'boalmari'],
+                    'bn'       => ['display_name' => 'বোয়ালমারী']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 2,
+            ],
+            [
+                'id'           => 55,
+                'slug'         => 'charbhadrasan',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'charbhadrasan'],
+                    'bn'       => ['display_name' => 'চরভদ্রাসন']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 2,
+            ],
+            [
+                'id'           => 56,
+                'slug'         => 'nagarkanda',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'nagarkanda'],
+                    'bn'       => ['display_name' => 'নগরকান্দা']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 2,
+            ],
+            [
+                'id'           => 57,
+                'slug'         => 'shaltha',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'shaltha'],
+                    'bn'       => ['display_name' => 'সালথা']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 2,
+            ],
+
+            //faridpur district thana  
+
+            [
+                'id'           => 58,
+                'slug'         => 'gazipur-sadar',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'gazipur sadar'],
+                    'bn'       => ['display_name' => 'গাজীপুর সদর']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 3,
+            ],
+            [
+                'id'           => 59,
+                'slug'         => 'kapasia',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'kapasia'],
+                    'bn'       => ['display_name' => 'কাপাসিয়া']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 3,
+            ],
+            [
+                'id'           => 60,
+                'slug'         => 'tongi-town',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'tongi town'],
+                    'bn'       => ['display_name' => 'টঙ্গী শহর']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 3,
+            ],
+            [
+                'id'           => 61,
+                'slug'         => 'sripur',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'sripur'],
+                    'bn'       => ['display_name' => 'শ্রীপুর']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 3,
+            ],
+            [
+                'id'           => 62,
+                'slug'         => 'kaliganj',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'kaliganj'],
+                    'bn'       => ['display_name' => 'কালিগঞ্জ']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 3,
+            ],
+            [
+                'id'           => 63,
+                'slug'         => 'kaliakior',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'kaliakior'],
+                    'bn'       => ['display_name' => 'কালিয়াকৈর']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 3,
+            ],
+             //Gazipur district thana  
+
+             [
+                'id'           => 64,
+                'slug'         => 'gopalganj-sadar',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'gopalganj sadar'],
+                    'bn'       => ['display_name' => 'গোপালগঞ্জ সদর']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 4,
+            ],
+            [
+                'id'           => 65,
+                'slug'         => 'tungipara',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'tungipara'],
+                    'bn'       => ['display_name' => 'টুংগীপাড়া']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 4,
+            ],
+            [
+                'id'           => 66,
+                'slug'         => 'kotalipara',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'kotalipara'],
+                    'bn'       => ['display_name' => 'কোটালীপাড়া']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 4,
+            ],
+            [
+                'id'           => 67,
+                'slug'         => 'kashiani',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'kashiani'],
+                    'bn'       => ['display_name' => 'কাশিয়ানী']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 4,
+            ],
+            [
+                'id'           => 68,
+                'slug'         => 'muksudpur',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'muksudpur'],
+                    'bn'       => ['display_name' => 'মুকসুদপুর']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 4,
+            ],
+
+            //Gopalganj district thana  
+            [
+                'id'           => 69,
+                'slug'         => 'austagram ',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'austagram '],
+                    'bn'       => ['display_name' => 'অষ্টগ্রাম']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 5,
+            ],
+            [
+                'id'           => 70,
+                'slug'         => 'bajitpur',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'bajitpur'],
+                    'bn'       => ['display_name' => 'বাজিতপুর']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 5,
+            ],
+            [
+                'id'           => 71,
+                'slug'         => 'bhairab',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'bhairab'],
+                    'bn'       => ['display_name' => 'ভৈরববাজার']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 5,
+            ],
+            [
+                'id'           => 72,
+                'slug'         => 'hossainpur',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'hossainpur'],
+                    'bn'       => ['display_name' => 'হোসেনপুর']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 5,
+            ],
+            [
+                'id'           => 73,
+                'slug'         => 'itna',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'itna'],
+                    'bn'       => ['display_name' => 'ইটনা']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 5,
+            ],
+            [
+                'id'           => 74,
+                'slug'         => 'karimganj',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'karimganj'],
+                    'bn'       => ['display_name' => 'করিমগঞ্জ']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 5,
+            ],
+            [
+                'id'           => 75,
+                'slug'         => 'katiadi',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'katiadi'],
+                    'bn'       => ['display_name' => 'কটিয়াদি']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 5,
+            ],
+            [
+                'id'           => 76,
+                'slug'         => 'kishoreganj-sadar',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'kishoreganj sadar'],
+                    'bn'       => ['display_name' => 'কিশোরগঞ্জ সদর']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 5,
+            ],
+            [
+                'id'           => 77,
+                'slug'         => 'kuliarchar',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'kuliarchar'],
+                    'bn'       => ['display_name' => 'কুলিয়ারচর']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 5,
+            ],
+            [
+                'id'           => 78,
+                'slug'         => 'mithamain',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'mithamain'],
+                    'bn'       => ['display_name' => 'মিটামইন']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 5,
+            ],
+            [
+                'id'           => 79,
+                'slug'         => 'nikli',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'nikli'],
+                    'bn'       => ['display_name' => 'নিকলি']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 5,
+            ],
+            [
+                'id'           => 80,
+                'slug'         => 'pakundia',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'pakundia'],
+                    'bn'       => ['display_name' => 'পাকুন্দিয়া']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 5,
+            ],
+            [
+                'id'           => 81,
+                'slug'         => 'tarail',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'tarail'],
+                    'bn'       => ['display_name' => 'নিকলি']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 5,
+            ],
+            //kishoreganj district all thanas
+            [
+                'id'           => 82,
+                'slug'         => 'madaripur-sadar',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'madaripur-sadar'],
+                    'bn'       => ['display_name' => 'মাদারীপুর সদর']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 6,
+            ],
+            [
+                'id'           => 83,
+                'slug'         => 'shibchar',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'shibchar'],
+                    'bn'       => ['display_name' => 'শিবচর']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 6,
+            ],
+            [
+                'id'           => 84,
+                'slug'         => 'kalkini',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'kalkini'],
+                    'bn'       => ['display_name' => 'কালকিনি']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 6,
+            ],
+            [
+                'id'           => 85,
+                'slug'         => 'rajoir',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'rajoir'],
+                    'bn'       => ['display_name' => 'রাজৈর']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 6,
+            ],
+            //madaripur district all thanas
+            [
+                'id'           => 86,
+                'slug'         => 'manikganj-sadar',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'manikganj sadar'],
+                    'bn'       => ['display_name' => 'মানিকগঞ্জ সদর']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 7,
+            ],
+            [
+                'id'           => 87,
+                'slug'         => 'singair',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'singair'],
+                    'bn'       => ['display_name' => 'সিংগাইর']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 7,
+            ],
+            [
+                'id'           => 88,
+                'slug'         => 'daulatpur',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'daulatpur'],
+                    'bn'       => ['display_name' => 'দৌলতপুর']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 7,
+            ],
+            [
+                'id'           => 89,
+                'slug'         => 'saturia',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'saturia'],
+                    'bn'       => ['display_name' => 'সাটুরিয়া']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 7,
+            ],
+            [
+                'id'           => 90,
+                'slug'         => 'ghior',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'ghior'],
+                    'bn'       => ['display_name' => 'গিওর']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 7,
+            ],
+            [
+                'id'           => 91,
+                'slug'         => 'shivalaya',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'shivalaya'],
+                    'bn'       => ['display_name' => 'শিবালয়']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 7,
+            ],
+            [
+                'id'           => 92,
+                'slug'         => 'harirampur',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'harirampur'],
+                    'bn'       => ['display_name' => 'হরিরামপুর']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 7,
+            ],
+            //manikgonj district all thanas
+            [
+                'id'           => 93,
+                'slug'         => 'munshiganj-sadar',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'munshiganj sadar'],
+                    'bn'       => ['display_name' => 'মুন্সিগঞ্জ সদর']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 8,
+            ],
+            [
+                'id'           => 94,
+                'slug'         => 'sreenagar',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'sreenagar'],
+                    'bn'       => ['display_name' => 'শ্রীনগর']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 8,
+            ],
+            [
+                'id'           => 95,
+                'slug'         => 'lohajang',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'lohajang'],
+                    'bn'       => ['display_name' => 'লৌহজং']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 8,
+            ],
+            [
+                'id'           => 96,
+                'slug'         => 'sirajdikhan',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'sirajdikhan'],
+                    'bn'       => ['display_name' => 'সিরাজদিখান']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 8,
+            ],
+            [
+                'id'           => 97,
+                'slug'         => 'gazaria',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'gazaria'],
+                    'bn'       => ['display_name' => 'গজারিয়া']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 8,
+            ],
+            [
+                'id'           => 98,
+                'slug'         => 'tongibari',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'tongibari'],
+                    'bn'       => ['display_name' => 'টঙ্গিবাড়ী']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 8,
+            ],
+            //Munshiganj district all thanas
+            [
+                'id'           => 99,
+                'slug'         => 'narayanganj-sadar',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'narayanganj sadar'],
+                    'bn'       => ['display_name' => 'নারায়ণগঞ্জ সদর']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 9,
+            ],
+            [
+                'id'           => 100,
+                'slug'         => 'araihazar',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'araihazar'],
+                    'bn'       => ['display_name' => 'আড়াইহাজার']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 9,
+            ],
+            [
+                'id'           => 101,
+                'slug'         => 'rupganj',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'rupganj'],
+                    'bn'       => ['display_name' => 'রূপগঞ্জ']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 9,
+            ],
+            [
+                'id'           => 102,
+                'slug'         => 'bandar',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'bandar'],
+                    'bn'       => ['display_name' => 'বন্দর']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 9,
+            ],
+            [
+                'id'           => 103,
+                'slug'         => 'sonargaon',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'sonargaon'],
+                    'bn'       => ['display_name' => 'সোনারগাঁও']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 9,
+            ],
+            [
+                'id'           => 104,
+                'slug'         => 'siddhirganj',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'siddhirganj'],
+                    'bn'       => ['display_name' => 'সিদ্ধিরগঞ্জ']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 9,
+            ],
+            [
+                'id'           => 105,
+                'slug'         => 'fatullah',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'fatullah'],
+                    'bn'       => ['display_name' => 'ফতুল্লা']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 9,
+            ],
+            //Narayanganj district all thanas
+            [
+                'id'           => 106,
+                'slug'         => 'narsingdi-sadar',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'narsingdi sadar'],
+                    'bn'       => ['display_name' => 'নরসিংদী সদর']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 10,
+            ],
+            [
+                'id'           => 107,
+                'slug'         => 'monohardi',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'monohardi'],
+                    'bn'       => ['display_name' => 'মনোহরদি']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 10,
+            ],
+            [
+                'id'           => 108,
+                'slug'         => 'belabo',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'belabo'],
+                    'bn'       => ['display_name' => 'বেলাব']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 10,
+            ],
+            [
+                'id'           => 109,
+                'slug'         => 'raipura',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'raipura'],
+                    'bn'       => ['display_name' => 'রায়পুরা']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 10,
+            ],
+            [
+                'id'           => 110,
+                'slug'         => 'shibpur',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'shibpur'],
+                    'bn'       => ['display_name' => 'শিবপুর']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 10,
+            ],
+            [
+                'id'           => 111,
+                'slug'         => 'palash',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'palash'],
+                    'bn'       => ['display_name' => 'পলাশ']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 10,
+            ],
+            //Narsingdi District all thanas
+            [
+                'id'           => 112,
+                'slug'         => 'rajbari sadar',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'rajbari sadar'],
+                    'bn'       => ['display_name' => 'রাজবাড়ী সদর']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 11,
+            ],
+            [
+                'id'           => 113,
+                'slug'         => 'baliakandi',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'baliakandi'],
+                    'bn'       => ['display_name' => 'বালিয়াকান্দি']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 11,
+            ],
+            [
+                'id'           => 114,
+                'slug'         => 'kalukhali',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'kalukhali'],
+                    'bn'       => ['display_name' => 'কালুখালী']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 11,
+            ],
+            [
+                'id'           => 115,
+                'slug'         => 'goalandaghat',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'goalandaghat'],
+                    'bn'       => ['display_name' => 'গোয়ালন্দঘাট']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 11,
+            ],
+            [
+                'id'           => 116,
+                'slug'         => 'pangsha',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'pangsha'],
+                    'bn'       => ['display_name' => 'পাংশা']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 11,
+            ],
+            //rajbari district all thanas
+            [
+                'id'           => 117,
+                'slug'         => 'shariatpur-sadar',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'shariatpur sadar'],
+                    'bn'       => ['display_name' => 'শরীয়তপুর সদর']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 12,
+            ],
+            [
+                'id'           => 118,
+                'slug'         => 'bhedarganj',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'bhedarganj'],
+                    'bn'       => ['display_name' => 'ভেদরগঞ্জ']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 12,
+            ],
+            [
+                'id'           => 119,
+                'slug'         => 'damudya',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'damudya'],
+                    'bn'       => ['display_name' => 'ডামুড্যা']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 12,
+            ],
+            [
+                'id'           => 120,
+                'slug'         => 'gosairhat',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'gosairhat'],
+                    'bn'       => ['display_name' => 'গোসাইরহাট']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 12,
+            ],
+            [
+                'id'           => 121,
+                'slug'         => 'naria',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'naria'],
+                    'bn'       => ['display_name' => 'নড়িয়া']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 12,
+            ],
+            [
+                'id'           => 122,
+                'slug'         => 'shakhipur',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'shakhipur'],
+                    'bn'       => ['display_name' => 'শখিপুর']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 12,
+            ],
+            [
+                'id'           => 123,
+                'slug'         => 'zanjira',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'zanjira'],
+                    'bn'       => ['display_name' => 'জাঁজিরা']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 12,
+            ],
         ]);
     }
 }
