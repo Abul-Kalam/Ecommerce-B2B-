@@ -49,17 +49,17 @@
                                         <div class="tab-pane active" id="tab_1">
                                             <div class="row">
                                                 <div class="col-lg-6 form-group {{  $errors->has('display-name-en') ? 'has-error' : '' }}">
-                                                    <label for="display-name-en">Display Name En</label>
+                                                    <label for="display-name-en">Display Name (english)</label>
                                                     <input type="text" class="form-control" id="display-name-en" name="display-name-en" value="{{ ucwords($shop->localization['en']['display_name']) }}">
                                                     @if($errors->has('display-name-en'))
-                                                    <span class="help-block">The Display Name En field is required.</span>
+                                                    <span class="help-block">The Display Name English field is required.</span>
                                                     @endif
                                                 </div>
                                                 <div class="col-lg-6 form-group {{  $errors->has('display-name-bn') ? 'has-error' : '' }}">
-                                                    <label for="display-name-bn">Display Name Bn</label>
+                                                    <label for="display-name-bn">Display Name (bangla)</label>
                                                     <input type="text" class="form-control" id="display-name-bn" name="display-name-bn" value="{{  $shop->localization['bn']['display_name'] }}">
                                                     @if($errors->has('display-name-en'))
-                                                    <span class="help-block">The Display Name Bn field is required.</span>
+                                                    <span class="help-block">The Display Name Bangla field is required.</span>
                                                     @endif
                                                 </div>
                                             </div>
@@ -108,34 +108,45 @@
                                             </div>
 
                                             <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="form-group">
+                                                        <label>Country</label>
+                                                        <select class="form-control" placeholder="Select country" name="country-id">
+                                                                @foreach ($countries as $c)
+                                                                <option value="{{ $c->id}}" {{ $c->id ==$shop->address['country_id'] ? 'selected' : '' }}>{{ ucwords($c->localization['en']['display_name']) }}</option>
+                                                                @endforeach
+                                                                @if($errors->has('country-id'))
+                                                                <span class="help-block">The Countrys field is required.</span>
+                                                                @endif
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
                                                         <label>District</label>
-                                                        <select class="form-control" name="district">
-                                                            <option value="narsingdi">Narsingdi</option>
-                                                            <option value="tangail">Tangail</option>
-                                                            <option value="patuakhali">Patuakhali</option>
-                                                            <option value="comilla">Comilla</option>
-                                                            <option value="mymensingh">Mymensingh</option>
-                                                            <option value="rajshahi">Rajshahi</option>
-                                                            <option value="sylhet">Sylhet</option>
-                                                            <option value="rangpur">Rangpur</option>
+                                                        <select class="form-control" placeholder="Select district" name="district-id">
+                                                                @foreach ($districts as $d)
+                                                                <option value="{{ $d->id}}" {{ $d->id ==$shop->address['district_id'] ? 'selected' : '' }}>{{ ucwords($d->localization['en']['display_name']) }}</option>
+                                                                @endforeach
+                                                                @if($errors->has('country-id'))
+                                                                <span class="help-block">The Districts field is required.</span>
+                                                                @endif
                                                         </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
                                                         <label>Division</label>
-                                                        <select class="form-control">
-                                                            <option value="barishal">Barishal</option>
-                                                            <option value="chattagram">Chattagram</option>
-                                                            <option value="dhaka">Dhaka</option>
-                                                            <option value="khulna">Khulna</option>
-                                                            <option value="mymensingh">Mymensingh</option>
-                                                            <option value="rajshahi">Rajshahi</option>
-                                                            <option value="sylhet">Sylhet</option>
-                                                            <option value="rangpur">Rangpur</option>
-                                                        </select>
+                                                            <select class="form-control" placeholder="Select division" name="division-id">
+                                                                @foreach ($divisions as $d)
+                                                                <option value="{{ $d->id}}" {{ $d->id ==$shop->address['division_id'] ? 'selected' : '' }}>{{ ucwords($d->localization['en']['display_name']) }}</option>
+                                                                @endforeach
+                                                                @if($errors->has('country-id'))
+                                                                <span class="help-block">The Division field is required.</span>
+                                                                @endif
+                                                            </select>
                                                     </div>
                                                 </div>
                                             </div>
@@ -143,15 +154,13 @@
                                                     <div class="col-lg-6">
                                                         <div class="form-group">
                                                             <label>Thana</label>
-                                                            <select class="form-control" name="thana">
-                                                                <option value="narsingdi">Narsingdi</option>
-                                                                <option value="tangail">Tangail</option>
-                                                                <option value="patuakhali">Patuakhali</option>
-                                                                <option value="comilla">Comilla</option>
-                                                                <option value="mymensingh">Mymensingh</option>
-                                                                <option value="rajshahi">Rajshahi</option>
-                                                                <option value="sylhet">Sylhet</option>
-                                                                <option value="rangpur">Rangpur</option>
+                                                            <select class="form-control" placeholder="Select thana" name="thana-id">
+                                                                @foreach ($thanas as $t)
+                                                                <option value="{{ $t->id}}" {{ $t->id ==$shop->address['thana_id'] ? 'selected' : '' }}>{{ ucwords($t->localization['en']['display_name']) }}</option>
+                                                                @endforeach
+                                                                @if($errors->has('country-id'))
+                                                                <span class="help-block">The Thana field is required.</span>
+                                                                @endif
                                                             </select>
                                                         </div>
                                                     </div>

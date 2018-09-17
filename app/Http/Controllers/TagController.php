@@ -84,7 +84,7 @@ class TagController extends Controller
         $meta_keywords = $request->input('meta-keywords');
         $tag->meta             = [
             'title' => strtolower($meta_title),
-            'keywords' => strtolower($meta_title),
+            'keywords' => strtolower($meta_keywords),
             'description' => $request->input('meta-description')
         ];
         $tag->description  = $request->input('description');
@@ -157,7 +157,7 @@ class TagController extends Controller
         $meta_keywords = $request->input('meta-keywords');
         $tag->meta             = [
             'title' => strtolower($meta_title),
-            'keywords' => strtolower($meta_title),
+            'keywords' => strtolower($meta_keywords),
             'description' => $request->input('meta-description')
         ];
         $tag->description  = $request->input('description');

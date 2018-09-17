@@ -54,23 +54,23 @@
                                                     <label for="iso2">Iso2</label>
                                                     <input type="text" class="form-control" id="iso2" name="iso2" value="{{ $country->iso2 }}">
                                                     @if($errors->has('iso2'))
-                                                    <span class="help-block">The Display Name Iso2 field is required.</span>
+                                                    <span class="help-block">The Iso2 field is required.</span>
                                                     @endif
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col-lg-6 form-group {{  $errors->has('display-name-en') ? 'has-error' : '' }}">
-                                                    <label for="display-name-en">Display Name English</label>
+                                                    <label for="display-name-en">Display Name (english)</label>
                                                     <input type="text" class="form-control" id="display-name-en" name="display-name-en" value="{{ $country->localization['en']['display_name'] }}">
                                                     @if($errors->has('display-name-en'))
-                                                    <span class="help-block">The Display Name En field is required.</span>
+                                                    <span class="help-block">The Display Name English field is required.</span>
                                                     @endif
                                                 </div>
                                                 <div class="col-lg-6 form-group {{  $errors->has('display-name-bn') ? 'has-error' : '' }}">
-                                                    <label for="display-name-bn">Display Name Bangla</label>
+                                                    <label for="display-name-bn">Display Name (bangla)</label>
                                                     <input type="text" class="form-control" id="display-name-bn" name="display-name-bn" value="{{ $country->localization['bn']['display_name'] }}">
                                                     @if($errors->has('display-name-bn'))
-                                                    <span class="help-block">The Display Name Bn field is required.</span>
+                                                    <span class="help-block">The Display Name Bangla field is required.</span>
                                                     @endif
                                                 </div>
                                             </div>

@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Session;
 use Carbon\Carbon;
+use App\Thana;
+use App\Country;
+use App\Division;
+use App\District;
 use App\User;
 use App\Role;
 use Illuminate\Support\Facades\Hash;
@@ -54,7 +58,15 @@ class UserController extends Controller
     public function create()
     {   
         $roles = Role::get();
+        $countries = Country::get();
+        $divisions = Division::get();
+        $districts = District::get();
+        $thanas = Thana::get();
         return view('backend.pages.user-create', [
+            'countries' => $countries,
+            'districts' => $districts,
+            'divisions' => $divisions,
+            'thanas' => $thanas,
             'roles' => $roles
         ]);
     }
@@ -95,9 +107,9 @@ class UserController extends Controller
             'line_1' => $request->input('billing-address-line-1'),
             'line_2' => $request->input('billing-address-line-2'),
             'zip' => $request->input('billing-zip'),
-            'district' => $request->input('billing-district'),
-            'division' => $request->input('billing-division'),
-            'thana' => $request->input('billing-thana'),
+            'district' => $request->input('billing-district-id'),
+            'division' => $request->input('billing-division-id'),
+            'thana' => $request->input('billing-thana-id'),
         ];
 
         $shipping_address_line_1 = $request->input('shipping-address-line-1') ? $request->input('shipping-address-line-1') : 
@@ -110,13 +122,13 @@ class UserController extends Controller
         $request->input('billing-zip');
 
         $shipping_district = $request->input('shipping-district') ? $request->input('shipping-district') : 
-        $request->input('billing-district');
+        $request->input('billing-district-id');
 
         $shipping_division = $request->input('shipping-division') ? $request->input('shipping-division') : 
-        $request->input('billing-division');
+        $request->input('billing-division-id');
 
         $shipping_thana = $request->input('shipping-thana') ? $request->input('shipping-thana') : 
-        $request->input('billing-thana');
+        $request->input('billing-thana-id');
 
 
         $user->shipping_address = [

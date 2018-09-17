@@ -1,5 +1,5 @@
 @php
-    $_activePrimaryNav = 'product-category';
+    $_activePrimaryNav = 'tag';
     $_activeSecondaryNav = 'index';
     $_alertType = null;
     $_alertMessage = null;

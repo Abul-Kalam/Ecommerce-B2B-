@@ -40,11 +40,11 @@
                             <div class="box-body">
                                 <div class="row">
                                     <div class="col-lg-6 form-group">
-                                        <label for="display_name_en">Display Name En</label>
+                                        <label for="display_name_en">Display Name (english)</label>
                                         <input type="text" class="form-control" id="display_name_en" name="display-name-en">
                                     </div>
                                     <div class="col-lg-6 form-group">
-                                        <label for="display-name-bn">Display Name Bn</label>
+                                        <label for="display-name-bn">Display Name (bangla)</label>
                                         <input type="text" class="form-control" id="display-name-bn" name="display-name-bn">
                                     </div>
                                 </div>

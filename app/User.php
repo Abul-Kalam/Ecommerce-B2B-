@@ -49,4 +49,21 @@ class User extends Authenticatable
         return $this->belongsToMany('App\User');
     }
 
+    public function district()
+    {
+        return $this->belongsTo('App\District');
+    }
+    public function division()
+    {
+        return $this->belongsTo('App\Division');
+    }
+    public function country()
+    {
+        return $this->belongsTo('App\Country');
+    }
+    public function thana()
+    {
+        return $this->belongsTo('App\Thana');
+    }
+
 }

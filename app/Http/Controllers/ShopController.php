@@ -139,11 +139,18 @@ class ShopController extends Controller
      */
     public function edit($id)
     {
-        $shop = shop::findOrFail($id); 
-
+        $shop = shop::findOrFail($id);
+        $countries = Country::get();
+        $divisions = Division::get();
+        $districts = District::get();
+        $thanas = Thana::get();
         
         return view('backend.pages.shop-edit', [
             'shop' => $shop,
+            'countries' => $countries,
+            'districts' => $districts,
+            'divisions' => $divisions,
+            'thanas' => $thanas,
         ]);
     }
 
@@ -191,13 +198,16 @@ class ShopController extends Controller
             'line_1' => $request->input('address-line-1'),
             'line_2' => $request->input('address-line-2'),
             'zip' => $request->input('zip'),
-            'district' => $request->input('district_id'),
-            'division' => $request->input('division'),
-            'thana' => $request->input('thana')
+            'country_id' => $request->input('country-id'),
+            'district_id' => $request->input('district-id'),
+            'division_id' => $request->input('division-id'),
+            'thana_id' => $request->input('thana-id'),
         ];
         $shop->status           =  $status;
         $shop->description  = $request->input('description');
         $shop->images_url  = $request->input('image-url');
+        
+        $shop->save();
         
         $shop->save();
 
