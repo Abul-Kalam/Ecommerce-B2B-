@@ -1,11 +1,11 @@
 @php
 $_activePrimaryNav = 'User';
-$_activeSecondaryNav = 'create';
+$_activeSecondaryNav = 'edit';
 $_alertType = 'success';
     $_alertMessage =  Session::get('message');
 @endphp
 @extends('backend.layouts.default')
-@section('title', 'Create User')
+@section('title', 'Edit User')
 @section('content')
 
 <section class="content-header">
@@ -146,30 +146,26 @@ $_alertType = 'success';
                                                         <div class="col-lg-6">
                                                             <div class="form-group">
                                                                 <label>District</label>
-                                                                <select class="form-control" name="billing-district">
-                                                                    <option value="narsingdi">Narsingdi</option>
-                                                                    <option value="tangail">Tangail</option>
-                                                                    <option value="patuakhali">Patuakhali</option>
-                                                                    <option value="comilla">Comilla</option>
-                                                                    <option value="mymensingh">Mymensingh</option>
-                                                                    <option value="rajshahi">Rajshahi</option>
-                                                                    <option value="sylhet">Sylhet</option>
-                                                                    <option value="rangpur">Rangpur</option>
+                                                                <select class="form-control" placeholder="Select district" name="billing-district-id">
+                                                                    @foreach ($districts as $d)
+                                                                    <option value="{{ $d->id}}" {{ $d->id ==$user->billing_address['district_id'] ? 'selected' : '' }}>{{ ucwords($d->localization['en']['display_name']) }}</option>
+                                                                    @endforeach
+                                                                    @if($errors->has('country-id'))
+                                                                    <span class="help-block">The Districts field is required.</span>
+                                                                    @endif
                                                                 </select>
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-6">
                                                             <div class="form-group">
                                                                 <label>Division</label>
-                                                                <select class="form-control" name="billing-division">
-                                                                    <option value="barishal">Barishal</option>
-                                                                    <option value="chattagram">Chattagram</option>
-                                                                    <option value="dhaka">Dhaka</option>
-                                                                    <option value="khulna">Khulna</option>
-                                                                    <option value="mymensingh">Mymensingh</option>
-                                                                    <option value="rajshahi">Rajshahi</option>
-                                                                    <option value="sylhet">Sylhet</option>
-                                                                    <option value="rangpur">Rangpur</option>
+                                                                <select class="form-control" placeholder="Select division" name="billing-division-id">
+                                                                    @foreach ($divisions as $d)
+                                                                    <option value="{{ $d->id}}" {{ $d->id ==$user->billing_address['division_id'] ? 'selected' : '' }}>{{ ucwords($d->localization['en']['display_name']) }}</option>
+                                                                    @endforeach
+                                                                    @if($errors->has('country-id'))
+                                                                    <span class="help-block">The Divisions field is required.</span>
+                                                                    @endif
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -178,15 +174,13 @@ $_alertType = 'success';
                                                         <div class="col-lg-6">
                                                             <div class="form-group">
                                                                 <label>Thana</label>
-                                                                <select class="form-control" name="billing-thana">
-                                                                    <option value="narsingdi">Narsingdi</option>
-                                                                    <option value="tangail">Tangail</option>
-                                                                    <option value="patuakhali">Patuakhali</option>
-                                                                    <option value="comilla">Comilla</option>
-                                                                    <option value="mymensingh">Mymensingh</option>
-                                                                    <option value="rajshahi">Rajshahi</option>
-                                                                    <option value="sylhet">Sylhet</option>
-                                                                    <option value="rangpur">Rangpur</option>
+                                                                <select class="form-control" placeholder="Select thana" name="billing-thana-id">
+                                                                    @foreach ($thanas as $d)
+                                                                    <option value="{{ $d->id}}" {{ $d->id ==$user->billing_address['thana_id'] ? 'selected' : '' }}>{{ ucwords($d->localization['en']['display_name']) }}</option>
+                                                                    @endforeach
+                                                                    @if($errors->has('country-id'))
+                                                                    <span class="help-block">The Thanas field is required.</span>
+                                                                    @endif
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -216,30 +210,26 @@ $_alertType = 'success';
                                                         <div class="col-lg-6">
                                                             <div class="form-group">
                                                                 <label>District</label>
-                                                                <select class="form-control" name="shipping-district">
-                                                                    <option value="narsingdi">Narsingdi</option>
-                                                                    <option value="tangail">Tangail</option>
-                                                                    <option value="patuakhali">Patuakhali</option>
-                                                                    <option value="comilla">Comilla</option>
-                                                                    <option value="mymensingh">Mymensingh</option>
-                                                                    <option value="rajshahi">Rajshahi</option>
-                                                                    <option value="sylhet">Sylhet</option>
-                                                                    <option value="rangpur">Rangpur</option>
+                                                                <select class="form-control" placeholder="Select district" name="shipping-district-id">
+                                                                    @foreach ($districts as $d)
+                                                                    <option value="{{ $d->id}}" {{ $d->id ==$user->shipping_address['district_id'] ? 'selected' : '' }}>{{ ucwords($d->localization['en']['display_name']) }}</option>
+                                                                    @endforeach
+                                                                    @if($errors->has('country-id'))
+                                                                    <span class="help-block">The Districts field is required.</span>
+                                                                    @endif
                                                                 </select>
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-6">
                                                             <div class="form-group">
                                                                 <label>Division</label>
-                                                                <select class="form-control" name="shipping-division">
-                                                                    <option value="barishal">Barishal</option>
-                                                                    <option value="chattagram">Chattagram</option>
-                                                                    <option value="dhaka">Dhaka</option>
-                                                                    <option value="khulna">Khulna</option>
-                                                                    <option value="mymensingh">Mymensingh</option>
-                                                                    <option value="rajshahi">Rajshahi</option>
-                                                                    <option value="sylhet">Sylhet</option>
-                                                                    <option value="rangpur">Rangpur</option>
+                                                                <select class="form-control" placeholder="Select division" name="shipping-division-id">
+                                                                    @foreach ($divisions as $d)
+                                                                    <option value="{{ $d->id}}" {{ $d->id ==$user->shipping_address['division_id'] ? 'selected' : '' }}>{{ ucwords($d->localization['en']['display_name']) }}</option>
+                                                                    @endforeach
+                                                                    @if($errors->has('country-id'))
+                                                                    <span class="help-block">The Divisions field is required.</span>
+                                                                    @endif
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -249,15 +239,13 @@ $_alertType = 'success';
                                                         <div class="col-lg-6">
                                                             <div class="form-group">
                                                                 <label>Thana</label>
-                                                                <select class="form-control" name="shipping-thana">
-                                                                    <option value="narsingdi">Narsingdi</option>
-                                                                    <option value="tangail">Tangail</option>
-                                                                    <option value="patuakhali">Patuakhali</option>
-                                                                    <option value="comilla">Comilla</option>
-                                                                    <option value="mymensingh">Mymensingh</option>
-                                                                    <option value="rajshahi">Rajshahi</option>
-                                                                    <option value="sylhet">Sylhet</option>
-                                                                    <option value="rangpur">Rangpur</option>
+                                                                <select class="form-control" placeholder="Select thana" name="shipping-thana-id">
+                                                                    @foreach ($thanas as $d)
+                                                                    <option value="{{ $d->id}}" {{ $d->id ==$user->shipping_address['thana_id'] ? 'selected' : '' }}>{{ ucwords($d->localization['en']['display_name']) }}</option>
+                                                                    @endforeach
+                                                                    @if($errors->has('country-id'))
+                                                                    <span class="help-block">The Thanas field is required.</span>
+                                                                    @endif
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -265,7 +253,7 @@ $_alertType = 'success';
                                                             <div class="form-group">
                                                                 <label for="shipping-zip">Zip / Postal Code</label>
                                                                 <input type="text" class="form-control" id="shipping-zip"
-                                                                    name="shipping-zip" value="{{ $user->billing_address['zip'] }}">
+                                                                    name="shipping-zip" value="{{ $user->shipping_address['zip'] }}">
                                                             </div>
                                                         </div>
                                                     </div>

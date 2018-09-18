@@ -213,35 +213,38 @@ $_activeSecondaryNav = 'create';
                                                     </div>
 
                                                     <div class="row">
+                                                        <div class="col-lg-12">
+                                                            <div class="form-group">
+                                                                <label>Country</label>
+                                                                <select class="form-control" name="shipping-country-id">
+                                                                    <option value="">Choose Country</option>
+                                                                    @foreach ($countries as $c)
+                                                                    <option value="{{ $c->id}}">{{ ucwords($c->localization['en']['display_name']) }}</option>
+                                                                    @endforeach
+                                                            </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
                                                         <div class="col-lg-6">
                                                             <div class="form-group">
                                                                 <label>District</label>
-                                                                <select class="form-control" name="shipping-district">
+                                                                <select class="form-control" name="shipping-district-id">
                                                                     <option value="">Choose District</option>
-                                                                    <option value="narsingdi">Narsingdi</option>
-                                                                    <option value="tangail">Tangail</option>
-                                                                    <option value="patuakhali">Patuakhali</option>
-                                                                    <option value="comilla">Comilla</option>
-                                                                    <option value="mymensingh">Mymensingh</option>
-                                                                    <option value="rajshahi">Rajshahi</option>
-                                                                    <option value="sylhet">Sylhet</option>
-                                                                    <option value="rangpur">Rangpur</option>
+                                                                    @foreach ($districts as $d)
+                                                                    <option value="{{ $d->id}}">{{ ucwords($d->localization['en']['display_name']) }}</option>
+                                                                    @endforeach
                                                                 </select>
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-6">
                                                             <div class="form-group">
                                                                 <label>Division</label>
-                                                                <select class="form-control" name="shipping-division">
+                                                                <select class="form-control" name="shipping-division-id">
                                                                     <option value="">Choose Division</option>
-                                                                    <option value="barishal">Barishal</option>
-                                                                    <option value="chattagram">Chattagram</option>
-                                                                    <option value="dhaka">Dhaka</option>
-                                                                    <option value="khulna">Khulna</option>
-                                                                    <option value="mymensingh">Mymensingh</option>
-                                                                    <option value="rajshahi">Rajshahi</option>
-                                                                    <option value="sylhet">Sylhet</option>
-                                                                    <option value="rangpur">Rangpur</option>
+                                                                    @foreach ($divisions as $d)
+                                                                    <option value="{{ $d->id}}">{{ ucwords($d->localization['en']['display_name']) }}</option>
+                                                                    @endforeach
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -251,16 +254,11 @@ $_activeSecondaryNav = 'create';
                                                         <div class="col-lg-6">
                                                             <div class="form-group">
                                                                 <label>Thana</label>
-                                                                <select class="form-control" name="shipping-thana">
+                                                                <select class="form-control" name="shipping-thana-id">
                                                                     <option value="">Choose Thana</option>
-                                                                    <option value="narsingdi">Narsingdi</option>
-                                                                    <option value="tangail">Tangail</option>
-                                                                    <option value="patuakhali">Patuakhali</option>
-                                                                    <option value="comilla">Comilla</option>
-                                                                    <option value="mymensingh">Mymensingh</option>
-                                                                    <option value="rajshahi">Rajshahi</option>
-                                                                    <option value="sylhet">Sylhet</option>
-                                                                    <option value="rangpur">Rangpur</option>
+                                                                    @foreach ($thanas as $d)
+                                                                    <option value="{{ $d->id}}">{{ ucwords($d->localization['en']['display_name']) }}</option>
+                                                                    @endforeach
                                                                 </select>
                                                             </div>
                                                         </div>

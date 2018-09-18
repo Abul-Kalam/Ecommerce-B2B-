@@ -107,9 +107,9 @@ class UserController extends Controller
             'line_1' => $request->input('billing-address-line-1'),
             'line_2' => $request->input('billing-address-line-2'),
             'zip' => $request->input('billing-zip'),
-            'district' => $request->input('billing-district-id'),
-            'division' => $request->input('billing-division-id'),
-            'thana' => $request->input('billing-thana-id'),
+            'district_id' => $request->input('billing-district-id'),
+            'division_id' => $request->input('billing-division-id'),
+            'thana_id' => $request->input('billing-thana-id'),
         ];
 
         $shipping_address_line_1 = $request->input('shipping-address-line-1') ? $request->input('shipping-address-line-1') : 
@@ -121,23 +121,23 @@ class UserController extends Controller
         $shipping_zip = $request->input('shipping-zip') ? $request->input('shipping-zip') : 
         $request->input('billing-zip');
 
-        $shipping_district = $request->input('shipping-district') ? $request->input('shipping-district') : 
+        $shipping_district = $request->input('shipping-district-id') ? $request->input('shipping-district-id') : 
         $request->input('billing-district-id');
 
-        $shipping_division = $request->input('shipping-division') ? $request->input('shipping-division') : 
+        $shipping_division = $request->input('shipping-division-id') ? $request->input('shipping-division-id') : 
         $request->input('billing-division-id');
 
-        $shipping_thana = $request->input('shipping-thana') ? $request->input('shipping-thana') : 
+        $shipping_thana = $request->input('shipping-thana-id') ? $request->input('shipping-thana-id') : 
         $request->input('billing-thana-id');
 
 
         $user->shipping_address = [
             'line_1' => $shipping_address_line_1,
             'line_2' => $shipping_address_line_2,
-            'district' => $shipping_district,
-            'division' =>$shipping_division,
             'zip' => $shipping_zip,
-            'thana' => $shipping_thana,
+            'district_id' => $shipping_district,
+            'division_id' =>$shipping_division,
+            'thana_id' => $shipping_thana,
         ];
 
        
@@ -186,8 +186,16 @@ class UserController extends Controller
         $user = User::findOrFail($id);
 
         $roles = Role::get();
+        $countries = Country::get();
+        $divisions = Division::get();
+        $districts = District::get();
+        $thanas = Thana::get();
         return view('backend.pages.user-edit', [
             'user' => $user,
+            'countries' => $countries,
+            'districts' => $districts,
+            'divisions' => $divisions,
+            'thanas' => $thanas,
             'roles' => $roles
             
         ]);
@@ -222,31 +230,15 @@ class UserController extends Controller
                 'display_name' => $request->input('display-name-bn')
             ]
         ];
-        $user->first_name  = $request->input('first-name');
-        $user->last_name  = $request->input('last-name');
-        $user->name  = $request->input('name');
-        $user->about  = $request->input('about');
-        $user->email= $request->input('email');
-        $user->avatar_url  = $request->input('avatar-url');
-        if ($request->input('password') )
-        {
-            $user->password  = Hash::make('password') ;
-        }
-        else {
-            $user->password  = $user->password;
-        }
-        // $user->update([
-        //     'last_login_at' => Carbon::now()->toDateTimeString(),
-        //     'last_login_ip' => $request->getClientIp()
-        // ]);
+
 
         $user->billing_address = [
             'line_1' => $request->input('billing-address-line-1'),
             'line_2' => $request->input('billing-address-line-2'),
             'zip' => $request->input('billing-zip'),
-            'district' => $request->input('billing-district'),
-            'division' => $request->input('billing-division'),
-            'thana' => $request->input('billing-thana'),
+            'district_id' => $request->input('billing-district-id'),
+            'division_id' => $request->input('billing-division-id'),
+            'thana_id' => $request->input('billing-thana-id'),
         ];
 
         $shipping_address_line_1 = $request->input('shipping-address-line-1') ? $request->input('shipping-address-line-1') : 
@@ -258,25 +250,38 @@ class UserController extends Controller
         $shipping_zip = $request->input('shipping-zip') ? $request->input('shipping-zip') : 
         $request->input('billing-zip');
 
-        $shipping_district = $request->input('shipping-district') ? $request->input('shipping-district') : 
-        $request->input('billing-district');
+        $shipping_district = $request->input('shipping-district-id') ? $request->input('shipping-district-id') : 
+        $request->input('billing-district-id');
 
-        $shipping_division = $request->input('shipping-division') ? $request->input('shipping-division') : 
-        $request->input('billing-division');
+        $shipping_division = $request->input('shipping-division-id') ? $request->input('shipping-division-id') : 
+        $request->input('billing-division-id');
 
-        $shipping_thana = $request->input('shipping-thana') ? $request->input('shipping-thana') : 
-        $request->input('billing-thana');
+        $shipping_thana = $request->input('shipping-thana-id') ? $request->input('shipping-thana-id') : 
+        $request->input('billing-thana-id');
 
 
         $user->shipping_address = [
             'line_1' => $shipping_address_line_1,
             'line_2' => $shipping_address_line_2,
-            'district' => $shipping_district,
-            'division' =>$shipping_division,
             'zip' => $shipping_zip,
-            'thana' => $shipping_thana,
+            'district_id' => $shipping_district,
+            'division_id' =>$shipping_division,
+            'thana_id' => $shipping_thana,
         ];
 
+       
+
+       
+
+        $user->first_name  = $request->input('first-name');
+        $user->last_name  = $request->input('last-name');
+        $user->name  = $request->input('name');
+        $user->about  = $request->input('about');
+        $user->email= $request->input('email');
+        $user->avatar_url  = $request->input('avatar-url');
+        $password = $request->input('password');
+        $user->password = Hash::make($password) ;
+        
         $user->last_login_at = Carbon::now()->toDateTimeString() ;
         $user->last_login_ip = $request->getClientIp() ;
         
