@@ -1303,16 +1303,6 @@ class ThanasTableSeeder extends Seeder
             ],
 
              //tangail barguna all thanas
-
-             [
-                'id'           => 141,
-                'slug'         => 'barisal-sadar',
-                'localization' => json_encode([
-                    'en'       => ['display_name' => 'barisal sadar'],
-                    'bn'       => ['display_name' => 'বরিশাল সদর']
-                ], JSON_UNESCAPED_UNICODE),
-                'district_id'  => 24,
-            ],
         ]);
     }
 }
