@@ -102,13 +102,30 @@ class ShopController extends Controller
             'description' => $request->input('meta-description')
         ];
         $shop->address             = [
-            'line_1' => $request->input('address-line-1'),
-            'line_2' => $request->input('address-line-2'),
-            'zip' => $request->input('zip'),
-            'country_id' => $request->input('country-id'),
-            'district_id' => $request->input('district-id'),
-            'division_id' => $request->input('division-id'),
-            'thana_id' => $request->input('thana-id'),
+            'business_line_1' => $request->input('business-address-line-1'),
+            'business_line_2' => $request->input('business-address-line-2'),
+            'business_zip' => $request->input('business-zip'),
+            'business_country_id' => $request->input('business-country-id'),
+            'business_district_id' => $request->input('business-district-id'),
+            'business_division_id' => $request->input('business-division-id'),
+            'business_thana_id' => $request->input('business-thana-id'),
+
+
+            'warehouse_line_1' => $request->input('warehouse-address-line-1'),
+            'warehouse_line_2' => $request->input('warehouse-address-line-2'),
+            'warehouse_zip' => $request->input('warehouse-zip'),
+            'warehouse_country_id' => $request->input('warehouse-country-id'),
+            'warehouse_district_id' => $request->input('warehouse-district-id'),
+            'warehouse_division_id' => $request->input('warehouse-division-id'),
+            'warehouse_thana_id' => $request->input('warehouse-thana-id'),
+
+            'return_line_1' => $request->input('return-address-line-1'),
+            'return_line_2' => $request->input('return-address-line-2'),
+            'return_zip' => $request->input('return-zip'),
+            'return_country_id' => $request->input('return-country-id'),
+            'return_district_id' => $request->input('return-district-id'),
+            'return_division_id' => $request->input('return-division-id'),
+            'return_thana_id' => $request->input('return-thana-id'),
         ];
         $shop->status           =  $status;
         $shop->description  = $request->input('description');
@@ -195,13 +212,30 @@ class ShopController extends Controller
             'description' => $request->input('meta-description')
         ];
         $shop->address             = [
-            'line_1' => $request->input('address-line-1'),
-            'line_2' => $request->input('address-line-2'),
-            'zip' => $request->input('zip'),
-            'country_id' => $request->input('country-id'),
-            'district_id' => $request->input('district-id'),
-            'division_id' => $request->input('division-id'),
-            'thana_id' => $request->input('thana-id'),
+            'business_line_1' => $request->input('business-address-line-1'),
+            'business_line_2' => $request->input('business-address-line-2'),
+            'business_zip' => $request->input('business-zip'),
+            'business_country_id' => $request->input('business-country-id'),
+            'business_district_id' => $request->input('business-district-id'),
+            'business_division_id' => $request->input('business-division-id'),
+            'business_thana_id' => $request->input('business-thana-id'),
+
+
+            'warehouse_line_1' => $request->input('warehouse-address-line-1'),
+            'warehouse_line_2' => $request->input('warehouse-address-line-2'),
+            'warehouse_zip' => $request->input('warehouse-zip'),
+            'warehouse_country_id' => $request->input('warehouse-country-id'),
+            'warehouse_district_id' => $request->input('warehouse-district-id'),
+            'warehouse_division_id' => $request->input('warehouse-division-id'),
+            'warehouse_thana_id' => $request->input('warehouse-thana-id'),
+
+            'return_line_1' => $request->input('return-address-line-1'),
+            'return_line_2' => $request->input('return-address-line-2'),
+            'return_zip' => $request->input('return-zip'),
+            'return_country_id' => $request->input('return-country-id'),
+            'return_district_id' => $request->input('return-district-id'),
+            'return_division_id' => $request->input('return-division-id'),
+            'return_thana_id' => $request->input('return-thana-id'),
         ];
         $shop->status           =  $status;
         $shop->description  = $request->input('description');

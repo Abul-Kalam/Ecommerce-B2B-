@@ -39,8 +39,10 @@
                                 <div class="nav-tabs-custom mb-0">
                                     <ul class="nav nav-tabs">
                                         <li class="active"><a href="#tab_1" data-toggle="tab" aria-expanded="false">Basic</a></li>
-                                        <li class=""><a href="#tab_2" data-toggle="tab" aria-expanded="false">Address</a></li>
-                                        <li class=""><a href="#tab_3" data-toggle="tab" aria-expanded="true">Meta</a></li>
+                                        <li class=""><a href="#tab_2" data-toggle="tab" aria-expanded="false">Business Address</a></li>
+                                        <li class=""><a href="#tab_3" data-toggle="tab" aria-expanded="false">Warehouse Address</a></li>
+                                        <li class=""><a href="#tab_4" data-toggle="tab" aria-expanded="false">Return Address</a></li>
+                                        <li class=""><a href="#tab_5" data-toggle="tab" aria-expanded="true">Meta</a></li>
                                         <li class="pull-right">
                                             <a href="#" class="text-muted"><i class="fas fa-cog"></i></a>
                                         </li>
@@ -95,15 +97,15 @@
                                         <div class="tab-pane" id="tab_2">
                                             <div class="form-group">
                                                 <label for="address-line-1">Address Line 1</label>
-                                                <input type="text" class="form-control" id="address-line-1" name="address-line-1" value="{{
-                                                    $shop->address['line_1']
+                                                <input type="text" class="form-control" id="address-line-1" name="business-address-line-1" value="{{
+                                                    $shop->address['business_line_1']
                                                 }}">
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="address-line-2">Address Line 2</label>
-                                                <input type="text" class="form-control" id="address-line-2" name="address-line-2" value="{{
-                                                    $shop->address['line_2']
+                                                <input type="text" class="form-control" id="address-line-2" name="business-address-line-2" value="{{
+                                                    $shop->address['business_line_2']
                                                 }}">
                                             </div>
 
@@ -111,9 +113,9 @@
                                                 <div class="col-lg-12">
                                                     <div class="form-group">
                                                         <label>Country</label>
-                                                        <select class="form-control" placeholder="Select country" name="country-id">
+                                                        <select class="form-control" placeholder="Select country" name="business-country-id">
                                                                 @foreach ($countries as $c)
-                                                                <option value="{{ $c->id}}" {{ $c->id ==$shop->address['country_id'] ? 'selected' : '' }}>{{ ucwords($c->localization['en']['display_name']) }}</option>
+                                                                <option value="{{ $c->id}}" {{ $c->id ==$shop->address['business_country_id'] ? 'selected' : '' }}>{{ ucwords($c->localization['en']['display_name']) }}</option>
                                                                 @endforeach
                                                                 @if($errors->has('country-id'))
                                                                 <span class="help-block">The Countrys field is required.</span>
@@ -126,9 +128,9 @@
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
                                                         <label>District</label>
-                                                        <select class="form-control" placeholder="Select district" name="district-id">
+                                                        <select class="form-control" placeholder="Select district" name="business-district-id">
                                                                 @foreach ($districts as $d)
-                                                                <option value="{{ $d->id}}" {{ $d->id ==$shop->address['district_id'] ? 'selected' : '' }}>{{ ucwords($d->localization['en']['display_name']) }}</option>
+                                                                <option value="{{ $d->id}}" {{ $d->id ==$shop->address['business_district_id'] ? 'selected' : '' }}>{{ ucwords($d->localization['en']['display_name']) }}</option>
                                                                 @endforeach
                                                                 @if($errors->has('country-id'))
                                                                 <span class="help-block">The Districts field is required.</span>
@@ -139,9 +141,9 @@
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
                                                         <label>Division</label>
-                                                            <select class="form-control" placeholder="Select division" name="division-id">
+                                                            <select class="form-control" placeholder="Select division" name="business-division-id">
                                                                 @foreach ($divisions as $d)
-                                                                <option value="{{ $d->id}}" {{ $d->id ==$shop->address['division_id'] ? 'selected' : '' }}>{{ ucwords($d->localization['en']['display_name']) }}</option>
+                                                                <option value="{{ $d->id}}" {{ $d->id ==$shop->address['business_division_id'] ? 'selected' : '' }}>{{ ucwords($d->localization['en']['display_name']) }}</option>
                                                                 @endforeach
                                                                 @if($errors->has('country-id'))
                                                                 <span class="help-block">The Division field is required.</span>
@@ -154,9 +156,9 @@
                                                     <div class="col-lg-6">
                                                         <div class="form-group">
                                                             <label>Thana</label>
-                                                            <select class="form-control" placeholder="Select thana" name="thana-id">
+                                                            <select class="form-control" placeholder="Select thana" name="business-thana-id">
                                                                 @foreach ($thanas as $t)
-                                                                <option value="{{ $t->id}}" {{ $t->id ==$shop->address['thana_id'] ? 'selected' : '' }}>{{ ucwords($t->localization['en']['display_name']) }}</option>
+                                                                <option value="{{ $t->id}}" {{ $t->id ==$shop->address['business_thana_id'] ? 'selected' : '' }}>{{ ucwords($t->localization['en']['display_name']) }}</option>
                                                                 @endforeach
                                                                 @if($errors->has('country-id'))
                                                                 <span class="help-block">The Thana field is required.</span>
@@ -167,8 +169,8 @@
                                                     <div class="col-lg-6">
                                                         <div class="form-group">
                                                                 <label for="zip">Zip / Postal Code</label>
-                                                            <input type="text" class="form-control" id="zip" name="zip" value="{{
-                                                                $shop->address['zip']
+                                                            <input type="text" class="form-control" id="zip" name="business-zip" value="{{
+                                                                $shop->address['business_zip']
                                                             }}">
                                                         </div>
                                                     </div>
@@ -176,6 +178,172 @@
                                         </div>
                                         <!-- /.tab-pane -->
                                         <div class="tab-pane" id="tab_3">
+                                            <div class="form-group">
+                                                <label for="address-line-1">Address Line 1</label>
+                                                <input type="text" class="form-control" id="address-line-1" name="warehouse-address-line-1" value="{{
+                                                    $shop->address['warehouse_line_1']
+                                                }}">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="address-line-2">Address Line 2</label>
+                                                <input type="text" class="form-control" id="address-line-2" name="warehouse-address-line-2" value="{{
+                                                    $shop->address['warehouse_line_2']
+                                                }}">
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="form-group">
+                                                        <label>Country</label>
+                                                        <select class="form-control" placeholder="Select country" name="warehouse-country-id">
+                                                                @foreach ($countries as $c)
+                                                                <option value="{{ $c->id}}" {{ $c->id ==$shop->address['warehouse_country_id'] ? 'selected' : '' }}>{{ ucwords($c->localization['en']['display_name']) }}</option>
+                                                                @endforeach
+                                                                @if($errors->has('country-id'))
+                                                                <span class="help-block">The Countrys field is required.</span>
+                                                                @endif
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-6">
+                                                    <div class="form-group">
+                                                        <label>District</label>
+                                                        <select class="form-control" placeholder="Select district" name="warehouse-district-id">
+                                                                @foreach ($districts as $d)
+                                                                <option value="{{ $d->id}}" {{ $d->id ==$shop->address['warehouse_district_id'] ? 'selected' : '' }}>{{ ucwords($d->localization['en']['display_name']) }}</option>
+                                                                @endforeach
+                                                                @if($errors->has('country-id'))
+                                                                <span class="help-block">The Districts field is required.</span>
+                                                                @endif
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <div class="form-group">
+                                                        <label>Division</label>
+                                                            <select class="form-control" placeholder="Select division" name="warehouse-division-id">
+                                                                @foreach ($divisions as $d)
+                                                                <option value="{{ $d->id}}" {{ $d->id ==$shop->address['warehouse_division_id'] ? 'selected' : '' }}>{{ ucwords($d->localization['en']['display_name']) }}</option>
+                                                                @endforeach
+                                                                @if($errors->has('country-id'))
+                                                                <span class="help-block">The Division field is required.</span>
+                                                                @endif
+                                                            </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                    <div class="col-lg-6">
+                                                        <div class="form-group">
+                                                            <label>Thana</label>
+                                                            <select class="form-control" placeholder="Select thana" name="warehouse-thana-id">
+                                                                @foreach ($thanas as $t)
+                                                                <option value="{{ $t->id}}" {{ $t->id ==$shop->address['warehouse_thana_id'] ? 'selected' : '' }}>{{ ucwords($t->localization['en']['display_name']) }}</option>
+                                                                @endforeach
+                                                                @if($errors->has('country-id'))
+                                                                <span class="help-block">The Thana field is required.</span>
+                                                                @endif
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <div class="form-group">
+                                                                <label for="zip">Zip / Postal Code</label>
+                                                            <input type="text" class="form-control" id="zip" name="warehouse-zip" value="{{
+                                                                $shop->address['warehouse_zip']
+                                                            }}">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        </div>
+                                        <!-- /.tab-pane -->
+                                        <div class="tab-pane" id="tab_4">
+                                            <div class="form-group">
+                                                <label for="address-line-1">Address Line 1</label>
+                                                <input type="text" class="form-control" id="address-line-1" name="return-address-line-1" value="{{
+                                                    $shop->address['return_line_1']
+                                                }}">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="address-line-2">Address Line 2</label>
+                                                <input type="text" class="form-control" id="address-line-2" name="return-address-line-2" value="{{
+                                                    $shop->address['return_line_2']
+                                                }}">
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="form-group">
+                                                        <label>Country</label>
+                                                        <select class="form-control" placeholder="Select country" name="return-country-id">
+                                                                @foreach ($countries as $c)
+                                                                <option value="{{ $c->id}}" {{ $c->id ==$shop->address['return_country_id'] ? 'selected' : '' }}>{{ ucwords($c->localization['en']['display_name']) }}</option>
+                                                                @endforeach
+                                                                @if($errors->has('country-id'))
+                                                                <span class="help-block">The Countrys field is required.</span>
+                                                                @endif
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-6">
+                                                    <div class="form-group">
+                                                        <label>District</label>
+                                                        <select class="form-control" placeholder="Select district" name="return-district-id">
+                                                                @foreach ($districts as $d)
+                                                                <option value="{{ $d->id}}" {{ $d->id ==$shop->address['return_district_id'] ? 'selected' : '' }}>{{ ucwords($d->localization['en']['display_name']) }}</option>
+                                                                @endforeach
+                                                                @if($errors->has('country-id'))
+                                                                <span class="help-block">The Districts field is required.</span>
+                                                                @endif
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <div class="form-group">
+                                                        <label>Division</label>
+                                                            <select class="form-control" placeholder="Select division" name="return-division-id">
+                                                                @foreach ($divisions as $d)
+                                                                <option value="{{ $d->id}}" {{ $d->id ==$shop->address['return_division_id'] ? 'selected' : '' }}>{{ ucwords($d->localization['en']['display_name']) }}</option>
+                                                                @endforeach
+                                                                @if($errors->has('country-id'))
+                                                                <span class="help-block">The Division field is required.</span>
+                                                                @endif
+                                                            </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                    <div class="col-lg-6">
+                                                        <div class="form-group">
+                                                            <label>Thana</label>
+                                                            <select class="form-control" placeholder="Select thana" name="return-thana-id">
+                                                                @foreach ($thanas as $t)
+                                                                <option value="{{ $t->id}}" {{ $t->id ==$shop->address['return_thana_id'] ? 'selected' : '' }}>{{ ucwords($t->localization['en']['display_name']) }}</option>
+                                                                @endforeach
+                                                                @if($errors->has('country-id'))
+                                                                <span class="help-block">The Thana field is required.</span>
+                                                                @endif
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <div class="form-group">
+                                                                <label for="zip">Zip / Postal Code</label>
+                                                            <input type="text" class="form-control" id="zip" name="return-zip" value="{{
+                                                                $shop->address['return_zip']
+                                                            }}">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        </div>
+                                        <!-- /.tab-pane -->
+                                        <div class="tab-pane" id="tab_5">
                                             <div class="form-group">
                                                 <label for="meta-title">Meta Title</label>
                                                 <input type="text" class="form-control" id="meta-title" name="meta-title" value="{{ ucwords($shop->meta['title']) }}">
