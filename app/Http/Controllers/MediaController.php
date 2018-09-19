@@ -28,6 +28,16 @@ class MediaController extends Controller
         ]);
     }
 
+    public function search(Request $request)
+    {
+        $keywords = $request->input('keywords');
+
+        $media = Media::where('title', 'like', '%'.$keywords.'%')->paginate(5);
+
+        return view('backend.pages.media-list', [
+            'media' => $media
+        ]);
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -124,6 +134,9 @@ class MediaController extends Controller
             }
             
     }
+
+
+   
 
     /**
      * Display the specified resource.

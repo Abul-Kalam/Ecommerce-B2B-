@@ -30,18 +30,19 @@ $_alertMessage = null;
                 <div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
                     <div class="box">
                         <div class="box-header with-border">
-                            <a href="" class="btn btn-sm btn-default">Add New</a>
+                            <a href="{{ route('backend.media.create')}}" class="btn btn-sm btn-default">Add New</a>
                             <div class="box-tools mt-2">
-                                <form class="form-inline my-2 my-lg-0" action="" method="post">
-                                    <div class="input-group input-group-sm" style="width: 200px;">
-                                                
-                                        <input type="text" name="keywords" class="form-control pull-right" placeholder="Search">
-                        
-                                        <div class="input-group-btn">
-                                            <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-                                        </div>
+                                <form class="form-inline my-2 my-lg-0" action="{{ route('backend.media.search') }}" method="post">
+                                    {{ csrf_field() }}
+                                <div class="input-group input-group-sm" style="width: 200px;">
+                                            
+                                    <input type="text" name="keywords" class="form-control pull-right" placeholder="Search">
+                    
+                                    <div class="input-group-btn">
+                                        <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
                                     </div>
-                                </form>
+                                </div>
+                            </form>
                             </div>
                         </div>
                         <div class="box-body no-padding">
@@ -57,13 +58,13 @@ $_alertMessage = null;
 
                                     @foreach ($media as $m)
                                     <tr>
-                                        <td>1</td>
+                                        <td>{{ $m->id}}</td>
                                         <td>
                                             
                                             <img class="img-md" src="{{ Storage::url( $m->paths['80x80'] ) }}" alt="">
                                         </td>
                                         <td>{{ ucwords($m->title)}}</td>
-                                        <td>{{ Carbon\Carbon::parse($m->published_at)->diffForHumans() }}</td>
+                                        <td>{{ Carbon\Carbon::parse($m->created_at)->diffForHumans() }}</td>
                                         <td>
                                             <span class="actions">
                                                 <a href="">View</a>

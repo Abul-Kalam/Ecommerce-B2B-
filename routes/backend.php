@@ -19,6 +19,8 @@ Route::middleware('auth')->group(function () {
     Route::resource('invoices', 'InvoiceController');
     // Route::resource('products', 'ProductController');
     Route::resource('media', 'MediaController');
+    Route::post('media/search', 'MediaController@search')->name('media.search');
+    
     Route::resource('brands', 'BrandController');
     Route::post('brands/search', 'BrandController@search')->name('brands.search');
     
