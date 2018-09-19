@@ -55,14 +55,15 @@ $_alertMessage = null;
                                         <th style="width: 95px; text-align: center">Actions</th>
                                     </tr>
 
-
+                                    @foreach ($media as $m)
                                     <tr>
                                         <td>1</td>
                                         <td>
-                                            <img class="img-md" src="{{ asset('/images/avatar.png') }}" alt="">
+                                            
+                                            <img class="img-md" src="{{ Storage::url( $m->paths['80x80'] ) }}" alt="">
                                         </td>
-                                        <td>Default.jpg</td>
-                                        <td>11/9/2018</td>
+                                        <td>{{ ucwords($m->title)}}</td>
+                                        <td>{{ Carbon\Carbon::parse($m->published_at)->diffForHumans() }}</td>
                                         <td>
                                             <span class="actions">
                                                 <a href="">View</a>
@@ -71,32 +72,14 @@ $_alertMessage = null;
                                             </span>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>
-                                            <img class="img-md" src="{{ asset('/images/avatar2.png') }}" alt="">
-                                        </td>
-                                        <td>Default.jpg</td>
-                                        <td>11/9/2018</td>
-                                        <td>
-                                            <span class="actions">
-                                                <a href="">View</a>
-                                                <span>&nbsp;|&nbsp;</span>
-                                                <a href="">Edit</a>
-                                            </span>
-                                        </td>
-                                    </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
                         <div class="box-footer clearfix">
-                            <ul class="pagination pagination-sm no-margin pull-right">
-                                <li><a href="#">«</a></li>
-                                <li><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">»</a></li>
-                            </ul>
+                            <nav aria-label="Page navigation example">
+                                {{ $media->links() }}
+                            </nav>
                         </div>
                     </div>
                 </div>
