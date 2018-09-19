@@ -17,16 +17,16 @@ class RolesTableSeeder extends Seeder
                 'display_name' => 'superadmin',
             ],
             [
-                'name' => 'author',
-                'display_name' => 'author',
-            ],
-            [
                 'name' => 'administrator',
                 'display_name' => 'administrator',
             ],
             [
                 'name' => 'editor',
                 'display_name' => 'editor',
+            ],
+            [
+                'name' => 'author',
+                'display_name' => 'author',
             ],
             [
                 'name' => 'contributor',

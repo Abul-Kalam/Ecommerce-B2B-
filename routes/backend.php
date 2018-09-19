@@ -6,7 +6,11 @@ Route::middleware('auth')->group(function () {
     //Design test route ========================================================
     Route::get('dashboard', function () {
         return view('backend.pages.dashboard');
-    })->name('dashboard');
+    })->name('dashboard')->middleware('permission:view-dashboard');
+
+    // Route::get('dashboard', function () {
+    //     return view('backend.pages.dashboard');
+    // })->name('dashboard');
     //==========================================================================
 
     Route::resource('users', 'UserController');

@@ -39,7 +39,7 @@
     <ul class="sidebar-menu" data-widget="tree">
         <li class="header">HEADER</li>
         @foreach ($nav as $item)
-            @if ($item['type'] === 'single')
+            @if ($item['type'] === 'single' && Laratrust::can($item['permissions']))
                 <li class="{{ $item['slug'] === $activePrimary ? 'active' : '' }}">
                     <a href="{{ route($item['route']) }}">
                         <i class="{{ $item['icon_class'] }}"></i>
@@ -57,9 +57,11 @@
                     </a>
                     <ul class="treeview-menu">
                         @foreach ($item['childs'] as $citem)
+                        @permission($citem['permissions'])
                         <li class="{{ $citem['slug'] === $activeSecondary ? 'active' : '' }}">
                             <a href="{{ route($citem['route']) }}">{{ $citem['label'] }}</a>
                         </li>
+                        @endpermission
                         @endforeach
                     </ul>
                 </li>

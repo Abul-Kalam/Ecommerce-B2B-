@@ -73,7 +73,7 @@
                                 <div class="checkbox disabled">
                                 <label>
                                     <input type="checkbox" value="{{ $permission->id }}" id="p-{{ $permission->id }}" name="permissions[]" {{ $role->permissions()->find($permission->id) ? "checked" : "" }}>
-                                    {{ $permission->name }}
+                                    {{ ucwords($permission->display_name) }}
                                 </label>
                                 </div>
                                 @endforeach

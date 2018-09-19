@@ -14,7 +14,7 @@ class PermissionController extends Controller
      */
     public function index()
     {
-        $paginate = config('app.pagenation_count', 11);
+        $paginate = config('app.pagenation_count', 17);
         
         $permissions = Permission::orderBy('created_at', 'DESC')->paginate($paginate);
 
