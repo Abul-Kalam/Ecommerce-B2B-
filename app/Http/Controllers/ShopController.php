@@ -73,7 +73,12 @@ class ShopController extends Controller
         $request->validate([
             'slug' => 'required|unique:shops|max:255',
             'display-name-en' => 'required|max:255',
-            'display-name-bn' => 'required|max:255'
+            'display-name-bn' => 'required|max:255',
+            'business-zip' => 'required',
+            'business-country-id' => 'required',
+            'business-district-id' => 'required',
+            'business-division-id' => 'required',
+            'business-thana-id' => 'required',
         ]);
         
         $shop = new Shop();
@@ -183,7 +188,9 @@ class ShopController extends Controller
         $request->validate([
             'slug' => 'required|max:255|unique:shops,id,'.$id,
             'display-name-en' => 'required|max:255',
-            'display-name-bn' => 'required|max:255'
+            'display-name-bn' => 'required|max:255',
+           
+            
         ]);
         
         $shop = shop::findOrFail($id); 

@@ -107,57 +107,72 @@
 
                                             <div class="row">
                                                 <div class="col-lg-12">
-                                                    <div class="form-group">
+                                                    <div class="form-group {{  $errors->has('business-country-id') ? 'has-error' : '' }}">
                                                         <label>Country</label>
                                                         <select class="form-control" name="business-country-id">
                                                             <option value="">Choose Country</option>
                                                             @foreach ($countries as $c)
                                                             <option value="{{ $c->id}}">{{ ucwords($c->localization['en']['display_name']) }}</option>
                                                             @endforeach
+                                                            @if($errors->has('business-country-id'))
+                                                            <span class="help-block">Country is required.</span>
+                                                            @endif
                                                         </select>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col-lg-6">
-                                                    <div class="form-group">
+                                                    <div class="form-group {{  $errors->has('business-district-id') ? 'has-error' : '' }}">
                                                         <label>District</label>
                                                         <select class="form-control" name="business-district-id">
                                                             <option value="">Choose District</option>
                                                             @foreach ($districts as $d)
                                                             <option value="{{ $d->id}}">{{ ucwords($d->localization['en']['display_name']) }}</option>
                                                             @endforeach
+                                                            @if($errors->has('business-district-id'))
+                                                            <span class="help-block">District is required.</span>
+                                                            @endif
                                                         </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6">
-                                                    <div class="form-group">
+                                                    <div class="form-group {{  $errors->has('business-division-id') ? 'has-error' : '' }}">
                                                         <label>Division</label>
                                                         <select class="form-control" name="business-division-id">
                                                             <option value="">Choose Division</option>
                                                             @foreach ($divisions as $d)
                                                             <option value="{{ $d->id}}">{{ ucwords($d->localization['en']['display_name']) }}</option>
                                                             @endforeach
+                                                            @if($errors->has('business-division-id'))
+                                                            <span class="help-block">Division is required.</span>
+                                                            @endif
                                                         </select>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col-lg-6">
-                                                    <div class="form-group">
+                                                    <div class="form-group {{  $errors->has('business-thana-id') ? 'has-error' : '' }}">
                                                         <label>Thana</label>
                                                         <select class="form-control" name="business-thana-id">
                                                             <option value="">Choose Thana</option>
                                                             @foreach ($thanas as $t)
                                                             <option value="{{ $t->id}}">{{ ucwords($t->localization['en']['display_name']) }}</option>
                                                             @endforeach
+                                                            @if($errors->has('business-thana-id'))
+                                                            <span class="help-block">Thana is required.</span>
+                                                            @endif
                                                         </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6">
-                                                    <div class="form-group">
+                                                    <div class="form-group {{  $errors->has('business-zip') ? 'has-error' : '' }}">
                                                         <label for="zip">Zip / Postal Code</label>
                                                         <input type="text" class="form-control" id="zip" name="business-zip">
+                                                        @if($errors->has('business-zip'))
+                                                        <span class="help-block">Zip is required.</span>
+                                                        @endif
                                                      </div>
                                                 </div>
                                             </div>
