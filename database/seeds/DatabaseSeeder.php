@@ -13,9 +13,9 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             //LaratrustSeeder::class,
-            PermissionsTableSeeder::class,
             UsersTableSeeder::class,
             RolesTableSeeder::class,
+            PermissionsTableSeeder::class,
             ThanasTableSeeder::class,
             CountriesTableSeeder::class,
             DivisionsTableSeeder::class,
