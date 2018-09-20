@@ -52,7 +52,7 @@
                                             <div class="row">
                                                 <div class="col-lg-6 form-group {{  $errors->has('display-name-en') ? 'has-error' : '' }}">
                                                     <label for="display-name-en">Display Name (english)</label>
-                                                    <input type="text" class="form-control" id="display-name-en" name="display-name-en" value="{{  $category->localization['en']['display_name'] }}">
+                                                    <input type="text" class="form-control" id="display-name-en" name="display-name-en" value="{{  ucwords($category->localization['en']['display_name']) }}">
                                                     @if($errors->has('display-name-en'))
                                                     <span class="help-block">The Display Name English field is required.</span>
                                                     @endif
@@ -79,7 +79,7 @@
                                                     <select class="form-control select2" placeholder="Select Category" name="parent_id">
                                                         <option value="0">Select Category</option>
                                                         @foreach ($categories as $c)
-                                                        <option value="{{ $c->id }}" id="p-{{ $c->id }}"  {{ $c->id === $c->id ? "selected" : "" }}>{{ $c->localization['bn']['display_name'] }}</option>
+                                                        <option value="{{ $c->id }}" id="p-{{ $c->id }}"  {{ $c->id === $c->id ? "selected" : "" }}>{{ ucwords($c->localization['bn']['display_name']) }}</option>
                                                         @endforeach
                                                     </select>
                                                 </div>
@@ -118,12 +118,12 @@
                                         <div class="tab-pane" id="tab_3">
                                             <div class="form-group">
                                                 <label for="meta-title">Meta Title</label>
-                                                <input type="text" class="form-control" id="meta-title" name="meta-title" value="{{ $category->meta['title'] }}">
+                                                <input type="text" class="form-control" id="meta-title" name="meta-title" value="{{ ucwords( $category->meta['title']) }}">
                                             </div>
                                             
                                             <div class="form-group">
                                                 <label for="meta-keywords">Meta Keywords</label>
-                                                <input type="text" class="form-control" id="meta-keywords" name="meta-keywords" value="{{ $category->meta['keywords'] }}">
+                                                <input type="text" class="form-control" id="meta-keywords" name="meta-keywords" value="{{ ucwords($category->meta['keywords']) }}">
                                             </div>
             
                                             <div class="form-group">

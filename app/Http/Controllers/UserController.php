@@ -56,7 +56,7 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {   
+    {
         $roles = Role::get();
         $countries = Country::get();
         $divisions = Division::get();
@@ -81,14 +81,28 @@ class UserController extends Controller
     {
        
         $request->validate([
-            'name' => 'required|max:255',
             'display-name-en' => 'required|max:255',
             'display-name-bn' => 'required|max:255',
             'first-name' => 'required|max:255',
             'last-name' => 'required|max:255',
             'email' => 'required|unique:users|max:255',
             'password' => 'required|max:255',
+            'role' => 'required',
+            'billing-address-line-1' => 'required',
+            'billing-address-line-2' => 'required',
+            'billing-district-id' => 'required',
+            'billing-country-id' => 'required',
+            'billing-division-id' => 'required',
+            'billing-thana-id' => 'required',
+            'billing-zip' => 'required',
 
+            'shipping-address-line-1' => 'required',
+            'shipping-address-line-2' => 'required',
+            'shipping-district-id' => 'required',
+            'shipping-country-id' => 'required',
+            'shipping-division-id' => 'required',
+            'shipping-thana-id' => 'required',
+            'shipping-zip' => 'required',
         ]);
         
         $user = new User();
@@ -107,27 +121,31 @@ class UserController extends Controller
             'line_1' => $request->input('billing-address-line-1'),
             'line_2' => $request->input('billing-address-line-2'),
             'zip' => $request->input('billing-zip'),
+            'country_id' => $request->input('billing-country-id'),
             'district_id' => $request->input('billing-district-id'),
             'division_id' => $request->input('billing-division-id'),
             'thana_id' => $request->input('billing-thana-id'),
         ];
 
-        $shipping_address_line_1 = $request->input('shipping-address-line-1') ? $request->input('shipping-address-line-1') : 
+        $shipping_address_line_1 = $request->input('shipping-address-line-1') ? $request->input('shipping-address-line-1') :
         $request->input('billing-address-line-1');
 
-        $shipping_address_line_2 = $request->input('shipping-address-line-2') ? $request->input('shipping-address-line-2') : 
+        $shipping_address_line_2 = $request->input('shipping-address-line-2') ? $request->input('shipping-address-line-2') :
         $request->input('billing-address-line-2');
 
-        $shipping_zip = $request->input('shipping-zip') ? $request->input('shipping-zip') : 
+        $shipping_zip = $request->input('shipping-zip') ? $request->input('shipping-zip') :
         $request->input('billing-zip');
 
-        $shipping_district = $request->input('shipping-district-id') ? $request->input('shipping-district-id') : 
+        $shipping_country_id = $request->input('shipping-country-id') ? $request->input('shipping-country-id') :
+        $request->input('billing-country-id');
+
+        $shipping_district = $request->input('shipping-district-id') ? $request->input('shipping-district-id') :
         $request->input('billing-district-id');
 
-        $shipping_division = $request->input('shipping-division-id') ? $request->input('shipping-division-id') : 
+        $shipping_division = $request->input('shipping-division-id') ? $request->input('shipping-division-id') :
         $request->input('billing-division-id');
 
-        $shipping_thana = $request->input('shipping-thana-id') ? $request->input('shipping-thana-id') : 
+        $shipping_thana = $request->input('shipping-thana-id') ? $request->input('shipping-thana-id') :
         $request->input('billing-thana-id');
 
 
@@ -135,6 +153,7 @@ class UserController extends Controller
             'line_1' => $shipping_address_line_1,
             'line_2' => $shipping_address_line_2,
             'zip' => $shipping_zip,
+            'country_id' => $shipping_country_id,
             'district_id' => $shipping_district,
             'division_id' =>$shipping_division,
             'thana_id' => $shipping_thana,
@@ -143,10 +162,10 @@ class UserController extends Controller
        
 
        
-
-        $user->first_name  = $request->input('first-name');
+        $first_name  = $request->input('first-name');
+        $user->first_name  = $first_name;
         $user->last_name  = $request->input('last-name');
-        $user->name  = $request->input('name');
+        $user->name  = $first_name;
         $user->about  = $request->input('about');
         $user->email= $request->input('email');
         $user->avatar_url  = $request->input('avatar-url');
@@ -211,12 +230,29 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'name' => 'required|max:255',
+            
             'display-name-en' => 'required|max:255',
             'display-name-bn' => 'required|max:255',
             'first-name' => 'required|max:255',
             'last-name' => 'required|max:255',
             'email' => 'required|max:255|unique:users,id,'.$id,
+            'role' => 'required',
+            'billing-address-line-1' => 'required',
+            'billing-address-line-2' => 'required',
+            'billing-district-id' => 'required',
+            'billing-country-id' => 'required',
+            'billing-division-id' => 'required',
+            'billing-thana-id' => 'required',
+            'billing-zip' => 'required',
+
+            'shipping-address-line-1' => 'required',
+            'shipping-address-line-2' => 'required',
+            'shipping-district-id' => 'required',
+            'shipping-country-id' => 'required',
+            'shipping-division-id' => 'required',
+            'shipping-thana-id' => 'required',
+            'shipping-zip' => 'required',
+           
 
         ]);
         
@@ -232,31 +268,45 @@ class UserController extends Controller
         ];
 
 
+        $user->localization     = [
+            'en' => [
+                'display_name' => $request->input('display-name-en')
+            ],
+            'bn' => [
+                'display_name' => $request->input('display-name-bn')
+            ]
+        ];
+
+
         $user->billing_address = [
             'line_1' => $request->input('billing-address-line-1'),
             'line_2' => $request->input('billing-address-line-2'),
             'zip' => $request->input('billing-zip'),
+            'country_id' => $request->input('billing-country-id'),
             'district_id' => $request->input('billing-district-id'),
             'division_id' => $request->input('billing-division-id'),
             'thana_id' => $request->input('billing-thana-id'),
         ];
 
-        $shipping_address_line_1 = $request->input('shipping-address-line-1') ? $request->input('shipping-address-line-1') : 
+        $shipping_address_line_1 = $request->input('shipping-address-line-1') ? $request->input('shipping-address-line-1') :
         $request->input('billing-address-line-1');
 
-        $shipping_address_line_2 = $request->input('shipping-address-line-2') ? $request->input('shipping-address-line-2') : 
+        $shipping_address_line_2 = $request->input('shipping-address-line-2') ? $request->input('shipping-address-line-2') :
         $request->input('billing-address-line-2');
 
-        $shipping_zip = $request->input('shipping-zip') ? $request->input('shipping-zip') : 
+        $shipping_zip = $request->input('shipping-zip') ? $request->input('shipping-zip') :
         $request->input('billing-zip');
 
-        $shipping_district = $request->input('shipping-district-id') ? $request->input('shipping-district-id') : 
+        $shipping_country_id = $request->input('shipping-country-id') ? $request->input('shipping-country-id') :
+        $request->input('billing-country-id');
+
+        $shipping_district = $request->input('shipping-district-id') ? $request->input('shipping-district-id') :
         $request->input('billing-district-id');
 
-        $shipping_division = $request->input('shipping-division-id') ? $request->input('shipping-division-id') : 
+        $shipping_division = $request->input('shipping-division-id') ? $request->input('shipping-division-id') :
         $request->input('billing-division-id');
 
-        $shipping_thana = $request->input('shipping-thana-id') ? $request->input('shipping-thana-id') : 
+        $shipping_thana = $request->input('shipping-thana-id') ? $request->input('shipping-thana-id') :
         $request->input('billing-thana-id');
 
 
@@ -264,6 +314,7 @@ class UserController extends Controller
             'line_1' => $shipping_address_line_1,
             'line_2' => $shipping_address_line_2,
             'zip' => $shipping_zip,
+            'country_id' => $shipping_country_id,
             'district_id' => $shipping_district,
             'division_id' =>$shipping_division,
             'thana_id' => $shipping_thana,
@@ -272,10 +323,10 @@ class UserController extends Controller
        
 
        
-
-        $user->first_name  = $request->input('first-name');
+        $first_name  = $request->input('first-name');
+        $user->first_name  = $first_name;
         $user->last_name  = $request->input('last-name');
-        $user->name  = $request->input('name');
+        $user->name  = $first_name;
         $user->about  = $request->input('about');
         $user->email= $request->input('email');
         $user->avatar_url  = $request->input('avatar-url');
@@ -284,6 +335,7 @@ class UserController extends Controller
         
         $user->last_login_at = Carbon::now()->toDateTimeString() ;
         $user->last_login_ip = $request->getClientIp() ;
+        
         
         
         

@@ -92,7 +92,7 @@ class CategoryController extends Controller
 
         $category->meta             = [
             'title' => strtolower($meta_title),
-            'keywords' => strtolower($meta_title),
+            'keywords' => strtolower($meta_keywords),
             'description' => $request->input('meta-description')
         ];
         $category->description  = $request->input('description');
@@ -180,7 +180,7 @@ class CategoryController extends Controller
         
         $category->meta             = [
             'title' => strtolower($meta_title),
-            'keywords' => strtolower($meta_title),
+            'keywords' => strtolower($meta_keywords),
             'description' => $request->input('meta-description')
         ];
         $category->description  = $request->input('description');

@@ -61,7 +61,7 @@
                                             <div class="row">
                                                 <div class="col-lg-6 form-group {{  $errors->has('display-name-en') ? 'has-error' : '' }}">
                                                     <label for="display-name-en">Display Name (english)</label>
-                                                    <input type="text" class="form-control" id="display-name-en" name="display-name-en" value="{{ $country->localization['en']['display_name'] }}">
+                                                    <input type="text" class="form-control" id="display-name-en" name="display-name-en" value="{{ ucwords($country->localization['en']['display_name']) }}">
                                                     @if($errors->has('display-name-en'))
                                                     <span class="help-block">The Display Name English field is required.</span>
                                                     @endif

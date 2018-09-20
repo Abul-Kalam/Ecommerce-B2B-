@@ -77,7 +77,7 @@
                                                     <select class="form-control select2" placeholder="Select Category"  name="parent_id">
                                                     <option value="0">Select Category</option>
                                                     @foreach ($categories as $c)
-                                                    <option value="{{ $c->id }}" id="p-{{ $c->id }}">{{ $c->localization['bn']['display_name'] }}</option>
+                                                    <option value="{{ $c->id }}" id="p-{{ $c->id }}">{{ ucwords($c->localization['bn']['display_name']) }}</option>
                                                     @endforeach
                                                     </select>
                                                 </div>

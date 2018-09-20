@@ -63,7 +63,7 @@
                                     @foreach ($users as $t)
                                     <tr>
                                         <td>{{$t->id}}</td>
-                                        <td>{{ $t->localization['en']['display_name'] }}</td>
+                                        <td>{{ ucwords($t->localization['en']['display_name']) }}</td>
 
                                         <td>{{ $t->email }}</td>
                                         <td>

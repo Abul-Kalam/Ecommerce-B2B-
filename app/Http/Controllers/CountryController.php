@@ -63,9 +63,11 @@ class CountryController extends Controller
         
         $country = new Country();
         
+        $display_name_en = $request->input('display-name-en');
+
         $country->localization     = [
             'en' => [
-                'display_name' => $request->input('display-name-en')
+                'display_name' => strtolower($display_name_en),
             ],
             'bn' => [
                 'display_name' => $request->input('display-name-bn')
@@ -77,7 +79,8 @@ class CountryController extends Controller
             'alternative' => $request->input('alternative')
         ];
         
-        $country->iso2  = $request->input('iso2');
+        $iso2 = $request->input('iso2');
+        $country->iso2  = strtolower($iso2);
 
         $country->image_urls             = [
             'currency_local' => $request->input('currency-local'),
@@ -138,9 +141,11 @@ class CountryController extends Controller
 
         $country = Country::findOrFail($id);
         
+        $display_name_en = $request->input('display-name-en');
+
         $country->localization     = [
             'en' => [
-                'display_name' => $request->input('display-name-en')
+                'display_name' => strtolower($display_name_en),
             ],
             'bn' => [
                 'display_name' => $request->input('display-name-bn')
@@ -152,7 +157,8 @@ class CountryController extends Controller
             'alternative' => $request->input('alternative')
         ];
         
-        $country->iso2  = $request->input('iso2');
+        $iso2 = $request->input('iso2');
+        $country->iso2  = strtolower($iso2);
 
         $country->image_urls             = [
             'currency_local' => $request->input('currency-local'),

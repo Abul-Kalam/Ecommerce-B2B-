@@ -11,7 +11,7 @@ $_alertType = 'success';
 <section class="content-header">
     <h1>
         User
-        <small>Add new</small>
+        <small>Edit</small>
     </h1>
     <ol class="breadcrumb">
         <li>
@@ -31,7 +31,7 @@ $_alertType = 'success';
                 <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
                     <form action="{{ route('backend.users.update', $user->id) }}" method="post">
 
-                        {{ csrf_field() }}  {{ method_field('PUT') }}
+                            {{ csrf_field() }}  {{ method_field('PUT') }}
 
                         <div class="box box-solid mt-3">
                             {{-- <div class="box-header with-border">
@@ -51,45 +51,45 @@ $_alertType = 'success';
                                             <div class="row">
                                                 <div class="col-lg-6 form-group {{  $errors->has('first-name') ? 'has-error' : '' }}">
                                                     <label for="first-name">First Name</label>
-                                                    <input type="text" class="form-control" id="first-name" name="first-name" value="{{ $user->first_name }}">
+                                                    <input type="text" class="form-control" id="first-name" name="first-name" value="{{ucwords( $user->first_name) }}">
                                                     @if($errors->has('first-name'))
                                                     <span class="help-block">The First Name field is required.</span>
                                                     @endif
                                                 </div>
                                                 <div class="col-lg-6 form-group {{  $errors->has('last-name') ? 'has-error' : '' }}">
                                                     <label for="last-name">Last Name</label>
-                                                    <input type="text" class="form-control" id="last-name" name="last-name" value="{{ $user->last_name }}" >
+                                                    <input type="text" class="form-control" id="last-name" name="last-name" value="{{ucwords( $user->last_name) }}">
                                                     @if($errors->has('last-name'))
-                                                    <span class="help-block">The First Name field is required.</span>
+                                                    <span class="help-block">The Last Name field is required.</span>
                                                     @endif
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col-lg-6 form-group {{  $errors->has('display-name-en') ? 'has-error' : '' }}">
                                                     <label for="display-name-en">Display Name (english)</label>
-                                                    <input type="text" class="form-control" id="display-name-en" name="display-name-en" value="{{  $user->localization['en']['display_name'] }}">
+                                                    <input type="text" class="form-control" id="display-name-en" name="display-name-en"  value="{{  $user->localization['en']['display_name'] }}">
                                                     @if($errors->has('display-name-en'))
                                                     <span class="help-block">The Display Name English field is required.</span>
                                                     @endif
                                                 </div>
                                                 <div class="col-lg-6 form-group {{  $errors->has('display-name-bn') ? 'has-error' : '' }}">
                                                     <label for="display-name-bn">Display Name (bangla)</label>
-                                                    <input type="text" class="form-control" id="display-name-bn" name="display-name-bn" value="{{  $user->localization['bn']['display_name'] }}">
+                                                    <input type="text" class="form-control" id="display-name-bn" name="display-name-bn"  value="{{  $user->localization['bn']['display_name'] }}">
                                                     @if($errors->has('display-name-bn'))
                                                     <span class="help-block">The Display Name Bangla field is required.</span>
                                                     @endif
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                <div class="col-lg-6 form-group {{  $errors->has('name') ? 'has-error' : '' }}">
+                                                {{-- <div class="col-lg-6 form-group {{  $errors->has('name') ? 'has-error' : '' }}">
                                                     <label for="name">User Name</label>
-                                                    <input type="text" class="form-control" id="name" name="name" value="{{ $user->name }}">
+                                                    <input type="text" class="form-control" id="name" name="name">
                                                     @if($errors->has('name'))
                                                     <span class="help-block">The Display Name User Name field is
                                                         required.</span>
                                                     @endif
-                                                </div>
-                                                <div class="col-lg-6 form-group {{  $errors->has('email') ? 'has-error' : '' }}">
+                                                </div> --}}
+                                                <div class="col-lg-12 form-group {{  $errors->has('email') ? 'has-error' : '' }}">
                                                     <label for="email">Email</label>
                                                     <input type="email" class="form-control" id="email" name="email" value="{{ $user->email }}">
                                                     @if($errors->has('email'))
@@ -105,11 +105,11 @@ $_alertType = 'success';
                                                     <span class="help-block">The Display Password field is required.</span>
                                                     @endif
                                                 </div>
-                                                <div class="col-lg-6 form-group">
+                                                <div class="col-lg-6 form-group {{  $errors->has('role') ? 'has-error' : '' }}">
                                                     <label for="display-name-bn">Role </label>
                                                     <select class="form-control" placeholder="Select Role" name="role">
                                                         @foreach ($roles as $role)
-                                                        <option {{ $user->roles[0]->id === $role->id ? 'selected' : '' }} value="{{  $role->id }}">{{ $role->display_name }}</option>
+                                                        <option {{ $user->roles[0]->id === $role->id ? 'selected' : '' }} value="{{  $role->id }}">{{ ucwords($role->display_name) }}</option>
                                                         @endforeach
                                                     </select>
                                                 </div>
@@ -130,106 +130,167 @@ $_alertType = 'success';
                                             <div class="row">
                                                 <div class="col-lg-6">
                                                     <h4 class="form-title">Billing Address</h4>
-                                                    <div class="form-group">
+                                                    <div class="form-group {{  $errors->has('billing-address-line-1') ? 'has-error' : '' }}">
                                                         <label for="billing-address-line-1">Address Line 1</label>
                                                         <input type="text" class="form-control" id="billing-address-line-1"
                                                             name="billing-address-line-1" value="{{ $user->billing_address['line_1'] }}">
+                                                            @if($errors->has('billing-address-line-1'))
+                                                            <span class="help-block">The Address Line 1 field is required.</span>
+                                                            @endif
+                                                            
                                                     </div>
 
-                                                    <div class="form-group">
+                                                    <div class="form-group {{  $errors->has('billing-address-line-2') ? 'has-error' : '' }}">
                                                         <label for="billing-address-line-2">Address Line 2</label>
                                                         <input type="text" class="form-control" id="billing-address-line-2"
                                                             name="billing-address-line-2" value="{{ $user->billing_address['line_2'] }}">
+                                                            @if($errors->has('billing-address-line-2'))
+                                                            <span class="help-block">The Address Line 2 field is required.</span>
+                                                            @endif
+                                                            
                                                     </div>
 
                                                     <div class="row">
+                                                        <div class="col-lg-12">
+                                                            <div class="form-group {{  $errors->has('billing-country-id') ? 'has-error' : '' }}">
+                                                                <label>Country</label>
+                                                                <select class="form-control" name="billing-country-id">
+                                                                        <option value="">Choose Country</option>
+                                                                        @foreach ($countries as $c)
+                                                                        <option value="{{ $c->id}}" {{ $c->id ==$user->billing_address['country_id'] ? 'selected' : '' }}>{{ ucwords($c->localization['en']['display_name']) }}</option>
+                                                                        @endforeach
+                                                                        @if($errors->has('country-id'))
+                                                                        <span class="help-block">The Country field is required.</span>
+                                                                        @endif
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
                                                         <div class="col-lg-6">
-                                                            <div class="form-group">
+                                                            <div class="form-group {{  $errors->has('billing-district-id') ? 'has-error' : '' }}">
                                                                 <label>District</label>
-                                                                <select class="form-control" placeholder="Select district" name="billing-district-id">
-                                                                    @foreach ($districts as $d)
-                                                                    <option value="{{ $d->id}}" {{ $d->id ==$user->billing_address['district_id'] ? 'selected' : '' }}>{{ ucwords($d->localization['en']['display_name']) }}</option>
-                                                                    @endforeach
-                                                                    @if($errors->has('country-id'))
-                                                                    <span class="help-block">The Districts field is required.</span>
-                                                                    @endif
+                                                                <select class="form-control" name="billing-district-id">
+                                                                        <option value="">Choose District</option>
+                                                                        @foreach ($districts as $d)
+                                                                        <option value="{{ $d->id}}" {{ $d->id ==$user->billing_address['district_id'] ? 'selected' : '' }}>{{ ucwords($d->localization['en']['display_name']) }}</option>
+                                                                        @endforeach
+                                                                        @if($errors->has('billing-district-id'))
+                                                                        <span class="help-block">The District field is required.</span>
+                                                                         @endif
                                                                 </select>
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-6">
-                                                            <div class="form-group">
+                                                            <div class="form-group {{  $errors->has('billing-division-id') ? 'has-error' : '' }}">
                                                                 <label>Division</label>
-                                                                <select class="form-control" placeholder="Select division" name="billing-division-id">
+                                                                <select class="form-control" name="billing-division-id">
+                                                                    <option value="">Choose Division</option>
                                                                     @foreach ($divisions as $d)
                                                                     <option value="{{ $d->id}}" {{ $d->id ==$user->billing_address['division_id'] ? 'selected' : '' }}>{{ ucwords($d->localization['en']['display_name']) }}</option>
                                                                     @endforeach
                                                                     @if($errors->has('country-id'))
                                                                     <span class="help-block">The Divisions field is required.</span>
                                                                     @endif
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-lg-6">
-                                                            <div class="form-group">
-                                                                <label>Thana</label>
-                                                                <select class="form-control" placeholder="Select thana" name="billing-thana-id">
-                                                                    @foreach ($thanas as $d)
-                                                                    <option value="{{ $d->id}}" {{ $d->id ==$user->billing_address['thana_id'] ? 'selected' : '' }}>{{ ucwords($d->localization['en']['display_name']) }}</option>
-                                                                    @endforeach
-                                                                    @if($errors->has('country-id'))
-                                                                    <span class="help-block">The Thanas field is required.</span>
+                                                                    @if($errors->has('billing-division-id'))
+                                                                        <span class="help-block">The Division field is required.</span>
                                                                     @endif
                                                                 </select>
                                                             </div>
                                                         </div>
+                                                    </div>
+
+                                                    <div class="row">
                                                         <div class="col-lg-6">
-                                                            <div class="form-group">
+                                                            <div class="form-group {{  $errors->has('billing-thana-id') ? 'has-error' : '' }}">
+                                                                <label>Thana</label>
+                                                                <select class="form-control" name="billing-thana-id">
+                                                                    <option value="">Choose Thana</option>
+                                                                    @foreach ($thanas as $d)
+                                                                    <option value="{{ $d->id}}" {{ $d->id ==$user->billing_address['thana_id'] ? 'selected' : '' }}>{{ ucwords($d->localization['en']['display_name']) }}</option>
+                                                                    @endforeach
+                                                                    @if($errors->has('billing-thana-id'))
+                                                                    <span class="help-block">The Thana field is required.</span>
+                                                                     @endif
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <div class="form-group {{  $errors->has('billing-zip') ? 'has-error' : '' }}">
                                                                 <label for="billing-zip">Zip / Postal Code</label>
                                                                 <input type="text" class="form-control" id="billing-zip"
                                                                     name="billing-zip" value="{{ $user->billing_address['zip'] }}">
+                                                                @if($errors->has('billing-zip'))
+                                                                <span class="help-block">The Zip field is required.</span>
+                                                                @endif
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6">
                                                     <h4 class="form-title">Shipping Address</h4>
-                                                    <div class="form-group">
+                                                    <div class="form-group {{  $errors->has('shipping-address-line-1') ? 'has-error' : '' }}">
                                                         <label for="shipping-address-line-1">Address Line 1</label>
                                                         <input type="text" class="form-control" id="shipping-address-line-1"
                                                             name="shipping-address-line-1" value="{{ $user->shipping_address['line_1']  }}">
+                                                             @if($errors->has('shipping-address-line-1'))
+                                                                <span class="help-block">The Address Line 1 field is required.</span>
+                                                            @endif
                                                     </div>
-                                                    <div class="form-group">
+                                                    <div class="form-group {{  $errors->has('shipping-address-line-2') ? 'has-error' : '' }}">
                                                         <label for="shipping-address-line-2">Address Line 2</label>
                                                         <input type="text" class="form-control" id="shipping-address-line-2"
                                                             name="shipping-address-line-2" value="{{ $user->shipping_address['line_2']  }}">
+                                                            @if($errors->has('shipping-address-line-2'))
+                                                                <span class="help-block">The Address Line 2 field is required.</span>
+                                                            @endif
                                                     </div>
 
                                                     <div class="row">
+                                                        <div class="col-lg-12">
+                                                            <div class="form-group {{  $errors->has('shipping-country-id') ? 'has-error' : '' }}">
+                                                                <label>Country</label>
+                                                                <select class="form-control" name="shipping-country-id">
+                                                                    <option value="">Choose Country</option>
+                                                                    <option value="">Choose Country</option>
+                                                                        @foreach ($countries as $c)
+                                                                        <option value="{{ $c->id}}" {{ $c->id ==$user->shipping_address['country_id'] ? 'selected' : '' }}>{{ ucwords($c->localization['en']['display_name']) }}</option>
+                                                                        @endforeach
+                                                                    @if($errors->has('shipping-country-id'))
+                                                                        <span class="help-block">The Country field is required.</span>
+                                                                    @endif
+                                                            </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
                                                         <div class="col-lg-6">
-                                                            <div class="form-group">
+                                                            <div class="form-group {{  $errors->has('shipping-district-id') ? 'has-error' : '' }}">
                                                                 <label>District</label>
-                                                                <select class="form-control" placeholder="Select district" name="shipping-district-id">
+                                                                <select class="form-control" name="shipping-district-id">
+                                                                    <option value="">Choose District</option>
                                                                     @foreach ($districts as $d)
                                                                     <option value="{{ $d->id}}" {{ $d->id ==$user->shipping_address['district_id'] ? 'selected' : '' }}>{{ ucwords($d->localization['en']['display_name']) }}</option>
                                                                     @endforeach
-                                                                    @if($errors->has('country-id'))
-                                                                    <span class="help-block">The Districts field is required.</span>
+                                                                    @if($errors->has('shipping-district-id'))
+                                                                        <span class="help-block">The District field is required.</span>
                                                                     @endif
                                                                 </select>
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-6">
-                                                            <div class="form-group">
+                                                            <div class="form-group {{  $errors->has('shipping-division-id') ? 'has-error' : '' }}">
                                                                 <label>Division</label>
-                                                                <select class="form-control" placeholder="Select division" name="shipping-division-id">
+                                                                <select class="form-control" name="shipping-division-id">
+                                                                    <option value="">Choose Division</option>
                                                                     @foreach ($divisions as $d)
                                                                     <option value="{{ $d->id}}" {{ $d->id ==$user->shipping_address['division_id'] ? 'selected' : '' }}>{{ ucwords($d->localization['en']['display_name']) }}</option>
                                                                     @endforeach
-                                                                    @if($errors->has('country-id'))
-                                                                    <span class="help-block">The Divisions field is required.</span>
+
+                                                                    @if($errors->has('shipping-division-id'))
+                                                                        <span class="help-block">The Division field is required.</span>
                                                                     @endif
+
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -237,23 +298,27 @@ $_alertType = 'success';
 
                                                     <div class="row">
                                                         <div class="col-lg-6">
-                                                            <div class="form-group">
+                                                            <div class="form-group {{  $errors->has('shipping-thana-id') ? 'has-error' : '' }}">
                                                                 <label>Thana</label>
-                                                                <select class="form-control" placeholder="Select thana" name="shipping-thana-id">
+                                                                <select class="form-control" name="shipping-thana-id">
+                                                                    <option value="">Choose Thana</option>
                                                                     @foreach ($thanas as $d)
                                                                     <option value="{{ $d->id}}" {{ $d->id ==$user->shipping_address['thana_id'] ? 'selected' : '' }}>{{ ucwords($d->localization['en']['display_name']) }}</option>
                                                                     @endforeach
-                                                                    @if($errors->has('country-id'))
-                                                                    <span class="help-block">The Thanas field is required.</span>
+                                                                    @if($errors->has('shipping-thana-id'))
+                                                                    <span class="help-block">The Thana field is required.</span>
                                                                     @endif
                                                                 </select>
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-6">
-                                                            <div class="form-group">
+                                                            <div class="form-group {{  $errors->has('shipping-zip') ? 'has-error' : '' }}">
                                                                 <label for="shipping-zip">Zip / Postal Code</label>
                                                                 <input type="text" class="form-control" id="shipping-zip"
                                                                     name="shipping-zip" value="{{ $user->shipping_address['zip'] }}">
+                                                                @if($errors->has('shipping-zip'))
+                                                                <span class="help-block">The Zip field is required.</span>
+                                                                @endif
                                                             </div>
                                                         </div>
                                                     </div>
