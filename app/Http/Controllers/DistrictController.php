@@ -15,7 +15,9 @@ class DistrictController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {   
+        $this->checkPermission('read-district');
+        
         $paginate = config('app.pagenation_count', 15);
         
         $districts = District::with('division')->orderBy('created_at', 'DESC')->paginate($paginate);
@@ -44,7 +46,9 @@ class DistrictController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
+    {   
+        $this->checkPermission('create-district');
+        
         $divisions = Division::get();
         return view('backend.pages.district-create' , [
             'divisions' => $divisions,
@@ -114,6 +118,8 @@ class DistrictController extends Controller
      */
     public function edit($id)
     {
+        $this->checkPermission('update-district');
+        
         $district = District::findOrFail($id);
         $divisions = Division::get();
         return view('backend.pages.district-edit', [

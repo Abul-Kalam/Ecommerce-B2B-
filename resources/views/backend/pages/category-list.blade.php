@@ -67,8 +67,10 @@
                                         <td>
                                             <span class="actions">
                                                 <a href="{{ route('backend.categories.show', $c->id)}}">View</a>
+                                                @permission('update-category')
                                                 <span>&nbsp;|&nbsp;</span>
                                                 <a href="{{ route('backend.categories.edit', $c->id)}}">Edit</a>
+                                                @endpermission
                                             </span>
                                             
                                         </td>

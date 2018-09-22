@@ -19,6 +19,8 @@ class ShopController extends Controller
      */
     public function index()
     {
+
+        $this->checkPermission('read-shop');
         $paginate = config('app.pagenation_count', 3);
         
         $shops = Shop::orderBy('created_at', 'DESC')->paginate($paginate);
@@ -50,6 +52,9 @@ class ShopController extends Controller
      */
     public function create()
     {
+
+        $this->checkPermission('create-shop');
+
         $countries = Country::get();
         $divisions = Division::get();
         $districts = District::get();
@@ -160,7 +165,8 @@ class ShopController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
+    {  
+        $this->checkPermission('update-shop');
         $shop = shop::findOrFail($id);
         $countries = Country::get();
         $divisions = Division::get();
@@ -247,8 +253,6 @@ class ShopController extends Controller
         $shop->status           =  $status;
         $shop->description  = $request->input('description');
         $shop->images_url  = $request->input('image-url');
-        
-        $shop->save();
         
         $shop->save();
 

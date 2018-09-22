@@ -19,6 +19,8 @@ class MediaController extends Controller
      */
     public function index()
     {
+        $this->checkPermission('read-media');
+
         $paginate = config('app.pagenation_count', 10);
         
         $media = Media::orderBy('created_at', 'DESC')->paginate($paginate);
@@ -45,6 +47,7 @@ class MediaController extends Controller
      */
     public function create()
     {
+        $this->checkPermission('create-media');
         return view('backend.pages.media-create');
     }
 

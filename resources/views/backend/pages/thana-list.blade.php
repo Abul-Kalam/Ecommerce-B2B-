@@ -33,7 +33,9 @@
                 <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
                     <div class="box mt-3">
                         <div class="box-header with-border">
+                            @permission('create-thana')
                             <a href="{{ route('backend.districts.create')}}" class="btn btn-sm btn-default">Add New</a>
+                            @endpermission
                             <div class="box-tools mt-2">
                             <form class="form-inline my-2 my-lg-0" action="{{ route('backend.thanas.search') }}" method="post">
                                     {{ csrf_field() }}
@@ -68,8 +70,10 @@
                                         <td>
                                             <span class="actions">
                                                 <a href="{{ route('backend.thanas.show', $c->id) }}">View</a>
+                                                @permission('update-thana')
                                                 <span>&nbsp;|&nbsp;</span>
                                                 <a href="{{ route('backend.thanas.edit', $c->id) }}">Edit</a>
+                                                @endpermission
                                             </span>
                                             
                                         </td>

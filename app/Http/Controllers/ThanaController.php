@@ -15,7 +15,8 @@ class ThanaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {   
+        $this->checkPermission('read-thana');
         $paginate = config('app.pagenation_count', 17);
         
         $thanas = Thana::with('district')->orderBy('created_at', 'DESC')->paginate($paginate);
@@ -42,7 +43,8 @@ class ThanaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
+    {   
+        $this->checkPermission('create-thana');
         $districts = District::get();
         return view('backend.pages.thana-create' , [
             'districts' => $districts,
@@ -110,7 +112,8 @@ class ThanaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
+    {   
+        $this->checkPermission('update-thana');
         $thana = Thana::findOrFail($id);
         $districts = District::get();
         return view('backend.pages.thana-edit', [

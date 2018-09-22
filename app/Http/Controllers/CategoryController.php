@@ -13,8 +13,11 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
-    {   
+    {
+        $this->checkPermission('read-category');
+
         $paginate = config('app.pagenation_count', 3);
         
         $categories = Category::orderBy('created_at', 'DESC')->paginate($paginate);
@@ -47,6 +50,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
+        $this->checkPermission('create-category');
         $categories = Category::where('parent_id', '=', 0)->get();
         return view('backend.pages.category-create', [
             'categories' => $categories
@@ -128,7 +132,9 @@ class CategoryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
+    {   
+        $this->checkPermission('update-category');
+
         $category = Category::findOrFail($id);
 
         $categories = Category::where('parent_id', '=', 0)->get();

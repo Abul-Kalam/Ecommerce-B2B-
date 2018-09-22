@@ -21,13 +21,13 @@ return [
                     'slug'  => 'create',
                     'label' => 'Add New',
                     'route' => 'backend.media.create',
-                    'permissions'   => 'view-dashboard'
+                    'permissions'   => 'create-media'
                 ],
                 [
                     'slug'  => 'index',
                     'label' => 'Library',
                     'route' => 'backend.media.index',
-                    'permissions'   => 'view-dashboard'
+                    'permissions'   => 'read-media'
                 ]
             ]
         ],
@@ -42,13 +42,13 @@ return [
                     'slug'  => 'create',
                     'label' => 'Add New',
                     'route' => 'backend.shops.create',
-                    'permissions'   => 'view-dashboard'
+                    'permissions'   => 'create-shop'
                 ],
                 [
                     'slug'  => 'index',
                     'label' => 'All shops',
                     'route' => 'backend.shops.index',
-                    'permissions'   => 'view-dashboard'
+                    'permissions'   => 'read-shop'
                 ]
             ]
         ],
@@ -63,13 +63,13 @@ return [
                     'slug'  => 'create',
                     'label' => 'Add New',
                     'route' => 'backend.categories.create',
-                    'permissions'   => 'view-dashboard'
+                    'permissions'   => 'create-category'
                 ],
                 [
                     'slug'  => 'index',
                     'label' => 'All Categories',
                     'route' => 'backend.categories.index',
-                    'permissions'   => 'view-dashboard'
+                    'permissions'   => 'read-category'
                 ]
             ]
         ],
@@ -84,13 +84,13 @@ return [
                     'slug'  => 'create',
                     'label' => 'Add New',
                     'route' => 'backend.tags.create',
-                    'permissions'   => 'view-dashboard'
+                    'permissions'   => 'create-tag'
                 ],
                 [
                     'slug'  => 'index',
                     'label' => 'All tag',
                     'route' => 'backend.tags.index',
-                    'permissions'   => 'view-dashboard'
+                    'permissions'   => 'read-tag'
                 ]
             ]
         ],
@@ -150,13 +150,13 @@ return [
                     'slug'  => 'create',
                     'label' => 'Add New',
                     'route' => 'backend.brands.create',
-                    'permissions'   => 'view-dashboard'
+                    'permissions'   => 'create-brand'
                 ],
                 [
                     'slug'  => 'index',
                     'label' => 'All brand',
                     'route' => 'backend.brands.index',
-                    'permissions'   => 'view-dashboard'
+                    'permissions'   => 'read-brand'
                 ]
             ]
         ],
@@ -171,13 +171,13 @@ return [
                     'slug'  => 'create',
                     'label' => 'Add New',
                     'route' => 'backend.countries.create',
-                    'permissions'   => 'view-dashboard'
+                    'permissions'   => 'create-country'
                 ],
                 [
                     'slug'  => 'index',
                     'label' => 'All country',
                     'route' => 'backend.countries.index',
-                    'permissions'   => 'view-dashboard'
+                    'permissions'   => 'read-country'
                 ]
             ]
         ],
@@ -192,13 +192,13 @@ return [
                     'slug'  => 'create',
                     'label' => 'Add New',
                     'route' => 'backend.divisions.create',
-                    'permissions'   => 'view-dashboard'
+                    'permissions'   => 'create-division'
                 ],
                 [
                     'slug'  => 'index',
                     'label' => 'All division',
                     'route' => 'backend.divisions.index',
-                    'permissions'   => 'view-dashboard'
+                    'permissions'   => 'read-division'
                 ]
             ]
         ],
@@ -213,13 +213,13 @@ return [
                     'slug'  => 'create',
                     'label' => 'Add New',
                     'route' => 'backend.districts.create',
-                    'permissions'   => 'view-dashboard'
+                    'permissions'   => 'create-district'
                 ],
                 [
                     'slug'  => 'index',
                     'label' => 'All district',
                     'route' => 'backend.districts.index',
-                    'permissions'   => 'view-dashboard'
+                    'permissions'   => 'read-district'
                 ]
             ]
         ],
@@ -234,13 +234,13 @@ return [
                     'slug'  => 'create',
                     'label' => 'Add New',
                     'route' => 'backend.thanas.create',
-                    'permissions'   => 'view-dashboard'
+                    'permissions'   => 'create-thana'
                 ],
                 [
                     'slug'  => 'index',
                     'label' => 'All thana',
                     'route' => 'backend.thanas.index',
-                    'permissions'   => 'view-dashboard'
+                    'permissions'   => 'read-thana'
                 ]
             ]
         ]
