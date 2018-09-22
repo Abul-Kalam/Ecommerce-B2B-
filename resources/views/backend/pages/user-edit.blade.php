@@ -108,9 +108,11 @@ $_alertType = 'success';
                                                 <div class="col-lg-6 form-group {{  $errors->has('role') ? 'has-error' : '' }}">
                                                     <label for="display-name-bn">Role </label>
                                                     <select class="form-control" placeholder="Select Role" name="role">
+                                                    
                                                         @foreach ($roles as $role)
                                                         <option {{ $user->roles[0]->id === $role->id ? 'selected' : '' }} value="{{  $role->id }}">{{ ucwords($role->display_name) }}</option>
                                                         @endforeach
+
                                                     </select>
                                                 </div>
                                             </div>

@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
             UsersTableSeeder::class,
             RolesTableSeeder::class,
             PermissionsTableSeeder::class,
+            User_role_permissionTableSeeder::class,
             ThanasTableSeeder::class,
             CountriesTableSeeder::class,
             DivisionsTableSeeder::class,
