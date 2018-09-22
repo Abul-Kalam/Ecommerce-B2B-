@@ -1,6 +1,6 @@
 @php
-    $_activePrimaryNav = 'permission';
-    $_activeSecondaryNav = 'create';
+    $_activePrimaryNav = 'user-management';
+    $_activeSecondaryNav = 'create-permissions';
     $_alertType = null;
     $_alertMessage = null;
 @endphp

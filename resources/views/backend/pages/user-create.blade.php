@@ -1,6 +1,6 @@
 @php
-$_activePrimaryNav = 'User';
-$_activeSecondaryNav = 'create';
+$_activePrimaryNav = 'user-management';
+$_activeSecondaryNav = 'create-users';
 @endphp
 @extends('backend.layouts.default')
 @section('title', 'Create User')

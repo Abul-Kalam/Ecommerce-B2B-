@@ -96,63 +96,45 @@ return [
         ],
         [
             'type'          => 'menu',
-            'slug'          => 'user',
-            'label'         => 'User',
+            'slug'          => 'user-management',
+            'label'         => 'User Management',
             'icon_class'    => 'fa fa-users',
             'permissions'   => 'view-dashboard',
             'childs'        => [
                 [
-                    'slug'  => 'create',
-                    'label' => 'Add New',
+                    'slug'  => 'create-users',
+                    'label' => 'Add New User',
                     'route' => 'backend.users.create',
                     'permissions'   => 'view-dashboard'
                 ],
                 [
-                    'slug'  => 'index',
+                    'slug'  => 'index-users',
                     'label' => 'All user',
                     'route' => 'backend.users.index',
                     'permissions'   => 'view-dashboard'
-                ]
-            ]
-        ],
-        [
-            'type'          => 'menu',
-            'slug'          => 'permission',
-            'label'         => 'Permission',
-            'icon_class'    => 'fa fa-users',
-            'permissions'   => 'view-dashboard',
-            'childs'        => [
-                [
-                    'slug'  => 'create',
-                    'label' => 'Add New',
-                    'route' => 'backend.permissions.create',
-                    'permissions'   => 'view-dashboard'
                 ],
                 [
-                    'slug'  => 'index',
-                    'label' => 'All Permission',
-                    'route' => 'backend.permissions.index',
-                    'permissions'   => 'view-dashboard'
-                ]
-            ]
-        ],
-        [
-            'type'          => 'menu',
-            'slug'          => 'role',
-            'label'         => 'Role',
-            'icon_class'    => 'fa fa-users',
-            'permissions'   => 'view-dashboard',
-            'childs'        => [
-                [
-                    'slug'  => 'create',
-                    'label' => 'Add New',
+                    'slug'  => 'create-roles',
+                    'label' => 'Add New Role',
                     'route' => 'backend.roles.create',
                     'permissions'   => 'view-dashboard'
                 ],
                 [
-                    'slug'  => 'index',
+                    'slug'  => 'index-roles',
                     'label' => 'All role',
                     'route' => 'backend.roles.index',
+                    'permissions'   => 'view-dashboard'
+                ],
+                [
+                    'slug'  => 'create-permissions',
+                    'label' => 'Add New Permission',
+                    'route' => 'backend.permissions.create',
+                    'permissions'   => 'view-dashboard'
+                ],
+                [
+                    'slug'  => 'index-permissions',
+                    'label' => 'All Permission',
+                    'route' => 'backend.permissions.index',
                     'permissions'   => 'view-dashboard'
                 ]
             ]

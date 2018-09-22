@@ -1,6 +1,6 @@
 @php
-    $_activePrimaryNav = 'role';
-    $_activeSecondaryNav = 'create';
+    $_activePrimaryNav = 'user-management';
+    $_activeSecondaryNav = 'create-roles';
     $_alertType = null;
     $_alertMessage = null;
 @endphp
