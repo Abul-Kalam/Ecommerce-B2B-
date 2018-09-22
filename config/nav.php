@@ -105,37 +105,37 @@ return [
                     'slug'  => 'create-users',
                     'label' => 'Add New User',
                     'route' => 'backend.users.create',
-                    'permissions'   => 'view-dashboard'
+                    'permissions'   => 'create-user'
                 ],
                 [
                     'slug'  => 'index-users',
                     'label' => 'All user',
                     'route' => 'backend.users.index',
-                    'permissions'   => 'view-dashboard'
+                    'permissions'   => 'read-user'
                 ],
                 [
                     'slug'  => 'create-roles',
                     'label' => 'Add New Role',
                     'route' => 'backend.roles.create',
-                    'permissions'   => 'view-dashboard'
+                    'permissions'   => 'create-role'
                 ],
                 [
                     'slug'  => 'index-roles',
                     'label' => 'All role',
                     'route' => 'backend.roles.index',
-                    'permissions'   => 'view-dashboard'
+                    'permissions'   => 'read-role'
                 ],
                 [
                     'slug'  => 'create-permissions',
                     'label' => 'Add New Permission',
                     'route' => 'backend.permissions.create',
-                    'permissions'   => 'view-dashboard'
+                    'permissions'   => 'create-permission'
                 ],
                 [
                     'slug'  => 'index-permissions',
                     'label' => 'All Permission',
                     'route' => 'backend.permissions.index',
-                    'permissions'   => 'view-dashboard'
+                    'permissions'   => 'read-permission'
                 ]
             ]
         ],

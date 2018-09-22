@@ -14,6 +14,9 @@ class PermissionController extends Controller
      */
     public function index()
     {
+
+        $this->checkPermission('read-permission');
+        
         $paginate = config('app.pagenation_count', 17);
         
         $permissions = Permission::orderBy('created_at', 'DESC')->paginate($paginate);
@@ -40,6 +43,7 @@ class PermissionController extends Controller
      */
     public function create()
     {
+        $this->checkPermission('create-permission');
         return view('backend.pages.permission-create');
     }
 
@@ -94,6 +98,8 @@ class PermissionController extends Controller
      */
     public function edit($id)
     {
+
+        $this->checkPermission('update-permission');
         $permission = Permission::findOrFail($id);
 
         return view('backend.pages.permission-edit', [

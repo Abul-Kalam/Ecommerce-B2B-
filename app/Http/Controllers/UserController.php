@@ -22,7 +22,8 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {   
+        $this->checkPermission('read-user');
         $paginate = config('app.pagenation_count', 3);
         
         $users = User::orderBy('created_at', 'DESC')->paginate($paginate);
@@ -57,6 +58,7 @@ class UserController extends Controller
      */
     public function create()
     {
+        $this->checkPermission('create-user');
         $roles = Role::get();
         $countries = Country::get();
         $divisions = Division::get();
@@ -204,6 +206,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
+        $this->checkPermission('update-user');
         $user = User::findOrFail($id);
 
         $roles = Role::get();

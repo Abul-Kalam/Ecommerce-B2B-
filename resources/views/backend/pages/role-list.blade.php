@@ -34,7 +34,9 @@
 
                     <div class="box mt-3">
                         <div class="box-header with-border">
+                            @permission('create-role')
                             <a href="{{ route('backend.roles.create')}}" class="btn btn-sm btn-default">Add New</a>
+                            @endpermission
                             <div class="box-tools mt-2">
                             <form class="form-inline my-2 my-lg-0" action="{{ route('backend.roles.search') }}" method="post">
                                     {{ csrf_field() }}
@@ -68,8 +70,10 @@
                                         <td>
                                             <span class="actions">
                                                 <a href="{{ route('backend.roles.show', $p->id)}}">View</a>
+                                                @permission('update-role')
                                                 <span>&nbsp;|&nbsp;</span>
                                                 <a href="{{ route('backend.roles.edit', $p->id)}}">Edit</a>
+                                                @endpermission
                                             </span>
                                             
                                         </td>

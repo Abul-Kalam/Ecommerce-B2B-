@@ -17,6 +17,7 @@ class RoleController extends Controller
      */
     public function index()
     {
+        $this->checkPermission('read-role');
         $paginate = config('app.pagenation_count', 5);
 
         $roles = Role::orderBy('created_at', 'DESC')->paginate($paginate);
@@ -33,6 +34,9 @@ class RoleController extends Controller
      */
     public function create()
     {
+
+        $this->checkPermission('create-role');
+        
         $permissions = Permission::get();
 
         return view('backend.pages.role-create', [
@@ -101,8 +105,10 @@ class RoleController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
-        $role = Role::findOrFail($id); 
+    { 
+
+        $this->checkPermission('update-role');
+        $role = Role::findOrFail($id);
 
         $permissions = Permission::get();
         
