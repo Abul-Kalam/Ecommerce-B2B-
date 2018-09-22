@@ -81,15 +81,18 @@ $_alertType = 'success';
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                {{-- <div class="col-lg-6 form-group {{  $errors->has('name') ? 'has-error' : '' }}">
-                                                    <label for="name">User Name</label>
-                                                    <input type="text" class="form-control" id="name" name="name">
-                                                    @if($errors->has('name'))
-                                                    <span class="help-block">The Display Name User Name field is
-                                                        required.</span>
+                                                <div class="col-lg-6 form-group {{  $errors->has('gender') ? 'has-error' : '' }}">
+                                                    <label for="display-name-bn">Gender</label>
+                                                    <select class="form-control" placeholder="Select Gender" name="gender">
+                                                        <option value="male"  {{ $user->gender === "male" ? 'selected' : '' }}>Male</option>
+                                                        <option value="female"  {{ $user->gender === "female" ? 'selected' : '' }}>Female</option>
+                                                        <option value="other"  {{ $user->gender === "other" ? 'selected' : '' }}>Other</option>
+                                                    </select>
+                                                    @if($errors->has('gender'))
+                                                    <span class="help-block">The Gender field is required.</span>
                                                     @endif
-                                                </div> --}}
-                                                <div class="col-lg-12 form-group {{  $errors->has('email') ? 'has-error' : '' }}">
+                                                </div>
+                                                <div class="col-lg-6 form-group {{  $errors->has('email') ? 'has-error' : '' }}">
                                                     <label for="email">Email</label>
                                                     <input type="email" class="form-control" id="email" name="email" value="{{ $user->email }}">
                                                     @if($errors->has('email'))
@@ -114,6 +117,9 @@ $_alertType = 'success';
                                                         @endforeach
 
                                                     </select>
+                                                    @if($errors->has('role'))
+                                                    <span class="help-block">The Display Role field is required.</span>
+                                                    @endif
                                                 </div>
                                             </div>
 
@@ -161,10 +167,10 @@ $_alertType = 'success';
                                                                         @foreach ($countries as $c)
                                                                         <option value="{{ $c->id}}" {{ $c->id ==$user->billing_address['country_id'] ? 'selected' : '' }}>{{ ucwords($c->localization['en']['display_name']) }}</option>
                                                                         @endforeach
-                                                                        @if($errors->has('country-id'))
-                                                                        <span class="help-block">The Country field is required.</span>
-                                                                        @endif
-                                                                </select>
+                                                                    </select>
+                                                                    @if($errors->has('country-id'))
+                                                                    <span class="help-block">The Country field is required.</span>
+                                                                    @endif
                                                             </div>
                                                         </div>
                                                     </div>
@@ -177,10 +183,10 @@ $_alertType = 'success';
                                                                         @foreach ($districts as $d)
                                                                         <option value="{{ $d->id}}" {{ $d->id ==$user->billing_address['district_id'] ? 'selected' : '' }}>{{ ucwords($d->localization['en']['display_name']) }}</option>
                                                                         @endforeach
-                                                                        @if($errors->has('billing-district-id'))
-                                                                        <span class="help-block">The District field is required.</span>
-                                                                         @endif
                                                                 </select>
+                                                                @if($errors->has('billing-district-id'))
+                                                                <span class="help-block">The District field is required.</span>
+                                                                 @endif
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-6">
@@ -191,13 +197,10 @@ $_alertType = 'success';
                                                                     @foreach ($divisions as $d)
                                                                     <option value="{{ $d->id}}" {{ $d->id ==$user->billing_address['division_id'] ? 'selected' : '' }}>{{ ucwords($d->localization['en']['display_name']) }}</option>
                                                                     @endforeach
-                                                                    @if($errors->has('country-id'))
-                                                                    <span class="help-block">The Divisions field is required.</span>
-                                                                    @endif
-                                                                    @if($errors->has('billing-division-id'))
-                                                                        <span class="help-block">The Division field is required.</span>
-                                                                    @endif
                                                                 </select>
+                                                                @if($errors->has('billing-division-id'))
+                                                                <span class="help-block">The Division field is required.</span>
+                                                                @endif
                                                             </div>
                                                         </div>
                                                     </div>
@@ -211,10 +214,10 @@ $_alertType = 'success';
                                                                     @foreach ($thanas as $d)
                                                                     <option value="{{ $d->id}}" {{ $d->id ==$user->billing_address['thana_id'] ? 'selected' : '' }}>{{ ucwords($d->localization['en']['display_name']) }}</option>
                                                                     @endforeach
-                                                                    @if($errors->has('billing-thana-id'))
-                                                                    <span class="help-block">The Thana field is required.</span>
-                                                                     @endif
                                                                 </select>
+                                                                @if($errors->has('billing-thana-id'))
+                                                                <span class="help-block">The Thana field is required.</span>
+                                                                 @endif
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-6">
@@ -258,10 +261,10 @@ $_alertType = 'success';
                                                                         @foreach ($countries as $c)
                                                                         <option value="{{ $c->id}}" {{ $c->id ==$user->shipping_address['country_id'] ? 'selected' : '' }}>{{ ucwords($c->localization['en']['display_name']) }}</option>
                                                                         @endforeach
+                                                                    </select>
                                                                     @if($errors->has('shipping-country-id'))
                                                                         <span class="help-block">The Country field is required.</span>
                                                                     @endif
-                                                            </select>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -274,10 +277,10 @@ $_alertType = 'success';
                                                                     @foreach ($districts as $d)
                                                                     <option value="{{ $d->id}}" {{ $d->id ==$user->shipping_address['district_id'] ? 'selected' : '' }}>{{ ucwords($d->localization['en']['display_name']) }}</option>
                                                                     @endforeach
-                                                                    @if($errors->has('shipping-district-id'))
-                                                                        <span class="help-block">The District field is required.</span>
-                                                                    @endif
                                                                 </select>
+                                                                @if($errors->has('shipping-district-id'))
+                                                                    <span class="help-block">The District field is required.</span>
+                                                                @endif
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-6">
@@ -288,12 +291,10 @@ $_alertType = 'success';
                                                                     @foreach ($divisions as $d)
                                                                     <option value="{{ $d->id}}" {{ $d->id ==$user->shipping_address['division_id'] ? 'selected' : '' }}>{{ ucwords($d->localization['en']['display_name']) }}</option>
                                                                     @endforeach
-
-                                                                    @if($errors->has('shipping-division-id'))
-                                                                        <span class="help-block">The Division field is required.</span>
-                                                                    @endif
-
                                                                 </select>
+                                                                @if($errors->has('shipping-division-id'))
+                                                                    <span class="help-block">The Division field is required.</span>
+                                                                @endif
                                                             </div>
                                                         </div>
                                                     </div>
@@ -307,10 +308,10 @@ $_alertType = 'success';
                                                                     @foreach ($thanas as $d)
                                                                     <option value="{{ $d->id}}" {{ $d->id ==$user->shipping_address['thana_id'] ? 'selected' : '' }}>{{ ucwords($d->localization['en']['display_name']) }}</option>
                                                                     @endforeach
-                                                                    @if($errors->has('shipping-thana-id'))
-                                                                    <span class="help-block">The Thana field is required.</span>
-                                                                    @endif
                                                                 </select>
+                                                                @if($errors->has('shipping-thana-id'))
+                                                                <span class="help-block">The Thana field is required.</span>
+                                                                @endif
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-6">

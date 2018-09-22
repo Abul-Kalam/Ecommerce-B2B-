@@ -79,15 +79,19 @@ $_activeSecondaryNav = 'create';
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                {{-- <div class="col-lg-6 form-group {{  $errors->has('name') ? 'has-error' : '' }}">
-                                                    <label for="name">User Name</label>
-                                                    <input type="text" class="form-control" id="name" name="name">
-                                                    @if($errors->has('name'))
-                                                    <span class="help-block">The Display Name User Name field is
-                                                        required.</span>
+                                                <div class="col-lg-6 form-group  {{  $errors->has('gender') ? 'has-error' : '' }}">
+                                                    <label for="display-name-bn">Gender</label>
+                                                    <select class="form-control" placeholder="Select Gender" name="gender">
+                                                        <option value="">Choose Gender</option>
+                                                        <option value="male">Male</option>
+                                                        <option value="female">Female</option>
+                                                        <option value="other">Other</option>
+                                                    </select>
+                                                    @if($errors->has('gender'))
+                                                    <span class="help-block">The Gender field is required.</span>
                                                     @endif
-                                                </div> --}}
-                                                <div class="col-lg-12 form-group {{  $errors->has('email') ? 'has-error' : '' }}">
+                                                </div>
+                                                <div class="col-lg-6 form-group {{  $errors->has('email') ? 'has-error' : '' }}">
                                                     <label for="email">Email</label>
                                                     <input type="email" class="form-control" id="email" name="email">
                                                     @if($errors->has('email'))
@@ -110,10 +114,10 @@ $_activeSecondaryNav = 'create';
                                                         @foreach ($roles as $role)
                                                         <option value="{{  $role->id }}">{{ ucwords($role->display_name) }}</option>
                                                         @endforeach
-                                                        @if($errors->has('role'))
-                                                        <span class="help-block">The Display Role field is required.</span>
-                                                        @endif
                                                     </select>
+                                                    @if($errors->has('role'))
+                                                    <span class="help-block">The Display Role field is required.</span>
+                                                    @endif
                                                 </div>
                                             </div>
 
@@ -161,10 +165,10 @@ $_activeSecondaryNav = 'create';
                                                                         @foreach ($countries as $c)
                                                                         <option value="{{ $c->id}}">{{ ucwords($c->localization['en']['display_name']) }}</option>
                                                                         @endforeach
-                                                                        @if($errors->has('billing-country-id'))
-                                                                        <span class="help-block">The Country field is required.</span>
-                                                                         @endif
-                                                                </select>
+                                                                    </select>
+                                                                    @if($errors->has('billing-country-id'))
+                                                                    <span class="help-block">The Country field is required.</span>
+                                                                     @endif
                                                             </div>
                                                         </div>
                                                     </div>
@@ -177,10 +181,10 @@ $_activeSecondaryNav = 'create';
                                                                         @foreach ($districts as $d)
                                                                         <option value="{{ $d->id}}">{{ ucwords($d->localization['en']['display_name']) }}</option>
                                                                         @endforeach
-                                                                        @if($errors->has('billing-district-id'))
-                                                                        <span class="help-block">The District field is required.</span>
-                                                                         @endif
-                                                                </select>
+                                                                    </select>
+                                                                    @if($errors->has('billing-district-id'))
+                                                                    <span class="help-block">The District field is required.</span>
+                                                                     @endif
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-6">
@@ -191,10 +195,10 @@ $_activeSecondaryNav = 'create';
                                                                     @foreach ($divisions as $d)
                                                                     <option value="{{ $d->id}}">{{ ucwords($d->localization['en']['display_name']) }}</option>
                                                                     @endforeach
-                                                                    @if($errors->has('billing-division-id'))
-                                                                        <span class="help-block">The Division field is required.</span>
-                                                                    @endif
                                                                 </select>
+                                                                @if($errors->has('billing-division-id'))
+                                                                    <span class="help-block">The Division field is required.</span>
+                                                                @endif
                                                             </div>
                                                         </div>
                                                     </div>
@@ -208,10 +212,10 @@ $_activeSecondaryNav = 'create';
                                                                     @foreach ($thanas as $d)
                                                                     <option value="{{ $d->id}}">{{ ucwords($d->localization['en']['display_name']) }}</option>
                                                                     @endforeach
-                                                                    @if($errors->has('billing-thana-id'))
-                                                                    <span class="help-block">The Thana field is required.</span>
-                                                                     @endif
                                                                 </select>
+                                                                @if($errors->has('billing-thana-id'))
+                                                                <span class="help-block">The Thana field is required.</span>
+                                                                 @endif
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-6">
@@ -254,10 +258,10 @@ $_activeSecondaryNav = 'create';
                                                                     @foreach ($countries as $c)
                                                                     <option value="{{ $c->id}}">{{ ucwords($c->localization['en']['display_name']) }}</option>
                                                                     @endforeach
-                                                                    @if($errors->has('shipping-country-id'))
-                                                                        <span class="help-block">The Country field is required.</span>
-                                                                    @endif
-                                                            </select>
+                                                                </select>
+                                                                @if($errors->has('shipping-country-id'))
+                                                                    <span class="help-block">The Country field is required.</span>
+                                                                @endif
                                                             </div>
                                                         </div>
                                                     </div>
@@ -270,10 +274,10 @@ $_activeSecondaryNav = 'create';
                                                                     @foreach ($districts as $d)
                                                                     <option value="{{ $d->id}}">{{ ucwords($d->localization['en']['display_name']) }}</option>
                                                                     @endforeach
-                                                                    @if($errors->has('shipping-district-id'))
-                                                                        <span class="help-block">The District field is required.</span>
-                                                                    @endif
                                                                 </select>
+                                                                @if($errors->has('shipping-district-id'))
+                                                                    <span class="help-block">The District field is required.</span>
+                                                                @endif
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-6">
@@ -283,13 +287,11 @@ $_activeSecondaryNav = 'create';
                                                                     <option value="">Choose Division</option>
                                                                     @foreach ($divisions as $d)
                                                                     <option value="{{ $d->id}}">{{ ucwords($d->localization['en']['display_name']) }}</option>
-                                                                    @endforeach
-
-                                                                    @if($errors->has('shipping-division-id'))
-                                                                        <span class="help-block">The Division field is required.</span>
-                                                                    @endif
-
+                                                                    @endforeach  
                                                                 </select>
+                                                                @if($errors->has('shipping-division-id'))
+                                                                    <span class="help-block">The Division field is required.</span>
+                                                                @endif
                                                             </div>
                                                         </div>
                                                     </div>
@@ -303,10 +305,10 @@ $_activeSecondaryNav = 'create';
                                                                     @foreach ($thanas as $d)
                                                                     <option value="{{ $d->id}}">{{ ucwords($d->localization['en']['display_name']) }}</option>
                                                                     @endforeach
-                                                                    @if($errors->has('shipping-thana-id'))
-                                                                    <span class="help-block">The Thana field is required.</span>
-                                                                    @endif
                                                                 </select>
+                                                                @if($errors->has('shipping-thana-id'))
+                                                                <span class="help-block">The Thana field is required.</span>
+                                                                @endif
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-6">

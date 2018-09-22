@@ -103,6 +103,7 @@ class UserController extends Controller
             'shipping-division-id' => 'required',
             'shipping-thana-id' => 'required',
             'shipping-zip' => 'required',
+            'gender' => 'required',
         ]);
         
         $user = new User();
@@ -165,6 +166,7 @@ class UserController extends Controller
         $first_name  = $request->input('first-name');
         $user->first_name  = $first_name;
         $user->last_name  = $request->input('last-name');
+        $user->gender  = $request->input('gender');
         $user->name  = $first_name;
         $user->about  = $request->input('about');
         $user->email= $request->input('email');
@@ -326,6 +328,7 @@ class UserController extends Controller
         $first_name  = $request->input('first-name');
         $user->first_name  = $first_name;
         $user->last_name  = $request->input('last-name');
+        $user->gender  = $request->input('gender');
         $user->name  = $first_name;
         $user->about  = $request->input('about');
         $user->email= $request->input('email');
