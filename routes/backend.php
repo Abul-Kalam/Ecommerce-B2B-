@@ -15,6 +15,8 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('users', 'UserController');
     Route::post('users/search', 'UserController@search')->name('users.search');
+
+    Route::get('users/profile', 'UserController@profile')->name('users.profile');
     
     Route::resource('tags', 'TagController');
     Route::post('tags/search', 'TagController@search')->name('tags.search');
@@ -49,5 +51,10 @@ Route::middleware('auth')->group(function () {
     Route::post('thanas/search', 'ThanaController@search')->name('thanas.search');
     Route::resource('roles', 'RoleController');
     Route::post('roles/search', 'RoleController@search')->name('roles.search');
+
+
+
+    Route::get('preferences', 'PreferenceController@edit')->name('preferences.edit');
+    Route::put('preferences', 'PreferenceController@update')->name('preferences.update');
 
 });

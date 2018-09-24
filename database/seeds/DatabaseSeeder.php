@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             CountriesTableSeeder::class,
             DivisionsTableSeeder::class,
             DistrictsTableSeeder::class,
+            PreferencesTableSeeder::class,
         ]);
     }
 }

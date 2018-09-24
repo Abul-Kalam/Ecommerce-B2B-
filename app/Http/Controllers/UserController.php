@@ -51,6 +51,15 @@ class UserController extends Controller
         ]);
     }
 
+    public function profile()
+    {
+        // $id = Auth::user()->id;
+        // $user = User::findOrFail($id);
+      
+        return 'hello';
+    
+    }
+
     /**
      * Show the form for creating a new resource.
      *

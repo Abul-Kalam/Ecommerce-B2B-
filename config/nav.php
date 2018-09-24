@@ -216,9 +216,9 @@ return [
             'permissions'   => 'view-dashboard',
             'childs'        => [
                 [
-                    'slug'  => 'create',
+                    'slug'  => 'Preference',
                     'label' => 'Add New',
-                    'route' => 'backend.thanas.create',
+                    'route' => 'backend.preferences.update',
                     'permissions'   => 'create-thana'
                 ]
             ]

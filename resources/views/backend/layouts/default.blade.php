@@ -1,8 +1,11 @@
 @php
+    use App\Preference;
     $_activePrimaryNav = isset($_activePrimaryNav) ? $_activePrimaryNav : 'dashboard';
     $_activeSecondaryNav = isset($_activeSecondaryNav) ? $_activeSecondaryNav : null;
     $_alertType = isset($_alertType) ? $_alertType : null;
     $_alertMessage = isset($_alertMessage) ? $_alertMessage : null;
+    $backendTheme = Preference::getValue('backend-theme');
+    $backendLayout = Preference::getValue('backend-layout');
 @endphp
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
@@ -20,7 +23,7 @@
     @stack('styles')
     @yield('styles')
 </head>
-<body class="sidebar-mini skin-purple">
+<body class="sidebar-mini {{ $backendTheme }} {{ $backendLayout }}">
     <div id="app" class="wrapper">
         <!-- Main Header -->
         <header class="main-header">
