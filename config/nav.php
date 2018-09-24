@@ -54,40 +54,31 @@ return [
         ],
         [
             'type'          => 'menu',
-            'slug'          => 'product-category',
-            'label'         => 'Product Category',
+            'slug'          => 'taxonomy',
+            'label'         => 'Taxonomy',
             'icon_class'    => 'fa fa-list',
             'permissions'   => 'view-dashboard',
             'childs'        => [
                 [
-                    'slug'  => 'create',
-                    'label' => 'Add New',
+                    'slug'  => 'create-categories',
+                    'label' => 'Add New Product Category',
                     'route' => 'backend.categories.create',
                     'permissions'   => 'create-category'
                 ],
                 [
-                    'slug'  => 'index',
-                    'label' => 'All Categories',
+                    'slug'  => 'index-categories',
+                    'label' => 'All Product Categories',
                     'route' => 'backend.categories.index',
                     'permissions'   => 'read-category'
-                ]
-            ]
-        ],
-        [
-            'type'          => 'menu',
-            'slug'          => 'tag',
-            'label'         => 'Tag',
-            'icon_class'    => 'fa fa-tags',
-            'permissions'   => 'view-dashboard',
-            'childs'        => [
+                ],
                 [
-                    'slug'  => 'create',
-                    'label' => 'Add New',
+                    'slug'  => 'create-tag',
+                    'label' => 'Add New Tag',
                     'route' => 'backend.tags.create',
                     'permissions'   => 'create-tag'
                 ],
                 [
-                    'slug'  => 'index',
+                    'slug'  => 'index-tag',
                     'label' => 'All tag',
                     'route' => 'backend.tags.index',
                     'permissions'   => 'read-tag'
@@ -109,7 +100,7 @@ return [
                 ],
                 [
                     'slug'  => 'index-users',
-                    'label' => 'All user',
+                    'label' => 'All Users',
                     'route' => 'backend.users.index',
                     'permissions'   => 'read-user'
                 ],
@@ -121,7 +112,7 @@ return [
                 ],
                 [
                     'slug'  => 'index-roles',
-                    'label' => 'All role',
+                    'label' => 'All Roles',
                     'route' => 'backend.roles.index',
                     'permissions'   => 'read-role'
                 ],
@@ -133,7 +124,7 @@ return [
                 ],
                 [
                     'slug'  => 'index-permissions',
-                    'label' => 'All Permission',
+                    'label' => 'All Permissions',
                     'route' => 'backend.permissions.index',
                     'permissions'   => 'read-permission'
                 ]
@@ -154,7 +145,7 @@ return [
                 ],
                 [
                     'slug'  => 'index',
-                    'label' => 'All brand',
+                    'label' => 'All Brands',
                     'route' => 'backend.brands.index',
                     'permissions'   => 'read-brand'
                 ]
@@ -162,71 +153,65 @@ return [
         ],
         [
             'type'          => 'menu',
-            'slug'          => 'country',
-            'label'         => 'Country',
+            'slug'          => 'place',
+            'label'         => 'Place',
             'icon_class'    => 'fa fa-users',
             'permissions'   => 'view-dashboard',
             'childs'        => [
                 [
-                    'slug'  => 'create',
-                    'label' => 'Add New',
+                    'slug'  => 'create-country',
+                    'label' => 'Add New Country',
                     'route' => 'backend.countries.create',
                     'permissions'   => 'create-country'
                 ],
                 [
-                    'slug'  => 'index',
-                    'label' => 'All country',
+                    'slug'  => 'index-country',
+                    'label' => 'All Countries',
                     'route' => 'backend.countries.index',
                     'permissions'   => 'read-country'
-                ]
-            ]
-        ],
-        [
-            'type'          => 'menu',
-            'slug'          => 'division',
-            'label'         => 'Division',
-            'icon_class'    => 'fa fa-users',
-            'permissions'   => 'view-dashboard',
-            'childs'        => [
+                ],
                 [
-                    'slug'  => 'create',
-                    'label' => 'Add New',
+                    'slug'  => 'create-division',
+                    'label' => 'Add New Division',
                     'route' => 'backend.divisions.create',
                     'permissions'   => 'create-division'
                 ],
                 [
-                    'slug'  => 'index',
-                    'label' => 'All division',
+                    'slug'  => 'index-division',
+                    'label' => 'All Divisions',
                     'route' => 'backend.divisions.index',
                     'permissions'   => 'read-division'
-                ]
-            ]
-        ],
-        [
-            'type'          => 'menu',
-            'slug'          => 'district',
-            'label'         => 'District',
-            'icon_class'    => 'fa fa-users',
-            'permissions'   => 'view-dashboard',
-            'childs'        => [
+                ],
                 [
-                    'slug'  => 'create',
-                    'label' => 'Add New',
+                    'slug'  => 'create-district',
+                    'label' => 'Add New District',
                     'route' => 'backend.districts.create',
                     'permissions'   => 'create-district'
                 ],
                 [
-                    'slug'  => 'index',
-                    'label' => 'All district',
+                    'slug'  => 'index-district',
+                    'label' => 'All Districts',
                     'route' => 'backend.districts.index',
                     'permissions'   => 'read-district'
+                ],
+                [
+                    'slug'  => 'create-thana',
+                    'label' => 'Add New Thana',
+                    'route' => 'backend.thanas.create',
+                    'permissions'   => 'create-thana'
+                ],
+                [
+                    'slug'  => 'index-thana',
+                    'label' => 'All Thanas',
+                    'route' => 'backend.thanas.index',
+                    'permissions'   => 'read-thana'
                 ]
             ]
         ],
         [
             'type'          => 'menu',
-            'slug'          => 'thana',
-            'label'         => 'Thana',
+            'slug'          => 'setting',
+            'label'         => 'Setting',
             'icon_class'    => 'fa fa-users',
             'permissions'   => 'view-dashboard',
             'childs'        => [
@@ -235,12 +220,6 @@ return [
                     'label' => 'Add New',
                     'route' => 'backend.thanas.create',
                     'permissions'   => 'create-thana'
-                ],
-                [
-                    'slug'  => 'index',
-                    'label' => 'All thana',
-                    'route' => 'backend.thanas.index',
-                    'permissions'   => 'read-thana'
                 ]
             ]
         ]

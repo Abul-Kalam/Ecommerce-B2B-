@@ -1,6 +1,6 @@
 @php
-    $_activePrimaryNav = 'thana';
-    $_activeSecondaryNav = 'index';
+    $_activePrimaryNav = 'place';
+    $_activeSecondaryNav = 'index-thana';
     $_alertType = null;
     $_alertMessage = null;
 @endphp

@@ -1,6 +1,6 @@
 @php
-    $_activePrimaryNav = 'tag';
-    $_activeSecondaryNav = 'index';
+    $_activePrimaryNav = 'taxonomy';
+    $_activeSecondaryNav = 'index-tag';
     $_alertType = null;
     $_alertMessage = null;
 @endphp

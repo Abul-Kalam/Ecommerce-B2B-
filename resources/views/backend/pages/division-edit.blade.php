@@ -1,6 +1,6 @@
 @php
-    $_activePrimaryNav = 'division';
-    $_activeSecondaryNav = 'edit';
+    $_activePrimaryNav = 'place';
+    $_activeSecondaryNav = 'create-division';
     $_alertType = 'success';
     $_alertMessage =  Session::get('message');
 @endphp

@@ -1,6 +1,6 @@
 @php
-    $_activePrimaryNav = 'districts';
-    $_activeSecondaryNav = 'create';
+    $_activePrimaryNav = 'place';
+    $_activeSecondaryNav = 'create-district';
     $_alertType = null;
     $_alertMessage = null;
 @endphp

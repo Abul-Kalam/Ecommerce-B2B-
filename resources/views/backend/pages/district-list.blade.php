@@ -1,6 +1,6 @@
 @php
-    $_activePrimaryNav = 'district';
-    $_activeSecondaryNav = 'index';
+    $_activePrimaryNav = 'place';
+    $_activeSecondaryNav = 'index-district';
     $_alertType = null;
     $_alertMessage = null;
 @endphp
@@ -15,13 +15,13 @@
             District
         <small>All</small>
     </h1>
-    <ol class="breadcrumb">
+    {{--  <ol class="breadcrumb">
         <li>
             <a href="#">
                 <i class="fa fa-dashboard"></i> Home</a>
         </li>
         <li class="active">Dashboard</li>
-    </ol>
+    </ol>  --}}
 </section>
 
 <section class="content">

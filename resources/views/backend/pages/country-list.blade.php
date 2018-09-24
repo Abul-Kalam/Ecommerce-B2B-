@@ -1,6 +1,6 @@
 @php
-    $_activePrimaryNav = 'country';
-    $_activeSecondaryNav = 'index';
+    $_activePrimaryNav = 'place';
+    $_activeSecondaryNav = 'index-country';
     $_alertType = null;
     $_alertMessage = null;
 @endphp

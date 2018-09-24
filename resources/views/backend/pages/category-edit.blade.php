@@ -1,6 +1,6 @@
 @php
-    $_activePrimaryNav = 'product-category';
-    $_activeSecondaryNav = 'create';
+    $_activePrimaryNav = 'taxonomy';
+    $_activeSecondaryNav = 'create-categories';
     $_alertType = 'success';
     $_alertMessage =  Session::get('message');
 @endphp

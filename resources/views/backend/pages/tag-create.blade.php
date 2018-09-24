@@ -1,6 +1,6 @@
 @php
-    $_activePrimaryNav = 'tag';
-    $_activeSecondaryNav = 'create';
+    $_activePrimaryNav = 'taxonomy';
+    $_activeSecondaryNav = 'create-tag';
     $_alertType = null;
     $_alertMessage = null;
 @endphp

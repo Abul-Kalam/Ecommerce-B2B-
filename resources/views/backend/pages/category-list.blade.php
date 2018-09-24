@@ -1,6 +1,6 @@
 @php
-    $_activePrimaryNav = 'product-category';
-    $_activeSecondaryNav = 'index';
+    $_activePrimaryNav = 'taxonomy';
+    $_activeSecondaryNav = 'index-categories';
     $_alertType = null;
     $_alertMessage = null;
 @endphp

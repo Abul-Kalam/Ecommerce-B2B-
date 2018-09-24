@@ -1,6 +1,6 @@
 @php
-    $_activePrimaryNav = 'districts';
-    $_activeSecondaryNav = 'create';
+    $_activePrimaryNav = 'place';
+    $_activeSecondaryNav = 'create-thana';
     $_alertType = 'success';
     $_alertMessage =  Session::get('message');
 @endphp

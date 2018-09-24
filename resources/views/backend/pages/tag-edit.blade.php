@@ -1,6 +1,6 @@
 @php
-    $_activePrimaryNav = 'tag';
-    $_activeSecondaryNav = 'edit';
+    $_activePrimaryNav = 'taxonomy';
+    $_activeSecondaryNav = 'create-tag';
     $_alertType = 'success';
     $_alertMessage =  Session::get('message');
 @endphp

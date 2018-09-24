@@ -1,6 +1,6 @@
 @php
-    $_activePrimaryNav = 'country';
-    $_activeSecondaryNav = 'create';
+    $_activePrimaryNav = 'place';
+    $_activeSecondaryNav = 'create-country';
 @endphp
 @extends('backend.layouts.default') 
 @section('title', 'Create Country') 

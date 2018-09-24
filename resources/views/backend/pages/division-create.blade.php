@@ -1,6 +1,6 @@
 @php
-    $_activePrimaryNav = 'divisions';
-    $_activeSecondaryNav = 'create';
+    $_activePrimaryNav = 'place';
+    $_activeSecondaryNav = 'create-division';
     $_alertType = null;
     $_alertMessage = null;
 @endphp

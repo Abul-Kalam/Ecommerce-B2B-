@@ -1,6 +1,6 @@
 @php
-    $_activePrimaryNav = 'country';
-    $_activeSecondaryNav = 'create';
+    $_activePrimaryNav = 'place';
+    $_activeSecondaryNav = 'create-country';
     $_alertType = 'success';
     $_alertMessage =  Session::get('message');
 @endphp
