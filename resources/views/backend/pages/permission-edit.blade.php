@@ -17,15 +17,15 @@
 <section class="content-header">
     <h1>
         Permission
-        <small>Add new</small>
+        <small>Edit</small>
     </h1>
-    <ol class="breadcrumb">
+    {{--  <ol class="breadcrumb">
         <li>
             <a href="#">
                 <i class="fa fa-dashboard"></i> Home</a>
         </li>
         <li class="active">Permission</li>
-    </ol>
+    </ol>  --}}
 </section>
 
 <section class="content">
@@ -41,7 +41,7 @@
 
                         <div class="box mt-3">
                             <div class="box-header with-border">
-                                <h3 class="box-title">Create</h3>
+                                <h3 class="box-title">Edit</h3>
                                 <div class="box-tools pull-right">
                                     <a href="{{ route('backend.permissions.index')}}" class="btn btn-sm btn-default">All</a>
                                 </div>

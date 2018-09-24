@@ -19,13 +19,13 @@
         Permission
         <small>Add new</small>
     </h1>
-    <ol class="breadcrumb">
+    {{--  <ol class="breadcrumb">
         <li>
             <a href="#">
                 <i class="fa fa-dashboard"></i> Home</a>
         </li>
         <li class="active">Permission</li>
-    </ol>
+    </ol>  --}}
 </section>
 
 <section class="content">
