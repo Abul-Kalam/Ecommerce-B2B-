@@ -155,7 +155,7 @@ return [
             'type'          => 'menu',
             'slug'          => 'place',
             'label'         => 'Place',
-            'icon_class'    => 'fa fa-users',
+            'icon_class'    => 'fas fa-map-marked-alt',
             'permissions'   => 'view-dashboard',
             'childs'        => [
                 [
@@ -212,12 +212,12 @@ return [
             'type'          => 'menu',
             'slug'          => 'setting',
             'label'         => 'Setting',
-            'icon_class'    => 'fa fa-users',
+            'icon_class'    => 'fas fa-cogs',
             'permissions'   => 'view-dashboard',
             'childs'        => [
                 [
-                    'slug'  => 'Preference',
-                    'label' => 'Add New',
+                    'slug'  => 'style',
+                    'label' => 'Style',
                     'route' => 'backend.preferences.update',
                     'permissions'   => 'create-thana'
                 ]

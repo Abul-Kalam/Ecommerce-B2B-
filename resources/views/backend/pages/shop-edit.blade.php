@@ -1,6 +1,8 @@
 @php
     $_activePrimaryNav = 'shop';
     $_activeSecondaryNav = 'create';
+    $_alertType = 'success';
+    $_alertMessage =  Session::get('message');
 @endphp
 @extends('backend.layouts.default') 
 @section('title', 'Create Shop') 
@@ -365,7 +367,7 @@
                                 </div>
                             </div>
                             <div class="box-footer">
-                                <button type="submit" class="btn btn-primary pull-right">Submit</button>
+                                <button type="submit" class="btn btn-primary pull-right">Update</button>
                             </div>
                         </div>
                     </form>

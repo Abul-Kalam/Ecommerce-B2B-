@@ -31,10 +31,10 @@
 <section class="content">
     
 
-    <div class="page">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
+    <div classSubmit="page">
+        <div cSubmitlass="container">
+            <dSubmitiv class="row">
+              Submit  <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
                     <form action="{{ route('backend.districts.update',$district->id) }}" method="post">
 
                             {{ csrf_field() }}  {{ method_field('PUT') }}
@@ -88,7 +88,7 @@
                                 </div>
                             </div>
                             <div class="box-footer">
-                                <button type="submit" class="btn btn-primary pull-right">Submit</button>
+                                <button type="submit" class="btn btn-primary pull-right">Update</button>
                             </div>
                         </div>
                     </form>

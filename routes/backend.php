@@ -14,6 +14,7 @@ Route::middleware('auth')->group(function () {
     //==========================================================================
 
     Route::get('users/profile', 'UserController@profile')->name('users.profile');
+    Route::put('users/profile', 'UserController@profileupdate')->name('users.profileupdate');
     Route::resource('users', 'UserController');
     Route::post('users/search', 'UserController@search')->name('users.search');
 

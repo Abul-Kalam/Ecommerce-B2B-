@@ -9,14 +9,14 @@
 
 @extends('backend.layouts.default')
 
-@section('title', 'Create Preference') 
+@section('title', 'Create Style') 
 
 
 @section('content')
 
 <section class="content-header">
     <h1>
-        Preference
+        Style
         <small>Edit</small>
     </h1>
     {{--  <ol class="breadcrumb">
@@ -73,7 +73,7 @@
                                 </div>
                             </div>
                             <div class="box-footer">
-                                <button type="submit" class="btn btn-primary pull-right">Submit</button>
+                                <button type="submit" class="btn btn-primary pull-right">Update</button>
                             </div>
                         </div>
                     </form>

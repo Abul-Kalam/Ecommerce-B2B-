@@ -1,6 +1,6 @@
 @php
-    $_activePrimaryNav = 'role';
-    $_activeSecondaryNav = 'create';
+    $_activePrimaryNav = 'user-management';
+    $_activeSecondaryNav = 'create-roles';
     $_alertType = 'success';
     $_alertMessage =  Session::get('message');
 @endphp
@@ -80,7 +80,7 @@
 
                             </div>
                             <div class="box-footer">
-                                <button type="submit" class="btn btn-primary pull-right">Submit</button>
+                                <button type="submit" class="btn btn-primary pull-right">Update</button>
                             </div>
                         </div>
                     </form>

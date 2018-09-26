@@ -53,7 +53,7 @@ $_alertMessage = null;
                                         <th style="width: 98px">Image</th>
                                         <th>Title</th>
                                         <th>Date</th>
-                                        <th style="width: 95px; text-align: center">Actions</th>
+                                        {{--  <th style="width: 95px; text-align: center">Actions</th>  --}}
                                     </tr>
 
                                     @foreach ($media as $m)
@@ -65,13 +65,13 @@ $_alertMessage = null;
                                         </td>
                                         <td>{{ ucwords($m->title)}}</td>
                                         <td>{{ Carbon\Carbon::parse($m->created_at)->diffForHumans() }}</td>
-                                        <td>
+                                        {{--  <td>
                                             <span class="actions">
                                                 <a href="">View</a>
                                                 <span>&nbsp;|&nbsp;</span>
                                                 <a href="">Edit</a>
                                             </span>
-                                        </td>
+                                        </td>  --}}
                                     </tr>
                                     @endforeach
                                 </tbody>

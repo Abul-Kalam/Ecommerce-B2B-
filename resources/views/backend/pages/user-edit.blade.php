@@ -1,6 +1,6 @@
 @php
-$_activePrimaryNav = 'User';
-$_activeSecondaryNav = 'edit';
+$_activePrimaryNav = 'user-management';
+$_activeSecondaryNav = 'create-users';
 $_alertType = 'success';
     $_alertMessage =  Session::get('message');
 @endphp
@@ -334,7 +334,7 @@ $_alertType = 'success';
                                 </div>
                             </div>
                             <div class="box-footer">
-                                <button type="submit" class="btn btn-primary pull-right">Submit</button>
+                                <button type="submit" class="btn btn-primary pull-right">Update</button>
                             </div>
                         </div>
                     </form>
