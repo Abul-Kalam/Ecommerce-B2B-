@@ -1245,64 +1245,202 @@ class ThanasTableSeeder extends Seeder
                 ], JSON_UNESCAPED_UNICODE),
                 'district_id'  => 13,
             ],
-                    //tangail district all thanas
-
+             //tangail district all thanas
             [
                 'id'           => 136,
-                'slug'         => 'amtali',
+                'slug'         => 'bagerhat-sadar',
                 'localization' => json_encode([
-                    'en'       => ['display_name' => 'amtali'],
-                    'bn'       => ['display_name' => 'আমতলী']
+                    'en'       => ['display_name' => 'bagerhat sadar'],
+                    'bn'       => ['display_name' => 'বাগেরহাট সদর ']
                 ], JSON_UNESCAPED_UNICODE),
-                'district_id'  => 24,
+                'district_id'  => 14,
             ],
             [
                 'id'           => 137,
-                'slug'         => 'bamna',
+                'slug'         => 'mongla',
                 'localization' => json_encode([
-                    'en'       => ['display_name' => 'bamna'],
-                    'bn'       => ['display_name' => 'বামনা']
+                    'en'       => ['display_name' => 'mongla'],
+                    'bn'       => ['display_name' => 'মোংলা']
                 ], JSON_UNESCAPED_UNICODE),
-                'district_id'  => 24,
+                'district_id'  => 14,
             ],
             [
                 'id'           => 138,
-                'slug'         => 'barguna-sadar',
+                'slug'         => 'chitalmari',
                 'localization' => json_encode([
-                    'en'       => ['display_name' => 'barguna-sadar'],
-                    'bn'       => ['display_name' => 'বরগুনা সদর']
+                    'en'       => ['display_name' => 'chitalmari'],
+                    'bn'       => ['display_name' => 'চিতলমারী']
                 ], JSON_UNESCAPED_UNICODE),
-                'district_id'  => 24,
+                'district_id'  => 14,
             ],
             [
                 'id'           => 139,
-                'slug'         => 'betagi',
+                'slug'         => 'mollahat',
                 'localization' => json_encode([
-                    'en'       => ['display_name' => 'betagi'],
-                    'bn'       => ['display_name' => 'বেতাগী']
+                    'en'       => ['display_name' => 'mollahat'],
+                    'bn'       => ['display_name' => 'মোল্লাহাট']
                 ], JSON_UNESCAPED_UNICODE),
-                'district_id'  => 24,
+                'district_id'  => 14,
             ],
             [
                 'id'           => 140,
-                'slug'         => 'patharghata',
+                'slug'         => 'sarankhola',
                 'localization' => json_encode([
-                    'en'       => ['display_name' => 'patharghata'],
-                    'bn'       => ['display_name' => 'পাথরঘাটা']
+                    'en'       => ['display_name' => 'sarankhola'],
+                    'bn'       => ['display_name' => 'শরণখোলা']
                 ], JSON_UNESCAPED_UNICODE),
-                'district_id'  => 24,
+                'district_id'  => 14,
             ],
             [
                 'id'           => 141,
-                'slug'         => 'taltali',
+                'slug'         => 'rampal',
                 'localization' => json_encode([
-                    'en'       => ['display_name' => 'taltali'],
-                    'bn'       => ['display_name' => 'তালতলী']
+                    'en'       => ['display_name' => 'rampal'],
+                    'bn'       => ['display_name' => 'রামপাল']
                 ], JSON_UNESCAPED_UNICODE),
-                'district_id'  => 24,
+                'district_id'  => 14,
             ],
+            [
+                'id'           => 142,
+                'slug'         => 'fakirhat',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'fakirhat'],
+                    'bn'       => ['display_name' => 'ফকিরহাট ']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 14,
+            ],
+            [
+                'id'           => 143,
+                'slug'         => 'morrelganj',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'morrelganj'],
+                    'bn'       => ['display_name' => 'মোড়েলগঞ্জ']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 14,
+            ],
+            [
+                'id'           => 144,
+                'slug'         => 'kachua',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'kachua'],
+                    'bn'       => ['display_name' => 'কচুয়া']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 14,
+            ],
+                   
+            //bagerhat district all thanas
 
-             //tangail barguna all thanas
+            [
+                'id'           => 145,
+                'slug'         => 'chuadanga-sadar',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'chuadanga sadar'],
+                    'bn'       => ['display_name' => 'চুয়াডাঙ্গা সদর']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 15,
+            ],
+            [
+                'id'           => 146,
+                'slug'         => 'alamdanga',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'alamdanga'],
+                    'bn'       => ['display_name' => 'আলমডাঙ্গা']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 15,
+            ],
+            [
+                'id'           => 147,
+                'slug'         => 'damurhuda',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'damurhuda'],
+                    'bn'       => ['display_name' => 'দামুড়হুদা']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 15,
+            ],
+            [
+                'id'           => 148,
+                'slug'         => 'jibonnagar',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'jibonnagar'],
+                    'bn'       => ['display_name' => 'জীবননগর']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 15,
+            ],
+            // chuadanga district all thanas
+            [
+                'id'           => 149,
+                'slug'         => 'jessore-sadar',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'jessore sadar'],
+                    'bn'       => ['display_name' => 'যশোর সদর']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 16,
+            ],
+            [
+                'id'           => 150,
+                'slug'         => 'jhikargachha',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'jhikargachha'],
+                    'bn'       => ['display_name' => 'ঝিকরগাছা ']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 16,
+            ],
+            [
+                'id'           => 151,
+                'slug'         => 'manirampur',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'manirampur'],
+                    'bn'       => ['display_name' => 'মনিরামপুর']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 16,
+            ],
+            [
+                'id'           => 152,
+                'slug'         => 'bagherpara ',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'bagherpara '],
+                    'bn'       => ['display_name' => 'বাঘারপাড়া ']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 16,
+            ],
+            [
+                'id'           => 153,
+                'slug'         => 'abhaynagar',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'abhaynagar'],
+                    'bn'       => ['display_name' => 'অভয়নগর']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 16,
+            ],
+            [
+                'id'           => 154,
+                'slug'         => 'keshabpur',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'keshabpur'],
+                    'bn'       => ['display_name' => 'কেশবপুর']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 16,
+            ],
+            [
+                'id'           => 155,
+                'slug'         => 'sharsha',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'sharsha'],
+                    'bn'       => ['display_name' => 'শার্শা']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 16,
+            ],
+            [
+                'id'           => 156,
+                'slug'         => 'chaugachha',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'chaugachha'],
+                    'bn'       => ['display_name' => 'চৌগাছা']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 16,
+            ],
+            // jessore district all thanas
+            
         ]);
     }
 }
