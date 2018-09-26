@@ -1449,6 +1449,133 @@ class ThanasTableSeeder extends Seeder
                 ], JSON_UNESCAPED_UNICODE),
                 'district_id'  => 17,
             ],
+            [
+                'id'           => 158,
+                'slug'         => 'shailkupa',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'shailkupa'],
+                    'bn'       => ['display_name' => 'শৈলকুপা']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 17,
+            ],
+            [
+                'id'           => 159,
+                'slug'         => 'harinakunda',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'harinakunda'],
+                    'bn'       => ['display_name' => 'হরিণাকুন্ডু ']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 17,
+            ],
+            [
+                'id'           => 160,
+                'slug'         => 'maheshpur',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'maheshpur'],
+                    'bn'       => ['display_name' => 'মহেশপুর']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 17,
+            ],
+            [
+                'id'           => 161,
+                'slug'         => 'kotchandpur',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'kotchandpur'],
+                    'bn'       => ['display_name' => 'কোটচাঁদপুর']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 17,
+            ],
+            [
+                'id'           => 162,
+                'slug'         => 'kaliganj-upazila',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'kaliganj upazila'],
+                    'bn'       => ['display_name' => 'কালীগঞ্জ']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 17,
+            ],
+            // jhenaidah district all thanas
+            [
+                'id'           => 163,
+                'slug'         => 'dumuria',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'dumuria'],
+                    'bn'       => ['display_name' => 'ডুমুরিয়া']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 18,
+            ],
+            [
+                'id'           => 164,
+                'slug'         => 'batiaghata',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'batiaghata'],
+                    'bn'       => ['display_name' => 'বটিয়াঘাটা']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 18,
+            ],
+            [
+                'id'           => 165,
+                'slug'         => 'dacope',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'dacope'],
+                    'bn'       => ['display_name' => 'দাকোপ']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 18,
+            ],
+            [
+                'id'           => 166,
+                'slug'         => 'phultala',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'phultala'],
+                    'bn'       => ['display_name' => 'ফুলতলা ']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 18,
+            ],
+            [
+                'id'           => 167,
+                'slug'         => 'dighalia',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'dighalia'],
+                    'bn'       => ['display_name' => 'দিঘলিয়া']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 18,
+            ],
+            [
+                'id'           => 168,
+                'slug'         => 'koyra',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'koyra'],
+                    'bn'       => ['display_name' => 'কয়রা']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 18,
+            ],
+            [
+                'id'           => 169,
+                'slug'         => 'terokhada',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'terokhada'],
+                    'bn'       => ['display_name' => 'তেরখাদা']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 18,
+            ],
+            [
+                'id'           => 170,
+                'slug'         => 'rupsha',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'rupsha'],
+                    'bn'       => ['display_name' => 'রূপসা']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 18,
+            ],
+            [
+                'id'           => 171,
+                'slug'         => 'paikgachha',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'paikgachha'],
+                    'bn'       => ['display_name' => 'পাইকগাছা']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 18,
+            ],
         ]);
     }
 }
