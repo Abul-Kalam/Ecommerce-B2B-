@@ -12,6 +12,7 @@ use App\User;
 use App\Role;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
 class UserController extends Controller
@@ -53,10 +54,23 @@ class UserController extends Controller
 
     public function profile()
     {
-        // $id = Auth::user()->id;
-        // $user = User::findOrFail($id);
+        $id = Auth::user()->id;
+        $user = User::findOrFail($id);
       
-        return 'hello';
+        $roles = Role::get();
+        $countries = Country::get();
+        $divisions = Division::get();
+        $districts = District::get();
+        $thanas = Thana::get();
+        return view('backend.pages.profile-edit', [
+            'user' => $user,
+            'countries' => $countries,
+            'districts' => $districts,
+            'divisions' => $divisions,
+            'thanas' => $thanas,
+            'roles' => $roles
+            
+        ]);
     
     }
 
@@ -97,7 +111,7 @@ class UserController extends Controller
             'first-name' => 'required|max:255',
             'last-name' => 'required|max:255',
             'email' => 'required|unique:users|max:255',
-            'password' => 'required|max:255',
+            'password' => 'required|string|min:6|confirmed',
             'role' => 'required',
             'billing-address-line-1' => 'required',
             'billing-address-line-2' => 'required',
@@ -345,8 +359,12 @@ class UserController extends Controller
         $user->about  = $request->input('about');
         $user->email= $request->input('email');
         $user->avatar_url  = $request->input('avatar-url');
-        $password = $request->input('password');
-        $user->password = Hash::make($password) ;
+        
+
+        if ($request->input('password')) {
+            $password = $request->input('password');
+            $user->password = Hash::make($password) ;
+        }
         
         $user->last_login_at = Carbon::now()->toDateTimeString() ;
         $user->last_login_ip = $request->getClientIp() ;

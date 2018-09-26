@@ -107,6 +107,7 @@ $_alertType = 'success';
                                                     @if($errors->has('password'))
                                                     <span class="help-block">The Display Password field is required.</span>
                                                     @endif
+                                    
                                                 </div>
                                                 <div class="col-lg-6 form-group {{  $errors->has('role') ? 'has-error' : '' }}">
                                                     <label for="display-name-bn">Role </label>

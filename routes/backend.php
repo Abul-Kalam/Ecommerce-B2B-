@@ -13,10 +13,10 @@ Route::middleware('auth')->group(function () {
     // })->name('dashboard');
     //==========================================================================
 
+    Route::get('users/profile', 'UserController@profile')->name('users.profile');
     Route::resource('users', 'UserController');
     Route::post('users/search', 'UserController@search')->name('users.search');
 
-    Route::get('users/profile', 'UserController@profile')->name('users.profile');
     
     Route::resource('tags', 'TagController');
     Route::post('tags/search', 'TagController@search')->name('tags.search');

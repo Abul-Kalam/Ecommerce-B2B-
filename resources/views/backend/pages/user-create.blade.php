@@ -103,10 +103,22 @@ $_activeSecondaryNav = 'create-users';
                                                 <div class="col-lg-6 form-group {{  $errors->has('password') ? 'has-error' : '' }}">
                                                     <label for="password">Password</label>
                                                     <input type="password" class="form-control" id="password" name="password">
-                                                    @if($errors->has('password'))
+                                                    {{-- @if($errors->has('password'))
                                                     <span class="help-block">The Display Password field is required.</span>
-                                                    @endif
+                                                    @endif --}}
+                                                    @if ($errors->has('password'))
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $errors->first('password') }}</strong>
+                                                    </span>
+                                                     @endif
                                                 </div>
+                                                <div class="col-lg-6 form-group {{  $errors->has('password') ? 'has-error' : '' }}">
+                                                    <label for="password-confirm">Confirm Password</label>
+                                                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                                                </div>
+                                               
+                                            </div>
+                                            <div class="row">
                                                 <div class="col-lg-6 form-group {{  $errors->has('role') ? 'has-error' : '' }}">
                                                     <label for="display-name-bn">Role </label>
                                                     <select class="form-control" placeholder="Select Role" name="role">
