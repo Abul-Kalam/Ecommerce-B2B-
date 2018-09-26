@@ -1440,7 +1440,15 @@ class ThanasTableSeeder extends Seeder
                 'district_id'  => 16,
             ],
             // jessore district all thanas
-            
+            [
+                'id'           => 157,
+                'slug'         => 'jhenaidah-sadar',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'jhenaidah sadar'],
+                    'bn'       => ['display_name' => 'ঝিনাইদহ সদর']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 17,
+            ],
         ]);
     }
 }
