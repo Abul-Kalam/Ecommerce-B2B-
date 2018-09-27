@@ -28,6 +28,7 @@ class CreateUsersTable extends Migration
             $table->string('last_login_ip')->nullable();
             $table->json('shipping_address')->nullable();
             $table->json('billing_address')->nullable();
+            $table->string('status', 100)->default('active');
             $table->rememberToken();
             $table->timestamps();
         });

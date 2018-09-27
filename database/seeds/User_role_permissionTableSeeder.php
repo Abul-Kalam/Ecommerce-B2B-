@@ -20,6 +20,11 @@ class User_role_permissionTableSeeder extends Seeder
                 'role_id'    => $userAdminRoleID,
                 'user_id' => $userAdminUserID,
                 'user_type' => 'App\User',
+            ],
+            [
+                'role_id'    => 6,
+                'user_id' => 2,
+                'user_type' => 'App\User',
             ]
         ]);
 

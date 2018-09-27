@@ -18,7 +18,8 @@ class PreferenceController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit()
-    {
+    { 
+        $this->checkPermission('manage-setting');
         $preferences = Preference::all();
         $backend_theme = $preferences->where('name', 'backend-theme')->first();
         $backend_layout = $preferences->where('name', 'backend-layout')->first();

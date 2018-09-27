@@ -33,7 +33,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
                     <div class="box mt-3">
                         <div class="box-header with-border">
-                            @permission('create-tag')
+                            @permission('manage-taxonomy')
                             <a href="{{ route('backend.tags.create')}}" class="btn btn-sm btn-default">Add New</a>
                             @endpermission
                             <div class="box-tools mt-2">
@@ -71,7 +71,7 @@
                                         <td>
                                             <span class="actions">
                                                 <a href="{{ route('backend.tags.show', $t->id)}}">View</a>
-                                                @permission('update-tag')
+                                                @permission('manage-taxonomy')
                                                 <span>&nbsp;|&nbsp;</span>
                                                 <a href="{{ route('backend.tags.edit', $t->id)}}">Edit</a>
                                                 @endpermission

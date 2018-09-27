@@ -15,19 +15,19 @@ return [
             'slug'          => 'media',
             'label'         => 'Media',
             'icon_class'    => 'fa fa-folder',
-            'permissions'   => 'view-dashboard',
+            'permissions'   => 'manage-media',
             'childs'        => [
                 [
                     'slug'  => 'create',
                     'label' => 'Add New',
                     'route' => 'backend.media.create',
-                    'permissions'   => 'create-media'
+                    'permissions'   => 'manage-media'
                 ],
                 [
                     'slug'  => 'index',
                     'label' => 'Library',
                     'route' => 'backend.media.index',
-                    'permissions'   => 'read-media'
+                    'permissions'   => 'manage-media'
                 ]
             ]
         ],
@@ -36,19 +36,19 @@ return [
             'slug'          => 'shop',
             'label'         => 'Shop',
             'icon_class'    => 'fa fa-store',
-            'permissions'   => 'view-dashboard',
+            'permissions'   => 'manage-shops',
             'childs'        => [
                 [
                     'slug'  => 'create',
                     'label' => 'Add New',
                     'route' => 'backend.shops.create',
-                    'permissions'   => 'create-shop'
+                    'permissions'   => 'manage-shops'
                 ],
                 [
                     'slug'  => 'index',
                     'label' => 'All shops',
                     'route' => 'backend.shops.index',
-                    'permissions'   => 'read-shop'
+                    'permissions'   => 'manage-shops'
                 ]
             ]
         ],
@@ -57,31 +57,31 @@ return [
             'slug'          => 'taxonomy',
             'label'         => 'Taxonomy',
             'icon_class'    => 'fa fa-list',
-            'permissions'   => 'view-dashboard',
+            'permissions'   => 'manage-taxonomy',
             'childs'        => [
                 [
                     'slug'  => 'create-categories',
                     'label' => 'Add New Product Category',
                     'route' => 'backend.categories.create',
-                    'permissions'   => 'create-category'
+                    'permissions'   => 'manage-taxonomy'
                 ],
                 [
                     'slug'  => 'index-categories',
                     'label' => 'All Product Categories',
                     'route' => 'backend.categories.index',
-                    'permissions'   => 'read-category'
+                    'permissions'   => 'manage-taxonomy'
                 ],
                 [
                     'slug'  => 'create-tag',
                     'label' => 'Add New Tag',
                     'route' => 'backend.tags.create',
-                    'permissions'   => 'create-tag'
+                    'permissions'   => 'manage-taxonomy'
                 ],
                 [
                     'slug'  => 'index-tag',
                     'label' => 'All tag',
                     'route' => 'backend.tags.index',
-                    'permissions'   => 'read-tag'
+                    'permissions'   => 'manage-taxonomy'
                 ]
             ]
         ],
@@ -90,43 +90,43 @@ return [
             'slug'          => 'user-management',
             'label'         => 'User Management',
             'icon_class'    => 'fa fa-users',
-            'permissions'   => 'view-dashboard',
+            'permissions'   => 'manage-users',
             'childs'        => [
                 [
                     'slug'  => 'create-users',
                     'label' => 'Add New User',
                     'route' => 'backend.users.create',
-                    'permissions'   => 'create-user'
+                    'permissions'   => 'manage-users'
                 ],
                 [
                     'slug'  => 'index-users',
                     'label' => 'All Users',
                     'route' => 'backend.users.index',
-                    'permissions'   => 'read-user'
+                    'permissions'   => 'manage-users'
                 ],
                 [
                     'slug'  => 'create-roles',
                     'label' => 'Add New Role',
                     'route' => 'backend.roles.create',
-                    'permissions'   => 'create-role'
+                    'permissions'   => 'manage-users'
                 ],
                 [
                     'slug'  => 'index-roles',
                     'label' => 'All Roles',
                     'route' => 'backend.roles.index',
-                    'permissions'   => 'read-role'
+                    'permissions'   => 'manage-users'
                 ],
                 [
                     'slug'  => 'create-permissions',
                     'label' => 'Add New Permission',
                     'route' => 'backend.permissions.create',
-                    'permissions'   => 'create-permission'
+                    'permissions'   => 'manage-users'
                 ],
                 [
                     'slug'  => 'index-permissions',
                     'label' => 'All Permissions',
                     'route' => 'backend.permissions.index',
-                    'permissions'   => 'read-permission'
+                    'permissions'   => 'manage-users'
                 ]
             ]
         ],
@@ -134,8 +134,8 @@ return [
             'type'          => 'menu',
             'slug'          => 'brand',
             'label'         => 'Brand',
-            'icon_class'    => 'fa fa-users',
-            'permissions'   => 'view-dashboard',
+            'icon_class'    => 'fas fa-chess-king',
+            'permissions'   => 'manage-brands',
             'childs'        => [
                 [
                     'slug'  => 'create',
@@ -147,7 +147,7 @@ return [
                     'slug'  => 'index',
                     'label' => 'All Brands',
                     'route' => 'backend.brands.index',
-                    'permissions'   => 'read-brand'
+                    'permissions'   => 'manage-brands'
                 ]
             ]
         ],
@@ -156,55 +156,55 @@ return [
             'slug'          => 'place',
             'label'         => 'Place',
             'icon_class'    => 'fas fa-map-marked-alt',
-            'permissions'   => 'view-dashboard',
+            'permissions'   => 'manage-places',
             'childs'        => [
                 [
                     'slug'  => 'create-country',
                     'label' => 'Add New Country',
                     'route' => 'backend.countries.create',
-                    'permissions'   => 'create-country'
+                    'permissions'   => 'manage-places'
                 ],
                 [
                     'slug'  => 'index-country',
                     'label' => 'All Countries',
                     'route' => 'backend.countries.index',
-                    'permissions'   => 'read-country'
+                    'permissions'   => 'manage-places'
                 ],
                 [
                     'slug'  => 'create-division',
                     'label' => 'Add New Division',
                     'route' => 'backend.divisions.create',
-                    'permissions'   => 'create-division'
+                    'permissions'   => 'manage-places'
                 ],
                 [
                     'slug'  => 'index-division',
                     'label' => 'All Divisions',
                     'route' => 'backend.divisions.index',
-                    'permissions'   => 'read-division'
+                    'permissions'   => 'manage-places'
                 ],
                 [
                     'slug'  => 'create-district',
                     'label' => 'Add New District',
                     'route' => 'backend.districts.create',
-                    'permissions'   => 'create-district'
+                    'permissions'   => 'manage-places'
                 ],
                 [
                     'slug'  => 'index-district',
                     'label' => 'All Districts',
                     'route' => 'backend.districts.index',
-                    'permissions'   => 'read-district'
+                    'permissions'   => 'manage-places'
                 ],
                 [
                     'slug'  => 'create-thana',
                     'label' => 'Add New Thana',
                     'route' => 'backend.thanas.create',
-                    'permissions'   => 'create-thana'
+                    'permissions'   => 'manage-places'
                 ],
                 [
                     'slug'  => 'index-thana',
                     'label' => 'All Thanas',
                     'route' => 'backend.thanas.index',
-                    'permissions'   => 'read-thana'
+                    'permissions'   => 'manage-places'
                 ]
             ]
         ],
@@ -213,13 +213,13 @@ return [
             'slug'          => 'setting',
             'label'         => 'Setting',
             'icon_class'    => 'fas fa-cogs',
-            'permissions'   => 'view-dashboard',
+            'permissions'   => 'manage-setting',
             'childs'        => [
                 [
                     'slug'  => 'style',
                     'label' => 'Style',
                     'route' => 'backend.preferences.update',
-                    'permissions'   => 'create-thana'
+                    'permissions'   => 'manage-setting'
                 ]
             ]
         ]

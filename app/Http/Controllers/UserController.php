@@ -24,7 +24,7 @@ class UserController extends Controller
      */
     public function index()
     {   
-        $this->checkPermission('read-user');
+        $this->checkPermission('manage-users');
         $paginate = config('app.pagenation_count', 3);
         
         $users = User::orderBy('created_at', 'DESC')->paginate($paginate);
@@ -105,7 +105,8 @@ class UserController extends Controller
         
         $id = Auth::user()->id;
         $user = User::findOrFail($id);
-        
+        $status = $request->input('status') ? $request->input('status') : "active";
+
         $user->localization     = [
             'en' => [
                 'display_name' => $request->input('display-name-en')
@@ -179,7 +180,7 @@ class UserController extends Controller
         $user->about  = $request->input('about');
         $user->email= $request->input('email');
         $user->avatar_url  = $request->input('avatar-url');
-        
+        $user->status           =  $status;
 
         if ($request->input('password')) {
             $password = $request->input('password');
@@ -194,7 +195,7 @@ class UserController extends Controller
         
         $user->save();
         $user->roles()->sync([$request->input('role')]);
-        Session::flash('message', 'Successfully Updated!');
+        Session::flash('message', 'Successfully Updated+!');
         return redirect()->route('backend.users.edit', $user->id);
     }
     /**
@@ -204,7 +205,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        $this->checkPermission('create-user');
+        $this->checkPermission('manage-users');
         $roles = Role::get();
         $countries = Country::get();
         $divisions = Division::get();
@@ -264,8 +265,8 @@ class UserController extends Controller
                 'display_name' => $request->input('display-name-bn')
             ]
         ];
-
-
+        $status = $request->input('status') ? $request->input('status') : "active";
+        $user->status           =  $status;
         $user->billing_address = [
             'line_1' => $request->input('billing-address-line-1'),
             'line_2' => $request->input('billing-address-line-2'),
@@ -352,7 +353,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $this->checkPermission('update-user');
+        $this->checkPermission('manage-users');
         $user = User::findOrFail($id);
 
         $roles = Role::get();
@@ -428,7 +429,9 @@ class UserController extends Controller
             ]
         ];
 
-
+        $status = $request->input('status') ? $request->input('status') : "active";
+        $user->status           =  $status;
+        
         $user->billing_address = [
             'line_1' => $request->input('billing-address-line-1'),
             'line_2' => $request->input('billing-address-line-2'),

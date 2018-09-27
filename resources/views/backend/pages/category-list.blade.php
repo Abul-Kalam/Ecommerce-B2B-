@@ -33,7 +33,9 @@
                 <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
                     <div class="box mt-3">
                         <div class="box-header with-border">
+                            @permission('manage-taxonomy')
                             <a href="{{ route('backend.categories.create')}}" class="btn btn-sm btn-default">Add New</a>
+                            @endpermission
                             <div class="box-tools mt-2">
                                 <form class="form-inline my-2 my-lg-0" action="{{ route('backend.categories.search') }}" method="post">
                                         {{ csrf_field() }}
@@ -67,7 +69,7 @@
                                         <td>
                                             <span class="actions">
                                                 <a href="{{ route('backend.categories.show', $c->id)}}">View</a>
-                                                @permission('update-category')
+                                                @permission('manage-taxonomy')
                                                 <span>&nbsp;|&nbsp;</span>
                                                 <a href="{{ route('backend.categories.edit', $c->id)}}">Edit</a>
                                                 @endpermission

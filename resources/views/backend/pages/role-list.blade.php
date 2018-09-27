@@ -34,7 +34,7 @@
 
                     <div class="box mt-3">
                         <div class="box-header with-border">
-                            @permission('create-role')
+                            @permission('manage-users')
                             <a href="{{ route('backend.roles.create')}}" class="btn btn-sm btn-default">Add New</a>
                             @endpermission
                             <div class="box-tools mt-2">
@@ -70,7 +70,7 @@
                                         <td>
                                             <span class="actions">
                                                 <a href="{{ route('backend.roles.show', $p->id)}}">View</a>
-                                                @permission('update-role')
+                                                @permission('manage-users')
                                                 <span>&nbsp;|&nbsp;</span>
                                                 <a href="{{ route('backend.roles.edit', $p->id)}}">Edit</a>
                                                 @endpermission

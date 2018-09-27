@@ -33,7 +33,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
                     <div class="box mt-3">
                         <div class="box-header with-border">
-                            @permission('create-user')
+                            @permission('manage-users')
                             <a href="{{ route('backend.users.create')}}" class="btn btn-sm btn-default">Add New</a>
                             @endpermission
                             <div class="box-tools mt-2">
@@ -59,6 +59,7 @@
                                         <th style="width: 10px">#</th>
                                         <th>Name</th>
                                         <th>Email</th>
+                                        <th style="width: 150px;">Status</th>
                                         <th style="width: 95px; text-align: center" >Actions</th>
                                     </tr>
                                     
@@ -69,9 +70,16 @@
 
                                         <td>{{ $t->email }}</td>
                                         <td>
+                                                @if($t->status === 'active')
+                                                <span class="label label-success">Active</span>
+                                                @elseif($t->status === 'inactive')
+                                                <span class="label label-danger">Inactive</span>
+                                                @endif
+                                        </td>
+                                        <td>
                                             <span class="actions">
                                                 <a href="{{ route('backend.users.show', $t->id)}}">View</a>
-                                                @permission('update-user')
+                                                @permission('manage-users')
                                                 <span>&nbsp;|&nbsp;</span>
                                                 <a href="{{ route('backend.users.edit', $t->id)}}">Edit</a>
                                                 @endpermission

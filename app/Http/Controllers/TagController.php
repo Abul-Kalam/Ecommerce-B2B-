@@ -15,7 +15,7 @@ class TagController extends Controller
      */
     public function index()
     {
-        $this->checkPermission('read-tag');
+        $this->checkPermission('manage-taxonomy');
         $paginate = config('app.pagenation_count', 3);
         
         $tags = Tag::orderBy('created_at', 'DESC')->paginate($paginate);
@@ -47,7 +47,7 @@ class TagController extends Controller
      */
     public function create()
     {
-        $this->checkPermission('create-tag');
+        $this->checkPermission('manage-taxonomy');
         return view('backend.pages.tag-create');
     }
 
@@ -116,7 +116,7 @@ class TagController extends Controller
      */
     public function edit($id)
     {
-        $this->checkPermission('update-tag');
+        $this->checkPermission('manage-taxonomy');
         $tag = Tag::findOrFail($id);
 
         return view('backend.pages.tag-edit', [

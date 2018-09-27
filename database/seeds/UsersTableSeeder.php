@@ -40,6 +40,35 @@ class UsersTableSeeder extends Seeder
                     'district_id'       => '1',
                     'division_id'       => '1',
                 ])
+                ],
+                [   'id'           => 2,
+                'name'         => 'admin2',
+                'first_name'   => 'admin',
+                'last_name'    => 'admin',
+                'email'        => 'admin2@gmail.com',
+                'password'     => bcrypt('123456'),
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'admin'],
+                    'bn'       => ['display_name' => 'admin']
+                ], JSON_UNESCAPED_UNICODE),
+                'shipping_address' => json_encode([
+                    'zip'       => '15',
+                    'line_1'       => 'dhaka',
+                    'line_2'       => 'dhaka',
+                    'thana_id'       => '2',
+                    'country_id'       => '1',
+                    'district_id'       => '1',
+                    'division_id'       => '1',
+                ]),
+                'billing_address' => json_encode([
+                    'zip'       => '15',
+                    'line_1'       => 'dhaka',
+                    'line_2'       => 'dhaka',
+                    'thana_id'       => '2',
+                    'country_id'       => '1',
+                    'district_id'       => '1',
+                    'division_id'       => '1',
+                ])
             ]
         ]);
     }

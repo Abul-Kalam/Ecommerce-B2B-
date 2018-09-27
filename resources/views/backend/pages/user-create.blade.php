@@ -131,6 +131,13 @@ $_activeSecondaryNav = 'create-users';
                                                     <span class="help-block">The Display Role field is required.</span>
                                                     @endif
                                                 </div>
+                                                <div class="col-lg-6 form-group">
+                                                    <label for="display-name-bn">User Account Status</label>
+                                                    <select class="form-control" placeholder="Select Status" name="status">
+                                                        <option value="active">Active</option>
+                                                        <option value="inactive">Inactive</option>
+                                                    </select>
+                                                </div>
                                             </div>
 
                                             <div class="form-group">

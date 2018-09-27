@@ -20,7 +20,7 @@ class ShopController extends Controller
     public function index()
     {
 
-        $this->checkPermission('read-shop');
+        $this->checkPermission('manage-shops');
         $paginate = config('app.pagenation_count', 3);
         
         $shops = Shop::orderBy('created_at', 'DESC')->paginate($paginate);
@@ -53,7 +53,7 @@ class ShopController extends Controller
     public function create()
     {
 
-        $this->checkPermission('create-shop');
+        $this->checkPermission('manage-shops');
 
         $countries = Country::get();
         $divisions = Division::get();
@@ -166,7 +166,7 @@ class ShopController extends Controller
      */
     public function edit($id)
     {  
-        $this->checkPermission('update-shop');
+        $this->checkPermission('manage-shops');
         $shop = shop::findOrFail($id);
         $countries = Country::get();
         $divisions = Division::get();

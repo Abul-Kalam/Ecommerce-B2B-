@@ -15,7 +15,7 @@ class CountryController extends Controller
      */
     public function index()
     {
-        $this->checkPermission('read-country');
+        $this->checkPermission('manage-places');
         $paginate = config('app.pagenation_count', 3);
         
         $countries = Country::orderBy('created_at', 'DESC')->paginate($paginate);
@@ -45,7 +45,7 @@ class CountryController extends Controller
      */
     public function create()
     { 
-        $this->checkPermission('create-country');
+        $this->checkPermission('manage-places');
         return view('backend.pages.country-create');
     }
 
@@ -118,7 +118,7 @@ class CountryController extends Controller
      */
     public function edit($id)
     {
-        $this->checkPermission('update-country');
+        $this->checkPermission('manage-places');
         $country = Country::findOrFail($id);
 
         return view('backend.pages.country-edit' ,[

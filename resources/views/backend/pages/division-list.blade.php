@@ -33,7 +33,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
                     <div class="box mt-3">
                         <div class="box-header with-border">
-                            @permission('create-division')
+                            @permission('manage-places')
                             <a href="{{ route('backend.divisions.create')}}" class="btn btn-sm btn-default">Add New</a>
                             @endpermission
                             <div class="box-tools mt-2">
@@ -70,7 +70,7 @@
                                         <td>
                                             <span class="actions">
                                                 <a href="{{ route('backend.divisions.show', $c->id) }}">View</a>
-                                                @permission('update-division')
+                                                @permission('manage-places')
                                                 <span>&nbsp;|&nbsp;</span>
                                                 <a href="{{ route('backend.divisions.edit', $c->id) }}">Edit</a>
                                                 @endpermission

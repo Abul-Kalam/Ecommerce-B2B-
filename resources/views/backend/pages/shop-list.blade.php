@@ -31,7 +31,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
                     <div class="box mt-3">
                         <div class="box-header with-border">
-                            @permission('create-shop')
+                            @permission('manage-shops')
                             <a href="{{ route('backend.shops.create')}}" class="btn btn-sm btn-default">Add New</a>
                             @endpermission
                             <div class="box-tools mt-2">
@@ -75,7 +75,7 @@
                                         <td>
                                             <span class="actions">
                                                 <a href="{{ route('backend.shops.show', $s->id)}}">View</a>
-                                                @permission('update-shop')
+                                                @permission('manage-shops')
                                                 <span>&nbsp;|&nbsp;</span>
                                                 <a href="{{ route('backend.shops.edit', $s->id)}}">Edit</a>
                                                 @endpermission

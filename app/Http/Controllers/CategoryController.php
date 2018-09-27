@@ -16,7 +16,7 @@ class CategoryController extends Controller
 
     public function index()
     {
-        $this->checkPermission('read-category');
+        $this->checkPermission('manage-taxonomy');
 
         $paginate = config('app.pagenation_count', 3);
         
@@ -50,7 +50,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        $this->checkPermission('create-category');
+        $this->checkPermission('manage-taxonomy');
         $categories = Category::where('parent_id', '=', 0)->get();
         return view('backend.pages.category-create', [
             'categories' => $categories
@@ -133,7 +133,7 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {   
-        $this->checkPermission('update-category');
+        $this->checkPermission('manage-taxonomy');
 
         $category = Category::findOrFail($id);
 

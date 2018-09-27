@@ -123,6 +123,15 @@ $_alertType = 'success';
                                                     @endif
                                                 </div>
                                             </div>
+                                            <div class="row">
+                                                <div class="col-lg-6 form-group">
+                                                    <label for="display-name-bn">User Account Status</label>
+                                                    <select class="form-control" placeholder="Select Status" name="status">
+                                                        <option value="active" {{ $user->status === "active" ? 'selected' : '' }}>Active</option>
+                                                        <option value="inactive" {{ $user->status === "inactive" ? 'selected' : '' }}>Inactive</option>
+                                                    </select>
+                                                </div>
+                                            </div>
 
                                             <div class="form-group">
                                                 <label for="about">About</label>

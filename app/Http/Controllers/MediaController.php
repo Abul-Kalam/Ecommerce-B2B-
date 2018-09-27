@@ -19,7 +19,7 @@ class MediaController extends Controller
      */
     public function index()
     {
-        $this->checkPermission('read-media');
+        $this->checkPermission('manage-media');
 
         $paginate = config('app.pagenation_count', 10);
         
@@ -47,7 +47,7 @@ class MediaController extends Controller
      */
     public function create()
     {
-        $this->checkPermission('create-media');
+        $this->checkPermission('manage-media');
         return view('backend.pages.media-create');
     }
 

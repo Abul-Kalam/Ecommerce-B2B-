@@ -16,7 +16,7 @@ class DivisionController extends Controller
      */
     public function index()
     {   
-        $this->checkPermission('read-division');
+        $this->checkPermission('manage-places');
         $paginate = config('app.pagenation_count', 3);
         
         $divisions = Division::with('country')->orderBy('created_at', 'DESC')->paginate($paginate);
@@ -45,7 +45,7 @@ class DivisionController extends Controller
      */
     public function create()
     {   
-        $this->checkPermission('create-division');
+        $this->checkPermission('manage-places');
         $countries = Country::get();
         return view('backend.pages.division-create' , [
             'countries' => $countries,
@@ -117,7 +117,7 @@ class DivisionController extends Controller
      */
     public function edit($id)
     {
-        $this->checkPermission('update-division');
+        $this->checkPermission('manage-places');
         
         $division = Division::findOrFail($id);
         $countries = Country::get();
