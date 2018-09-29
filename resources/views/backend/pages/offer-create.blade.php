@@ -41,44 +41,44 @@
                                 <div class="row">
                                     <div class="col-lg-6 form-group">
                                         <label for="display_name_en">Display Name (english)</label>
-                                        <input type="text" class="form-control" id="display_name_en" name="display-name-en">
+                                        <input type="text" class="form-control" id="display_name_en" name="display-name-en" value="{{ old('display-name-en') }}">
                                     </div>
                                     <div class="col-lg-6 form-group">
                                         <label for="display-name-bn">Display Name (bangla)</label>
-                                        <input type="text" class="form-control" id="display-name-bn" name="display-name-bn">
+                                        <input type="text" class="form-control" id="display-name-bn" name="display-name-bn" value="{{ old('display-name-bn') }}">
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <div class="col-lg-12 form-group">
                                         <label for="slug">Slug</label>
-                                        <input type="text" class="form-control" id="slug" name="slug">
+                                        <input type="text" class="form-control" id="slug" name="slug" value="{{ old('slug') }}">
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="description">Description</label>
-                                    <textarea class="form-control" id="description" rows="3" name="description"></textarea>
+                                    <textarea class="form-control" id="description" rows="3" name="description">{{Request::old('description')}}</textarea>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="meta-title">Meta Title</label>
-                                    <input type="text" class="form-control" id="meta-title" name="meta-title">
+                                    <input type="text" class="form-control" id="meta-title" name="meta-title" value="{{ old('meta-title') }}">
                                 </div>
                                 
                                 <div class="form-group">
                                     <label for="meta-keywords">Meta Keywords</label>
-                                    <input type="text" class="form-control" id="meta-keywords" name="meta-keywords">
+                                    <input type="text" class="form-control" id="meta-keywords" name="meta-keywords" value="{{ old('meta-keywords') }}">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="meta-description">Meta Description</label>
-                                    <textarea class="form-control" id="description" rows="3" name="meta-description"></textarea>
+                                    <textarea class="form-control" id="description" rows="3" name="meta-description">{{Request::old('description')}}</textarea>
                                 </div>
                                       
                                 <div class="form-group">
                                     <label for="feature-image-url">Url</label>
-                                    <input type="text" class="form-control" id="feature-image-url" name="feature-image-url">
+                                    <input type="text" class="form-control" id="feature-image-url" name="feature-image-url" value="{{ old('feature-image-url') }}">
                                 </div>
                             </div>
                             <div class="box-footer">

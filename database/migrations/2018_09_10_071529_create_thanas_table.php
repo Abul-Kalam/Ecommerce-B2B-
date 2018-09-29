@@ -16,7 +16,7 @@ class CreateThanasTable extends Migration
         Schema::create('thanas', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('district_id')->nullable();
-            $table->string('slug', 255)->unique();
+            $table->string('slug', 255);
             $table->json('localization')->nullable();
             $table->timestamps();
             $table->softDeletes();

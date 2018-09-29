@@ -50,14 +50,14 @@
                                             <div class="row">
                                                 <div class="col-lg-6 form-group {{  $errors->has('display-name-en') ? 'has-error' : '' }}">
                                                     <label for="display-name-en">Display Name (english)</label>
-                                                    <input type="text" class="form-control" id="display-name-en" name="display-name-en">
+                                                    <input type="text" class="form-control" id="display-name-en" name="display-name-en"  value="{{ old('display-name-en') }}">
                                                     @if($errors->has('display-name-en'))
                                                     <span class="help-block">The Display Name English field is required.</span>
                                                     @endif
                                                 </div>
                                                 <div class="col-lg-6 form-group {{  $errors->has('display-name-bn') ? 'has-error' : '' }}">
                                                     <label for="display-name-bn">Display Name (bangla)</label>
-                                                    <input type="text" class="form-control" id="display-name-bn" name="display-name-bn">
+                                                    <input type="text" class="form-control" id="display-name-bn" name="display-name-bn" value="{{ old('display-name-bn') }}">
                                                     @if($errors->has('display-name-bn'))
                                                     <span class="help-block">The Display Name Bangla field is required.</span>
                                                     @endif
@@ -67,7 +67,7 @@
                                             <div class="row">
                                                 <div class="col-lg-6 form-group {{  $errors->has('slug') ? 'has-error' : '' }}">
                                                     <label for="slug">Slug</label>
-                                                    <input type="text" class="form-control" id="slug" name="slug">
+                                                    <input type="text" class="form-control" id="slug" name="slug" value="{{ old('slug') }}">
                                                     @if($errors->has('slug'))
                                                     <span class="help-block">The Slug field is required.</span>
                                                     @endif
@@ -93,30 +93,30 @@
 
                                             <div class="form-group">
                                                 <label for="description">Description</label>
-                                                <textarea class="form-control" id="description" rows="3" name="description"></textarea>
+                                                <textarea class="form-control" id="description" rows="3" name="description">{{Request::old('description')}}</textarea>
                                             </div>
                                         </div>
                                         <!-- /.tab-pane -->
                                         <div class="tab-pane" id="tab_2">
                                             <div class="form-group">
                                                 <label for="logo-url">Logo Url</label>
-                                                <input type="text" class="form-control" id="logo-url" name="logo-url">
+                                                <input type="text" class="form-control" id="logo-url" name="logo-url" value="{{ old('logo-url') }}">
                                                 <p class="help-block">Example block-level help text here.</p>
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="banner-url">Banner Url</label>
-                                                <input type="text" class="form-control" id="banner-url" name="banner-url">
+                                                <input type="text" class="form-control" id="banner-url" name="banner-url" value="{{ old('banner-url') }}">
                                                 <p class="help-block">Example block-level help text here.</p>
                                             </div>
                                             <div class="form-group">
                                                 <label for="icone-url">Icon Url</label>
-                                                <input type="text" class="form-control" id="icon-url" name="icon-url">
+                                                <input type="text" class="form-control" id="icon-url" name="icon-url" value="{{ old('icon-url') }}">
                                                 <p class="help-block">Example block-level help text here.</p>
                                             </div>
                                             <div class="form-group">
                                                 <label for="thumbnail-url">Thumbnail Url</label>
-                                                <input type="text" class="form-control" id="thumbnail-url" name="thumbnail-url">
+                                                <input type="text" class="form-control" id="thumbnail-url" name="thumbnail-url" value="{{ old('thumbnail-url') }}">
                                                 <p class="help-block">Example block-level help text here.</p>
                                             </div>
                                         </div>
@@ -124,17 +124,17 @@
                                         <div class="tab-pane" id="tab_3">
                                             <div class="form-group">
                                                 <label for="meta-title">Meta Title</label>
-                                                <input type="text" class="form-control" id="meta-title" name="meta-title">
+                                                <input type="text" class="form-control" id="meta-title" name="meta-title" value="{{ old('meta-title') }}">
                                             </div>
                                             
                                             <div class="form-group">
                                                 <label for="meta-keywords">Meta Keywords</label>
-                                                <input type="text" class="form-control" id="meta-keywords" name="meta-keywords">
+                                                <input type="text" class="form-control" id="meta-keywords" name="meta-keywords" value="{{ old('meta-keywords') }}">
                                             </div>
             
                                             <div class="form-group">
                                                 <label for="meta-description">Meta Description</label>
-                                                <textarea class="form-control" id="description" rows="3" name="meta-description"></textarea>
+                                                <textarea class="form-control" id="description" rows="3" name="meta-description">{{Request::old('description')}}</textarea>
                                             </div>
                                         </div>
                                         <!-- /.tab-pane -->

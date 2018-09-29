@@ -50,7 +50,7 @@
                                             <div class="row">
                                                 <div class="col-lg-12 form-group {{  $errors->has('iso2') ? 'has-error' : '' }}">
                                                     <label for="iso2">Iso2</label>
-                                                    <input type="text" class="form-control" id="iso2" name="iso2">
+                                                    <input type="text" class="form-control" id="iso2" name="iso2" value="{{ old('iso2') }}">
                                                     @if($errors->has('iso2'))
                                                     <span class="help-block">The Iso2 field is required.</span>
                                                     @endif
@@ -59,14 +59,14 @@
                                             <div class="row">
                                                 <div class="col-lg-6 form-group {{  $errors->has('display-name-en') ? 'has-error' : '' }}">
                                                     <label for="display-name-en">Display Name (english)</label>
-                                                    <input type="text" class="form-control" id="display-name-en" name="display-name-en">
+                                                    <input type="text" class="form-control" id="display-name-en" name="display-name-en" value="{{ old('display-name-en') }}">
                                                     @if($errors->has('display-name-en'))
                                                     <span class="help-block">The Display Name English field is required.</span>
                                                     @endif
                                                 </div>
                                                 <div class="col-lg-6 form-group {{  $errors->has('display-name-bn') ? 'has-error' : '' }}">
                                                     <label for="display-name-bn">Display Name (bangla)</label>
-                                                    <input type="text" class="form-control" id="display-name-bn" name="display-name-bn">
+                                                    <input type="text" class="form-control" id="display-name-bn" name="display-name-bn" value="{{ old('display-name-bn') }}">
                                                     @if($errors->has('display-name-bn'))
                                                     <span class="help-block">The Display Name Bangla field is required.</span>
                                                     @endif
@@ -95,34 +95,34 @@
                                         <div class="tab-pane" id="tab_2">
                                             <div class="form-group">
                                                 <label for="local">Local</label>
-                                                <input type="text" class="form-control" id="local" name="local">
+                                                <input type="text" class="form-control" id="local" name="local" value="{{ old('local') }}">
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="global">Global</label>
-                                                <input type="text" class="form-control" id="global" name="global">
+                                                <input type="text" class="form-control" id="global" name="global" value="{{ old('global') }}">
                                             </div>
                                             <div class="form-group">
                                                 <label for="global">Alternative</label>
-                                                <input type="text" class="form-control" id="alternative" name="alternative">
+                                                <input type="text" class="form-control" id="alternative" name="alternative" value="{{ old('alternative') }}">
                                             </div>
                                         </div>
                                         <!-- /.tab-pane -->
                                         <div class="tab-pane" id="tab_3">
                                             <div class="form-group">
                                                 <label for="currency-local">Local</label>
-                                                <input type="text" class="form-control" id="currency-local" name="currency-local">
+                                                <input type="text" class="form-control" id="currency-local" name="currency-local" value="{{ old('currency-local') }}">
                                                 <p class="help-block">Example block-level help text here.</p>
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="currency-global">Global</label>
-                                                <input type="text" class="form-control" id="currency-global" name="currency-global">
+                                                <input type="text" class="form-control" id="currency-global" name="currency-global" value="{{ old('currency-global') }}">
                                                 <p class="help-block">Example block-level help text here.</p>
                                             </div>
                                             <div class="form-group">
                                                 <label for="currency-alternative">Alternative</label>
-                                                <input type="text" class="form-control" id="currency-alternative" name="currency-alternative">
+                                                <input type="text" class="form-control" id="currency-alternative" name="currency-alternative" value="{{ old('currency-alternative') }}">
                                                 <p class="help-block">Example block-level help text here.</p>
                                             </div>
                                         </div>
