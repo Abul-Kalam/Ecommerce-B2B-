@@ -49,14 +49,14 @@ $_activeSecondaryNav = 'create-users';
                                             <div class="row">
                                                 <div class="col-lg-6 form-group {{  $errors->has('first-name') ? 'has-error' : '' }}">
                                                     <label for="first-name">First Name</label>
-                                                    <input type="text" class="form-control" id="first-name" name="first-name">
+                                                    <input type="text" class="form-control" id="first-name" name="first-name" value="{{ old('first-name') }}">
                                                     @if($errors->has('first-name'))
                                                     <span class="help-block">The First Name field is required.</span>
                                                     @endif
                                                 </div>
                                                 <div class="col-lg-6 form-group {{  $errors->has('last-name') ? 'has-error' : '' }}">
                                                     <label for="last-name">Last Name</label>
-                                                    <input type="text" class="form-control" id="last-name" name="last-name">
+                                                    <input type="text" class="form-control" id="last-name" name="last-name" value="{{ old('last-name') }}">
                                                     @if($errors->has('last-name'))
                                                     <span class="help-block">The First Name field is required.</span>
                                                     @endif
@@ -65,14 +65,14 @@ $_activeSecondaryNav = 'create-users';
                                             <div class="row">
                                                 <div class="col-lg-6 form-group {{  $errors->has('display-name-en') ? 'has-error' : '' }}">
                                                     <label for="display-name-en">Display Name (english)</label>
-                                                    <input type="text" class="form-control" id="display-name-en" name="display-name-en">
+                                                    <input type="text" class="form-control" id="display-name-en" name="display-name-en" value="{{ old('display-name-en') }}">
                                                     @if($errors->has('display-name-en'))
                                                     <span class="help-block">The Display Name English field is required.</span>
                                                     @endif
                                                 </div>
                                                 <div class="col-lg-6 form-group {{  $errors->has('display-name-bn') ? 'has-error' : '' }}">
                                                     <label for="display-name-bn">Display Name (bangla)</label>
-                                                    <input type="text" class="form-control" id="display-name-bn" name="display-name-bn">
+                                                    <input type="text" class="form-control" id="display-name-bn" name="display-name-bn" value="{{ old('display-name-bn') }}">
                                                     @if($errors->has('display-name-bn'))
                                                     <span class="help-block">The Display Name Bangla field is required.</span>
                                                     @endif
@@ -93,7 +93,7 @@ $_activeSecondaryNav = 'create-users';
                                                 </div>
                                                 <div class="col-lg-6 form-group {{  $errors->has('email') ? 'has-error' : '' }}">
                                                     <label for="email">Email</label>
-                                                    <input type="email" class="form-control" id="email" name="email">
+                                                    <input type="email" class="form-control" id="email" name="email"  value="{{ old('email') }}">
                                                     @if($errors->has('email'))
                                                     <span class="help-block">The Display Name Email field is required.</span>
                                                     @endif
@@ -142,12 +142,12 @@ $_activeSecondaryNav = 'create-users';
 
                                             <div class="form-group">
                                                 <label for="about">About</label>
-                                                <textarea class="form-control" id="about" rows="3" name="about"></textarea>
+                                                <textarea class="form-control" id="about" rows="3" name="about">{{Request::old('about')}}</textarea>
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="avatar-url">Avatar Url</label>
-                                                <input type="text" class="form-control" id="avatar-url" name="avatar-url">
+                                                <input type="text" class="form-control" id="avatar-url" name="avatar-url" value="{{ old('avatar-url') }}">
                                             </div>
                                         </div>
                                         <!-- /.tab-pane -->
@@ -158,7 +158,7 @@ $_activeSecondaryNav = 'create-users';
                                                     <div class="form-group {{  $errors->has('billing-address-line-1') ? 'has-error' : '' }}">
                                                         <label for="billing-address-line-1">Address Line 1</label>
                                                         <input type="text" class="form-control" id="billing-address-line-1"
-                                                            name="billing-address-line-1">
+                                                            name="billing-address-line-1" value="{{ old('billing-address-line-1') }}">
                                                             @if($errors->has('billing-address-line-1'))
                                                             <span class="help-block">The Address Line 1 field is required.</span>
                                                             @endif
@@ -168,7 +168,7 @@ $_activeSecondaryNav = 'create-users';
                                                     <div class="form-group {{  $errors->has('billing-address-line-2') ? 'has-error' : '' }}">
                                                         <label for="billing-address-line-2">Address Line 2</label>
                                                         <input type="text" class="form-control" id="billing-address-line-2"
-                                                            name="billing-address-line-2">
+                                                            name="billing-address-line-2"  value="{{ old('billing-address-line-2') }}">
                                                             @if($errors->has('billing-address-line-2'))
                                                             <span class="help-block">The Address Line 2 field is required.</span>
                                                             @endif
