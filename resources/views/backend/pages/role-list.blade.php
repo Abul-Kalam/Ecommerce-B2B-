@@ -82,9 +82,11 @@
                                 </tbody>
                             </table>
                         </div>
+                        @if(strlen($roles->links()))
                         <div class="box-footer clearfix">
                             {{ $roles->links() }}
                         </div>
+                        @endif
                     </div>
                 </div>
             </div>

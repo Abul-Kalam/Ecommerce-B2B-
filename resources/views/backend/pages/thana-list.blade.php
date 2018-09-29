@@ -82,9 +82,11 @@
                                 </tbody>
                             </table>
                         </div>
+                        @if(strlen($thanas->links()))
                         <div class="box-footer clearfix">
                             {{ $thanas->links() }}
                         </div>
+                        @endif
                     </div>
                 </div>
             </div>

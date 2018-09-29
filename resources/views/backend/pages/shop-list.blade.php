@@ -86,9 +86,11 @@
                                 </tbody>
                             </table>
                         </div>
+                        @if(strlen($shops->links()))
                         <div class="box-footer clearfix">
                             {{ $shops->links() }}
                         </div>
+                        @endif
                     </div>
                 </div>
             </div>

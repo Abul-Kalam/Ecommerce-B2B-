@@ -77,11 +77,13 @@ $_alertMessage = null;
                                 </tbody>
                             </table>
                         </div>
+                        @if( strlen($media->links()))
                         <div class="box-footer clearfix">
                             <nav aria-label="Page navigation example">
                                 {{ $media->links() }}
                             </nav>
                         </div>
+                        @endif
                     </div>
                 </div>
             </div>

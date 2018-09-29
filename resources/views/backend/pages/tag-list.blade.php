@@ -83,9 +83,11 @@
                                 </tbody>
                             </table>
                         </div>
+                        @if(strlen($tags->links()))
                         <div class="box-footer clearfix">
                             {{ $tags->links() }}
                         </div>
+                        @endif
                     </div>
                 </div>
             </div>

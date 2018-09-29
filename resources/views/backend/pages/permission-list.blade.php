@@ -82,9 +82,11 @@
                                 </tbody>
                             </table>
                         </div>
+                        @if(strlen($permissions->links()))
                         <div class="box-footer clearfix">
                             {{ $permissions->links() }}
                         </div>
+                        @endif
                     </div>
                 </div>
             </div>
