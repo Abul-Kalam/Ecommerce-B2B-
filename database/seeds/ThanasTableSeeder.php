@@ -3166,6 +3166,148 @@ class ThanasTableSeeder extends Seeder
                 'district_id'  => 39,
                
             ],
+            //Cox's Bazar district all thanas
+            [
+                'id'           => 338,
+                'slug'         => 'feni-sadar',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'feni sadar'],
+                    'bn'       => ['display_name' => 'ফেনী সদর']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 40,
+               
+            ],
+            [
+                'id'           => 339,
+                'slug'         => 'daganbhuiyan',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'daganbhuiyan'],
+                    'bn'       => ['display_name' => 'দাগনভূঞা']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 40,
+               
+            ],
+            [
+                'id'           => 340,
+                'slug'         => 'chhagalnaiya',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'chhagalnaiya'],
+                    'bn'       => ['display_name' => 'ছাগলন্যাইয়া']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 40,
+               
+            ],
+            [
+                'id'           => 341,
+                'slug'         => 'porshuram',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'porshuram'],
+                    'bn'       => ['display_name' => 'পরশুরাম']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 40,
+               
+            ],
+            [
+                'id'           => 342,
+                'slug'         => 'fulgazi',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'fulgazi'],
+                    'bn'       => ['display_name' => 'ফুলগাজী']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 40,
+               
+            ],
+            [
+                'id'           => 343,
+                'slug'         => 'sonagazi',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'sonagazi'],
+                    'bn'       => ['display_name' => 'সোনাগাজী']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 40,
+               
+            ],
+            // Feni district all thanas
+            [
+                'id'           => 344,
+                'slug'         => 'khagrachhari-sadar',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'khagrachhari sadar'],
+                    'bn'       => ['display_name' => 'খাগড়াছড়ি সদর']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 41,
+               
+            ],
+            [
+                'id'           => 345,
+                'slug'         => 'panchhari',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'panchhari'],
+                    'bn'       => ['display_name' => 'পানছড়ি']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 41,
+               
+            ],
+            [
+                'id'           => 346,
+                'slug'         => 'dighinala',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'dighinala'],
+                    'bn'       => ['display_name' => 'দিঘীনালা']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 41,
+               
+            ],
+            [
+                'id'           => 347,
+                'slug'         => 'manikchhari',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'manikchhari'],
+                    'bn'       => ['display_name' => 'মানিকছড়ি']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 41,
+               
+            ],
+            [
+                'id'           => 348,
+                'slug'         => 'lakshmichhari',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'lakshmichhari'],
+                    'bn'       => ['display_name' => 'লক্ষ্মীছড়ি']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 41,
+               
+            ],
+            [
+                'id'           => 349,
+                'slug'         => 'ramgarh',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'ramgarh'],
+                    'bn'       => ['display_name' => 'রামগড়']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 41,
+               
+            ],
+            [
+                'id'           => 350,
+                'slug'         => 'mahalchhari',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'mahalchhari'],
+                    'bn'       => ['display_name' => 'মহালছড়ি']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 41,
+               
+            ],
+            [
+                'id'           => 351,
+                'slug'         => 'matiranga',
+                'localization' => json_encode([
+                    'en'       => ['display_name' => 'matiranga'],
+                    'bn'       => ['display_name' => 'মাটিরাঙ্গা']
+                ], JSON_UNESCAPED_UNICODE),
+                'district_id'  => 41,
+               
+            ],
         ]);
     }
 }
