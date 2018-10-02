@@ -79,11 +79,30 @@ class ShopController extends Controller
             'slug' => 'required|unique:shops|max:255',
             'display-name-en' => 'required|max:255',
             'display-name-bn' => 'required|max:255',
+
+            'business-address-line-1' => 'required|max:255',
+            'business-address-line-2' => 'required|max:255',
             'business-zip' => 'required',
             'business-country-id' => 'required',
             'business-district-id' => 'required',
             'business-division-id' => 'required',
             'business-thana-id' => 'required',
+
+            'warehouse-address-line-1' => 'required|max:255',
+            'warehouse-address-line-2' => 'required|max:255',
+            'warehouse-zip' => 'required',
+            'warehouse-country-id' => 'required',
+            'warehouse-district-id' => 'required',
+            'warehouse-division-id' => 'required',
+            'warehouse-thana-id' => 'required',
+
+            'return-address-line-1' => 'required|max:255',
+            'return-address-line-2' => 'required|max:255',
+            'return-zip' => 'required',
+            'return-country-id' => 'required',
+            'return-district-id' => 'required',
+            'return-division-id' => 'required',
+            'return-thana-id' => 'required',
         ]);
         
         $shop = new Shop();
@@ -196,6 +215,29 @@ class ShopController extends Controller
             'display-name-en' => 'required|max:255',
             'display-name-bn' => 'required|max:255',
            
+            'business-address-line-1' => 'required|max:255',
+            'business-address-line-2' => 'required|max:255',
+            'business-zip' => 'required',
+            'business-country-id' => 'required',
+            'business-district-id' => 'required',
+            'business-division-id' => 'required',
+            'business-thana-id' => 'required',
+
+            'warehouse-address-line-1' => 'required|max:255',
+            'warehouse-address-line-2' => 'required|max:255',
+            'warehouse-zip' => 'required',
+            'warehouse-country-id' => 'required',
+            'warehouse-district-id' => 'required',
+            'warehouse-division-id' => 'required',
+            'warehouse-thana-id' => 'required',
+
+            'return-address-line-1' => 'required|max:255',
+            'return-address-line-2' => 'required|max:255',
+            'return-zip' => 'required',
+            'return-country-id' => 'required',
+            'return-district-id' => 'required',
+            'return-division-id' => 'required',
+            'return-thana-id' => 'required',
             
         ]);
         
