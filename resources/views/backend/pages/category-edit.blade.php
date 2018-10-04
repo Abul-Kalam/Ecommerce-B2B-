@@ -54,14 +54,14 @@
                                                     <label for="display-name-en">Display Name (english)</label>
                                                     <input type="text" class="form-control" id="display-name-en" name="display-name-en" value="{{  ucwords($category->localization['en']['display_name']) }}">
                                                     @if($errors->has('display-name-en'))
-                                                    <span class="help-block">The Display Name English field is required.</span>
+                                                    <span class="help-block">Display Name English field is required.</span>
                                                     @endif
                                                 </div>
                                                 <div class="col-lg-6 form-group {{  $errors->has('display-name-bn') ? 'has-error' : '' }}">
                                                     <label for="display-name-bn">Display Name (bangla)</label>
                                                     <input type="text" class="form-control" id="display-name-bn" name="display-name-bn" value="{{  $category->localization['bn']['display_name'] }}">
                                                     @if($errors->has('display-name-bn'))
-                                                    <span class="help-block">The Display Name Bangla field is required.</span>
+                                                    <span class="help-block">Display Name Bangla field is required.</span>
                                                     @endif
                                                 </div>
                                             </div>
@@ -71,7 +71,7 @@
                                                     <label for="slug">Slug</label>
                                                     <input type="text" class="form-control" id="slug" name="slug" value="{{  $category->slug }}">
                                                     @if($errors->has('slug'))
-                                                    <span class="help-block">The Slug field is required.</span>
+                                                    <span class="help-block">Slug field is required.</span>
                                                     @endif
                                                 </div>
                                                 <div class="col-lg-6 form-group">
@@ -92,10 +92,13 @@
                                         </div>
                                         <!-- /.tab-pane -->
                                         <div class="tab-pane" id="tab_2">
-                                            <div class="form-group">
+                                            <div class="form-group {{  $errors->has('logo-url') ? 'has-error' : '' }}">
                                                 <label for="logo-url">Logo Url</label>
                                                 <input type="text" class="form-control" id="logo-url" name="logo-url" value="{{  $category->image_url['logo'] }}">
                                                 <p class="help-block">Example block-level help text here.</p>
+                                                @if($errors->has('logo-url'))
+                                                <span class="help-block">logo-url is required.</span>
+                                                @endif
                                             </div>
 
                                             <div class="form-group">

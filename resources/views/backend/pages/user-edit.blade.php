@@ -53,14 +53,14 @@ $_alertType = 'success';
                                                     <label for="first-name">First Name</label>
                                                     <input type="text" class="form-control" id="first-name" name="first-name" value="{{ucwords( $user->first_name) }}">
                                                     @if($errors->has('first-name'))
-                                                    <span class="help-block">The First Name field is required.</span>
+                                                    <span class="help-block">First Name field is required.</span>
                                                     @endif
                                                 </div>
                                                 <div class="col-lg-6 form-group {{  $errors->has('last-name') ? 'has-error' : '' }}">
                                                     <label for="last-name">Last Name</label>
                                                     <input type="text" class="form-control" id="last-name" name="last-name" value="{{ucwords( $user->last_name) }}">
                                                     @if($errors->has('last-name'))
-                                                    <span class="help-block">The Last Name field is required.</span>
+                                                    <span class="help-block">Last Name field is required.</span>
                                                     @endif
                                                 </div>
                                             </div>
@@ -69,14 +69,14 @@ $_alertType = 'success';
                                                     <label for="display-name-en">Display Name (english)</label>
                                                     <input type="text" class="form-control" id="display-name-en" name="display-name-en"  value="{{  $user->localization['en']['display_name'] }}">
                                                     @if($errors->has('display-name-en'))
-                                                    <span class="help-block">The Display Name English field is required.</span>
+                                                    <span class="help-block">Display Name English field is required.</span>
                                                     @endif
                                                 </div>
                                                 <div class="col-lg-6 form-group {{  $errors->has('display-name-bn') ? 'has-error' : '' }}">
                                                     <label for="display-name-bn">Display Name (bangla)</label>
                                                     <input type="text" class="form-control" id="display-name-bn" name="display-name-bn"  value="{{  $user->localization['bn']['display_name'] }}">
                                                     @if($errors->has('display-name-bn'))
-                                                    <span class="help-block">The Display Name Bangla field is required.</span>
+                                                    <span class="help-block">Display Name Bangla field is required.</span>
                                                     @endif
                                                 </div>
                                             </div>
@@ -89,14 +89,14 @@ $_alertType = 'success';
                                                         <option value="other"  {{ $user->gender === "other" ? 'selected' : '' }}>Other</option>
                                                     </select>
                                                     @if($errors->has('gender'))
-                                                    <span class="help-block">The Gender field is required.</span>
+                                                    <span class="help-block">Gender field is required.</span>
                                                     @endif
                                                 </div>
                                                 <div class="col-lg-6 form-group {{  $errors->has('email') ? 'has-error' : '' }}">
                                                     <label for="email">Email</label>
                                                     <input type="email" class="form-control" id="email" name="email" value="{{ $user->email }}">
                                                     @if($errors->has('email'))
-                                                    <span class="help-block">The Display Name Email field is required.</span>
+                                                    <span class="help-block">Email field is required.</span>
                                                     @endif
                                                 </div>
                                             </div>
@@ -105,7 +105,7 @@ $_alertType = 'success';
                                                     <label for="password">Password</label>
                                                     <input type="password" class="form-control" id="password" name="password">
                                                     @if($errors->has('password'))
-                                                    <span class="help-block">The Display Password field is required.</span>
+                                                    <span class="help-block">Password field is required.</span>
                                                     @endif
                                     
                                                 </div>
@@ -119,7 +119,7 @@ $_alertType = 'success';
 
                                                     </select>
                                                     @if($errors->has('role'))
-                                                    <span class="help-block">The Display Role field is required.</span>
+                                                    <span class="help-block">Role field is required.</span>
                                                     @endif
                                                 </div>
                                             </div>
@@ -153,7 +153,7 @@ $_alertType = 'success';
                                                         <input type="text" class="form-control" id="billing-address-line-1"
                                                             name="billing-address-line-1" value="{{ $user->billing_address['line_1'] }}">
                                                             @if($errors->has('billing-address-line-1'))
-                                                            <span class="help-block">The Address Line 1 field is required.</span>
+                                                            <span class="help-block">Address 1 field is required.</span>
                                                             @endif
                                                             
                                                     </div>
@@ -163,7 +163,7 @@ $_alertType = 'success';
                                                         <input type="text" class="form-control" id="billing-address-line-2"
                                                             name="billing-address-line-2" value="{{ $user->billing_address['line_2'] }}">
                                                             @if($errors->has('billing-address-line-2'))
-                                                            <span class="help-block">The Address Line 2 field is required.</span>
+                                                            <span class="help-block">Address 2 field is required.</span>
                                                             @endif
                                                             
                                                     </div>
@@ -179,7 +179,7 @@ $_alertType = 'success';
                                                                         @endforeach
                                                                     </select>
                                                                     @if($errors->has('country-id'))
-                                                                    <span class="help-block">The Country field is required.</span>
+                                                                    <span class="help-block">Country field is required.</span>
                                                                     @endif
                                                             </div>
                                                         </div>
@@ -195,7 +195,7 @@ $_alertType = 'success';
                                                                         @endforeach
                                                                 </select>
                                                                 @if($errors->has('billing-district-id'))
-                                                                <span class="help-block">The District field is required.</span>
+                                                                <span class="help-block">District field is required.</span>
                                                                  @endif
                                                             </div>
                                                         </div>
@@ -209,7 +209,7 @@ $_alertType = 'success';
                                                                     @endforeach
                                                                 </select>
                                                                 @if($errors->has('billing-division-id'))
-                                                                <span class="help-block">The Division field is required.</span>
+                                                                <span class="help-block">Division field is required.</span>
                                                                 @endif
                                                             </div>
                                                         </div>
@@ -226,7 +226,7 @@ $_alertType = 'success';
                                                                     @endforeach
                                                                 </select>
                                                                 @if($errors->has('billing-thana-id'))
-                                                                <span class="help-block">The Thana field is required.</span>
+                                                                <span class="help-block">Thana field is required.</span>
                                                                  @endif
                                                             </div>
                                                         </div>
@@ -236,7 +236,7 @@ $_alertType = 'success';
                                                                 <input type="text" class="form-control" id="billing-zip"
                                                                     name="billing-zip" value="{{ $user->billing_address['zip'] }}">
                                                                 @if($errors->has('billing-zip'))
-                                                                <span class="help-block">The Zip field is required.</span>
+                                                                <span class="help-block">Zip field is required.</span>
                                                                 @endif
                                                             </div>
                                                         </div>
@@ -249,7 +249,7 @@ $_alertType = 'success';
                                                         <input type="text" class="form-control" id="shipping-address-line-1"
                                                             name="shipping-address-line-1" value="{{ $user->shipping_address['line_1']  }}">
                                                              @if($errors->has('shipping-address-line-1'))
-                                                                <span class="help-block">The Address Line 1 field is required.</span>
+                                                                <span class="help-block">Address 1 field is required.</span>
                                                             @endif
                                                     </div>
                                                     <div class="form-group {{  $errors->has('shipping-address-line-2') ? 'has-error' : '' }}">
@@ -257,7 +257,7 @@ $_alertType = 'success';
                                                         <input type="text" class="form-control" id="shipping-address-line-2"
                                                             name="shipping-address-line-2" value="{{ $user->shipping_address['line_2']  }}">
                                                             @if($errors->has('shipping-address-line-2'))
-                                                                <span class="help-block">The Address Line 2 field is required.</span>
+                                                                <span class="help-block">Address 2 field is required.</span>
                                                             @endif
                                                     </div>
 
@@ -273,7 +273,7 @@ $_alertType = 'success';
                                                                         @endforeach
                                                                     </select>
                                                                     @if($errors->has('shipping-country-id'))
-                                                                        <span class="help-block">The Country field is required.</span>
+                                                                        <span class="help-block">Country field is required.</span>
                                                                     @endif
                                                             </div>
                                                         </div>
@@ -289,7 +289,7 @@ $_alertType = 'success';
                                                                     @endforeach
                                                                 </select>
                                                                 @if($errors->has('shipping-district-id'))
-                                                                    <span class="help-block">The District field is required.</span>
+                                                                    <span class="help-block">District field is required.</span>
                                                                 @endif
                                                             </div>
                                                         </div>
@@ -303,7 +303,7 @@ $_alertType = 'success';
                                                                     @endforeach
                                                                 </select>
                                                                 @if($errors->has('shipping-division-id'))
-                                                                    <span class="help-block">The Division field is required.</span>
+                                                                    <span class="help-block">Division field is required.</span>
                                                                 @endif
                                                             </div>
                                                         </div>
@@ -320,7 +320,7 @@ $_alertType = 'success';
                                                                     @endforeach
                                                                 </select>
                                                                 @if($errors->has('shipping-thana-id'))
-                                                                <span class="help-block">The Thana field is required.</span>
+                                                                <span class="help-block">Thana field is required.</span>
                                                                 @endif
                                                             </div>
                                                         </div>
@@ -330,7 +330,7 @@ $_alertType = 'success';
                                                                 <input type="text" class="form-control" id="shipping-zip"
                                                                     name="shipping-zip" value="{{ $user->shipping_address['zip'] }}">
                                                                 @if($errors->has('shipping-zip'))
-                                                                <span class="help-block">The Zip field is required.</span>
+                                                                <span class="help-block">Zip field is required.</span>
                                                                 @endif
                                                             </div>
                                                         </div>

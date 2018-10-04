@@ -52,7 +52,7 @@
                                         <div class="col-lg-12 form-group {{ $errors->has('slug') ? 'has-error' : '' }}">
                                             <label for="slug">Slug</label>
                                             <input type="text" class="form-control" id="slug" name="slug" value="{{ $thana->slug }}">
-                                            @if($errors->has('slug'))<span id="helpBlock2" class="help-block">The slug field is required.</span>
+                                            @if($errors->has('slug'))<span id="helpBlock2" class="help-block">Slug field is required.</span>
                                             @endif
                                         </div>
                                     </div>
@@ -61,14 +61,14 @@
                                         <label for="display_name_en">Display Name (english)</label>
                                         <input type="text" class="form-control" id="display-name-en" name="display-name-en" value="{{ ucwords($thana->localization['en']['display_name']) }}">
                                         @if($errors->has('display-name-en'))
-                                        <span class="help-block">The Display Name English field is required.</span>
+                                        <span class="help-block">Display Name English field is required.</span>
                                         @endif
                                     </div>
                                     <div class="col-lg-6 form-group {{ $errors->has('display-name-bn') ? 'has-error' : '' }}">
                                         <label for="display-name-bn">Display Name (bangla)</label>
                                         <input type="text" class="form-control" id="display-name-bn" name="display-name-bn" value="{{ $thana->localization['bn']['display_name'] }}">
                                         @if($errors->has('display-name-bn'))
-                                        <span class="help-block">The Display Name Bangla field is required.</span>
+                                        <span class="help-block">Display Name Bangla field is required.</span>
                                         @endif
                                     </div>
                                 </div>
@@ -84,7 +84,7 @@
                                                 <option value="{{ $d->id}}" {{ $d->id == $thana->district_id ? 'selected' : '' }}>{{ ucwords($d->localization['en']['display_name']) }}</option>
                                                 @endforeach
                                                 @if($errors->has('country-id'))
-                                                <span class="help-block">The Districts field is required.</span>
+                                                <span class="help-block">Districts field is required.</span>
                                                 @endif
                                         </select>
                                     </div>
