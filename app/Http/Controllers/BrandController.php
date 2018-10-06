@@ -16,7 +16,7 @@ class BrandController extends Controller
      */
     public function index()
     {
-        $this->checkPermission('read-brand');
+        $this->checkPermission('manage-brands');
         $paginate = config('app.pagenation_count', 3);
         
         $brands = Brand::with('country')->orderBy('created_at', 'DESC')->paginate($paginate);
@@ -46,7 +46,7 @@ class BrandController extends Controller
 
     public function create()
     {   
-        $this->checkPermission('create-brand');
+        $this->checkPermission('manage-brands');
         $countries = Country::get();
         return view('backend.pages.brand-create', [
             'countries' => $countries,
@@ -126,7 +126,7 @@ class BrandController extends Controller
      */
     public function edit($id)
     { 
-        $this->checkPermission('update-brand');
+        $this->checkPermission('manage-brands');
         $brand = Brand::findOrFail($id);
         $countries = Country::get();
         return view('backend.pages.brand-edit', [

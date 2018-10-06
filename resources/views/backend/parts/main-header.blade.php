@@ -5,7 +5,7 @@
         <b>K</b>M</span>
     <!-- logo for regular state and mobile devices -->
     <span class="logo-lg">
-        <b>Kada</b>Mati</span>
+        <b>N</b>ijhum</span>
 </a>
 
 <!-- Header Navbar -->
