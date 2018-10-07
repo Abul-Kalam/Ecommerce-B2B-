@@ -23,16 +23,16 @@ class User extends Authenticatable
 
 
     protected $casts      = [
-        'name'           => 'string',
-        'email'           => 'string',
-        'first_name'           => 'string',
-        'last_name'           => 'string',
-        'password'           => 'string',
-        'localization'   => 'array',
-        'about'    => 'string',
-        'avatar_url'    => 'string',
-        'shipping_address'   => 'array',
-        'billing_address'    => 'array'
+        'name'              => 'string',
+        'email'             => 'string',
+        'first_name'        => 'string',
+        'last_name'         => 'string',
+        'password'          => 'string',
+        'localization'      => 'array',
+        'about'             => 'string',
+        'avatar_url'        => 'string',
+        'shipping_address'  => 'array',
+        'billing_address'   => 'array'
     ];
 
     /**

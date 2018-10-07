@@ -15,6 +15,7 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('status');
             $table->integer('user_id');
             $table->json('shipping_address')->nullable();
             $table->json('billing_address')->nullable();

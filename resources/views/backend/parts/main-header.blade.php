@@ -1,11 +1,9 @@
 <!-- Logo -->
 <a href="#" class="logo">
     <!-- mini logo for sidebar mini 50x50 pixels -->
-    <span class="logo-mini">
-        <b>K</b>M</span>
+    <span class="logo-mini">{{ config('app.short-name') }}</span>
     <!-- logo for regular state and mobile devices -->
-    <span class="logo-lg">
-        <b>N</b>ijhum</span>
+    <span class="logo-lg">{{ config('app.name') }}</span>
 </a>
 
 <!-- Header Navbar -->
@@ -18,7 +16,7 @@
     <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
             <!-- Messages: style can be found in dropdown.less-->
-            <li class="dropdown messages-menu">
+            {{-- <li class="dropdown messages-menu">
                 <!-- Menu toggle button -->
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                     <i class="fa fa-envelope-o"></i>
@@ -54,11 +52,11 @@
                         <a href="#">See All Messages</a>
                     </li>
                 </ul>
-            </li>
+            </li> --}}
             <!-- /.messages-menu -->
 
             <!-- Notifications Menu -->
-            <li class="dropdown notifications-menu">
+            {{-- <li class="dropdown notifications-menu">
                 <!-- Menu toggle button -->
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                     <i class="fa fa-bell-o"></i>
@@ -82,9 +80,9 @@
                         <a href="#">View all</a>
                     </li>
                 </ul>
-            </li>
+            </li> --}}
             <!-- Tasks Menu -->
-            <li class="dropdown tasks-menu">
+            {{-- <li class="dropdown tasks-menu">
                 <!-- Menu Toggle Button -->
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                     <i class="fa fa-flag-o"></i>
@@ -119,7 +117,7 @@
                         <a href="#">View all tasks</a>
                     </li>
                 </ul>
-            </li>
+            </li> --}}
             <!-- User Account Menu -->
             <li class="dropdown user user-menu">
                 <!-- Menu Toggle Button -->

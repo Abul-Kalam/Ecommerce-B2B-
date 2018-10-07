@@ -14,6 +14,7 @@ return [
     */
 
     'name' => env('APP_NAME', 'KadaMati'),
+    'short-name' => env('APP_SHORT_NAME', 'KM'),
 
     /*
     |--------------------------------------------------------------------------

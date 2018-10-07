@@ -19,21 +19,18 @@ class Product extends Model
     protected $casts      = [
         'slug'             => 'string',
         'title'            => 'string',
-        'localization'     => 'array',
         'status'           => 'string',
         'description'      => 'string',
-        'cost_price'       => 'float',
-        'regular_price'    => 'float',
-        'mr_price'         => 'float',
-        'sale_price'       => 'float',
-        'pack_price'       => 'float',
+        'short-description'=> 'string',
+        'variation'        => 'array',
         'sku'              => 'string',
         'meta'             => 'array',
         'image_url'        => 'array',
         'likes'            => 'string',
         'manage_stock'     => 'string',
-        'sold_individually'=> 'string',
-        'link_products'    => 'string',
-        'featured'         => 'array'
+        'featured'         => 'array', 
+        'rating'           => 'array',
+        'video_url'        => 'string',
+        'shop-id'          => 'integer'
     ];
 }
