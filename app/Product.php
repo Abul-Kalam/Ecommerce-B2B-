@@ -18,19 +18,17 @@ class Product extends Model
 
     protected $casts      = [
         'slug'             => 'string',
-        'title'            => 'string',
+        'name'             => 'string',
         'status'           => 'string',
         'description'      => 'string',
-        'short-description'=> 'string',
+        'short_description'=> 'string',
         'variation'        => 'array',
-        'sku'              => 'string',
         'meta'             => 'array',
         'image_url'        => 'array',
-        'likes'            => 'string',
-        'manage_stock'     => 'string',
         'featured'         => 'array', 
+        'comment'         => 'array', 
         'rating'           => 'array',
         'video_url'        => 'string',
-        'shop-id'          => 'integer'
+        'shop_id'          => 'integer'
     ];
 }

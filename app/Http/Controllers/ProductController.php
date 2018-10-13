@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Session;
+use App\Product;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -23,7 +25,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+       return view('backend.pages.product-create');
     }
 
     /**
@@ -34,7 +36,50 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       $product = new Product();
+        
+
+       $name = $request->input('name');
+
+       $status = $request->input('status') ? $request->input('status') : "active";
+
+       $slug = preg_replace('/\s+/u', '-', trim($name));
+
+       $product->name             = $name;
+       $product->slug             = $slug;
+       $product->status           =  $status;
+
+       $product->description  = $request->input('description');
+       $product->short_description  = $request->input('short-description');
+       $product->video_url  = $request->input('video-url');
+       $product->shop_id  = $request->input('shop-id');
+
+       $meta_title = $request->input('meta-title');
+       $meta_keywords = $request->input('meta-keywords');
+
+       $product->meta  = [
+        'title'       => strtolower($meta_title),
+        'keywords'    => strtolower($meta_title),
+        'description' => $request->input('meta-description')
+        ];
+
+       $product->variation  = [
+        'color'       => $request->input('color'),
+        'size'        => $request->input('size'),
+        'style'        => $request->input('style'),
+        'price'        => $request->input('sku'),
+        'sku'        => $request->input('style'),
+        'stock_manage'        => $request->input('stock-manage'),
+        ];
+       $product->image_url  = [
+        'image_url1'       => $request->input('image-url1'),
+        'image_url2'        => $request->input('image-url2'),
+        'image_url3'        => $request->input('image-url3')
+        ];
+        $product->save();
+       
+
+        
     }
 
     /**
