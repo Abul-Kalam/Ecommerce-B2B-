@@ -76,6 +76,7 @@ class ProductController extends Controller
         'image_url2'        => $request->input('image-url2'),
         'image_url3'        => $request->input('image-url3')
         ];
+        $product->featured  = $request->input('featured');
         $product->save();
        
 

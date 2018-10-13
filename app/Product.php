@@ -25,7 +25,7 @@ class Product extends Model
         'variation'        => 'array',
         'meta'             => 'array',
         'image_url'        => 'array',
-        'featured'         => 'array', 
+        'featured'         => 'string', 
         'comment'         => 'array', 
         'rating'           => 'array',
         'video_url'        => 'string',

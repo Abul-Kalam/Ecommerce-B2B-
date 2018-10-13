@@ -23,7 +23,7 @@ class CreateProductsTable extends Migration
             $table->json('variation')->nullable();
             $table->json('meta')->nullable();
             $table->json('image_url')->nullable();
-            $table->json('featured')->nullable();
+            $table->text('featured')->nullable();
             $table->json('comment')->nullable();
             $table->json('rating')->nullable();
             $table->string('video_url')->nullable();
