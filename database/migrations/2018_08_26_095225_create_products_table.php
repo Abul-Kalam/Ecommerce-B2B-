@@ -16,17 +16,17 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->increments('id');
             $table->string('slug')->unique();
-            $table->string('title');
+            $table->string('name')->nullable();
+            $table->string('title')->nullable();
             $table->string('status')->nullable();
+            $table->string('category')->nullable();
             $table->string('short-description')->nullable();
             $table->text('description')->nullable();
             $table->json('variation')->nullable();
-            $table->string('sku')->unique();
             $table->json('meta')->nullable();
             $table->json('image_url')->nullable();
             $table->json('featured')->nullable();
             $table->integer('likes')->nullable();
-            $table->string('manage_stock')->nullable();
             $table->json('comment')->nullable();
             $table->json('rating')->nullable();
             $table->string('video_url')->nullable();
