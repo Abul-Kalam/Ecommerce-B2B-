@@ -22,8 +22,10 @@ $_activeSecondaryNav = 'create';
 
 <section class="content">
 
-    <form action="">
-        
+    <form action="{{ route('backend.products.store') }}" method="post">
+
+        {{ csrf_field() }}
+
         <div class="page">
             
             <div class="container-fluid">
@@ -32,7 +34,7 @@ $_activeSecondaryNav = 'create';
                         <nav class="navbar navbar-default">
                             <div class="container-fluid">
                                 <div class="navbar-header pull-right">
-                                    <button type="button" class="btn btn-sm btn-primary navbar-btn">Publish</button>
+                                    <button type="submit" class="btn btn-sm btn-primary navbar-btn">Publish</button>
                                 </div>
                             </div>
                         </nav>
@@ -42,17 +44,17 @@ $_activeSecondaryNav = 'create';
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
                         <div class="form-group">
-                            <input type="text" class="form-control" id="title" placeholder="Enter product name">
+                            <input type="text" class="form-control" name="name" id="name" placeholder="Enter product name">
                         </div>
 
                         <div class="form-group">
                             <label>Description</label>
-                            <textarea class="form-control" rows="5" placeholder="Enter ..."></textarea>
+                            <textarea class="form-control" rows="5"  name="description" placeholder="Enter ..."></textarea>
                         </div>
 
                         <div class="form-group">
                             <label>Short Description</label>
-                            <textarea class="form-control" rows="5" placeholder="Enter ..."></textarea>
+                            <textarea class="form-control" rows="5" name="short-description" placeholder="Enter ..."></textarea>
                         </div>
 
                         <div class="row">
