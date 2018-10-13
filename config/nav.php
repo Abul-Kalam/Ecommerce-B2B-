@@ -12,6 +12,27 @@ return [
         ],
         [
             'type'          => 'menu',
+            'slug'          => 'product',
+            'label'         => 'Product',
+            'icon_class'    => 'fa fa-folder',
+            'permissions'   => 'view-dashboard',
+            'childs'        => [
+                [
+                    'slug'  => 'create',
+                    'label' => 'Add New',
+                    'route' => 'backend.product.create',
+                    'permissions'   => 'view-dashboard'
+                ],
+                [
+                    'slug'  => 'index',
+                    'label' => 'All Products',
+                    'route' => 'backend.dashboard',
+                    'permissions'   => 'view-dashboard'
+                ]
+            ]
+        ],
+        [
+            'type'          => 'menu',
             'slug'          => 'media',
             'label'         => 'Media',
             'icon_class'    => 'fa fa-folder',
@@ -31,6 +52,7 @@ return [
                 ]
             ]
         ],
+        
         [
             'type'          => 'menu',
             'slug'          => 'shop',
