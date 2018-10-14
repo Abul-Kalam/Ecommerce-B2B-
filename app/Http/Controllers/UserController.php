@@ -196,7 +196,13 @@ class UserController extends Controller
         $user->save();
         $user->roles()->sync([$request->input('role')]);
         Session::flash('message', 'Successfully Updated+!');
-        return redirect()->route('backend.users.edit', $user->id);
+        //return redirect()->route('backend.users.edit', $user->id);
+
+
+        return response()->json([
+            'user' => $user,
+            'massage' =>'User Successfully Created '
+        ], 200);
     }
     /**
      * Show the form for creating a new resource.
@@ -230,29 +236,29 @@ class UserController extends Controller
     {
        
         $request->validate([
-            'display-name-en' => 'required|max:255',
-            'display-name-bn' => 'required|max:255',
-            'first-name' => 'required|max:255',
-            'last-name' => 'required|max:255',
+            // 'display-name-en' => 'required|max:255',
+            // 'display-name-bn' => 'required|max:255',
+            // 'first-name' => 'required|max:255',
+            // 'last-name' => 'required|max:255',
             'email' => 'required|unique:users|max:255',
             'password' => 'required|string|min:6|confirmed',
-            'role' => 'required',
-            'billing-address-line-1' => 'required',
-            'billing-address-line-2' => 'required',
-            'billing-district-id' => 'required',
-            'billing-country-id' => 'required',
-            'billing-division-id' => 'required',
-            'billing-thana-id' => 'required',
-            'billing-zip' => 'required',
+            // 'role' => 'required',
+            // 'billing-address-line-1' => 'required',
+            // 'billing-address-line-2' => 'required',
+            // 'billing-district-id' => 'required',
+            // 'billing-country-id' => 'required',
+            // 'billing-division-id' => 'required',
+            // 'billing-thana-id' => 'required',
+            // 'billing-zip' => 'required',
 
-            'shipping-address-line-1' => 'required',
-            'shipping-address-line-2' => 'required',
-            'shipping-district-id' => 'required',
-            'shipping-country-id' => 'required',
-            'shipping-division-id' => 'required',
-            'shipping-thana-id' => 'required',
-            'shipping-zip' => 'required',
-            'gender' => 'required',
+            // 'shipping-address-line-1' => 'required',
+            // 'shipping-address-line-2' => 'required',
+            // 'shipping-district-id' => 'required',
+            // 'shipping-country-id' => 'required',
+            // 'shipping-division-id' => 'required',
+            // 'shipping-thana-id' => 'required',
+            // 'shipping-zip' => 'required',
+            // 'gender' => 'required',
         ]);
         
         $user = new User();
@@ -504,6 +510,35 @@ class UserController extends Controller
         return redirect()->route('backend.users.edit', $user->id);
     }
 
+
+
+    public function signin(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required'
+        ]);
+
+
+        $credientals = $request->only('email', 'password');
+        $token = JWTAuth::attempt($credientals);
+
+        try {
+            if (!$token) {
+                return response()->json([
+                'error' => 'Invalid Credientals!'
+                ], 401);
+            }
+        } catch (JWTException $e) {
+                return response()->json([
+                'error' => 'Could not creat token!'
+                ], 500);
+        }
+        return response()->json([
+                'token' => $token,
+                ], 200);
+    }
+    
     /**
      * Remove the specified resource from storage.
      *

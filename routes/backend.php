@@ -58,4 +58,5 @@ Route::middleware('auth')->group(function () {
     Route::get('preferences', 'PreferenceController@edit')->name('preferences.edit');
     Route::put('preferences', 'PreferenceController@update')->name('preferences.update');
 
+
 });
