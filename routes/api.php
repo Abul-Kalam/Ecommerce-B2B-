@@ -46,7 +46,7 @@ Route::post('signup', 'AuthController@signup');
 Route::post('login', 'AuthController@login');
 
 
-Route::get('test', function () {
-    return response()->json([
-        ], 200);
-});
+// Route::get('test', function () {
+//     return response()->json([
+//         ], 200);
+// });
