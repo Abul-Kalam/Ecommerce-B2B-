@@ -22,6 +22,13 @@ class LoginController extends Controller
 
     use AuthenticatesUsers;
 
+
+    public function __construct()
+    {
+        $this->middleware('guest')->except('logout');
+    }
+
+
     /**
      * Where to redirect users after login.
      *
@@ -34,8 +41,7 @@ class LoginController extends Controller
      *
      * @return void
      */
-
-
+ 
 
 
  
@@ -46,8 +52,5 @@ class LoginController extends Controller
             'last_login_ip' => $request->getClientIp()
         ]);
     }
-    public function __construct()
-    {
-        $this->middleware('guest')->except('logout');
-    }
+   
 }
