@@ -27,6 +27,10 @@ Route::post('signup', 'AuthController@signup');
 Route::post('login', 'AuthController@login');
 
 
+
+Route::resource('shops', 'ShopController');
+
+
 Route::get('test', function () {
     return response()->json([
         'massage' =>'User Successfully Created '

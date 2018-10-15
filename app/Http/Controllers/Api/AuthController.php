@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
 use App\User;
 use Illuminate\Http\Request;
@@ -13,7 +13,7 @@ class AuthController extends Controller
 {
     public function __construct()
     {
-      
+       $this->middleware('auth:api', ['except' => ['login']]);
     }
     /**
      * Create a new AuthController instance.
