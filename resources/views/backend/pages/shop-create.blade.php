@@ -92,6 +92,10 @@
                                                 <label for="image-url">Image Url</label>
                                                 <input type="text" class="form-control" id="image-url" name="image-url">
                                             </div>
+                                            <div class="form-group">
+                                                <label for="shop-email-admin">Shop Email Edmin</label>
+                                                <input type="email" class="form-control" id="shop-email-admin" name="shop-email-admin">
+                                            </div>
                                         </div>
                                         <!-- /.tab-pane -->
                                         <div class="tab-pane" id="tab_2">

@@ -14,11 +14,10 @@ class CreateShopsUsersTable extends Migration
     public function up()
     {
         Schema::create('shops_users', function (Blueprint $table) {
-            $table->integer('user_id')->nullable();
-            $table->integer('shop_id')->nullable();
-            $table->string('role')->nullable();
+            $table->integer('user_id')->unique();
+            $table->integer('shop_id')->unique();
+            //$table->string('role')->nullable();
             $table->primary(['user_id', 'shop_id']);
-            $table->timestamps();
         });
     }
 

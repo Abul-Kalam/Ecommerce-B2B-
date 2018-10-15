@@ -28,9 +28,14 @@ class Shop extends Model
     ];
 
 
-    public function users()
+    // public function shopusers()
+    // {
+    //     return $this->belongsToMany('App\User', 'shops_users', 'user_id', 'shop_id');
+    // }
+
+    public function shopusers()
     {
-        return $this->belongsToMany('App\User')->withPivot('role');
+        return $this->belongsToMany('App\User', 'shops_users');
     }
 
     public function district()

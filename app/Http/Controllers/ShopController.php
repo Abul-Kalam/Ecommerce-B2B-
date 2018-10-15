@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Session;
+use App\User;
 use App\Shop;
 use App\Thana;
 use App\Country;
@@ -124,6 +125,12 @@ class ShopController extends Controller
         ];
 
         $meta_title = $request->input('meta-title');
+
+        $email = $request->input('shop-email-admin');
+
+        $shop_user = User::where('email', $email)->first();
+        $user_id = $shop_user->id;
+
         $meta_keywords = $request->input('meta-keywords');
         $shop->meta             = [
             'title' => strtolower($meta_title),
@@ -159,11 +166,16 @@ class ShopController extends Controller
         $shop->status           =  $status;
         $shop->description  = $request->input('description');
         $shop->images_url  = $request->input('image-url');
+
+        
         
         $shop->save();
+        $shop->shopusers()->sync($user_id);
 
         Session::flash('message', 'Successfully Created!');
         return redirect()->route('backend.shops.edit', $shop->id);
+
+       
     }
 
     /**
@@ -186,7 +198,7 @@ class ShopController extends Controller
     public function edit($id)
     {  
         $this->checkPermission('manage-shops');
-        $shop = shop::findOrFail($id);
+        $shop = shop::with('shopusers')->findOrFail($id);
         $countries = Country::get();
         $divisions = Division::get();
         $districts = District::get();
@@ -241,7 +253,7 @@ class ShopController extends Controller
             
         ]);
         
-        $shop = shop::findOrFail($id); 
+        $shop = shop::findOrFail($id);
         
         $status = $request->input('status') ? $request->input('status') : "active";
         $slug = $request->input('slug');
@@ -292,12 +304,19 @@ class ShopController extends Controller
             'return_division_id' => $request->input('return-division-id'),
             'return_thana_id' => $request->input('return-thana-id'),
         ];
+
+
+        $email = $request->input('shop-email-admin');
+
+        $shop_user = User::where('email', $email)->first();
+        $user_id = $shop_user->id;
+
         $shop->status           =  $status;
         $shop->description  = $request->input('description');
         $shop->images_url  = $request->input('image-url');
         
         $shop->save();
-
+        $shop->shopusers()->sync($user_id);
         Session::flash('message', 'Successfully Updated!');
         return redirect()->route('backend.shops.edit', $shop->id);
     }

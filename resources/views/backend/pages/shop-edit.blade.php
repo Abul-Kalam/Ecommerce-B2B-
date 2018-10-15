@@ -94,6 +94,11 @@
                                                 <label for="feature-image-url">Feature Image Url</label>
                                                 <input type="text" class="form-control" id="feature-image-url" name="feature-image-url" value="{{ $shop->images_url }}">
                                             </div>
+                                            <div class="form-group">
+                                                <label for="shop-email-admin">Shop Email Edmin</label>
+                                                <input type="email" class="form-control" id="shop-email-admin" name="shop-email-admin"  value="{{ $shop->shopusers[0]['email'] }}">
+                                            </div>
+                                   
                                         </div>
                                         <!-- /.tab-pane -->
                                         <div class="tab-pane" id="tab_2">
