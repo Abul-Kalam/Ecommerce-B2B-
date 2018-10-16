@@ -30,6 +30,12 @@ Route::post('login', 'AuthController@login');
 
 Route::resource('shops', 'ShopController');
 Route::resource('countries', 'CountryController');
+Route::resource('divisions', 'DivisionController');
+Route::resource('districts', 'DistrictController');
+Route::resource('thanas', 'ThanaController');
+Route::resource('brands', 'BrandController');
+Route::resource('categories', 'CategoryController');
+
 
 
 Route::get('test', function () {

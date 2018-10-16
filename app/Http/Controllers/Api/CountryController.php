@@ -38,28 +38,12 @@ class CountryController extends Controller
         ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    { 
-        return view('backend.pages.country-create');
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $request->validate([
             'iso2' => 'required|unique:countries|max:2',
-            // 'display-name-en' => 'required|max:255',
-            // 'display-name-bn' => 'required|max:255'
+            'display-name-en' => 'required|max:255',
+            'display-name-bn' => 'required|max:255'
         ]);
         
         $country = new Country();
@@ -74,23 +58,23 @@ class CountryController extends Controller
                 'display_name' => $request->input('display-name-bn')
             ]
         ];
-        // $country->currency             = [
-        //     'local' => $request->input('local'),
-        //     'global' => $request->input('global'),
-        //     'alternative' => $request->input('alternative')
-        // ];
+        $country->currency             = [
+            'local' => $request->input('local'),
+            'global' => $request->input('global'),
+            'alternative' => $request->input('alternative')
+        ];
         
-        // $iso2 = $request->input('iso2');
-        // $country->iso2  = strtolower($iso2);
+        $iso2 = $request->input('iso2');
+        $country->iso2  = strtolower($iso2);
 
-        // $country->image_urls             = [
-        //     'currency_local' => $request->input('currency-local'),
-        //     'currency_global' => $request->input('currency-global'),
-        //     'currency_alternative' => $request->input('currency-alternative'),
-        // ];
+        $country->image_urls             = [
+            'currency_local' => $request->input('currency-local'),
+            'currency_global' => $request->input('currency-global'),
+            'currency_alternative' => $request->input('currency-alternative'),
+        ];
         
-        // $country->sell_status = $request->input('sell-status');
-        // $country->buy_status = $request->input('buy-status');
+        $country->sell_status = $request->input('sell-status');
+        $country->buy_status = $request->input('buy-status');
 
         $country->save();
 
@@ -175,8 +159,9 @@ class CountryController extends Controller
 
         $country->save();
 
-        Session::flash('message', 'Successfully Updated!');
-        return redirect()->route('backend.countries.edit', $country->id);
+        return response()->json([
+            'massage' =>'Countries Successfully Update'
+        ], 200);
     }
 
     /**

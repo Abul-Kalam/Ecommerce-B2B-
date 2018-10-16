@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
 use Session;
 use App\Brand;
@@ -16,14 +16,15 @@ class BrandController extends Controller
      */
     public function index()
     {
-        $this->checkPermission('manage-brands');
+        
         $paginate = config('app.pagenation_count', 3);
         
         $brands = Brand::with('country')->orderBy('created_at', 'DESC')->paginate($paginate);
 
-        return view('backend.pages.brand-list' ,[
+        return response()->json([
             'brands' => $brands,
-        ]);
+            'massage' =>'Brand Successfully Created '
+        ], 200);
     }
     // with('country')->
     /**
@@ -44,21 +45,6 @@ class BrandController extends Controller
         ]);
     }
 
-    public function create()
-    {   
-        $this->checkPermission('manage-brands');
-        $countries = Country::get();
-        return view('backend.pages.brand-create', [
-            'countries' => $countries,
-        ]);
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $request->validate([
@@ -103,8 +89,10 @@ class BrandController extends Controller
         
         $brand->save();
 
-        Session::flash('message', 'Successfully Created!');
-        return redirect()->route('backend.brands.edit', $brand->id);
+       
+        return response()->json([
+            'massage' =>'Brands Successfully Created '
+        ], 200);
     }
 
     /**
@@ -126,7 +114,7 @@ class BrandController extends Controller
      */
     public function edit($id)
     { 
-        $this->checkPermission('manage-brands');
+        
         $brand = Brand::findOrFail($id);
         $countries = Country::get();
         return view('backend.pages.brand-edit', [
@@ -182,8 +170,9 @@ class BrandController extends Controller
         
         $brand->save();
 
-        Session::flash('message', 'Successfully Updated!');
-        return redirect()->route('backend.brands.edit', $brand->id);
+        return response()->json([
+            'massage' =>'Brands Successfully Update '
+        ], 200);
     }
 
     /**
