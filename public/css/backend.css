@@ -7423,6 +7423,18 @@ button {
   display: block;
 }
 
+.multi-input-list .item .container.close .icon {
+  color: #333 !important;
+}
+
+.multi-input-list .item .container.close .action {
+  color: #333 !important;
+}
+
+.multi-input-list .item .container.close .input {
+  color: #333 !important;
+}
+
 .multi-input-list .item .container .header {
   display: -webkit-box;
   display: -ms-flexbox;

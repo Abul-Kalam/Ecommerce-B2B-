@@ -11,21 +11,21 @@ $_activeSecondaryNav = 'create';
         Product
         <small>Add new</small>
     </h1>
-    {{--  <ol class="breadcrumb">
+    {{-- <ol class="breadcrumb">
         <li>
             <a href="#">
                 <i class="fa fa-dashboard"></i> Home</a>
         </li>
         <li class="active">Dashboard</li>
-    </ol>  --}}
+    </ol> --}}
 </section>
 
 <section class="content">
 
     <form action="">
-        
+
         <div class="page">
-            
+
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -279,78 +279,120 @@ $_activeSecondaryNav = 'create';
                                         </div>
                                     </div>
                                     <!-- /.box-header -->
-                                    <ul class="multi-input-list">
-                                        <li class="item">
-                                            <div class="container open">
-                                                <div class="header">
-                                                    <span class="icon">
-                                                        <i class="fas fa-ellipsis-v"></i>
-                                                    </span>
-                                                    <button class="btn btn-link action btn-images">
-                                                        <i class="far fa-images"></i>
-                                                    </button>
-                                                    <input class="input" type="text">
-                                                    <button class="btn btn-link action">
-                                                        <i class="fas fa-angle-down"></i>
-                                                    </button>
-                                                    <button class="btn btn-link action">
-                                                        <i class="fas fa-times"></i>
-                                                    </button>
-                                                </div>
-                                                <div class="body">
-                                                    <div class="row form-group">
-                                                        <label for="price" class="col-lg-3 ">Price</label>
-                                                        <div class="col-lg-3">
-                                                            <div class="input-group">
-                                                                <input type="text" class="form-control" id="cost" name="cost"
-                                                                    placeholder="Min Cost">
-                                                                <span class="input-group-addon">৳</span>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <ul class="multi-input-list">
+                                                <li class="item">
+                                                    <div class="container close">
+                                                        <div class="header">
+                                                            <span class="icon">
+                                                                <i class="fas fa-ellipsis-v"></i>
+                                                            </span>
+                                                            <button class="btn btn-link action btn-images">
+                                                                <i class="far fa-images"></i>
+                                                            </button>
+                                                            <input class="input" type="text">
+                                                            <button class="btn btn-link action">
+                                                                <i class="fas fa-angle-down"></i>
+                                                            </button>
+                                                            <button class="btn btn-link action">
+                                                                <i class="fas fa-times"></i>
+                                                            </button>
+                                                        </div>
+                                                        <div class="body">
+                                                            <div class="row">
+                                                                <div class="col-lg-6">
+                                                                    <div class="row form-group">
+                                                                        <label for="price" class="col-lg-3 ">Price</label>
+                                                                        <div class="col-lg-3">
+                                                                            <div class="input-group">
+                                                                                <input type="text" class="form-control"
+                                                                                    id="cost" name="cost" placeholder="Min Cost">
+                                                                                <span class="input-group-addon">৳</span>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-lg-3">
+                                                                            <div class="input-group">
+                                                                                <input type="text" class="form-control"
+                                                                                    id="regular" name="regular"
+                                                                                    placeholder="Regular">
+                                                                                <span class="input-group-addon">৳</span>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-lg-3">
+                                                                            <div class="input-group">
+                                                                                <input type="text" class="form-control"
+                                                                                    id="sale" name="sale" placeholder="Sale">
+                                                                                <span class="input-group-addon">৳</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="row form-group">
+                                                                        <label for="size" class="col-lg-3 ">Size</label>
+                                                                        <div class="col-lg-9">
+                                                                            <input type="text" class="form-control" id="size"
+                                                                                name="size" placeholder="0">
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="row form-group">
+                                                                        <label for="weight" class="col-lg-3 ">Weight&nbsp;(kg)</label>
+                                                                        <div class="col-lg-9">
+                                                                            <input type="text" class="form-control" id="weight"
+                                                                                name="weight" placeholder="0">
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="row form-group">
+                                                                        <label for="color" class="col-lg-3 ">Color</label>
+                                                                        <div class="col-lg-9">
+                                                                            <input type="text" class="form-control" id="color"
+                                                                                name="color" placeholder="#ebebeb">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-6">
+                                                                    <ul class="img-list">
+                                                                        <li>
+                                                                            <div class="img-box">
+                                                                                <img src="{{ asset('/images/avatar.png') }}"
+                                                                                    alt="thumbnail">
+                                                                                <button class="btn-r-close" title="Delete image"
+                                                                                    type="button">
+                                                                                    <i class="fas fa-times"></i>
+                                                                                </button>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li>
+                                                                            <div class="img-box">
+                                                                                <img src="{{ asset('/images/avatar.png') }}"
+                                                                                    alt="thumbnail">
+                                                                                <button class="btn-r-close" title="Delete image"
+                                                                                    type="button">
+                                                                                    <i class="fas fa-times"></i>
+                                                                                </button>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li>
+                                                                            <div class="img-box">
+                                                                                <img src="{{ asset('/images/avatar.png') }}"
+                                                                                    alt="thumbnail">
+                                                                                <button class="btn-r-close" title="Delete image"
+                                                                                    type="button">
+                                                                                    <i class="fas fa-times"></i>
+                                                                                </button>
+                                                                            </div>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                        <div class="col-lg-3">
-                                                            <div class="input-group">
-                                                                <input type="text" class="form-control" id="regular"
-                                                                    name="regular" placeholder="Regular">
-                                                                <span class="input-group-addon">৳</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-3">
-                                                            <div class="input-group">
-                                                                <input type="text" class="form-control" id="sale" name="sale"
-                                                                    placeholder="Sale">
-                                                                <span class="input-group-addon">৳</span>
-                                                            </div>
-                                                        </div>
                                                     </div>
-
-                                                    <div class="row form-group">
-                                                        <label for="size" class="col-lg-3 ">Size</label>
-                                                        <div class="col-lg-9">
-                                                            <input type="text" class="form-control" id="size" name="size"
-                                                                placeholder="0">
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="row form-group">
-                                                        <label for="weight" class="col-lg-3 ">Weight&nbsp;(kg)</label>
-                                                        <div class="col-lg-9">
-                                                            <input type="text" class="form-control" id="weight" name="weight"
-                                                                placeholder="0">
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="row form-group">
-                                                        <label for="color" class="col-lg-3 ">Color</label>
-                                                        <div class="col-lg-9">
-                                                            <input type="text" class="form-control" id="color" name="color"
-                                                                placeholder="#ebebeb">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </li>
-                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                     <!-- /.box-body -->
                                 </div>
                             </div>

@@ -249,6 +249,17 @@ button{
           display: block;
         }
       }
+      &.close{
+        .icon{
+          color: #333!important;
+        }
+        .action{
+          color: #333!important;
+        }
+        .input{
+          color: #333!important;
+        }
+      }
       .header{
         display: flex;
         flex-direction: row;
@@ -342,6 +353,7 @@ button{
     outline: none;
   }
 }
+
 
 .tag-list{
   margin: 0;
