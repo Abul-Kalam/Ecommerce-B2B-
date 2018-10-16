@@ -29,6 +29,7 @@ Route::post('login', 'AuthController@login');
 
 
 Route::resource('shops', 'ShopController');
+Route::resource('countries', 'CountryController');
 
 
 Route::get('test', function () {
