@@ -266,6 +266,11 @@ $_activeSecondaryNav = 'create';
                             {{-- ======================./Attributes=================== --}}
 
                             <div class="col-lg-6">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                 <div class="box box-solid">
                                     <div class="box-header with-border">
                                         <h3 class="box-title">Variation</h3>
@@ -349,8 +354,8 @@ $_activeSecondaryNav = 'create';
                                     <!-- /.box-body -->
                                 </div>
                             </div>
-                            {{-- =======================./Variation================= --}}
                         </div>
+                        {{-- =======================./Variation================= --}}
                     </div>
 
                     <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
