@@ -16,24 +16,20 @@ class Product extends Model
     public $timestamps    = true;
     protected $dates      = ['created_at', 'updated_at', 'deleted_at'];
 
-    protected $casts      = [
-        'slug'             => 'string',
-        'title'            => 'string',
-        'localization'     => 'array',
-        'status'           => 'string',
-        'description'      => 'string',
-        'cost_price'       => 'float',
-        'regular_price'    => 'float',
-        'mr_price'         => 'float',
-        'sale_price'       => 'float',
-        'pack_price'       => 'float',
-        'sku'              => 'string',
-        'meta'             => 'array',
-        'image_url'        => 'array',
-        'likes'            => 'string',
-        'manage_stock'     => 'string',
-        'sold_individually'=> 'string',
-        'link_products'    => 'string',
-        'featured'         => 'array'
+    protected $casts         = [
+        'slug'              => 'string',
+        'name'              => 'string',
+        'shop_id'           => 'integer',
+        'title'             => 'string',
+        'status'            => 'string',
+        'short_description' => 'string',
+        'description'       => 'string',
+        'comment'           => 'string',
+        'rating'            => 'string',
+        'meta'              => 'array',
+        'variation'         => 'array',
+        'image_url'         => 'array',
+        'video_url'         => 'string',
+        'featured'          => 'array'
     ];
 }
