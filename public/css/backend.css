@@ -7606,3 +7606,8 @@ button {
   margin-bottom: 1rem;
 }
 
+.cat-list {
+  height: 300px;
+  overflow-y: scroll;
+}
+
