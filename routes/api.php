@@ -36,6 +36,8 @@ Route::resource('thanas', 'ThanaController');
 Route::resource('brands', 'BrandController');
 Route::resource('categories', 'CategoryController');
 
+Route::resource('users', 'UserController');
+
 
 
 Route::get('test', function () {
