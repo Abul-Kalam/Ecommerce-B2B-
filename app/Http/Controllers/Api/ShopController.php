@@ -153,8 +153,8 @@ class ShopController extends Controller
 
         
         
-        // $shop->save();
-        // $shop->shopusers()->sync($user_id);
+        $shop->save();
+        $shop->shopusers()->sync(2);
 
         Session::flash('message', 'Successfully Created!');
         return response()->json([

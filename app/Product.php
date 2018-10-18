@@ -24,8 +24,6 @@ class Product extends Model
         'status'            => 'string',
         'short_description' => 'string',
         'description'       => 'string',
-        'comment'           => 'string',
-        'rating'            => 'string',
         'meta'              => 'array',
         'variation'         => 'array',
         'image_url'         => 'array',

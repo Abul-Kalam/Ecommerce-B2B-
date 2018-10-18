@@ -23,8 +23,6 @@ class CreateProductsTable extends Migration
             $table->mediumText('short_description')->nullable();
             $table->longText('description')->nullable();
             $table->json('meta')->nullable();
-            $table->json('comment')->nullable();
-            $table->json('rating')->nullable();
             $table->json('variation')->nullable();
             $table->json('image_url')->nullable();
             $table->json('featured')->nullable();

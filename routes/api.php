@@ -28,6 +28,7 @@ Route::post('login', 'AuthController@login');
 
 
 
+Route::resource('products', 'ProductController');
 Route::resource('shops', 'ShopController');
 Route::resource('countries', 'CountryController');
 Route::resource('divisions', 'DivisionController');
