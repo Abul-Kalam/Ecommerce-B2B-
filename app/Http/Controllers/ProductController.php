@@ -57,7 +57,6 @@ class ProductController extends Controller
         ];
         $product->description  = $request->input('short_description');
         $product->description  = $request->input('description');
-        $product->country_id  = $request->input('country-id');
         $product->video_url  = $request->input('video-url');
 
         $product->comment             = [
@@ -81,7 +80,7 @@ class ProductController extends Controller
             'featured_2' => $request->input('featured-2')
         ];
         
-        $brand->save();
+        $product->save();
 
         Session::flash('message', 'Successfully Created!');
         return redirect()->route('backend.brands.edit', $brand->id);

@@ -251,13 +251,13 @@ button{
       }
       &.close{
         .icon{
-          color: #333!important;
+          color: #333 !important;
         }
         .action{
-          color: #333!important;
+          color: #333 !important;
         }
         .input{
-          color: #333!important;
+          color: #333 !important;
         }
       }
       .header{
@@ -407,4 +407,9 @@ button{
       margin-bottom: 1rem;
     }
   }
+}
+
+.cat-list{
+  height: 300px;
+  overflow-y: scroll;
 }
