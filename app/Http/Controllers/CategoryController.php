@@ -66,29 +66,19 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'slug' => 'required|unique:categories|max:255',
-            'display-name-en' => 'required|max:255',
-            'display-name-bn' => 'required|max:255'
+            'name' => 'required|unique:categories|max:255',
         ]);
         
         $category = new Category();
         
         $parent_id = $request->input('parent_id') ? $request->input('parent_id') : 0;
-        $slug = $request->input('slug');
 
-        $slug = preg_replace('/\s+/u', '-', trim($slug));
+        $name = $request->input('name');
+        $slug = preg_replace('/\s+/u', '-', trim($name));
 
         $category->slug             = $slug;
+        $category->name             = strtolower($name);
 
-        $display_name_en = $request->input('display-name-en');
-        $category->localization     = [
-            'en' => [
-                'display_name' => strtolower($display_name_en),
-            ],
-            'bn' => [
-                'display_name' => $request->input('display-name-bn')
-            ]
-        ];
         $category->options            = null;
 
         $meta_title = $request->input('meta-title');
@@ -156,29 +146,17 @@ class CategoryController extends Controller
     {
         
         $request->validate([
-            'slug' => 'required|max:255|unique:categories,id,'.$id,
-            'display-name-en' => 'required|max:255',
-            'display-name-bn' => 'required|max:255'
+            'name' => 'required|max:255|unique:categories,id,'.$id,
         ]);
         
         $category = Category::findOrFail($id);
         
-        $slug = $request->input('slug');
-
-        $slug = preg_replace('/\s+/u', '-', trim($slug));
+        $name = $request->input('name');
+        $slug = preg_replace('/\s+/u', '-', trim($name));
 
         $category->slug             = $slug;
+        $category->name             = strtolower($name);
 
-        $display_name_en = $request->input('display-name-en');
-
-        $category->localization     = [
-            'en' => [
-                'display_name' => strtolower($display_name_en),
-            ],
-            'bn' => [
-                'display_name' => $request->input('display-name-bn')
-            ]
-        ];
         $category->options            = null;
 
         $meta_title = $request->input('meta-title');

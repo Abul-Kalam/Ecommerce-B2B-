@@ -16,15 +16,15 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('shop_id')->nullable();
+            $table->integer('country_id')->nullable();
             $table->string('slug')->nullable();
             $table->string('name')->nullable();
-            $table->string('title')->nullable();
-            $table->string('status')->nullable();
+            $table->string('status', 100)->default('inactive')->comment('active or inactive active product can be show');
             $table->mediumText('short_description')->nullable();
             $table->longText('description')->nullable();
             $table->json('meta')->nullable();
             $table->json('variation')->nullable();
-            $table->json('image_url')->nullable();
+            $table->json('images_url')->nullable();
             $table->json('featured')->nullable();
             $table->string('video_url')->nullable();
             $table->timestamps();

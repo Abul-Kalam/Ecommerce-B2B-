@@ -61,18 +61,17 @@
                                         <th style="width: 95px; text-align: center" >Actions</th>
                                     </tr>
                                     
-                                    @foreach ($brands as $c)
+                                    @foreach ($brands as $b)
                                     <tr>
-                                        <td>{{$c->id}}</td>
-                                        <td>{{ ucwords($c->localization['en']['display_name']) }}</td>
-
-                                        <td><a href="{{ route('backend.countries.edit', $c->country->id )}}">{{ ucwords($c->country->localization['en']['display_name'])  }}</a></td>
+                                        <td>{{$b->id}}</td>
+                                        <td>{{ ucwords($b->name) }}</td>
+                                        <td><a href="{{ route('backend.countries.edit', $b->country->id )}}">{{ ucwords($b->country->localization['en']['display_name'])  }}</a></td>
                                         <td>
                                             <span class="actions">
-                                                <a href="{{ route('backend.brands.show', $c->id) }}">View</a>
+                                                <a href="{{ route('backend.brands.show', $b->id) }}">View</a>
                                                 @permission('manage-brands')
                                                 <span>&nbsp;|&nbsp;</span>
-                                                <a href="{{ route('backend.brands.edit', $c->id) }}">Edit</a>
+                                                <a href="{{ route('backend.brands.edit', $b->id) }}">Edit</a>
                                                 @endpermission
                                             </span>
                                             

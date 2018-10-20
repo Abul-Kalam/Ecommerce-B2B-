@@ -26,8 +26,13 @@ class Product extends Model
         'description'       => 'string',
         'meta'              => 'array',
         'variation'         => 'array',
-        'image_url'         => 'array',
+        'images_url'         => 'array',
         'video_url'         => 'string',
         'featured'          => 'array'
     ];
+
+    public function categories()
+    {
+        return $this->belongsToMany('App\Category', 'product_category');
+    }
 }

@@ -11,18 +11,13 @@ $_activeSecondaryNav = 'create';
         Product
         <small>Add new</small>
     </h1>
-    {{-- <ol class="breadcrumb">
-        <li>
-            <a href="#">
-                <i class="fa fa-dashboard"></i> Home</a>
-        </li>
-        <li class="active">Dashboard</li>
-    </ol> --}}
 </section>
 
 <section class="content">
 
-    <form action="">
+        <form action="{{ route('backend.products.store') }}" method="post">
+
+            {{ csrf_field() }}
 
         <div class="page">
 
@@ -30,156 +25,18 @@ $_activeSecondaryNav = 'create';
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
                         <div class="form-group">
-                            <input type="text" class="form-control" id="title" placeholder="Enter product name">
+                            <input type="text" class="form-control" id="name"  name="name"placeholder="Enter product name">
                         </div>
 
                         <div class="form-group">
                             <label>Description</label>
-                            <textarea class="form-control" rows="5" placeholder="Enter ..."></textarea>
+                            <textarea class="form-control" rows="5" placeholder="Enter ..." name="description"></textarea>
                         </div>
 
                         <div class="form-group">
                             <label>Short Description</label>
-                            <textarea class="form-control" rows="5" placeholder="Enter ..."></textarea>
+                            <textarea class="form-control" rows="5" placeholder="Enter ..." name="short_description"></textarea>
                         </div>
-
-                        {{-- <div class="nav-tabs-custom">
-                            <ul class="nav nav-tabs">
-                                <li class="active"><a href="#tab_1" data-toggle="tab" aria-expanded="false">General</a></li>
-                                <li class=""><a href="#tab_2" data-toggle="tab" aria-expanded="true">Inventory</a></li>
-                                <li><a href="#tab_3" data-toggle="tab">Shipping</a></li>
-                                <li class="pull-right"><a href="#" class="text-muted"><i class="fa fa-gear"></i></a></li>
-                            </ul>
-                            <div class="tab-content">
-                                <div class="tab-pane active" id="tab_1">
-                                    <div class="row form-group">
-                                        <label for="price" class="col-lg-3 ">Price</label>
-                                        <div class="col-lg-3">
-                                            <div class="input-group">
-                                                <input type="text" class="form-control" id="cost" name="cost"
-                                                    placeholder="Min Cost">
-                                                <span class="input-group-addon">৳</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3">
-                                            <div class="input-group">
-                                                <input type="text" class="form-control" id="regular" name="regular"
-                                                    placeholder="Regular">
-                                                <span class="input-group-addon">৳</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3">
-                                            <div class="input-group">
-                                                <input type="text" class="form-control" id="sale" name="sale"
-                                                    placeholder="Sale">
-                                                <span class="input-group-addon">৳</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row from-group">
-                                        <label for="include" class="col-lg-3  pt-3">Include</label>
-                                        <div class="col-lg-6 checkbox">
-                                            <ul class="choosen-list">
-                                                <li>
-                                                    <label>
-                                                        <input type="checkbox">&nbsp;Application Cost
-                                                    </label>
-                                                </li>
-                                                <li>
-                                                    <label>
-                                                        <input type="checkbox">&nbsp;VAT
-                                                    </label>
-                                                </li>
-                                                <li>
-                                                    <label>
-                                                        <input type="checkbox">&nbsp;COD
-                                                    </label>
-                                                </li>
-                                                <li>
-                                                    <label>
-                                                        <input type="checkbox">&nbsp;Affiliate Marketing
-                                                    </label>
-                                                </li>
-                                                <li>
-                                                    <label>
-                                                        <input type="checkbox">&nbsp;Student Cost
-                                                    </label>
-                                                </li>
-                                                <li>
-                                                    <label>
-                                                        <input type="checkbox">&nbsp;Shipping Cost
-                                                    </label>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <!-- /.tab-pane -->
-                                <div class="tab-pane" id="tab_2">
-                                    <div class="row form-group">
-                                        <label for="sku" class="col-lg-3 ">SKU</label>
-                                        <div class="col-lg-9">
-                                            <input type="text" class="form-control" id="sku" name="sku">
-                                        </div>
-                                    </div>
-                                    <div class="row form-group">
-                                        <label for="manage-stock" class="col-lg-3 ">Manage Stock?</label>
-                                        <div class="col-lg-9">
-                                            <input type="checkbox"> Enable stock management at product level
-                                        </div>
-                                    </div>
-                                    <div class="row form-group">
-                                        <label for="stock-status" class="col-lg-3 ">Stock Status</label>
-                                        <div class="col-lg-9">
-                                            <select class="form-control select2 select2-hidden-accessible" style="width: 100%;"
-                                                tabindex="-1" aria-hidden="true">
-                                                <option>In stock</option>
-                                                <option>Out of stock</option>
-                                                <option>On backorder</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- /.tab-pane -->
-                                <div class="tab-pane" id="tab_3">
-                                    <div class="row form-group">
-                                        <label for="weight" class="col-lg-3 ">Weight&nbsp;(kg)</label>
-                                        <div class="col-lg-9">
-                                            <input type="text" class="form-control" id="weight" name="weight"
-                                                placeholder="0">
-                                        </div>
-                                    </div>
-                                    <div class="row form-group">
-                                        <label for="dimensions" class="col-lg-3 ">Dimensions&nbsp;(cm)</label>
-                                        <div class="col-lg-3">
-                                            <input type="text" class="form-control" id="length" name="length"
-                                                placeholder="Length">
-                                        </div>
-                                        <div class="col-lg-3">
-                                            <input type="text" class="form-control" id="width" name="width" placeholder="Width">
-                                        </div>
-                                        <div class="col-lg-3">
-                                            <input type="text" class="form-control" id="height" name="height"
-                                                placeholder="Height">
-                                        </div>
-                                    </div>
-                                    <div class="row form-group">
-                                        <label for="shipping-class" class="col-lg-3 ">Shipping
-                                            class</label>
-                                        <div class="col-lg-9">
-                                            <select class="form-control select2 select2-hidden-accessible" style="width: 100%;"
-                                                tabindex="-1" aria-hidden="true">
-                                                <option>No shipping class</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- /.tab-pane -->
-                            </div>
-                            <!-- /.tab-content -->
-                        </div> --}}
-
                         <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                 <div class="box box-solid">
@@ -337,7 +194,7 @@ $_activeSecondaryNav = 'create';
                             <!-- /.box-header -->
                             <div class="box-body">
                                 <button type="button" class="pull-left btn btn-sm btn-default navbar-btn">Save Draft</button>
-                                <button type="button" class="pull-right btn btn-sm btn-primary navbar-btn">Publish</button>
+                                <button type="submit" class="pull-right btn btn-sm btn-primary navbar-btn">Publish</button>
                             </div>
                             <!-- /.box-body -->
                         </div>
@@ -348,28 +205,24 @@ $_activeSecondaryNav = 'create';
                             </div>
                             <!-- /.box-header -->
                             <div class="box-body">
-                                <div class="input-group">
+                                <div class="form-group">
                                     <select class="form-control select2" style="width: 100%;" tabindex="-1" aria-hidden="true">
-                                        <option>Choose product brand</option>
-                                        <option>Ponds</option>
-                                        <option>Nivea</option>
-                                        <option>Garnier</option>
-                                        <option>Dexe</option>
-                                        <option>Amanah</option>
+                                        <option value="null">Choose product brand</option>
+                                        @foreach ($brands as $b)
+                                        <option value="{{ $b->id}}">{{ ucwords($b->name) }}</option>
+                                        @endforeach
                                     </select>
-                                    <span class="input-group-btn">
-                                        <button type="button" class="btn btn-default btn-flat"><i class="fas fa-plus"></i></button>
-                                    </span>
                                 </div>
                                 {{-- ======================./Brand================ --}}
 
                                 <br>
 
                                 <div class="form-group">
-                                    <select class="form-control select2" style="width: 100%;" tabindex="-1" aria-hidden="true">
-                                        <option selected="selected">Select made by country </option>
-                                        <option>Bangladesh</option>
-                                        <option>UK</option>
+                                    <select class="form-control select2" style="width: 100%;" tabindex="-1" aria-hidden="true" name="country-id">
+                                        <option selected="selected" value="null">Select made by country </option>
+                                        @foreach ($countries as $c)
+                                        <option value="{{ $c->id}}">{{ ucwords($c->localization['en']['display_name']) }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                                 {{-- ======================./Country================ --}}
@@ -411,36 +264,14 @@ $_activeSecondaryNav = 'create';
                             <!-- /.box-header -->
                             <div class="box-body">
                                 <div class="form-group cat-list">
+                                      @foreach ($categories as $c)
                                     <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox">
-                                            Checkbox 1
+                                        <label id="p-{{ $c->id }}" >
+                                            <input type="checkbox" id="c-{{ $c->id }}" value="{{ $c->id }}" name="categories[]">
+                                            {{ $c->localization['bn']['display_name'] }}
                                         </label>
                                     </div>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox">
-                                            Checkbox 2
-                                        </label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox">
-                                            Checkbox 2
-                                        </label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox">
-                                            Checkbox 2
-                                        </label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox">
-                                            Checkbox 1
-                                        </label>
-                                    </div>
+                                    @endforeach
                                 </div>
                             </div>
                             <!-- /.box-body -->
@@ -449,7 +280,7 @@ $_activeSecondaryNav = 'create';
 
                         <div class="box box-solid">
                             <div class="box-header with-border">
-                                <h3 class="box-title">Tag's</h3>
+                                <h3 class="box-title">Tag s</h3>
                             </div>
                             <div class="box-body">
                                 <div class="form-group mb-0">

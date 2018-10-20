@@ -63,7 +63,7 @@
                                     @foreach($shops as $s)
                                     <tr>
                                         <td>{{ $s->id }}.</td>
-                                        <td>{{ ucwords($s->localization['en']['display_name']) }}</td>
+                                        <td>{{ ucwords($s->name) }}</td>
                                         <td>{{  $s->slug }}</td>
                                         <td>
                                             @if($s->status === 'active')

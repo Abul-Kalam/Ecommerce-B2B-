@@ -27,6 +27,13 @@ class Category extends Model
     ];
 
 
+
+
+    public function product()
+    {
+        return $this->belongsToMany('App\Product');
+    }
+
     public function categories()
     {
         return $this->hasOne('App\Category');

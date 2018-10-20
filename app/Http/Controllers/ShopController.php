@@ -93,52 +93,41 @@ class ShopController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'slug' => 'required|unique:shops|max:255',
-            'display-name-en' => 'required|max:255',
-            'display-name-bn' => 'required|max:255',
+            'name' => 'required|unique:shops|max:255',
 
-            'business-address-line-1' => 'required|max:255',
-            'business-address-line-2' => 'required|max:255',
-            'business-zip' => 'required',
-            'business-country-id' => 'required',
-            'business-district-id' => 'required',
-            'business-division-id' => 'required',
-            'business-thana-id' => 'required',
+            // 'business-address-line-1' => 'required|max:255',
+            // 'business-address-line-2' => 'required|max:255',
+            // 'business-zip' => 'required',
+            // 'business-country-id' => 'required',
+            // 'business-district-id' => 'required',
+            // 'business-division-id' => 'required',
+            // 'business-thana-id' => 'required',
 
-            'warehouse-address-line-1' => 'required|max:255',
-            'warehouse-address-line-2' => 'required|max:255',
-            'warehouse-zip' => 'required',
-            'warehouse-country-id' => 'required',
-            'warehouse-district-id' => 'required',
-            'warehouse-division-id' => 'required',
-            'warehouse-thana-id' => 'required',
+            // 'warehouse-address-line-1' => 'required|max:255',
+            // 'warehouse-address-line-2' => 'required|max:255',
+            // 'warehouse-zip' => 'required',
+            // 'warehouse-country-id' => 'required',
+            // 'warehouse-district-id' => 'required',
+            // 'warehouse-division-id' => 'required',
+            // 'warehouse-thana-id' => 'required',
 
-            'return-address-line-1' => 'required|max:255',
-            'return-address-line-2' => 'required|max:255',
-            'return-zip' => 'required',
-            'return-country-id' => 'required',
-            'return-district-id' => 'required',
-            'return-division-id' => 'required',
-            'return-thana-id' => 'required',
+            // 'return-address-line-1' => 'required|max:255',
+            // 'return-address-line-2' => 'required|max:255',
+            // 'return-zip' => 'required',
+            // 'return-country-id' => 'required',
+            // 'return-district-id' => 'required',
+            // 'return-division-id' => 'required',
+            // 'return-thana-id' => 'required',
         ]);
         
         $shop = new Shop();
         
         $status = $request->input('status') ? $request->input('status') : "active";
-        $slug = $request->input('slug');
-
-        $slug = preg_replace('/\s+/u', '-', trim($slug));
+        $name = $request->input('name');
+        $slug = preg_replace('/\s+/u', '-', trim($name));
 
         $shop->slug             = $slug;
-        $display_name_en = $request->input('display-name-en');
-        $shop->localization     = [
-            'en' => [
-                'display_name' => strtolower($display_name_en),
-            ],
-            'bn' => [
-                'display_name' => $request->input('display-name-bn')
-            ]
-        ];
+        $shop->name             = strtolower($name);
 
         $meta_title = $request->input('meta-title');
 
@@ -239,53 +228,43 @@ class ShopController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'slug' => 'required|max:255|unique:shops,id,'.$id,
-            'display-name-en' => 'required|max:255',
-            'display-name-bn' => 'required|max:255',
+            'name' => 'required|max:255|unique:shops,id,'.$id,
            
-            'business-address-line-1' => 'required|max:255',
-            'business-address-line-2' => 'required|max:255',
-            'business-zip' => 'required',
-            'business-country-id' => 'required',
-            'business-district-id' => 'required',
-            'business-division-id' => 'required',
-            'business-thana-id' => 'required',
+            // 'business-address-line-1' => 'required|max:255',
+            // 'business-address-line-2' => 'required|max:255',
+            // 'business-zip' => 'required',
+            // 'business-country-id' => 'required',
+            // 'business-district-id' => 'required',
+            // 'business-division-id' => 'required',
+            // 'business-thana-id' => 'required',
 
-            'warehouse-address-line-1' => 'required|max:255',
-            'warehouse-address-line-2' => 'required|max:255',
-            'warehouse-zip' => 'required',
-            'warehouse-country-id' => 'required',
-            'warehouse-district-id' => 'required',
-            'warehouse-division-id' => 'required',
-            'warehouse-thana-id' => 'required',
+            // 'warehouse-address-line-1' => 'required|max:255',
+            // 'warehouse-address-line-2' => 'required|max:255',
+            // 'warehouse-zip' => 'required',
+            // 'warehouse-country-id' => 'required',
+            // 'warehouse-district-id' => 'required',
+            // 'warehouse-division-id' => 'required',
+            // 'warehouse-thana-id' => 'required',
 
-            'return-address-line-1' => 'required|max:255',
-            'return-address-line-2' => 'required|max:255',
-            'return-zip' => 'required',
-            'return-country-id' => 'required',
-            'return-district-id' => 'required',
-            'return-division-id' => 'required',
-            'return-thana-id' => 'required',
+            // 'return-address-line-1' => 'required|max:255',
+            // 'return-address-line-2' => 'required|max:255',
+            // 'return-zip' => 'required',
+            // 'return-country-id' => 'required',
+            // 'return-district-id' => 'required',
+            // 'return-division-id' => 'required',
+            // 'return-thana-id' => 'required',
             
         ]);
         
         $shop = shop::findOrFail($id);
         
         $status = $request->input('status') ? $request->input('status') : "active";
-        $slug = $request->input('slug');
-
-        $slug = preg_replace('/\s+/u', '-', trim($slug));
+        $name = $request->input('name');
+        $slug = preg_replace('/\s+/u', '-', trim($name));
 
         $shop->slug             = $slug;
-        $display_name_en = $request->input('display-name-en');
-        $shop->localization     = [
-            'en' => [
-                'display_name' => strtolower($display_name_en),
-            ],
-            'bn' => [
-                'display_name' => $request->input('display-name-bn')
-            ]
-        ];
+        $shop->name             = strtolower($name);
+
 
         $meta_title = $request->input('meta-title');
         $meta_keywords = $request->input('meta-keywords');

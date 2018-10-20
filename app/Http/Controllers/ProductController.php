@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Session;
 use App\Product;
+use App\Brand;
+use App\Category;
+use App\Country;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -25,7 +28,14 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::get();
+        $brands = Brand::get();
+        $countries = Country::get();
+        return view('backend.pages.product-create' ,[
+            'categories' => $categories,
+            'countries' => $countries,
+            'brands' => $brands,
+        ]);
     }
 
     /**
@@ -37,7 +47,7 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|unique:brands|max:255',
+            'name' => 'required|max:255',
         ]);
         
         $product = new Product();
@@ -55,14 +65,10 @@ class ProductController extends Controller
             'keywords' => strtolower($meta_title),
             'description' => $request->input('meta-description')
         ];
-        $product->description  = $request->input('short_description');
+        $product->short_description  = $request->input('short_description');
+        $product->country_id = $request->input('country-id');
         $product->description  = $request->input('description');
         $product->video_url  = $request->input('video-url');
-
-        $product->comment             = [
-            'comment_1' => $request->input('comment-1'),
-            'comment_2' => $request->input('comment-2')
-        ];
         $product->variation  = [
             'color'         => $request->input('color'),
             'style'         => $request->input('style'),
@@ -83,7 +89,13 @@ class ProductController extends Controller
         $product->save();
 
         Session::flash('message', 'Successfully Created!');
-        return redirect()->route('backend.brands.edit', $brand->id);
+        
+        if (empty($request->input('categories'))) {
+            $product->categories()->sync([1]);
+        } else {
+            $product->categories()->sync($request->input('categories'));
+        }
+        //return redirect()->route('backend.brands.edit', $brand->id);
     }
 
     /**
