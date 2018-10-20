@@ -227,7 +227,7 @@ $_activeSecondaryNav = 'create';
                                 </div>
                                 {{-- ======================./Country================ --}}
 
-                                <div class="row from-group">
+                                {{--  <div class="row from-group">
                                     <label for="include" class="col-lg-3  pt-3">Allow</label>
                                     <div class="col-lg-6 checkbox">
                                         <ul class="choosen-list">
@@ -248,7 +248,7 @@ $_activeSecondaryNav = 'create';
                                             </li>
                                         </ul>
                                     </div>
-                                </div>
+                                </div>  --}}
                                 {{-- ========================./Allow==================== --}}
 
                             </div>
@@ -268,7 +268,7 @@ $_activeSecondaryNav = 'create';
                                     <div class="checkbox">
                                         <label id="p-{{ $c->id }}" >
                                             <input type="checkbox" id="c-{{ $c->id }}" value="{{ $c->id }}" name="categories[]">
-                                            {{ $c->localization['bn']['display_name'] }}
+                                            {{ ucwords($c->name) }}
                                         </label>
                                     </div>
                                     @endforeach
@@ -366,8 +366,8 @@ $_activeSecondaryNav = 'create';
                             </div>
                             <div class="box-body">
                                 <div class="form-group">
-                                    <label for="embed_url">Youtube embed url</label>
-                                    <input type="text" class="form-control" id="embed_url">
+                                    <label for="video-url">Youtube embed url</label>
+                                    <input type="text" class="form-control" id="video-url" name="video-url">
                                 </div>
                             </div>
                         </div>
