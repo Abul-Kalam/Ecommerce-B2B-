@@ -65,7 +65,7 @@
                                     @foreach ($tags as $t)
                                     <tr>
                                         <td>{{$t->id}}</td>
-                                        <td>{{ $t->localization['en']['display_name'] }}</td>
+                                        <td>{{ ucwords($t->name) }}</td>
 
                                         <td>{{ $t->slug }}</td>
                                         <td>
