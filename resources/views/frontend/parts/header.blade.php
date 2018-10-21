@@ -42,7 +42,7 @@
                 <div class="header-content bg-white p-2">
                     <div class="row">
                         <div class="col-xm-12 col-sm-12 col-md-6 col-lg-6">
-                            <div class="logo-header pt-3 pb-3">
+                            <div class="logo-header p-3">
                                 <a href="{{ url('/') }}">
                                     <img src="{{ asset('images/logo-header.png') }}" alt="Logo-Header">
                                 </a>
