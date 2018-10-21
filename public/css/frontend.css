@@ -66,12 +66,19 @@
 }
 
 .post-header .main-nav {
-  padding: .5rem;
+  padding: 0;
 }
 
-.post-header .main-nav .navbar-nav .nav-link {
+.post-header .main-nav .navbar-nav .nav-item {
+  border-right: 1px solid #ebebeb;
+}
+
+.post-header .main-nav .navbar-nav .nav-item .nav-link {
   color: #000;
   font-weight: 600;
+  font-size: 1.1em;
+  padding: .7rem;
+  line-height: 1.6;
 }
 
 .post-header .main-nav .login-wrap {

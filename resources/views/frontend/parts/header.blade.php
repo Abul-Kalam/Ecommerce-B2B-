@@ -88,7 +88,7 @@
                                 </li>
                             </ul>
                             
-                            <span class="login-wrap">
+                            <span class="login-wrap pr-2">
                                 <a href="#">Login</a>&nbsp;|&nbsp;<a href="#">Sign Up</a>
                             </span>
                         </div>

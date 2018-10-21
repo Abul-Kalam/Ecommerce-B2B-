@@ -60,11 +60,20 @@
 }
 .post-header{
   .main-nav{
-    padding: .5rem;
+    padding: 0;
     .navbar-nav {
-      .nav-link{
-        color: $black;
-        font-weight: 600;
+      .nav-item{
+        border-right: 1px solid #ebebeb;
+        .nav-link{
+          color: $black;
+          font-weight: 600;
+          font-size: 1.1em;
+          padding: .7rem;
+          line-height: 1.6;
+        }
+        &:last-child{
+          // border-right: 0;
+        }
       }
     }
     .login-wrap{
