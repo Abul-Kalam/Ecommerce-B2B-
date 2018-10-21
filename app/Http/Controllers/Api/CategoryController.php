@@ -76,9 +76,9 @@ class CategoryController extends Controller
 
 
         $name = $request->input('name');
-        $slug = preg_replace('/\s+/u', '-', trim($slug));
+        $slug = preg_replace('/\s+/u', '-', trim($name));
 
-        $category->slug             = $name;
+        $category->slug             = $slug;
         $category->name             = strtolower($name);
 
 
@@ -156,9 +156,9 @@ class CategoryController extends Controller
         $category = Category::findOrFail($id);
         
         $name = $request->input('name');
-        $slug = preg_replace('/\s+/u', '-', trim($slug));
+        $slug = preg_replace('/\s+/u', '-', trim($name));
 
-        $category->slug             = $name;
+        $category->slug             = $slug;
         $category->name             = strtolower($name);
 
         $category->options            = null;
