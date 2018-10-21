@@ -4,8 +4,11 @@
 
 @section('content')
 
-
-<h1>Hello Body</h1>
+<div class="contaoner-fluid">
+  <div class="container">
+    <h1>Hello Body</h1>
+  </div>
+</div>
 
 
 
