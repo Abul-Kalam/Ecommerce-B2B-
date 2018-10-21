@@ -1,3 +1,91 @@
+.pre-header .service span {
+  vertical-align: middle;
+}
+
+.pre-header .social-nav {
+  float: right;
+  margin-left: auto;
+}
+
+.pre-header .social-nav .social-list {
+  display: block;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.pre-header .social-nav .social-list .item {
+  display: inline;
+  margin-left: 0.2em;
+}
+
+.pre-header .social-nav .social-list .item a {
+  display: inline-block;
+  border: 1px solid;
+  width: 28px;
+  height: 28px;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 3px;
+  border-color: rgba(0, 0, 0, 0.15);
+  background-color: #fff;
+  color: #6c757d;
+}
+
+.pre-header .social-nav .social-list .item a i {
+  font-size: 1.1em;
+  line-height: 1.65rem;
+}
+
+.pre-header .social-nav .social-list .item a i.facebook:hover {
+  color: #3B5998;
+}
+
+.pre-header .social-nav .social-list .item a i.twitter:hover {
+  color: #3B5998;
+}
+
+.pre-header .social-nav .social-list .item a i.youtube:hover {
+  color: #E32C28;
+}
+
+.pre-header .social-nav .social-list .item a i.google-plus:hover {
+  color: #dd5144;
+}
+
+.header-content {
+  border-top: 1px solid #ebebeb;
+  border-bottom: 1px solid #ebebeb;
+}
+
+.header-content .logo-header img {
+  width: 228px;
+  height: auto;
+  vertical-align: middle;
+}
+
+.post-header .main-nav {
+  padding: .5rem;
+}
+
+.post-header .main-nav .navbar-nav .nav-link {
+  color: #000;
+  font-weight: 600;
+}
+
+.post-header .main-nav .login-wrap {
+  color: #6c757d;
+}
+
+.post-header .main-nav .login-wrap a {
+  color: #6c757d;
+}
+
+.post-header .main-nav .login-wrap a:hover {
+  color: #212529;
+}
+
 /*!
  * Bootstrap v4.1.3 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors
@@ -10473,5 +10561,9 @@ a.text-dark:focus {
 
 body {
   background-color: #EEEEEE;
+}
+
+* {
+  text-decoration: none !important;
 }
 
