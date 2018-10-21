@@ -16,6 +16,7 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected $namespace = 'App\Http\Controllers';
     protected $apinamespace = 'App\Http\Controllers\Api';
+    protected $userendnamespace = 'App\Http\Controllers\Userend';
 
     /**
      * Define your route model bindings, pattern filters, etc.
@@ -37,6 +38,7 @@ class RouteServiceProvider extends ServiceProvider
     public function map()
     {
         $this->mapApiRoutes();
+        $this->mapUserendRoutes();
         $this->mapBackendRoutes();
         $this->mapWebRoutes();
         //
@@ -70,6 +72,22 @@ class RouteServiceProvider extends ServiceProvider
             ->middleware('web')
             ->namespace($this->namespace)
             ->group(base_path('routes/backend.php'));
+    }
+
+    /**
+     * Define the "web" routes for the application.
+     *
+     * These routes all receive session state, CSRF protection, etc.
+     *
+     * @return void
+     */
+    protected function mapUserendRoutes()
+    {
+        Route::prefix('userend')
+            ->name('userend.')
+            ->middleware('web')
+            ->namespace($this->userendnamespace)
+            ->group(base_path('routes/userend.php'));
     }
 
     /**
