@@ -21,7 +21,6 @@ class Category extends Model
         'slug'           => 'string',
         'image_url'      => 'array',
         'description'    => 'string',
-        'localization'   => 'array',
         'options'        => 'array',
         'meta'           => 'array'
     ];

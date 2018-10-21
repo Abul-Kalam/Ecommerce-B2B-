@@ -20,7 +20,6 @@ class Brand extends Model
         'slug'            => 'string',
         'images_url'      => 'array',
         'about'           => 'string',
-        'localization'    => 'array',
         'country_id'      => 'string',
         'meta'            => 'array'
     ];
