@@ -14,6 +14,6 @@
 Auth::routes();
 
 Route::get('/', function () {
-  return view('frontend.layouts.default');
+  return view('frontend.pages.home');
 });
  

@@ -15,12 +15,16 @@
 <body>
     <div id="page">
         <header class="main-header">
-            <div class="container-fluid">
-                <div class="container">
-                    <div class="row"></div>
-                </div>
-            </div>
+            @include('frontend.parts.social')
+            @include('frontend.parts.header')
         </header>
+
+        <div>
+            @yield('content')
+        </div>
+        <footer class="main-footer">
+
+        </footer>
     </div>
     <script src="{{ asset('js/frontend.js') }}" defer></script>
 </body>
