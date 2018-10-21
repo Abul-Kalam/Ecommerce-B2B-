@@ -15,7 +15,7 @@ Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', function () {
-  return view('frontend.layouts.default');
+  return view('frontend.pages.home');
 });
 
 // Route::get('media/list', function () {
