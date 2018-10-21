@@ -141,7 +141,7 @@ return [
                     'slug'  => 'create',
                     'label' => 'Add New',
                     'route' => 'backend.brands.create',
-                    'permissions'   => 'create-brand'
+                    'permissions'   => 'manage-brands'
                 ],
                 [
                     'slug'  => 'index',
