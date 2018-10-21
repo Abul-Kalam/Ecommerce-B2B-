@@ -16,4 +16,8 @@ Route::get('register', 'RegisterController@create')->name('register');
 
 Route::post('login', 'LoginController@login');
 
+Route::get('/register', function () {
+    return view('userend.pages.register');
+  });
+
 
