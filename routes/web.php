@@ -16,4 +16,5 @@ Auth::routes();
 Route::get('/', function () {
   return view('frontend.pages.home');
 });
+
  
