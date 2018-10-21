@@ -28,7 +28,10 @@ class TagController extends Controller
     public function search(Request $request)
     {
         $keywords = $request->input('keywords');
-        $tags = tag::where('slug', 'like', '%'.$keywords.'%')->paginate(5);
+
+        $keywords = strtolower($keywords);
+        
+        $tags = tag::where('name', 'like', '%'.$keywords.'%')->paginate(5);
 
         return view('backend.pages.tag-list', [
             'tags' => $tags
@@ -61,27 +64,19 @@ class TagController extends Controller
     {
         
         $request->validate([
-            'slug' => 'required|unique:categories|max:255',
-            'display-name-en' => 'required|max:255',
-            'display-name-bn' => 'required|max:255'
+            'name' => 'required|unique:tags|max:255',
         ]);
         
         $tag = new Tag();
         
-        $slug = $request->input('slug');
+        $name = $request->input('name');
 
-        $slug = preg_replace('/\s+/u', '-', trim($slug));
+        $slug = preg_replace('/\s+/u', '-', trim($name));
 
         $tag->slug             = $slug;
-        $display_name_en = $request->input('display-name-en');
-        $tag->localization     = [
-            'en' => [
-                'display_name' => strtolower($display_name_en),
-            ],
-            'bn' => [
-                'display_name' => $request->input('display-name-bn')
-            ]
-        ];
+
+        $tag->name             = strtolower($name);
+
         $meta_title = $request->input('meta-title');
         $meta_keywords = $request->input('meta-keywords');
         $tag->meta             = [
@@ -135,18 +130,16 @@ class TagController extends Controller
     {
          
         $request->validate([
-            'slug' => 'required|unique:categories|max:255',
-            'display-name-en' => 'required|max:255',
-            'display-name-bn' => 'required|max:255'
+            'slug' => 'required|unique:tages|max:255',
         ]);
         
         $tag = Tag::findOrFail($id);
         
-        $slug = $request->input('slug');
-
-        $slug = preg_replace('/\s+/u', '-', trim($slug));
+        $slug = preg_replace('/\s+/u', '-', trim($name));
 
         $tag->slug             = $slug;
+        $tag->name             = strtolower($name);
+
         $display_name_en = $request->input('display-name-en');
         $tag->localization     = [
             'en' => [

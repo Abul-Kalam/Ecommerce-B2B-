@@ -48,30 +48,18 @@ class BrandController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'slug' => 'required|unique:brands|max:255',
-            'display-name-en' => 'required|max:255',
-            'display-name-bn' => 'required|max:255'
+            'name' => 'required|unique:brands|max:255',
         ]);
         
         $brand = new Brand();
-        
-        $slug = $request->input('slug');
 
-        $slug = preg_replace('/\s+/u', '-', trim($slug));
-
+        $name = $request->input('name');
+        $slug = preg_replace('/\s+/u', '-', trim($name));
         $brand->slug             = $slug;
-
-        $display_name_en = $request->input('display-name-en');
-        $brand->localization     = [
-            'en' => [
-                'display_name' => strtolower($display_name_en),
-            ],
-            'bn' => [
-                'display_name' => $request->input('display-name-bn')
-            ]
-        ];
+        $brand->name             = strtolower($name);
         $meta_title = $request->input('meta-title');
         $meta_keywords = $request->input('meta-keywords');
+
         $brand->meta             = [
             'title' => strtolower($meta_title),
             'keywords' => strtolower($meta_title),
@@ -134,25 +122,15 @@ class BrandController extends Controller
     {
         $request->validate([
             'slug' => 'required|max:255|unique:brands,id,'.$id,
-            'display-name-en' => 'required|max:255',
-            'display-name-bn' => 'required|max:255'
         ]);
         
         $brand = Brand::findOrFail($id);
         
-        $slug = $request->input('slug');
-
-        $slug = preg_replace('/\s+/u', '-', trim($slug));
-
+        $name = $request->input('name');
+        $slug = preg_replace('/\s+/u', '-', trim($name));
         $brand->slug             = $slug;
-        $brand->localization     = [
-            'en' => [
-                'display_name' => $request->input('display-name-en')
-            ],
-            'bn' => [
-                'display_name' => $request->input('display-name-bn')
-            ]
-        ];
+        $brand->name             = strtolower($name);
+        
         $brand->meta             = [
             'title' => $request->input('meta-title'),
             'keywords' => $request->input('meta-keywords'),

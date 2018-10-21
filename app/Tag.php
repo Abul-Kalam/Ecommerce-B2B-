@@ -18,8 +18,8 @@ class Tag extends Model
 
     protected $casts      = [
         'slug'           => 'string',
+        'name'           => 'string',
         'description'    => 'string',
-        'localization'   => 'array',
         'meta'           => 'array'
     ];
 }

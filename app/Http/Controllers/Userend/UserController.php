@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Userend;
 
 use Session;
 use Carbon\Carbon;
@@ -24,19 +24,15 @@ class UserController extends Controller
      */
     public function index()
     {   
-        $this->checkPermission('manage-users');
+        // $this->checkPermission('manage-users');
         $paginate = config('app.pagenation_count', 3);
-        
         $users = User::orderBy('created_at', 'DESC')->paginate($paginate);
 
-        // return view('backend.pages.user-list' ,[
-        //     'users' => $users,
+        // return view('backend.pages.user-list', [
+        //     'users' => $users
         // ]);
 
-
-        return view('backend.pages.user-list', [
-            'users' => $users
-        ]);
+        return "all user";
     }
 
 
@@ -84,21 +80,21 @@ class UserController extends Controller
             'last-name' => 'required|max:255',
             'email' => 'required|max:255|unique:users,id,'.$id,
             'role' => 'required',
-            'billing-address-line-1' => 'required',
-            'billing-address-line-2' => 'required',
-            'billing-district-id' => 'required',
-            'billing-country-id' => 'required',
-            'billing-division-id' => 'required',
-            'billing-thana-id' => 'required',
-            'billing-zip' => 'required',
+            // 'billing-address-line-1' => 'required',
+            // 'billing-address-line-2' => 'required',
+            // 'billing-district-id' => 'required',
+            // 'billing-country-id' => 'required',
+            // 'billing-division-id' => 'required',
+            // 'billing-thana-id' => 'required',
+            // 'billing-zip' => 'required',
 
-            'shipping-address-line-1' => 'required',
-            'shipping-address-line-2' => 'required',
-            'shipping-district-id' => 'required',
-            'shipping-country-id' => 'required',
-            'shipping-division-id' => 'required',
-            'shipping-thana-id' => 'required',
-            'shipping-zip' => 'required',
+            // 'shipping-address-line-1' => 'required',
+            // 'shipping-address-line-2' => 'required',
+            // 'shipping-district-id' => 'required',
+            // 'shipping-country-id' => 'required',
+            // 'shipping-division-id' => 'required',
+            // 'shipping-thana-id' => 'required',
+            // 'shipping-zip' => 'required',
            
 
         ]);
@@ -106,16 +102,6 @@ class UserController extends Controller
         $id = Auth::user()->id;
         $user = User::findOrFail($id);
         $status = $request->input('status') ? $request->input('status') : "active";
-
-        $user->localization     = [
-            'en' => [
-                'display_name' => $request->input('display-name-en')
-            ],
-            'bn' => [
-                'display_name' => $request->input('display-name-bn')
-            ]
-        ];
-
 
         $user->localization     = [
             'en' => [
@@ -211,7 +197,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        $this->checkPermission('manage-users');
+      
         $roles = Role::get();
         $countries = Country::get();
         $divisions = Division::get();
@@ -237,10 +223,10 @@ class UserController extends Controller
        
         $request->validate([
 
-            'name'  => 'required|max:255',
-            'email' => 'required|unique:users|max:255',
-            'phone' => 'required',
-            'password' => 'required|string|min:6|confirmed',
+            // 'name'  => 'required|max:255',
+            // 'email' => 'required|unique:users|max:255',
+            // 'phone' => 'required',
+            // 'password' => 'required|string|min:6',
             // 'display-name-en' => 'required|max:255',
             // 'display-name-bn' => 'required|max:255',
             // 'first-name' => 'required|max:255',
@@ -268,7 +254,7 @@ class UserController extends Controller
 
         $user->name  = $request->input('name');
         $user->email = $request->input('email');
-        $user->phone = $request->input('phone');
+        $user->phone_number = $request->input('phone');
         $password = $request->input('password');
         $user->password = Hash::make($password) ;
        
@@ -344,11 +330,17 @@ class UserController extends Controller
         // $user->last_login_ip = $request->getClientIp() ;
         
         
-        
+        // return response()->json([
+        //     'massage' =>'user Successfully Created '
+        // ], 200);
         $user->save();
         // $user->roles()->sync([$request->input('role')]);
-        Session::flash('message', 'Successfully Created!');
-        return redirect()->route('backend.users.edit', $user->id);
+        // Session::flash('message', 'Successfully Created!');
+        // return redirect()->route('backend.users.edit', $user->id);
+
+        return response()->json([
+            'massage' =>'user Successfully Created '
+        ], 200);
     }
 
     /**
