@@ -12,6 +12,27 @@ return [
         ],
         [
             'type'          => 'menu',
+            'slug'          => 'product',
+            'label'         => 'Product',
+            'icon_class'    => 'fa fa-store',
+            'permissions'   => 'manage-product',
+            'childs'        => [
+                [
+                    'slug'  => 'create',
+                    'label' => 'Add New',
+                    'route' => 'backend.products.create',
+                    'permissions'   => 'manage-product'
+                ],
+                [
+                    'slug'  => 'index',
+                    'label' => 'All products',
+                    'route' => 'backend.products.index',
+                    'permissions'   => 'manage-product'
+                ]
+            ]
+        ],
+        [
+            'type'          => 'menu',
             'slug'          => 'media',
             'label'         => 'Media',
             'icon_class'    => 'fa fa-folder',

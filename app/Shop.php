@@ -22,7 +22,6 @@ class Shop extends Model
         'status'         => 'string',
         'images_url'     => 'array',
         'description'    => 'string',
-        'localization'   => 'array',
         'address'        => 'array',
         'meta'           => 'array'
     ];

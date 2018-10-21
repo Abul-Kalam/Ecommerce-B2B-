@@ -51,6 +51,11 @@ class PermissionsTableSeeder extends Seeder
                 'id'           => 8,
                 'name' => 'manage-setting',
                 'display_name' => 'Manage Setting',
+            ],
+            [
+                'id'           => 9,
+                'name' => 'manage-product',
+                'display_name' => 'Manage Prosuct',
             ]
         ]);
     }
