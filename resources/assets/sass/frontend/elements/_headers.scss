@@ -88,3 +88,41 @@
   }
 }
 
+.ticker-wrap{
+  height: 32px;
+  .title {
+    a{
+      h5{
+        color: $white;
+        background-color: $gray-700;
+        font-weight: 600;
+        font-size: 1.1em;
+        margin: 0 .8rem 0 0;
+        padding: 0.25rem 1.3rem 0.4rem 1.3rem;
+      }
+    }
+  }
+  .headlines{
+    height: 32px;
+    .list{
+      margin: 0;
+      padding: 0;
+      display: block;
+      list-style-type: none;
+      li{
+        display: inline;
+        line-height: 1.9;
+        padding-right: 1rem;
+        &::before{
+          content: "";
+          padding-right: 0.2rem;
+          font: 14px FontAwesome;
+        }
+        a{
+          color: $black;
+          font-size: .9em;
+        }
+      }
+    }
+  }
+}
