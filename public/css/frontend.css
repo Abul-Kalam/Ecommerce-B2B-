@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 .pre-header .service span {
   vertical-align: middle;
 }
@@ -91,6 +93,63 @@
 
 .post-header .main-nav .login-wrap a:hover {
   color: #212529;
+}
+
+.ticker-wrap {
+  height: 32px;
+}
+
+.ticker-wrap .title a h5 {
+  color: #fff;
+  background-color: #495057;
+  font-weight: 600;
+  font-size: 1.1em;
+  margin: 0 .8rem 0 0;
+  padding: 0.25rem 1.3rem 0.4rem 1.3rem;
+}
+
+.ticker-wrap .headlines {
+  height: 32px;
+}
+
+.ticker-wrap .headlines .list {
+  margin: 0;
+  padding: 0;
+  display: block;
+  list-style-type: none;
+}
+
+.ticker-wrap .headlines .list li {
+  display: inline;
+  line-height: 1.9;
+  padding-right: 1rem;
+}
+
+.ticker-wrap .headlines .list li::before {
+  content: "\F138";
+  padding-right: 0.2rem;
+  font: 14px FontAwesome;
+}
+
+.ticker-wrap .headlines .list li a {
+  color: #000;
+  font-size: .9em;
+}
+
+.cat-list .list-group-item {
+  text-align: center;
+  padding: 0.4rem;
+  margin-bottom: 0;
+}
+
+.cat-list .list-group-item.active {
+  background-color: #495057;
+  border-color: #495057;
+}
+
+.cat-list .list-group-item:first-child,
+.cat-list .list-group-item:last-child {
+  border-radius: 0;
 }
 
 /*!

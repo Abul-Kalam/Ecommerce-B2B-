@@ -19,6 +19,7 @@
         <header class="main-header">
             @include('frontend.parts.social')
             @include('frontend.parts.header')
+            @include('frontend.parts.latest-ticker')
         </header>
 
         <div>
