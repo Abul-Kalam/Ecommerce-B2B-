@@ -15,7 +15,7 @@ $_activeSecondaryNav = 'create';
 
 <section class="content">
 
-        <form action="{{ route('backend.products.store') }}" method="post">
+        <form action="{{ route('backend.products.store') }}" method="post" enctype="multipart/form-data">
 
             {{ csrf_field() }}
 
@@ -193,8 +193,14 @@ $_activeSecondaryNav = 'create';
                             </div>
                             <!-- /.box-header -->
                             <div class="box-body">
-                                <button type="button" class="pull-left btn btn-sm btn-default navbar-btn">Save Draft</button>
-                                <button type="submit" class="pull-right btn btn-sm btn-primary navbar-btn">Publish</button>
+                                <div class="form-group">
+                                    <button type="submit" class="pull-right btn btn-sm btn-primary navbar-btn">Publish</button>
+                                    <select class="form-control select2" style="width: 100%;" tabindex="-1" aria-hidden="true" name="status">
+                                        <option value="publishhed">Published</option>
+                                        <option value="unpublished">Unpublished</option>
+                                        <option value="draft">Save Draft</option>
+                                    </select>
+                                </div>
                             </div>
                             <!-- /.box-body -->
                         </div>
@@ -206,8 +212,8 @@ $_activeSecondaryNav = 'create';
                             <!-- /.box-header -->
                             <div class="box-body">
                                 <div class="form-group">
-                                    <select class="form-control select2" style="width: 100%;" tabindex="-1" aria-hidden="true">
-                                        <option value="null">Choose product brand</option>
+                                    <select class="form-control select2" style="width: 100%;" tabindex="-1" aria-hidden="true" name="brand-id">
+                                        <option value="">Choose product brand</option>
                                         @foreach ($brands as $b)
                                         <option value="{{ $b->id}}">{{ ucwords($b->name) }}</option>
                                         @endforeach
@@ -219,7 +225,7 @@ $_activeSecondaryNav = 'create';
 
                                 <div class="form-group">
                                     <select class="form-control select2" style="width: 100%;" tabindex="-1" aria-hidden="true" name="country-id">
-                                        <option selected="selected" value="null">Select made by country </option>
+                                        <option selected="selected" value="">Select made by country </option>
                                         @foreach ($countries as $c)
                                         <option value="{{ $c->id}}">{{ ucwords($c->localization['en']['display_name']) }}</option>
                                         @endforeach
@@ -341,16 +347,14 @@ $_activeSecondaryNav = 'create';
                         <div class="box box-solid">
                             <div class="box-header with-border">
                                 <h3 class="box-title">Feature Image</h3>
-                                <div class="box-tools pull-right">
-                                    <button type="button" class="btn btn-box-tool">Add New</button>
-                                </div>
                             </div>
                             <div class="box-body">
                                 <ul class="img-list">
                                     <li>
                                         <div class="img-box">
-                                            <img src="{{ asset('/images/avatar.png') }}" alt="thumbnail">
-                                            <button class="btn-r-close" title="Delete image" type="button">
+                                            <input type="file" name="icon">
+                                            {{--  <img src="{{ asset('/images/avatar.png') }}" alt="thumbnail">  --}}
+                                            <button class="btn-r-close" title="Delete image">
                                                 <i class="fas fa-times"></i>
                                             </button>
                                         </div>

@@ -193,8 +193,14 @@ $_activeSecondaryNav = 'create';
                             </div>
                             <!-- /.box-header -->
                             <div class="box-body">
-                                <button type="button" class="pull-left btn btn-sm btn-default navbar-btn">Save Draft</button>
-                                <button type="submit" class="pull-right btn btn-sm btn-primary navbar-btn">Publish</button>
+                                <div class="form-group">
+                                    <button type="submit" class="pull-right btn btn-sm btn-primary navbar-btn">Publish</button>
+                                    <select class="form-control select2" style="width: 100%;" tabindex="-1" aria-hidden="true" name="status">
+                                        <option value="publishhed" {{ $product->status === "published" ? 'selected' : '' }}>Published</option>
+                                        <option value="unpublished" {{ $product->status === "unpublished" ? 'selected' : '' }}>Unpublished</option>
+                                        <option value="draft" {{ $product->status === "draft" ? 'selected' : '' }}>Save Draft</option>
+                                    </select>
+                                </div>
                             </div>
                             <!-- /.box-body -->
                         </div>
@@ -209,7 +215,7 @@ $_activeSecondaryNav = 'create';
                                     <select class="form-control select2" style="width: 100%;" tabindex="-1" aria-hidden="true">
                                         <option value="null">Choose product brand</option>
                                         @foreach ($brands as $b)
-                                        <option value="{{ $b->id}}" {{  $b->id === $product->country_id}}>{{ ucwords($b->name) }}</option>
+                                        <option value="{{ $b->id}}" {{  $b->id === $product->brand_id  ? 'selected' : ''}}>{{ ucwords($b->name) }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -221,7 +227,7 @@ $_activeSecondaryNav = 'create';
                                     <select class="form-control select2" style="width: 100%;" tabindex="-1" aria-hidden="true" name="country-id">
                                         <option selected="selected" value="null">Select made by country </option>
                                         @foreach ($countries as $c)
-                                        <option value="{{ $c->id}}" {{  $c->id === $product->address['business_country_id'] ? 'selected' : ''}}>{{ ucwords($c->localization['en']['display_name']) }}</option>
+                                        <option value="{{ $c->id}}" {{  $c->id === $product->country_id ? 'selected' : ''}}>{{ ucwords($c->localization['en']['display_name']) }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -349,7 +355,8 @@ $_activeSecondaryNav = 'create';
                                 <ul class="img-list">
                                     <li>
                                         <div class="img-box">
-                                            <img src="{{ asset('/images/avatar.png') }}" alt="thumbnail">
+                                            {{--  <img src="{{ asset('/images/avatar.png') }}" alt="thumbnail">  --}}
+                                            <img src="{{ Storage::url( $product->image ) }}" alt="Icon" style="width:100px; height:100px">
                                             <button class="btn-r-close" title="Delete image" type="button">
                                                 <i class="fas fa-times"></i>
                                             </button>

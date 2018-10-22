@@ -17,15 +17,17 @@ class CreateProductsTable extends Migration
             $table->bigIncrements('id');
             $table->integer('shop_id')->nullable();
             $table->integer('country_id')->nullable();
+            $table->integer('brand_id')->nullable();
             $table->string('slug')->nullable();
             $table->string('name')->nullable();
-            $table->string('status', 100)->default('inactive')->comment('active or inactive active product can be show');
+            $table->string('status', 100)->default('unpublished')->comment('published or unpublished published product can be show');
             $table->mediumText('short_description')->nullable();
             $table->longText('description')->nullable();
             $table->json('meta')->nullable();
             $table->json('variation')->nullable();
             $table->json('images_url')->nullable();
             $table->json('featured')->nullable();
+            $table->string('image')->nullable();
             $table->string('video_url')->nullable();
             $table->timestamps();
             $table->softDeletes();

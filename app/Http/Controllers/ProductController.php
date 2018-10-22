@@ -7,7 +7,10 @@ use App\Product;
 use App\Brand;
 use App\Category;
 use App\Country;
+use Carbon\Carbon;
+use Illuminate\Http\File;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -66,7 +69,9 @@ class ProductController extends Controller
             'description' => $request->input('meta-description')
         ];
         $product->short_description  = $request->input('short_description');
+        $product->status  = $request->input('status');
         $product->country_id = $request->input('country-id');
+        $product->brand_id = $request->input('brand-id');
         $product->description  = $request->input('description');
         $product->video_url  = $request->input('video-url');
         $product->variation  = [
@@ -85,6 +90,18 @@ class ProductController extends Controller
             'featured_1' => $request->input('featured-1'),
             'featured_2' => $request->input('featured-2')
         ];
+
+        if ($request->hasFile('icon')) {
+            $file = $request->file('icon');
+            $file_type = substr($file->getMimeType(), 0, 5);
+            $originalName = $file->getClientOriginalName();
+            $nowtime = Carbon::now();
+            $year =  $nowtime->year;
+            $month = $nowtime->month;
+            $day = $nowtime->day;
+            $path = $file->storeAs('public/'.$file_type.'s/' . $year .'/' . $month . '/' .  $day.'/file', $originalName);
+            $product->image = $path;
+        }
         
         $product->save();
 
@@ -95,7 +112,7 @@ class ProductController extends Controller
         } else {
             $product->categories()->sync($request->input('categories'));
         }
-        //return redirect()->route('backend.brands.edit', $brand->id);
+        return redirect()->route('backend.products.edit', $product->id);
     }
 
     /**
@@ -142,7 +159,8 @@ class ProductController extends Controller
             'name' => 'required|max:255',
         ]);
         
-        $product = new findOrFail($id);
+        $product = Product::findOrFail($id);
+
         
         $name = $request->input('name');
 
@@ -158,7 +176,9 @@ class ProductController extends Controller
             'description' => $request->input('meta-description')
         ];
         $product->short_description  = $request->input('short_description');
+        $product->status  = $request->input('status');
         $product->country_id = $request->input('country-id');
+        $product->brand_id = $request->input('brand-id');
         $product->description  = $request->input('description');
         $product->video_url  = $request->input('video-url');
         $product->variation  = [
@@ -187,6 +207,7 @@ class ProductController extends Controller
         } else {
             $product->categories()->sync($request->input('categories'));
         }
+        return redirect()->route('backend.products.edit', $product->id);
     }
 
     /**
