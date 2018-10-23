@@ -82,6 +82,8 @@ class RegisterController extends Controller
         $request->validate([
             'email' => 'required|unique:users|max:255'
         ]);
+
+
         
         $user = new User();
         

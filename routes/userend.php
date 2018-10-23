@@ -21,4 +21,6 @@ Route::post('login', 'LoginController@login');
 //     return view('userend.pages.register');
 //   });
 
-
+Route::get('dashboard', function () {
+    return view('userend.pages.dashboard');
+})->name('dashboard');
