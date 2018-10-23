@@ -100,8 +100,10 @@ class RegisterController extends Controller
 
         $issaved =  $user->save();
 
+        $user->roles()->sync([5]);
+
         if($issaved){
-            return redirect('userend/dashboard');
+            return redirect('userend/login');
         }else{
             return "you are not regester";
         }

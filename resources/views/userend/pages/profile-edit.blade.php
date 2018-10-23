@@ -1,11 +1,7 @@
-@php
-$_activePrimaryNav = 'User';
-$_activeSecondaryNav = 'edit';
-$_alertType = 'success';
-    $_alertMessage =  Session::get('message');
-@endphp
 @extends('userend.layouts.default')
+
 @section('title', 'Edit User')
+
 @section('content')
 
 <section class="content-header">
@@ -29,14 +25,11 @@ $_alertType = 'success';
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
-                    <form action="#" method="post">
+                    <form action="{{ route('backend.users.update', $user->id) }}" method="post">
 
                             {{ csrf_field() }}  {{ method_field('PUT') }}
 
                         <div class="box box-solid mt-3">
-                            {{-- <div class="box-header with-border">
-                                <a href="#" class="btn btn-sm btn-default pull-right">All</a>
-                            </div> --}}
                             <div class="box-body p-0">
                                 <div class="nav-tabs-custom mb-0">
                                     <ul class="nav nav-tabs">

@@ -18,7 +18,7 @@ Route::get('register', 'RegisterController@create')->name('register');
 Route::post('register', 'RegisterController@userendstore')->name('register.userendstore');
 
 
-Route::post('login', 'LoginController@login');
+Route::post('login', 'LoginController@login')->name('userend.login');
 
 // Route::get('/register', function () {
 //     return view('userend.pages.register');
@@ -28,4 +28,4 @@ Route::get('dashboard', function () {
     return view('userend.pages.dashboard');
 })->name('dashboard');
 
- Route::get('users/profile', 'UserController@profile')->name('users.profile');
+ Route::get('profile', 'UserController@profile')->name('profile');
