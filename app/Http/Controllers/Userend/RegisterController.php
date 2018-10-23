@@ -80,8 +80,13 @@ class RegisterController extends Controller
     public function userendstore(Request $request)
     {
         $request->validate([
-            'email' => 'required|unique:users|max:255'
+            'name' => 'required|string|max:255',
+            'phone-number' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:6',
         ]);
+
+
         
         $user = new User();
         
@@ -91,7 +96,15 @@ class RegisterController extends Controller
         $user->email  = $request->input('email');
         $user->phone_number  = $request->input('phone-number');
         $user->password  = Hash::make($request->input('password'));
-        $user->save();
+
+
+        $issaved =  $user->save();
+
+        if($issaved){
+            return redirect('userend/dashboard');
+        }else{
+            return "you are not regester";
+        }
     }
 
     /**

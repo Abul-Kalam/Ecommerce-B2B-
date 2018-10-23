@@ -52,7 +52,7 @@
                                                     <label for="name">Name</label>
                                                     <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}">
                                                     @if($errors->has('name'))
-                                                    <span class="help-block">name field is required.</span>
+                                                    <span class="help-block">Name field is required.</span>
                                                     @endif
                                                 </div>
                                                 <div class="col-lg-6 form-group">

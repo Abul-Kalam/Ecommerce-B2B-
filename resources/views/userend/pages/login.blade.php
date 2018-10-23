@@ -16,7 +16,6 @@
 <body>
     <div id="page">
         <header>
-
         </header>
 
         <div>
@@ -25,26 +24,11 @@
                     <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
                         <form action="{{ route('userend.register.userendstore') }}" method="post">
                                 {{ csrf_field() }}
-
-                            <div class="form-group {{  $errors->has('name') ? 'has-error' : '' }}">
-                                <label for="name">User Name</label>
-                                <input type="text" class="form-control" id="name" name="name" placeholder="User Name">
-                                @if($errors->has('name'))
-                                <span class="help-block">User Name field is required.</span>
-                                @endif
-                            </div>
                             <div class="form-group {{  $errors->has('email') ? 'has-error' : '' }}">
                                 <label for="exampleInputEmail1">Email Address</label>
                                 <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" name="email">
                                 @if($errors->has('email'))
                                 <span class="help-block">Email is required.</span>
-                                @endif
-                            </div>
-                            <div class="form-group {{  $errors->has('phone-number') ? 'has-error' : '' }}">
-                                <label for="phone-number">Phone Number</label>
-                                <input type="text" class="form-control" id="phone-number" placeholder="Phone Number" name="phone-number">
-                                @if($errors->has('phone-number'))
-                                <span class="help-block">Phone Number is required.</span>
                                 @endif
                             </div>
                             <div class="form-group {{  $errors->has('password') ? 'has-error' : '' }}">
