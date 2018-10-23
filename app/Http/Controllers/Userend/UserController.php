@@ -17,6 +17,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 
 class UserController extends Controller
 {
+    
     /**
      * Display a listing of the resource.
      *
@@ -50,24 +51,26 @@ class UserController extends Controller
 
     public function profile()
     {
-        $id = Auth::user()->id;
-        $user = User::findOrFail($id);
-      
+         //echo "ok";
+        //  return view('userend.pages.profile-edit');
+        //  $id = Auth::user()->id;
+        //  $user = User::findOrFail($id);
+         $id = 9;
+         $user = User::findOrFail($id);
         $roles = Role::get();
-        $countries = Country::get();
-        $divisions = Division::get();
-        $districts = District::get();
-        $thanas = Thana::get();
-        return view('backend.pages.profile-edit', [
-            'user' => $user,
-            'countries' => $countries,
-            'districts' => $districts,
-            'divisions' => $divisions,
+         $countries = Country::get();
+         $divisions = Division::get();
+         $districts = District::get();
+         $thanas = Thana::get();
+        return view('userend.pages.profile-edit', [
+             'user' => $user,
+             'countries' => $countries,
+             'districts' => $districts,
+             'divisions' => $divisions,
             'thanas' => $thanas,
             'roles' => $roles
             
         ]);
-    
     }
 
     public function profileupdate()
@@ -552,4 +555,19 @@ class UserController extends Controller
     {
         //
     }
+
+    // public function profile()
+    // {
+    //     $id = Auth::user()->id;
+    //     $user = User::findOrFail($id);
+      
+    //     // $roles = Role::get();
+    //     // $countries = Country::get();
+    //     // $divisions = Division::get();
+    //     // $districts = District::get();
+    //     // $thanas = Thana::get();
+    //     return view('backend.pages.profile-edit');
+    // }
+
+    
 }

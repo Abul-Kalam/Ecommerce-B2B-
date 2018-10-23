@@ -34,7 +34,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/backend/dashboard';
+    protected $redirectTo = '/userend/dashboard';
 
     /**
      * Create a new controller instance.
@@ -52,5 +52,13 @@ class LoginController extends Controller
             'last_login_ip' => $request->getClientIp()
         ]);
     }
+
+    protected function create()
+    {
+        return view('userend.pages.login', [
+          
+        ]);
+    }
+
    
 }
