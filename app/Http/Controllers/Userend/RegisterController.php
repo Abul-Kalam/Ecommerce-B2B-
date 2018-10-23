@@ -14,6 +14,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -70,19 +71,35 @@ class RegisterController extends Controller
      */
     protected function create()
     {
-        
-        $roles = Role::get();
-        $countries = Country::get();
-        $divisions = Division::get();
-        $districts = District::get();
-        $thanas = Thana::get();
-        return view('frontend.pages.register', [
-            'countries' => $countries,
-            'districts' => $districts,
-            'divisions' => $divisions,
-            'thanas' => $thanas,
-            'roles' => $roles
+        return view('userend.pages.register', [
+          
         ]);
+    }
+
+
+    public function userendstore(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|unique:users|max:255'
+        ]);
+        
+        $user = new User();
+        
+       
+        $name = $request->input('name');
+        $user->name             = strtolower($name);
+        $user->email  = $request->input('email');
+        $user->phone_number  = $request->input('phone-number');
+        $user->password  = bcrupt($request->input('password'));
+
+        
+        
+        $user->save();
+        // Session::flash('message', 'Successfully Created!');
+
+        return "ok";
+
+       
     }
 
     /**
