@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Session;
 use App\Product;
+use App\User;
 use App\Brand;
+use App\Shop;
 use App\Category;
 use App\Country;
 use Carbon\Carbon;
@@ -56,6 +58,24 @@ class ProductController extends Controller
         $product = new Product();
         
         $name = $request->input('name');
+
+        $email = $request->input('shop-email');
+        
+        $shop_email = User::where('email', $email)->first();
+
+
+        if ($shop_email) {
+
+            $user_id = $shop_email->id;
+            // return $user_id;
+        } else {
+            return "user not found";
+        }
+
+        //$shop = Shop::with('shopusers')::where('user_id', $user_id)->frist();
+        
+
+    
 
         $slug = preg_replace('/\s+/u', '-', trim($name));
 
@@ -111,7 +131,7 @@ class ProductController extends Controller
             $product->categories()->sync([1]);
         } else {
             $product->categories()->sync($request->input('categories'));
-        }
+        };
         return redirect()->route('backend.products.edit', $product->id);
     }
 

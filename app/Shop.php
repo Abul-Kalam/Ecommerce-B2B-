@@ -36,6 +36,10 @@ class Shop extends Model
     {
         return $this->belongsToMany('App\User', 'shops_users');
     }
+    public function products()
+    {
+        return $this->belongsToMany('App\Product', 'shop_product');
+    }
 
     public function district()
     {
