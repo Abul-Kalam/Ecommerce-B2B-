@@ -92,16 +92,8 @@ class RegisterController extends Controller
         $user->name             = strtolower($name);
         $user->email  = $request->input('email');
         $user->phone_number  = $request->input('phone-number');
-        $user->password  = bcrupt($request->input('password'));
-
-        
-        
+        $user->password  = Hash::make($request->input('password'));
         $user->save();
-        // Session::flash('message', 'Successfully Created!');
-
-        return "ok";
-
-       
     }
 
     /**
