@@ -14,3 +14,108 @@
   }
 
 }
+
+.main-slide{
+  .carousel-inner{
+    .carousel-item{
+      .link{
+        .thumbnail-holder{
+          width: 100%;
+          height: 388px;
+          img{
+            height: inherit;
+          }
+          iframe{
+            width: 100%;
+            height: inherit;
+          }
+        }
+      }
+    }
+  }
+}
+.events{
+  .link{
+    .thumbnail-holder{
+      width: 100%;
+      height: 388px;
+      img{
+        width: inherit;
+        height: inherit;
+      }
+    }
+  }
+}
+
+.partner-wrap{
+  .title {
+    width: 246px;
+    a{
+      h5{
+        color: $white;
+        background-color: $gray-700;
+        font-weight: 600;
+        font-size: 1.5em;
+        margin: 0;
+        padding: 1.1rem;
+      }
+    }
+  }
+  .headlines{
+    .list{
+      margin: 0;
+      padding: 0;
+      display: block;
+      list-style-type: none;
+      li{
+        display: inline-block;
+        padding-right: 1rem;
+        a{
+          .thumbnail-holder{
+            width: 128px;
+            height: 64px;
+            img{
+
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.cat-box{
+  position: relative;
+  .link{
+    img{
+      width: 100%;
+      height: 300px;
+    }
+    .title{
+      top: 8px;
+      left: -8px;
+      margin: 0; 
+      padding: .5rem .8rem;
+      font-size: 1.3em;
+      color: $white;
+      position: absolute;
+      border-left: 8px solid rgba(0,0,0,0.35);
+      opacity: 0.9;
+      filter: alpha(opacity=50)
+    }
+    .men{
+      background-color: #A67C52;
+    }
+    .women{
+      background-color: #9C27B0;
+    }
+    .kid{
+      background-color: #E61B83;
+    }
+    .boy{
+      background-color: #3d00e0;
+    }
+    .girl{
+      background-color: #F94E57;
+    }
+  }
+}
