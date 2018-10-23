@@ -36,7 +36,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/backend/dashboard';
+    protected $redirectTo = '/userend/dashboard';
 
     /**
      * Create a new controller instance.
@@ -81,9 +81,9 @@ class RegisterController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'phone-number' => 'required|string|max:255',
+            // 'phone-number' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6',
+            'password' => 'required|string|min:6|confirmed',
         ]);
 
 
@@ -102,9 +102,9 @@ class RegisterController extends Controller
 
         $user->roles()->sync([5]);
 
-        if($issaved){
+        if ($issaved) {
             return redirect('userend/login');
-        }else{
+        } else {
             return "you are not regester";
         }
     }

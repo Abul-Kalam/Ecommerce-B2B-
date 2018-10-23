@@ -62,15 +62,17 @@ class UserController extends Controller
          $divisions = Division::get();
          $districts = District::get();
          $thanas = Thana::get();
-        return view('userend.pages.profile-edit', [
-             'user' => $user,
-             'countries' => $countries,
-             'districts' => $districts,
-             'divisions' => $divisions,
-            'thanas' => $thanas,
-            'roles' => $roles
+        // return view('userend.pages.profile-edit', [
+        //      'user' => $user,
+        //      'countries' => $countries,
+        //      'districts' => $districts,
+        //      'divisions' => $divisions,
+        //     'thanas' => $thanas,
+        //     'roles' => $roles
             
-        ]);
+        // ]);
+
+        return"ok";
     }
 
     public function profileupdate()
