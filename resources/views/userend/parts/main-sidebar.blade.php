@@ -57,7 +57,7 @@
                         <a href="#">View</a>
                     </li> --}}
                     <li>
-                        <a href="{{ route('userend.users.profile')}}">Edit</a>
+                        <a href="#">Edit</a>
                     </li>
                 </ul>
             </li>
