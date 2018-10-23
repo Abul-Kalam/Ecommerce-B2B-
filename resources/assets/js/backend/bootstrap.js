@@ -12,6 +12,7 @@ try {
     window.$ = window.jQuery = require('jquery');
     require('admin-lte');
     require('select2');
+    window.repeater = require('jquery.repeater');
 } catch (e) {}
 
 /**
