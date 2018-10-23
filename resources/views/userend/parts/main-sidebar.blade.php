@@ -53,11 +53,11 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li>
+                    {{-- <li>
                         <a href="#">View</a>
-                    </li>
+                    </li> --}}
                     <li>
-                        <a href="#">Edit</a>
+                        <a href="{{ route('userend.users.profile')}}">Edit</a>
                     </li>
                 </ul>
             </li>

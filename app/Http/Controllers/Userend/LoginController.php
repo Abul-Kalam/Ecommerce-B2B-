@@ -52,5 +52,13 @@ class LoginController extends Controller
             'last_login_ip' => $request->getClientIp()
         ]);
     }
+
+    protected function create()
+    {
+        return view('userend.pages.login', [
+          
+        ]);
+    }
+
    
 }

@@ -17,6 +17,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 
 class UserController extends Controller
 {
+    
     /**
      * Display a listing of the resource.
      *
@@ -67,7 +68,6 @@ class UserController extends Controller
             'roles' => $roles
             
         ]);
-    
     }
 
     public function profileupdate()
@@ -552,4 +552,19 @@ class UserController extends Controller
     {
         //
     }
+
+    // public function profile()
+    // {
+    //     $id = Auth::user()->id;
+    //     $user = User::findOrFail($id);
+      
+    //     // $roles = Role::get();
+    //     // $countries = Country::get();
+    //     // $divisions = Division::get();
+    //     // $districts = District::get();
+    //     // $thanas = Thana::get();
+    //     return view('backend.pages.profile-edit');
+    // }
+
+    
 }
