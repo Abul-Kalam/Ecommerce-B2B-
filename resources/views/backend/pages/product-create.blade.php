@@ -231,6 +231,14 @@ $_activeSecondaryNav = 'create';
                                         @endforeach
                                     </select>
                                 </div>
+
+                                <br>
+
+                                <div class="form-group">
+                                    <label for="shop-email">Shop Email</label>
+                                    <input type="email" class="form-control" id="shop-email" name="shop-email">
+                                </div>
+
                                 {{-- ======================./Country================ --}}
 
                                 {{--  <div class="row from-group">
