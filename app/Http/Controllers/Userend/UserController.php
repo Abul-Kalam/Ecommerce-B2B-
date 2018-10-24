@@ -51,31 +51,26 @@ class UserController extends Controller
 
     public function profile()
     {
-         //echo "ok";
-        //  return view('userend.pages.profile-edit');
-        //  $id = Auth::user()->id;
-        //  $user = User::findOrFail($id);
-         $id = 9;
+         $id = Auth::user()->id;
+         $user = User::findOrFail($id);
          $user = User::findOrFail($id);
         $roles = Role::get();
          $countries = Country::get();
          $divisions = Division::get();
          $districts = District::get();
          $thanas = Thana::get();
-        // return view('userend.pages.profile-edit', [
-        //      'user' => $user,
-        //      'countries' => $countries,
-        //      'districts' => $districts,
-        //      'divisions' => $divisions,
-        //     'thanas' => $thanas,
-        //     'roles' => $roles
+        return view('userend.pages.profile-edit', [
+             'user' => $user,
+             'countries' => $countries,
+             'districts' => $districts,
+             'divisions' => $divisions,
+            'thanas' => $thanas,
+            'roles' => $roles
             
-        // ]);
-
-        return"ok";
+        ]);
     }
 
-    public function profileupdate()
+    public function profileupdate(Request $request)
     {
         $request->validate([
             
@@ -83,23 +78,23 @@ class UserController extends Controller
             'display-name-bn' => 'required|max:255',
             'first-name' => 'required|max:255',
             'last-name' => 'required|max:255',
-            'email' => 'required|max:255|unique:users,id,'.$id,
+            'email' => 'required|max:255',
             'role' => 'required',
-            // 'billing-address-line-1' => 'required',
-            // 'billing-address-line-2' => 'required',
-            // 'billing-district-id' => 'required',
-            // 'billing-country-id' => 'required',
-            // 'billing-division-id' => 'required',
-            // 'billing-thana-id' => 'required',
-            // 'billing-zip' => 'required',
+            'billing-address-line-1' => 'required',
+            'billing-address-line-2' => 'required',
+            'billing-district-id' => 'required',
+            'billing-country-id' => 'required',
+            'billing-division-id' => 'required',
+            'billing-thana-id' => 'required',
+            'billing-zip' => 'required',
 
-            // 'shipping-address-line-1' => 'required',
-            // 'shipping-address-line-2' => 'required',
-            // 'shipping-district-id' => 'required',
-            // 'shipping-country-id' => 'required',
-            // 'shipping-division-id' => 'required',
-            // 'shipping-thana-id' => 'required',
-            // 'shipping-zip' => 'required',
+            'shipping-address-line-1' => 'required',
+            'shipping-address-line-2' => 'required',
+            'shipping-district-id' => 'required',
+            'shipping-country-id' => 'required',
+            'shipping-division-id' => 'required',
+            'shipping-thana-id' => 'required',
+            'shipping-zip' => 'required',
            
 
         ]);
@@ -187,13 +182,7 @@ class UserController extends Controller
         $user->save();
         $user->roles()->sync([$request->input('role')]);
         Session::flash('message', 'Successfully Updated+!');
-        //return redirect()->route('backend.users.edit', $user->id);
-
-
-        return response()->json([
-            'user' => $user,
-            'massage' =>'User Successfully Created '
-        ], 200);
+        return redirect()->route('userend.profileupdate', $user->id);
     }
     /**
      * Show the form for creating a new resource.
