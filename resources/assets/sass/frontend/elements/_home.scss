@@ -32,6 +32,72 @@
         }
       }
     }
+    .carousel-control-prev{
+      .carousel-control-prev-icon{
+        background-color: rgba(0,0,0,0.35);
+      }
+    }
+    .carousel-control-next{
+      .carousel-control-next-icon{
+        background-color: rgba(0,0,0,0.35);
+        
+      }
+    }
+  }
+}
+.mini-slide{
+  .carousel-inner{
+    .carousel-item{
+      .link{
+        .thumbnail-holder{
+          width: 100%;
+          height: 300px;
+          img{
+            height: inherit;
+          }
+          iframe{
+            width: 100%;
+            height: inherit;
+          }
+        }
+      }
+    }
+    .carousel-control-prev{
+      .carousel-control-prev-icon{
+        background-color: rgba(0,0,0,0.35);
+      }
+    }
+    .carousel-control-next{
+      .carousel-control-next-icon{
+        background-color: rgba(0,0,0,0.35);
+        
+      }
+    }
+  }
+}
+.more{
+  margin: auto;
+  text-align: center;
+  .link{
+    color: $white;    
+    font-size: .9em;
+    font-weight: 600;
+    padding: 0.3em 0.8em;
+  }
+  .men{
+    background-color: $men;
+  }
+  .women{
+    background-color: $women;
+  }
+  .kid{
+    background-color: $kid;
+  }
+  .boy{
+    background-color: $boy;
+  }
+  .girl{
+    background-color: $girl;
   }
 }
 .events{
@@ -75,7 +141,8 @@
             width: 128px;
             height: 64px;
             img{
-
+              width: inherit;
+              height: inherit;
             }
           }
         }
@@ -103,19 +170,73 @@
       filter: alpha(opacity=50)
     }
     .men{
-      background-color: #A67C52;
+      background-color: $men;
     }
     .women{
-      background-color: #9C27B0;
+      background-color: $women;
     }
     .kid{
-      background-color: #E61B83;
+      background-color: $kid;
     }
     .boy{
-      background-color: #3d00e0;
+      background-color: $boy;
     }
     .girl{
-      background-color: #F94E57;
+      background-color: $girl;
+    }
+  }
+}
+
+
+.footer-wrap{
+  border-top: 6px solid $black;
+  .page-wrap{
+    .title{
+      color: $white;
+      margin-bottom: 1.8rem;
+      font-size: 1.5em;
+    }
+  }
+  .address-wrap{
+    .title{
+      color: $white;
+      margin-bottom: 1.8rem;
+      font-size: 1.5em;
+    }
+    address {
+      letter-spacing: 1px;
+      padding-left: 1.5rem;
+      border-left: 3px solid $white;
+      font-size: .9em;
+      color: $white;
+    }
+  }
+  .follow-wrap{
+    .title{
+      color: $white;
+      margin-bottom: 1.8rem;
+      font-size: 1.5em;
+    }
+    .app{
+      margin-top: 1em;
+      float: right;
+      .link{
+        img{
+          width: 198px;
+        }
+      }
+    }
+  }
+}
+.post-wrap{
+  background-color: $black;
+  .post-footer{
+    .post-title{
+      color: $white;
+      font-size: .8em;
+      margin: 0;
+      padding: .5rem;
+      text-align: center;
     }
   }
 }

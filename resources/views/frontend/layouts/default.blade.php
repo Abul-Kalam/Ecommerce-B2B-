@@ -25,8 +25,9 @@
         <div>
             @yield('content')
         </div>
-        <footer class="main-footer">
 
+        <footer class="main-footer">
+            @include('frontend.parts.footer')
         </footer>
     </div>
     <script src="{{ asset('js/frontend.js') }}" defer></script>
