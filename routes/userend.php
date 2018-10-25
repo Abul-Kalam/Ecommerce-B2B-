@@ -26,6 +26,11 @@ Route::post('login', 'LoginController@login')->name('userend.login');
 
 Route::resource('products', 'ProductController');
 
+
+Route::get('shop/register', 'ShopController@register')->name('shop.register');
+Route::resource('shops', 'ShopController');
+
+
 Route::get('dashboard', function () {
     return view('userend.pages.dashboard');
 })->name('dashboard');

@@ -3,10 +3,10 @@
         <div class="row">
             <div class="col-xm-12 col-sm-12 col-md-4 col-lg-4">
                 <div class="page-wrap">
-                  <h5 class="title">Page's</h5>
+                  <h5 class="title">Pages</h5>
                   <h5 class="title mb-0">Earn wirh Nijhhum</h5>
-                  <a class="link" href="#">
-                        <h5 class="title">Earn wirh Nijhhum</h5>
+                  <a class="link" href="{{ url('/userend/shop/register') }}">
+                        <h5 class="title">Sell on Nijhhum</h5>
                   </a>
                 </div>
             </div>

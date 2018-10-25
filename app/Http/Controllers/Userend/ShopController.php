@@ -70,18 +70,43 @@ class ShopController extends Controller
     public function create()
     {
 
-        $this->checkPermission('manage-shops');
+        // $this->checkPermission('manage-shops');
+
+        // $countries = Country::get();
+        // $divisions = Division::get();
+        // $districts = District::get();
+        // $thanas = Thana::get();
+        // return view('userend.pages.shop-register' ,[
+        //     'countries' => $countries,
+        //     'districts' => $districts,
+        //     'divisions' => $divisions,
+        //     'thanas' => $thanas,
+        // ]);
+
+        // return view('userend.pages.shop-register', [
+          
+        //     ]);
+    }
+    
+    public function register()
+    {
+
+        // $this->checkPermission('manage-shops');
 
         $countries = Country::get();
         $divisions = Division::get();
         $districts = District::get();
         $thanas = Thana::get();
-        return view('backend.pages.shop-create' ,[
+        return view('userend.pages.shop-register' ,[
             'countries' => $countries,
             'districts' => $districts,
             'divisions' => $divisions,
             'thanas' => $thanas,
         ]);
+
+        // return view('userend.pages.shop-register', [
+          
+        //     ]);
     }
 
     /**
@@ -94,9 +119,9 @@ class ShopController extends Controller
     {
         $request->validate([
             'name' => 'required|unique:shops|max:255',
-
-            // 'business-address-line-1' => 'required|max:255',
-            // 'business-address-line-2' => 'required|max:255',
+            'email' => 'required|max:255',
+            'phone-number' => 'required|max:255',
+            'country-id' => 'required|max:255',
             // 'business-zip' => 'required',
             // 'business-country-id' => 'required',
             // 'business-district-id' => 'required',
@@ -131,11 +156,21 @@ class ShopController extends Controller
 
         $meta_title = $request->input('meta-title');
 
-        $email = $request->input('shop-email-admin');
+        $email = $request->input('email');
 
         $shop_user = User::where('email', $email)->first();
-        $user_id = $shop_user->id;
 
+        if ($shop_user) {
+                $user_id = $shop_user->id;
+        }
+        else {  
+            Session::flash('message', 'register!');
+            return view('userend.pages.register', [
+          
+                ]);
+        }
+        $shop->phone_number  = $request->input('phone-number');
+        
         $meta_keywords = $request->input('meta-keywords');
         $shop->meta             = [
             'title' => strtolower($meta_title),
@@ -178,7 +213,10 @@ class ShopController extends Controller
         $shop->shopusers()->sync($user_id);
 
         Session::flash('message', 'Successfully Created!');
-        return redirect()->route('backend.shops.edit', $shop->id);
+        // return redirect()->route('userend.shops.edit', $shop->id);
+
+
+        return "Successfully Shop register!";
 
        
     }
