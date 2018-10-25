@@ -89,7 +89,8 @@
                             </ul>
                             
                             <span class="login-wrap pr-2">
-                                <a href="#">Login</a>&nbsp;|&nbsp;<a href="#">Sign Up</a>
+                                <a href="{{ url('/userend/login') }}
+                                ">Login</a>&nbsp;|&nbsp;<a href="{{ url('/userend/register') }}">Sign Up</a>
                             </span>
                         </div>
                     </nav>
