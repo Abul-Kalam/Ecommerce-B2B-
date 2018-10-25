@@ -71,7 +71,7 @@ class RegisterController extends Controller
      */
     protected function create()
     {
-        return view('userend.pages.register', [
+        return view('userend.pages.shop-register', [
           
         ]);
     }
