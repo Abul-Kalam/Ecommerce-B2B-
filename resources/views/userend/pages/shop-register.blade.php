@@ -31,7 +31,7 @@
                             </div>
                             <div class="box-body">
                                 <div class="form-group">
-                                    <label for="shop-based-in" class="col-sm-3 control-label" required>Shop Based in :</label>
+                                    <label for="shop-based-in" class="col-sm-3 control-label" required>Shop Based in</label>
                                     <div class="col-sm-9">
                                         <select class="form-control">
                                             <option>Bangladesh</option>
@@ -42,19 +42,19 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="shop-based-in" class="col-sm-3 control-label" required>Mobile Number :</label>
+                                    <label for="shop-based-in" class="col-sm-3 control-label" required>Mobile Number</label>
                                     <div class="col-sm-9">
                                       <input type="text" class="form-control" placeholder="+880.........">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="password" class="col-sm-3 control-label" required>Password :</label>
+                                    <label for="password" class="col-sm-3 control-label" required>Password</label>
                                     <div class="col-sm-9">
                                       <input type="password" class="form-control" placeholder="password">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="password" class="col-sm-3 control-label" required>Confirm Password :</label>
+                                    <label for="password" class="col-sm-3 control-label" required>Confirm Password</label>
                                     <div class="col-sm-9">
                                       <input type="password" class="form-control" placeholder="Confirm password">
                                     </div>
@@ -66,7 +66,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="shop-name" class="col-sm-3 control-label" required>Shop Name :</label>
+                                    <label for="shop-name" class="col-sm-3 control-label" required>Shop Name</label>
                                     <div class="col-sm-9">
                                       <input type="text" class="form-control" placeholder="Enter shop name">
                                     </div>
