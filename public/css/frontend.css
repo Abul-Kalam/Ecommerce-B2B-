@@ -326,6 +326,7 @@
 }
 
 .footer-wrap .page-wrap .link .title {
+  margin-top: 1rem;
   font-size: .9em;
   font-weight: normal;
 }
