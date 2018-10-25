@@ -325,6 +325,11 @@
   font-size: 1.5em;
 }
 
+.footer-wrap .page-wrap .link .title {
+  font-size: .9em;
+  font-weight: normal;
+}
+
 .footer-wrap .address-wrap .title {
   color: #fff;
   margin-bottom: 1.8rem;

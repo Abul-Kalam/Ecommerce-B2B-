@@ -4,6 +4,9 @@
             <div class="col-xm-12 col-sm-12 col-md-4 col-lg-4">
                 <div class="page-wrap">
                   <h5 class="title">Page's</h5>
+                  <a class="link" href="#">
+                      <h5 class="title">Earn wirh Nijhhum</h5>
+                  </a>
                 </div>
             </div>
             <div class="col-xm-12 col-sm-12 col-md-5 col-lg-5">
