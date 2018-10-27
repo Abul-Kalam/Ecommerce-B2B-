@@ -217,10 +217,10 @@ class UserController extends Controller
        
         $request->validate([
 
+            // 'phone-number' => 'required',
             // 'name'  => 'required|max:255',
             // 'email' => 'required|unique:users|max:255',
-            // 'phone' => 'required',
-            // 'password' => 'required|string|min:6',
+            // 'password' => 'required|string|min:6|confirmed',
             // 'display-name-en' => 'required|max:255',
             // 'display-name-bn' => 'required|max:255',
             // 'first-name' => 'required|max:255',
@@ -248,7 +248,7 @@ class UserController extends Controller
 
         $user->name  = $request->input('name');
         $user->email = $request->input('email');
-        $user->phone_number = $request->input('phone');
+        $user->phone_number = $request->input('phone-number');
         $password = $request->input('password');
         $user->password = Hash::make($password) ;
        
