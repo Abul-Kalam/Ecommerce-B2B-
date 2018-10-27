@@ -17,6 +17,7 @@ class CreateShopsTable extends Migration
             $table->increments('id');
             $table->string('name')->nullable();
             $table->string('slug')->unique();
+            $table->integer('country_id')->nullable();
             $table->string('status', 100)->default('draft');
             $table->string('phone_number')->nullable();
             $table->json('address')->nullable();
