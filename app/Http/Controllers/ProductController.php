@@ -94,14 +94,7 @@ class ProductController extends Controller
         $product->brand_id = $request->input('brand-id');
         $product->description  = $request->input('description');
         $product->video_url  = $request->input('video-url');
-        $product->variation  = [
-            'color'         => $request->input('color'),
-            'style'         => $request->input('style'),
-            'price'         => $request->input('price'),
-            'sku'           => $request->input('sku'),
-            'stock_manage'  => $request->input('stock-manage'),
-            'size'          => $request->input('size')
-        ];
+        $product->variation  = $request->input('variation');
         $product->images_url = [
             'thumbnail_1' => $request->input('thumbnail-url-1'),
             'thumbnail_2' => $request->input('thumbnail-url-2')
