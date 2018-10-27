@@ -121,11 +121,11 @@ class ShopController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            //'shop-name' => 'required|unique:shops|max:255',
+            'shop-name' => 'required|unique:shops|max:255',
             'phone-number' => 'required|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
-            // 'country-id' => 'required|max:255',
+            'country-id' => 'required|max:255',
             // 'business-zip' => 'required',
             // 'business-country-id' => 'required',
             // 'business-district-id' => 'required',

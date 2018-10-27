@@ -61,20 +61,13 @@
                                         <div class="form-group {{ $errors->has('password') ? 'has-error' : '' }}">
                                             <label for="password" required>Password</label>
                                             <input type="password" class="form-control" placeholder="password" name="password">
-                                            @if ($errors->has('password'))
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $errors->first('password') }}</strong>
-                                                </span>
+                                            @if($errors->has('password'))
+                                            <span class="help-block">Password is required.</span>
                                             @endif
                                         </div>
-                                        <div class="form-group {{ $errors->has('password_confirmation') ? 'has-error' : '' }}">
+                                        <div class="form-group">
                                             <label for="password" required>Confirm Password</label>
-                                            <input type="password" class="form-control" placeholder="Confirm password" name="password_confirmation" required>
-                                            @if ($errors->has('password_confirmation'))
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $errors->first('password_confirmation') }}</strong>
-                                                </span>
-                                            @endif
+                                            <input type="password" class="form-control" placeholder="Confirm password" name="password_confirmation">
                                         </div>
                                         <div class="checkbox pl-4">
                                             <label>
@@ -87,25 +80,25 @@
                                         <div class="box-header">
                                             <h5 class="box-title">Shop</h5>
                                         </div>
-                                        <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
+                                        <div class="form-group {{ $errors->has('shop-name') ? 'has-error' : '' }}">
                                             <label for="shop-name" required>Shop Name</label>
                                             <input type="text" class="form-control" placeholder="Enter shop name" name="shop-name">
-                                            @if($errors->has('name'))
+                                            @if($errors->has('shop-name'))
                                             <span class="help-block">Shop Name is required.</span>
                                             @endif
                                         </div>
-                                        <div class            = "form-group {{ $errors->has('country-id') ? 'has-error' : '' }}">
-                                            <label for        = "shop-based-in" required>Shop Based in</label>
-                                            <select class     = "form-control" placeholder = "Select country" name = "country-id">
-                                                <option value = "">Choose Country</option>
-                                                @foreach ($countries as $c)
-                                                <option value = "{{ $c->id}}">{{ ucwords($c->localization['en']['display_name']) }}</option>
-                                                @endforeach
-                                            </select>
-                                            @if($errors->has('country-id'))
-                                            <span class       = "help-block">The Country field is required.</span>
-                                            @endif
-                                        </div>
+                                    <div class="form-group {{ $errors->has('country-id') ? 'has-error' : '' }}">
+                                    <label for="shop-based-in" required>Shop Based in</label>
+                                    <select class="form-control" placeholder="Select country" name="country-id">
+                                        <option value="">Choose Country</option>
+                                        @foreach ($countries as $c)
+                                        <option value="{{ $c->id}}">{{ ucwords($c->localization['en']['display_name']) }}</option>
+                                        @endforeach
+                                    </select>
+                                    @if($errors->has('country-id'))
+                                    <span class="help-block">The Country field is required.</span>
+                                    @endif
+                                </div>
                                     </div>
                                 </div>
                             </div>
