@@ -6992,9 +6992,16 @@ button {
           box-shadow: 0 0 50px #c7c7c7;
 }
 
-.shop-reg .box-title {
+.shop-reg .box-header .box-title {
   display: block;
   padding: 1rem 0;
+  font-weight: 600;
+  text-align: center;
+}
+
+.shop-reg .box-body .box-title {
+  display: block;
+  padding: .5rem 0;
   font-weight: 600;
   text-align: center;
 }
