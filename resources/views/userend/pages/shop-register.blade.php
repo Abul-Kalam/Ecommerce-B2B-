@@ -16,11 +16,11 @@
 <body>
     <div class="contaoner-fluid">
         <div class="container">
-            <form class="form-horizontal"  action="{{ route('userend.shops.store') }}" method="post">
+            <form action="{{ route('userend.shops.store') }}" method="post">
 
                     {{ csrf_field() }}
                 <div class="row mt-5">
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 col-lg-offset-2">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10 col-lg-offset-1">
                         <div class="page">
                             <a class="link" href="#">
                                 <img src="{{ asset('images/logo-header.png') }}" alt="logo">
@@ -32,64 +32,81 @@
                                 <h3 class="box-title">SIGN UP</h3>
                             </div>
                             <div class="box-body">
-                                <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
-                                    <label for="shop-name" class="col-sm-3 control-label" required>Shop Name</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" placeholder="Enter shop name" name="name">
-                                        @if($errors->has('name'))
-                                        <span class="help-block">Shop Name is required.</span>
-                                        @endif
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                        <div class="box-header">
+                                            <h5 class="box-title">Shop Manager</h5>
+                                        </div>
+                                        <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
+                                            <label for="shop-name" required>Name</label>
+                                            <input type="text" class="form-control" placeholder="Enter shop name" name="name">
+                                            @if($errors->has('name'))
+                                            <span class="help-block">Shop Name is required.</span>
+                                            @endif
+                                        </div>
+                                        <div class="form-group {{ $errors->has('phone-number') ? 'has-error' : '' }}">
+                                            <label for="shop-based-in" required>Mobile Number</label>
+                                            <input type="text" class="form-control" placeholder="+880........." name="phone-number">
+                                            @if($errors->has('phone-number'))
+                                            <span class="help-block">Mobile Number is required.</span>
+                                            @endif
+                                        </div>
+                                        <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
+                                            <label for="email" required>Email Address</label>
+                                            <input type="email" class="form-control" placeholder="Enter email" name="email">
+                                            @if($errors->has('email'))
+                                            <span class="help-block">Email is required.</span>
+                                            @endif
+                                        </div>
+                                        <div class="form-group {{ $errors->has('password') ? 'has-error' : '' }}">
+                                            <label for="password" required>Password</label>
+                                            <input type="password" class="form-control" placeholder="password" name="password">
+                                            @if ($errors->has('password'))
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $errors->first('password') }}</strong>
+                                                </span>
+                                            @endif
+                                        </div>
+                                        <div class="form-group {{ $errors->has('password_confirmation') ? 'has-error' : '' }}">
+                                            <label for="password" required>Confirm Password</label>
+                                            <input type="password" class="form-control" placeholder="Confirm password" name="password_confirmation" required>
+                                            @if ($errors->has('password_confirmation'))
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $errors->first('password_confirmation') }}</strong>
+                                                </span>
+                                            @endif
+                                        </div>
+                                        <div class="checkbox pl-4">
+                                            <label>
+                                                <input type="checkbox"> I've read and understood Nijhum's <a href="#">Terms &
+                                                    Conditions</a>.
+                                            </label>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="form-group {{ $errors->has('country-id') ? 'has-error' : '' }}">
-                                    <label for="shop-based-in" class="col-sm-3 control-label" required>Shop Based in</label>
-                                    <div class="col-sm-9">
-                                        <select class="form-control" placeholder="Select country" name="country-id">
-                                            <option value="">Choose Country</option>
-                                            @foreach ($countries as $c)
-                                            <option value="{{ $c->id}}">{{ ucwords($c->localization['en']['display_name']) }}</option>
-                                            @endforeach
-                                        </select>
-                                        @if($errors->has('country-id'))
-                                        <span class="help-block">The Country field is required.</span>
-                                        @endif
+                                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                        <div class="box-header">
+                                            <h5 class="box-title">Shop</h5>
+                                        </div>
+                                        <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
+                                            <label for="shop-name" required>Shop Name</label>
+                                            <input type="text" class="form-control" placeholder="Enter shop name" name="shop-name">
+                                            @if($errors->has('name'))
+                                            <span class="help-block">Shop Name is required.</span>
+                                            @endif
+                                        </div>
+                                        <div class            = "form-group {{ $errors->has('country-id') ? 'has-error' : '' }}">
+                                            <label for        = "shop-based-in" required>Shop Based in</label>
+                                            <select class     = "form-control" placeholder = "Select country" name = "country-id">
+                                                <option value = "">Choose Country</option>
+                                                @foreach ($countries as $c)
+                                                <option value = "{{ $c->id}}">{{ ucwords($c->localization['en']['display_name']) }}</option>
+                                                @endforeach
+                                            </select>
+                                            @if($errors->has('country-id'))
+                                            <span class       = "help-block">The Country field is required.</span>
+                                            @endif
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="form-group {{ $errors->has('phone-number') ? 'has-error' : '' }}">
-                                    <label for="shop-based-in" class="col-sm-3 control-label" required>Mobile Number</label>
-                                    <div class="col-sm-9">
-                                      <input type="text" class="form-control" placeholder="+880........." name="phone-number">
-                                      @if($errors->has('phone-number'))
-                                      <span class="help-block">Shop Name is required.</span>
-                                      @endif
-                                    </div>
-                                </div>
-                                {{-- <div class="form-group">
-                                    <label for="password" class="col-sm-3 control-label" required>Password</label>
-                                    <div class="col-sm-9">
-                                      <input type="password" class="form-control" placeholder="password">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="password" class="col-sm-3 control-label" required>Confirm Password</label>
-                                    <div class="col-sm-9">
-                                      <input type="password" class="form-control" placeholder="Confirm password">
-                                    </div>
-                                </div> --}}
-                                <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
-                                    <label for="email" class="col-sm-3 control-label" required>Email Address</label>
-                                    <div class="col-sm-9">
-                                      <input type="email" class="form-control" placeholder="Enter email" name="email">
-                                      @if($errors->has('email'))
-                                      <span class="help-block">Shop Name is required.</span>
-                                      @endif
-                                    </div>
-                                </div>
-                                <div class="checkbox pl-4">
-                                    <label>
-                                        <input type="checkbox"> I've read and understood Nijhum's <a href="#">Terms &
-                                            Conditions</a>.
-                                    </label>
                                 </div>
                             </div>
                             <div class="box-footer">

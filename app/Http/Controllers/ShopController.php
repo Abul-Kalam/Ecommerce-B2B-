@@ -78,9 +78,9 @@ class ShopController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request
     {
-        $request->validate([
+          $request->validate([
             // 'name' => 'required|unique:shops|max:255',
             // 'business-address-line-1' => 'required|max:255',
             // 'business-address-line-2' => 'required|max:255',

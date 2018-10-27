@@ -1,3 +1,7 @@
+@php
+$_activePrimaryNav = 'product';
+$_activeSecondaryNav = 'create';
+@endphp
 @extends('userend.layouts.default')
 @section('title', 'Create Product')
 @section('content')

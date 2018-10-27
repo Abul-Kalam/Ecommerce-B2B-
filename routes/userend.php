@@ -36,3 +36,4 @@ Route::get('dashboard', function () {
 })->name('dashboard');
 
  Route::get('profile', 'UserController@profile')->name('profile');
+
