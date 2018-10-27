@@ -177,6 +177,12 @@
                                     <div class="thumbnail-holder">
                                         <img class="d-block w-100" src="{{ asset('images/mens-cloth (3).jpg') }}" alt="First slide">
                                     </div>
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>Men"s T-Shirt</h5>
+                                    </div>
+                                    <div class="on-sale">
+                                        <strong>-20%</strong>
+                                    </div>
                                 </a>
                             </div>
                             <div class="carousel-item">
@@ -184,12 +190,24 @@
                                     <div class="thumbnail-holder">
                                         <img class="d-block w-100" src="{{ asset('images/mens-cloth (2).jpg') }}" alt="Second slide">
                                     </div>
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>Men"s T-Shirt</h5>
+                                    </div>
+                                    <div class="on-sale">
+                                        <strong>-30%</strong>
+                                    </div>
                                 </a>
                             </div>
                             <div class="carousel-item">
                                 <a class="link" href="#">
                                     <div class="thumbnail-holder">
                                         <img class="d-block w-100" src="{{ asset('images/mens-cloth (1).jpg') }}" alt="Third slide">
+                                    </div>
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>Men"s T-Shirt</h5>
+                                    </div>
+                                    <div class="on-sale">
+                                        <strong>-40%</strong>
                                     </div>
                                 </a>
                             </div>
@@ -234,6 +252,12 @@
                                     <div class="thumbnail-holder">
                                         <img class="d-block w-100" src="{{ asset('images/womens-cloth (5).jpg') }}" alt="First slide">
                                     </div>
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>Men"s T-Shirt</h5>
+                                    </div>
+                                    <div class="on-sale">
+                                        <strong>-30%</strong>
+                                    </div>
                                 </a>
                             </div>
                             <div class="carousel-item">
@@ -241,12 +265,24 @@
                                     <div class="thumbnail-holder">
                                         <img class="d-block w-100" src="{{ asset('images/womens-cloth (4).jpg') }}" alt="Second slide">
                                     </div>
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>Men"s T-Shirt</h5>
+                                    </div>
+                                    <div class="on-sale">
+                                        <strong>-30%</strong>
+                                    </div>
                                 </a>
                             </div>
                             <div class="carousel-item">
                                 <a class="link" href="#">
                                     <div class="thumbnail-holder">
                                         <img class="d-block w-100" src="{{ asset('images/womens-cloth (3).jpg') }}" alt="Third slide">
+                                    </div>
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>Men"s T-Shirt</h5>
+                                    </div>
+                                    <div class="on-sale">
+                                        <strong>-30%</strong>
                                     </div>
                                 </a>
                             </div>
@@ -291,6 +327,12 @@
                                     <div class="thumbnail-holder">
                                         <img class="d-block w-100" src="{{ asset('images/kids-cloth (1).jpg') }}" alt="First slide">
                                     </div>
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>Men"s T-Shirt</h5>
+                                    </div>
+                                    <div class="on-sale">
+                                        <strong>-30%</strong>
+                                    </div>
                                 </a>
                             </div>
                             <div class="carousel-item">
@@ -298,12 +340,24 @@
                                     <div class="thumbnail-holder">
                                         <img class="d-block w-100" src="{{ asset('images/kids-cloth (2).jpg') }}" alt="Second slide">
                                     </div>
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>Men"s T-Shirt</h5>
+                                    </div>
+                                    <div class="on-sale">
+                                        <strong>-30%</strong>
+                                    </div>
                                 </a>
                             </div>
                             <div class="carousel-item">
                                 <a class="link" href="#">
                                     <div class="thumbnail-holder">
                                         <img class="d-block w-100" src="{{ asset('images/kids-cloth (3).jpg') }}" alt="Third slide">
+                                    </div>
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>Men"s T-Shirt</h5>
+                                    </div>
+                                    <div class="on-sale">
+                                        <strong>-30%</strong>
                                     </div>
                                 </a>
                             </div>
@@ -348,6 +402,12 @@
                                     <div class="thumbnail-holder">
                                         <img class="d-block w-100" src="{{ asset('images/girls-cloth (1).jpg') }}" alt="First slide">
                                     </div>
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>Men"s T-Shirt</h5>
+                                    </div>
+                                    <div class="on-sale">
+                                        <strong>-30%</strong>
+                                    </div>
                                 </a>
                             </div>
                             <div class="carousel-item">
@@ -355,12 +415,24 @@
                                     <div class="thumbnail-holder">
                                         <img class="d-block w-100" src="{{ asset('images/girls-cloth (2).jpg') }}" alt="Second slide">
                                     </div>
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>Men"s T-Shirt</h5>
+                                    </div>
+                                    <div class="on-sale">
+                                        <strong>-30%</strong>
+                                    </div>
                                 </a>
                             </div>
                             <div class="carousel-item">
                                 <a class="link" href="#">
                                     <div class="thumbnail-holder">
                                         <img class="d-block w-100" src="{{ asset('images/girls-cloth (3).jpg') }}" alt="Third slide">
+                                    </div>
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>Men"s T-Shirt</h5>
+                                    </div>
+                                    <div class="on-sale">
+                                        <strong>-30%</strong>
                                     </div>
                                 </a>
                             </div>
@@ -405,6 +477,12 @@
                                     <div class="thumbnail-holder">
                                         <img class="d-block w-100" src="{{ asset('images/boy-cloth (1).jpg') }}" alt="First slide">
                                     </div>
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>Men"s T-Shirt</h5>
+                                    </div>
+                                    <div class="on-sale">
+                                        <strong>-30%</strong>
+                                    </div>
                                 </a>
                             </div>
                             <div class="carousel-item">
@@ -412,12 +490,24 @@
                                     <div class="thumbnail-holder">
                                         <img class="d-block w-100" src="{{ asset('images/boy-cloth (2).jpg') }}" alt="Second slide">
                                     </div>
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>Men"s T-Shirt</h5>
+                                    </div>
+                                    <div class="on-sale">
+                                        <strong>-30%</strong>
+                                    </div>
                                 </a>
                             </div>
                             <div class="carousel-item">
                                 <a class="link" href="#">
                                     <div class="thumbnail-holder">
                                         <img class="d-block w-100" src="{{ asset('images/boy-cloth (3).jpg') }}" alt="Third slide">
+                                    </div>
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>Men"s T-Shirt</h5>
+                                    </div>
+                                    <div class="on-sale">
+                                        <strong>-30%</strong>
                                     </div>
                                 </a>
                             </div>
