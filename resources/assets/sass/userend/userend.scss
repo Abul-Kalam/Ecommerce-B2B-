@@ -1,5 +1,46 @@
-@import '~select2/dist/css/select2.min.css';
-// Admin Light
-// @import '~dropzone/dist/min/dropzone.min.css';
-@import '~admin-lte/dist/css/AdminLTE.css';
-@import '~admin-lte/dist/css/skins/_all-skins.css';
+@import '../backend/backend';
+// =======================./Padding=====================
+.page{
+  display: block;
+  text-align: center;
+  margin-bottom: 3rem;
+  .link{
+    img{
+      width: 208px;
+    }
+  }
+  .title{
+    font-size: 1.3em;
+    padding: 1rem 0;
+  }
+}
+.shop-reg{
+  box-shadow: 0 0 50px #c7c7c7;
+  .box-header{
+    .box-title{
+      display: block;
+      padding: 1rem 0;
+      font-weight: 600;
+      text-align: center;
+    }
+  }
+  .box-body{
+    .box-title{
+      display: block;
+      padding: .5rem 0;
+      font-weight: 600;
+      text-align: center;
+    }
+  }
+  .form-group{
+    label[required]{
+      &::after{
+        display: inline-block;
+        margin-left: 4px;
+        content: "*";
+        font-family: SimSun;
+        color: #f33;
+      }
+    }
+  }
+}

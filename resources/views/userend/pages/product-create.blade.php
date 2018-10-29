@@ -2,7 +2,7 @@
 $_activePrimaryNav = 'product';
 $_activeSecondaryNav = 'create';
 @endphp
-@extends('backend.layouts.default')
+@extends('userend.layouts.default')
 @section('title', 'Create Product')
 @section('content')
 
@@ -15,7 +15,7 @@ $_activeSecondaryNav = 'create';
 
 <section class="content">
 
-        <form action="{{ route('backend.products.store') }}" method="post" enctype="multipart/form-data">
+        <form action="{{ route('userend.products.store') }}" method="post" enctype="multipart/form-data">
 
             {{ csrf_field() }}
 
@@ -39,18 +39,18 @@ $_activeSecondaryNav = 'create';
                         </div>
                         <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                <div class="box box-solid repeater-variation">
+                                <div class="box box-solid">
                                     <div class="box-header with-border">
                                         <h3 class="box-title">Variation</h3>
                                         <div class="box-tools pull-right">
-                                            <button type="button" class="btn btn-box-tool"  data-repeater-create>Add New</button>
+                                            <button type="button" class="btn btn-box-tool">Add New</button>
                                         </div>
                                     </div>
                                     <!-- /.box-header -->
                                     <div class="row">
                                         <div class="col-lg-12">
-                                            <ul class="multi-input-list" data-repeater-list="variation">
-                                                <li class="item" data-repeater-item>
+                                            <ul class="multi-input-list">
+                                                <li class="item">
                                                     <div class="container open">
                                                         <div class="header">
                                                             <span class="icon">
@@ -60,10 +60,10 @@ $_activeSecondaryNav = 'create';
                                                                 <i class="far fa-images"></i>
                                                             </button>
                                                             <input class="input" type="text">
-                                                            <button type="button" class="btn btn-link action">
+                                                            <button class="btn btn-link action">
                                                                 <i class="fas fa-angle-down"></i>
                                                             </button>
-                                                            <button type="button" class="btn btn-link action" data-repeater-delete>
+                                                            <button class="btn btn-link action">
                                                                 <i class="fas fa-times"></i>
                                                             </button>
                                                         </div>
@@ -71,10 +71,10 @@ $_activeSecondaryNav = 'create';
                                                             <div class="row">
                                                                 <div class="col-lg-6">
                                                                     <div class="row form-group">
-                                                                        <label for="sku" class="col-lg-3 ">SKU</label>
+                                                                        <label for="size" class="col-lg-3 ">SKU</label>
                                                                         <div class="col-lg-9">
-                                                                            <input type="text" class="form-control" id="sku"
-                                                                                name="sku" placeholder="XI285SP0SD3C4NAFAMZ-177345">
+                                                                            <input type="text" class="form-control" id="size"
+                                                                                name="size" placeholder="XI285SP0SD3C4NAFAMZ-177345">
                                                                         </div>
                                                                     </div>
                                                                     <div class="row form-group">
@@ -99,7 +99,7 @@ $_activeSecondaryNav = 'create';
                                                                     <div class="row form-group">
                                                                         <label for="size" class="col-lg-3 ">Size</label>
                                                                         <div class="col-lg-9">
-                                                                            <div class="form-group" name="size">
+                                                                            <div class="form-group">
                                                                                 <select class="form-control select2"
                                                                                     style="width: 100%;" tabindex="-1"
                                                                                     aria-hidden="true">
@@ -391,13 +391,4 @@ $_activeSecondaryNav = 'create';
     </form>
 </section>
 
-@endsection
-
-@section('scripts')
-<script>
-    $(document).ready(function () {
-        $('.repeater-variation').repeater();
-      // console.log('ok');
-    });
-</script>
 @endsection

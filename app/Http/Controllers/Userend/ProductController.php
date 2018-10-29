@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Userend;
 
 use Session;
 use App\Product;
@@ -36,7 +36,7 @@ class ProductController extends Controller
         $categories = Category::get();
         $brands = Brand::get();
         $countries = Country::get();
-        return view('backend.pages.product-create' ,[
+        return view('userend.pages.product-create' ,[
             'categories' => $categories,
             'countries' => $countries,
             'brands' => $brands,
@@ -94,7 +94,14 @@ class ProductController extends Controller
         $product->brand_id = $request->input('brand-id');
         $product->description  = $request->input('description');
         $product->video_url  = $request->input('video-url');
-        $product->variation  = $request->input('variation');
+        $product->variation  = [
+            'color'         => $request->input('color'),
+            'style'         => $request->input('style'),
+            'price'         => $request->input('price'),
+            'sku'           => $request->input('sku'),
+            'stock_manage'  => $request->input('stock-manage'),
+            'size'          => $request->input('size')
+        ];
         $product->images_url = [
             'thumbnail_1' => $request->input('thumbnail-url-1'),
             'thumbnail_2' => $request->input('thumbnail-url-2')

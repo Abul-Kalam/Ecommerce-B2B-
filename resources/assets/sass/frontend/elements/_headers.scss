@@ -4,43 +4,43 @@
       vertical-align: middle;
     }
   }
-  .social-nav{
-    float: right;
-    margin-left: auto;
-    .social-list{
-      display: block;
-      margin: 0;
-      padding: 0;
-      list-style-type: none;
-      .item{
-        display: inline;
-        margin-left: 0.2em;
-        a{
-          display: inline-block;
-          border: 1px solid;
-          width: 28px;
-          height: 28px;
-          text-align: center;
-          box-sizing: border-box;
-          border-radius: 3px;
-          border-color: rgba(0,0,0,0.15);
-          background-color: #fff;
-          color: $gray-600;
-          i{
-            font-size: 1.1em;
-            line-height: 1.65rem;
-            &.facebook:hover {
-              color: $facebook;
-            }
-            &.twitter:hover {
-              color: $twitter;
-            }
-            &.youtube:hover {
-              color: #E32C28;
-            }
-            &.google-plus:hover {
-              color: #dd5144;
-            }
+}
+.social-nav{
+  float: right;
+  margin-left: auto;
+  .social-list{
+    display: block;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    .item{
+      display: inline;
+      margin-left: 0.2em;
+      a{
+        display: inline-block;
+        border: 1px solid;
+        width: 28px;
+        height: 28px;
+        text-align: center;
+        box-sizing: border-box;
+        border-radius: 3px;
+        border-color: rgba(0,0,0,0.15);
+        background-color: #fff;
+        color: $gray-600;
+        i{
+          font-size: 1.1em;
+          line-height: 1.65rem;
+          &.facebook:hover {
+            color: $facebook;
+          }
+          &.twitter:hover {
+            color: $twitter;
+          }
+          &.youtube:hover {
+            color: #E32C28;
+          }
+          &.google-plus:hover {
+            color: #dd5144;
           }
         }
       }
